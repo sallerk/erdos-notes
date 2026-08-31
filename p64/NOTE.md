@@ -75,8 +75,18 @@ claim and is stated as such in the comment.
 
 ## How to check this yourself
 
-    python audit64.py            # stages A-C, pure Python, no dependencies
-    python audit64.py --geng     # adds the nauty regeneration
+See `REPRODUCE.md`, which was executed end to end on 2026-08-31 and quotes what it
+actually printed. In short:
+
+    python audit64.py                 # verify the recorded results, no dependencies
+    python test_gen.py                # validate the generator against A002851
+    python run.py 30 20 1 bip         # reproduce the n=30 certificate from scratch
+
+Two things a reader will otherwise trip on, both now documented: the fourth argument
+`bip` is required for the bipartite class, and the reported node count depends on
+SPLIT_DEPTH and WORKERS (the shared prefix is counted once per worker), so matching a
+stored count needs the split recorded in that run's JSON. The verdict does not depend
+on the split.
 
 Stage A re-adds the per-n node counts and checks coverage of every even n from 4 to 62
 with no gaps. Stage B checks that the task lines in the n=60 and n=62 certificates sum
@@ -88,9 +98,22 @@ regeneration above.
 
 * `LITERATURE.md`
 * `REFERENCES.md`
+* `REPRODUCE.md`
 * `RESULTS.md`
+* `__pycache__/cycles.cpython-312.pyc`
+* `__pycache__/fastgen._creates_forbidden-158.py312.1.nbc`
+* `__pycache__/fastgen._creates_forbidden-158.py312.nbi`
+* `__pycache__/fastgen._path_exists-50.py312.1.nbc`
+* `__pycache__/fastgen._path_exists-50.py312.nbi`
+* `__pycache__/fastgen.cpython-312.pyc`
+* `__pycache__/fastgen.search-174.py312.1.nbc`
+* `__pycache__/fastgen.search-174.py312.nbi`
+* `__pycache__/gen.cpython-312.pyc`
 * `audit64.c`
 * `audit64.py`
+* `cycles.py`
+* `fastgen.py`
+* `gen.py`
 * `prune64.c`
 * `results/TABLE.md`
 * `results/bip_n10.json`
@@ -125,3 +148,9 @@ regeneration above.
 * `results/bip_n62.json`
 * `results/bip_n62_CERTIFIED.txt`
 * `results/bip_n8.json`
+* `run.py`
+* `summarize.py`
+* `sweep.py`
+* `test_cycles.py`
+* `test_fastgen.py`
+* `test_gen.py`
