@@ -1,0 +1,22 @@
+{
+ "n": 52,
+ "bipartite": true,
+ "workers": 5,
+ "split_depth": 24,
+ "incremental_forbidden": [
+  4,
+  8,
+  16
+ ],
+ "all_pow2_lengths": [
+  4,
+  8,
+  16,
+  32
+ ],
+ "tree_nodes": 71992044,
+ "survivors_C4C8C16": 0,
+ "survivors_rechecked": 0,
+ "counterexamples": [],
+ "wall_secs": 77.71463418006897
+}

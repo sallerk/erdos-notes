@@ -28,10 +28,76 @@ Code, per-$n$ certificates and the validation suite are in this directory: `RESU
 
 Disclosure: the searches, computations and the drafting of this note were done with AI assistance.
 
+## Independent re-verification with nauty (added after the original search)
+
+The generator used for the search performs no isomorph rejection, because nauty was
+not available at the time. It is now, so the claim has been re-checked with a
+completely different generator and a completely different cycle routine.
+
+* connected cubic counts reproduced with `geng`: 1, 2, 5, 19, 85 for n = 4..12,
+  matching **A002851**
+* connected cubic bipartite counts reproduced: 1, 1, 2, 5, 13, 38, 149, 703 for
+  n = 6..20, matching **A006823**
+* zero survivors at every one of those n
+* restricting to the C4-free graphs, which alone could survive, the check extends to
+  **n = 28** (11,415 graphs at n = 28), still zero survivors
+
+**What this does and does not establish.** It confirms the original search across its
+whole overlapping range, from independent code. It does NOT reach n = 30 to 62: those
+counts are beyond any regeneration a reader could run. Over that range exhaustiveness
+rests on the original over-generating generator being correct, and `audit64.py` stages
+A and B check only that the recorded totals and certificates are internally
+consistent, not that the search missed nothing. That is the weakest point in the
+claim and is stated as such in the comment.
+
+## How to check this yourself
+
+    python audit64.py            # stages A-C, pure Python, no dependencies
+    python audit64.py --geng     # adds the nauty regeneration
+
+Stage A re-adds the per-n node counts and checks coverage of every even n from 4 to 62
+with no gaps. Stage B checks that the task lines in the n=60 and n=62 certificates sum
+to their stated totals. Stage C validates the cycle routine against K(3,3), Heawood,
+Moebius-Kantor and Pappus, whose cycle spectra are known. Stage D is the nauty
+regeneration above.
+
 ## Files in this directory
 
 * `LITERATURE.md`
 * `REFERENCES.md`
 * `RESULTS.md`
-* `bip_n60_CERTIFIED.txt`
-* `bip_n62_CERTIFIED.txt`
+* `audit64.c`
+* `audit64.py`
+* `results/TABLE.md`
+* `results/bip_n10.json`
+* `results/bip_n12.json`
+* `results/bip_n14.json`
+* `results/bip_n16.json`
+* `results/bip_n18.json`
+* `results/bip_n20.json`
+* `results/bip_n22.json`
+* `results/bip_n24.json`
+* `results/bip_n26.json`
+* `results/bip_n28.json`
+* `results/bip_n30.json`
+* `results/bip_n32.json`
+* `results/bip_n34.json`
+* `results/bip_n36.json`
+* `results/bip_n38.json`
+* `results/bip_n4.json`
+* `results/bip_n40.json`
+* `results/bip_n42.json`
+* `results/bip_n44.json`
+* `results/bip_n46.json`
+* `results/bip_n48.json`
+* `results/bip_n50.json`
+* `results/bip_n52.json`
+* `results/bip_n54.json`
+* `results/bip_n56.json`
+* `results/bip_n58.json`
+* `results/bip_n6.json`
+* `results/bip_n60.json`
+* `results/bip_n60_CERTIFIED.txt`
+* `results/bip_n62.json`
+* `results/bip_n62_CERTIFIED.txt`
+* `results/bip_n8.json`
