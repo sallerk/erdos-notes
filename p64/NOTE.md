@@ -18,7 +18,7 @@ Search sizes, in search-tree nodes with wall time on 5 or 10 worker processes: f
 
 Method. Depth-first generation of connected cubic (bipartite) graphs in BFS-canonical labelling, pruning any partial graph that already contains a $C_4$, $C_8$ or $C_{16}$. The pruning is sound because a partial graph is a subgraph of every completion, so a forbidden cycle present at a node is present in every descendant. Survivors are then re-tested from scratch by a separately validated checker covering every power-of-two length.
 
-On the generator. It performs no isomorph rejection, so it over-generates: the same graph may be produced several times. For a non-existence claim this is the safe direction, since duplicates only cost time whereas missing graphs would silently manufacture a false negative. It was written this way only because nauty, geng and genbg were unavailable in the environment used; a standard isomorph-free generator would be considerably faster.
+On the generator. It performs no isomorph rejection, so it over-generates: the same graph may be produced several times. For a non-existence claim this is the safe direction, since duplicates only cost time whereas missing graphs would silently manufacture a false negative. It was written this way because nauty was unavailable in the environment used. I previously wrote here that a standard isomorph-free generator would be considerably faster. That was an assumption and I have now tested it; it is false for the one such generator that runs on this machine. Compiling nauty's geng with a PRUNE hook rejecting any intermediate graph containing a C4, C8 or C16 (sound, since geng only adds vertices and edges, so a forbidden cycle never disappears) takes 431 s at n = 30, against 4.2 s and 46,828 tree nodes for the search used here. Roughly a hundred times slower. The cause is not the hook: geng's own built-in C4-free generation at n = 30 exceeds ten minutes on its own. geng adds one vertex at a time and its intermediate graphs are far from cubic, so they contain almost no cycles and the prune barely fires, while it pays canonical-labelling cost at every node. The search used here adds edges with the cubic degree constraint enforced throughout, so a forbidden cycle appears early and kills the subtree at once. Over-generating isomorphic copies is much cheaper than walking that larger space. The claim may still hold for a cubic-specific generator: snarkhunter 2.0b builds here only with shims for sys/times.h and sysconf, and then returns correct counts at n = 4 and 6 but nothing from n = 8 upward, so it is not usable on this machine; GENREG could not be obtained at all, its FTP host being unreachable and its SourceForge mirror returning 403. Neither was tested, and the claim is withdrawn rather than restated.
 
 Validation, carried out before any search. (i) The generator reproduces the published connected-cubic counts A002851 exactly for $n = 4, 6, 8, 10, 12$, namely $1, 2, 5, 19, 85$; for the class actually searched here it also matches A006823 (bicubic, that is cubic bipartite, graphs) and A006924 (connected cubic graphs of girth exactly $4$). (ii) It reproduces Markström's four $24$-vertex $C_4/C_8$-free cubic graphs, exactly one of which is planar. (iii) The cycle-length checker was cross-checked against networkx.simple_cycles on $396$ random graphs and $120$ random cubic graphs with zero disagreements; that cross-check caught a genuine bug in an early Hamiltonicity prune.
 
@@ -27,6 +27,29 @@ Caveats. (i) This covers only the cubic bipartite subclass, and does not improve
 Code, per-$n$ certificates and the validation suite are in this directory: `RESULTS.md` for the full run table, `LITERATURE.md` for the search record, and `bip_n60_CERTIFIED.txt` and `bip_n62_CERTIFIED.txt` for the two certified runs.
 
 Disclosure: the searches, computations and the drafting of this note were done with AI assistance.
+
+## Generator comparison, measured 2026-08-31
+
+| generator | n = 30 | note |
+|---|---|---|
+| the search used here (over-generating, edge by edge, degree enforced) | **4.2 s**, 46,828 tree nodes | |
+| nauty `geng` + PRUNE on C4/C8/C16 (`prune64.c`, isomorph-free) | **431 s** | about 100x slower |
+| nauty `geng -f` alone, no custom hook | **> 600 s, unfinished** | control: the cost is geng, not the hook |
+| snarkhunter 2.0b | unusable here | builds only with sys/times.h and sysconf shims, then gives correct counts at n = 4, 6 and nothing from n = 8 up |
+| GENREG | unobtainable | FTP host unreachable, SourceForge mirror 403 |
+| minibaum | unobtainable | not distributed on the ugent cubic page |
+
+`prune64.c` is included so the geng comparison can be reproduced. Build it from the
+nauty directory with
+
+    gcc -o geng64.exe -O3 -march=native -DMAXN=WORDSIZE -DWORDSIZE=64         -DPRUNE=prune64 -DPREPRUNE=preprune64 -I. geng.c prune64.c         gtoolsL.o nautyL1.o nautilL1.o naugraphL1.o schreierL.o naurng.o
+
+then `./geng64.exe -c -b -d3 -D3 -u 30` (it should report 0 graphs, i.e. no survivor).
+
+**Consequence for going further.** The path to n = 64 and beyond is the search used
+here, not an isomorph-free generator. Its pruned tree grew 1.45e9, 3.99e9, 1.22e10 at
+n = 58, 60, 62, a factor of about 2.8 per two vertices, so n = 64 projects to roughly
+3.5e10 nodes.
 
 ## Independent re-verification with nauty (added after the original search)
 
@@ -68,6 +91,7 @@ regeneration above.
 * `RESULTS.md`
 * `audit64.c`
 * `audit64.py`
+* `prune64.c`
 * `results/TABLE.md`
 * `results/bip_n10.json`
 * `results/bip_n12.json`
