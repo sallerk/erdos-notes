@@ -1,0 +1,50 @@
+{
+ "n": 9,
+ "nshards": 5,
+ "regions": {
+  "100": {
+   "nodes": 8065470465,
+   "solutions": 0,
+   "seconds": 180.0,
+   "shards": 5,
+   "status": "COMPLETED"
+  },
+  "144": {
+   "nodes": 31570223839,
+   "solutions": 0,
+   "seconds": 540.0,
+   "shards": 5,
+   "status": "COMPLETED"
+  },
+  "196": {
+   "nodes": 117265608552,
+   "solutions": 0,
+   "seconds": 1860.1,
+   "shards": 5,
+   "status": "COMPLETED"
+  },
+  "256": {
+   "nodes": 317956070648,
+   "solutions": 0,
+   "seconds": 4620.1,
+   "shards": 5,
+   "status": "COMPLETED"
+  },
+  "324": {
+   "nodes": 762178950124,
+   "solutions": 0,
+   "seconds": 10920.4,
+   "shards": 5,
+   "status": "COMPLETED"
+  },
+  "400": {
+   "nodes": 1826221345879,
+   "solutions": 0,
+   "seconds": 25081.9,
+   "shards": 5,
+   "status": "COMPLETED"
+  }
+ },
+ "status": "COMPLETED",
+ "wall_total_s": 43202.8
+}

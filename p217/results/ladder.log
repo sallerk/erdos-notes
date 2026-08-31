@@ -1,0 +1,4 @@
+n=9 R2=25 shard 0: nodes=16636430 solutions=0 2.78s
+n=9 R2=64 shard 0: nodes=1391779545 solutions=0 183.41s
+n=9 R2=81 shard 0: nodes=3479500902 solutions=0 376.66s
+n=9 R2=100 points=367 shard 0/1

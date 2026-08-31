@@ -1,0 +1,27 @@
+{
+ "n": 9,
+ "R2": 400,
+ "nshards": 5,
+ "alive": 0,
+ "shards_completed": 5,
+ "nodes": 1826221345879,
+ "nodes_delta_last_60s": 736854716,
+ "HEALTHY": true,
+ "solutions": 0,
+ "elapsed_s": 25081.9,
+ "heartbeat_age_s": [
+  435.9,
+  11.5,
+  304.9,
+  591.3,
+  64.5
+ ],
+ "wall_total_s": 43202.7,
+ "regions_done": [
+  "100",
+  "144",
+  "196",
+  "256",
+  "324"
+ ]
+}
