@@ -38,3 +38,28 @@ Erdős-Fishburn's; Erdős and Fishburn resolved k <= 4.
 `search.py`, `extend.py`, `extend_control.py`, `frontier.py`, `concentric.py`,
 `cyclo.py`, `geo.py`, `check_two_classes.py`, `z3_decisive.py`, and the verifiers
 `verify_machinery.py`, `verify_set1.py`.
+
+## Provenance of the Harborth configuration, from the thread
+
+Moritz Firsching wrote to Heiko Harborth directly and reported the reply on the #1082
+thread (20:52, 28 Feb 2026): Harborth found the configuration himself and told Erdos
+about it at a conference, and a subset of it already appears as the third of the nine
+six-point three-distance configurations in
+
+* **H. Harborth and L. Piepmeyer**, "Three distinct distances in the plane",
+  Geometria Dedicata **61** (1996), 315-327, Figure 2.
+  *[VERIFIED AT SOURCE that this is what the thread reports; the paper itself not read]*
+
+The configuration is studied in **Fishburn**, Discrete Math. (2002),
+https://www.sciencedirect.com/science/article/pii/S0012365X01001340 , whose abstract
+begins "I first heard about $H_8$ from Paul Erdos ... who learned about it from Heiko
+Harborth."  *[VERIFIED AT SOURCE: quoted in the thread by BorisAlexeev and Firsching]*
+
+BorisAlexeev's description of $H_8$, which I re-derived and checked exactly: take a
+square, erect an outward equilateral triangle on each side, and use the four apexes as
+the remaining points. With the square at $(\pm 1, \pm 1)$ the apexes are at distance
+$1+\sqrt3$ from the centre and the square vertices at $\sqrt2$, so the eight points lie
+on exactly **two** concentric circles. Each point sees exactly $3$ distinct distances,
+which is fewer than $\lfloor 8/2 \rfloor = 4$, so the second question fails; but the
+set determines $4$ distinct distances in total, so the **first** question holds for it.
+*[VERIFIED: recomputed exactly in sympy]*
