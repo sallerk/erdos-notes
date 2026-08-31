@@ -129,6 +129,32 @@ for mm in range(4, 41):
 ck('for m = 4..40 the odd->even parabola is negative at both window ends '
    '(so negative across the whole window)', ok)
 
+# The two reductions above are identities; the proof then rests on two INEQUALITIES
+# holding for every m and every l.  Check those directly rather than only checking
+# the conclusion they are supposed to imply.
+bad_ineq = []
+nchk = 0
+for mm in range(3, 41):
+    c1 = sp.cos(sp.pi / mm)
+    lo, hi = c1, 1 / c1
+    for l in range(0, mm - 1):
+        c_l, c_l1 = sp.cos(l * sp.pi / mm), sp.cos((l + 1) * sp.pi / mm)
+        if l % 2 == 0:
+            poly, want_pos = b ** 2 - 2 * c_l1 * b + 2 * c_l - 1, True
+        else:
+            poly, want_pos = b ** 2 - 2 * c_l * b + 2 * c_l1 - 1, False
+        vals = [sp.N(poly.subs(b, lo + (hi - lo) * sp.Rational(t, 20)), 30)
+                for t in range(1, 20)]
+        nchk += 1
+        good = all(v > 0 for v in vals) if want_pos else all(v < 0 for v in vals)
+        if not good:
+            bad_ineq.append((mm, l))
+ck('the two inequalities the proof rests on hold for every m = 3..40 and every '
+   'l = 0..m-2, both parities', not bad_ineq,
+   '%d inequalities checked, %d violations' % (nchk, len(bad_ineq)))
+print('     (m = 2 is excluded because cos(pi/2) = 0 makes the window unbounded;')
+print('      there n = 2m = 4, a vertex has only 3 others, so k = 4 is vacuous)')
+
 # ------------------------------------------------------------------------ 3
 print()
 print('3. THEOREM, the conclusion, checked NUMERICALLY at 50 digits.')

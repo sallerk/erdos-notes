@@ -25,10 +25,12 @@ printed. The machine was not idle, so timings are upper bounds.
 
 Shares no code with `theorem_alt.py`, `verify_p97.py` or any search script. Re-derives
 the concyclic lemma on exact roots of unity, both algebraic reductions behind the
-theorem, the degenerate m = 3 parabola, the convexity window, the nonagon (convexity
-over all 84 orientations and all nine equidistant sets in exact arithmetic), the
-correspondence with Erdős's printed relations, and the counting-bound comparison. Takes
-about 20 minutes. Ends:
+theorem, the two inequalities the proof of the theorem rests on (779 of them, every
+m = 3..40 and every l, both parities), the degenerate m = 3 parabola, the convexity
+window, the nonagon (convexity over all 84 orientations and all nine equidistant sets
+in exact arithmetic), the correspondence with Erdős's printed relations, the
+counting-bound comparison, and the Erdős-Fishburn novelty check. Takes about 25
+minutes. Ends:
 
     ALL CHECKS PASSED
 
@@ -97,8 +99,10 @@ From `k3-minimality/`:
     python verify_prune.py brute 4      # n=4 BRUTE: sat=0 unsat=1 unknown=0 / 1
     python verify_prune.py brute 5      # n=5 BRUTE: sat=0 unsat=1024 unknown=0 / 1024
     python enum2.py 6                   # n=6 NT=10 raw=1,000,000 nodes=4,451 classes=66
-    python numsearch.py 6 40            # n=6: 0/66 classes numerically realisable
+    python numsearch.py 6 120           # n=6: 0/66 classes numerically realisable
                                         #      as a STRICTLY CONVEX 6-gon
+                                        # (120 restarts is what numsearch_n6.json
+                                        #  records; 40 gives the same 0/66 faster)
 
 `verify_prune.py brute` uses no pruning at all, so n = 4 and n = 5 depend on nothing but
 the encoding. `numsearch.py` shares no code with the solver path.
