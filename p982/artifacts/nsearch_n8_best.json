@@ -1,0 +1,51 @@
+{
+ "problem": 982,
+ "label": "nsearch_n8_best",
+ "coords_kind": "mp",
+ "coords": [
+  [
+   "1.0",
+   "0.0"
+  ],
+  [
+   "0.7071067811865476",
+   "0.7071067811865476"
+  ],
+  [
+   "6.123233995736766e-17",
+   "1.0"
+  ],
+  [
+   "-0.7071067811865475",
+   "0.7071067811865476"
+  ],
+  [
+   "-1.0",
+   "1.2246467991473532e-16"
+  ],
+  [
+   "-0.7071067811865477",
+   "-0.7071067811865475"
+  ],
+  [
+   "-1.8369701987210297e-16",
+   "-1.0"
+  ],
+  [
+   "0.7071067811865474",
+   "-0.7071067811865477"
+  ]
+ ],
+ "n": 8,
+ "claim": "near_miss",
+ "claimed_per_vertex": null,
+ "claimed_max_per_vertex": null,
+ "claimed_convex": true,
+ "target_floor_n_2": 4,
+ "producer": "python nsearch.py 8 600 4",
+ "notes": "best numerical near-miss for n=8: rho=1.989124e-01 (rho = max over vertices of the largest within-cluster spread of its distances, divided by the SHORTEST SIDE, when its n-1 distances are optimally split into floor(n/2)-1 clusters; rho=0 would be a counterexample).  seed=12887. FLOATING POINT (double), NOT exact.",
+ "precision_dps": 15,
+ "rho": 0.19891236737965837,
+ "regular_ngon_rho": 0.19891236737965837,
+ "min_side_over_diameter": 0.3826834323650897
+}

@@ -1,0 +1,102 @@
+[
+ {
+  "n": 8,
+  "R": 7,
+  "lattice": "Z2",
+  "status": "COMPLETED",
+  "secs": 168.2,
+  "cex": 0,
+  "nodes": 13647872,
+  "pool": 149
+ },
+ {
+  "n": 8,
+  "R": 7,
+  "lattice": "A2",
+  "status": "COMPLETED",
+  "secs": 454.0,
+  "cex": 0,
+  "nodes": 26467094,
+  "pool": 175
+ },
+ {
+  "n": 9,
+  "R": 6,
+  "lattice": "Z2",
+  "status": "COMPLETED",
+  "secs": 36.3,
+  "cex": 0,
+  "nodes": 4433822,
+  "pool": 113
+ },
+ {
+  "n": 9,
+  "R": 6,
+  "lattice": "A2",
+  "status": "COMPLETED",
+  "secs": 74.8,
+  "cex": 0,
+  "nodes": 7249593,
+  "pool": 127
+ },
+ {
+  "n": 10,
+  "R": 6,
+  "lattice": "Z2",
+  "status": "COMPLETED",
+  "secs": 283.2,
+  "cex": 0,
+  "nodes": 46132254,
+  "pool": 113
+ },
+ {
+  "n": 10,
+  "R": 6,
+  "lattice": "A2",
+  "status": "COMPLETED",
+  "secs": 687.4,
+  "cex": 0,
+  "nodes": 84946833,
+  "pool": 127
+ },
+ {
+  "n": 11,
+  "R": 5,
+  "lattice": "Z2",
+  "status": "COMPLETED",
+  "secs": 32.0,
+  "cex": 0,
+  "nodes": 8038701,
+  "pool": 81
+ },
+ {
+  "n": 11,
+  "R": 5,
+  "lattice": "A2",
+  "status": "COMPLETED",
+  "secs": 73.7,
+  "cex": 0,
+  "nodes": 15130413,
+  "pool": 91
+ },
+ {
+  "n": 12,
+  "R": 5,
+  "lattice": "Z2",
+  "status": "COMPLETED",
+  "secs": 85.3,
+  "cex": 0,
+  "nodes": 33113080,
+  "pool": 81
+ },
+ {
+  "n": 12,
+  "R": 5,
+  "lattice": "A2",
+  "status": "COMPLETED",
+  "secs": 276.9,
+  "cex": 0,
+  "nodes": 72251921,
+  "pool": 91
+ }
+]

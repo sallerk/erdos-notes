@@ -227,8 +227,8 @@ certifies nothing about general real polygons.**
 Objects: `lattice_*_b*.json` (each records its own pool definition and node count), plus the
 run log `lattice_batch_log.json`: **10 of 10 planned runs COMPLETED, 0 counterexamples**.
 Earlier runs at `R = 8`/`R = 9` were started and **KILLED** before completing;
-they contribute nothing and are recorded as killed in `tasks/lessons.md` and in the
-validation index. (`n ≤ 7` is already settled for *all* real polygons by §2, so the lattice
+they contribute nothing and are recorded as killed in the validation index
+(`lattice_batch_log.json`); the author's private working notes are not part of this repo. (`n ≤ 7` is already settled for *all* real polygons by §2, so the lattice
 runs matter only for `n ≥ 8` — where the pools reached are small.)
 
 A control confirms the enumerator reaches complete polygons and reproduces ground truth: run
@@ -250,7 +250,7 @@ interesting question is how much of a polygon can be pushed *below* it.
 
 These are the staggered two-ring polygons `T(m, r)` with `r` chosen as a root of an
 outer-ring coincidence quadratic. Independently verified by `verify_artifacts.py`
-(`artifacts/nearmiss_tworing_m3.json` … `m14.json`, plus
+(`artifacts/nearmiss_tworing_m3.json` through `artifacts/nearmiss_tworing_m14.json`, plus
 `artifacts/nearmiss_hexagon_exact.json`). Sample:
 
 | n | r | per-vertex range | budget | vertices at budget | min gap between distinct squared distances |

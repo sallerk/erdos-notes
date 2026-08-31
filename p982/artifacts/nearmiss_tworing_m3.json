@@ -1,0 +1,50 @@
+{
+ "problem": 982,
+ "label": "nearmiss_tworing_m3",
+ "coords_kind": "mp",
+ "coords": [
+  [
+   "1.0",
+   "0.0"
+  ],
+  [
+   "0.36602540378443864676372317075293618347140262690519",
+   "0.63397459621556135323627682924706381652859737309481"
+  ],
+  [
+   "-0.5",
+   "0.86602540378443864676372317075293618347140262690519"
+  ],
+  [
+   "-0.73205080756887729352744634150587236694280525381038",
+   "8.3599740990254565830121498876755331663504296123068e-62"
+  ],
+  [
+   "-0.5",
+   "-0.86602540378443864676372317075293618347140262690519"
+  ],
+  [
+   "0.36602540378443864676372317075293618347140262690519",
+   "-0.63397459621556135323627682924706381652859737309481"
+  ]
+ ],
+ "n": 6,
+ "claim": "near_miss",
+ "claimed_per_vertex": [
+  2,
+  3,
+  2,
+  3,
+  2,
+  3
+ ],
+ "claimed_max_per_vertex": 3,
+ "claimed_convex": true,
+ "target_floor_n_2": 3,
+ "producer": "python nearmiss.py 3 14",
+ "notes": "staggered two-ring T(3, r) with r=0.732050807568877293527446341506 (a root of the outer-ring coincidence quadratic a=1, b=1); 3 of the 6 vertices see only 2 = floor(n/2)-1 distinct distances, i.e. they already meet the counterexample budget; the other 3 see 3 = floor(n/2).  HIGH-PRECISION object (60 dps), not exact.",
+ "precision_dps": 60,
+ "radius_ratio": "0.7320508075688772935274463415058723669428",
+ "vertices_at_budget": 3,
+ "min_gap_distinct_sq_distances": "0.80384757729336811942"
+}

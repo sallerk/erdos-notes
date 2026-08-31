@@ -1,0 +1,68 @@
+1082 | Erdős Problems 
+ Forum 
+ Inbox 
+ Favourites 
+ Tags 
+ More 
+ FAQ 
+ Prizes 
+ Problem Lists 
+ Definitions 
+ Links 
+ Forum 
+ Menu 
+ Inbox 
+ Favourites 
+ Tags 
+ FAQ 
+ Prizes 
+ Problem Lists 
+ Definitions 
+ Links 
+ Go 
+ Go 
+ Dual View 
+ Random Solved 
+ Random Open 
+FALSIFIABLE
+Open, but could be disproved with a finite counterexample.
+Let $A\subset \mathbb{R}^2$ be a set of $n$ points with no three on a line. Does $A$ determine at least $\lfloor n/2\rfloor$ distinct distances? In fact, must there exist a single point from which there are at least $\lfloor n/2\rfloor$ distinct distances?
+ #1082 : [Er75f,p.101] [Er87b] [Er97e] 
+ geometry | 
+ distances 
+A conjecture of Szemerédi, who proved this with $n/2$ replaced by $n/3$. More generally, Szemerédi gave a simple proof that if there are no $k$ points on a line then some point determines $\gg n/k$ distinct distances (a weak inverse result to the distinct distance problem [89] ). This is a stronger form of [93] . The second question is a stronger form of [982] . Szemerédi's proof is unpublished, but given in [Er75f] . In [Er75f] Erdős asks whether, given $n$ points in $\mathbb{R}^3$ with no three on a line, do they determine $\gg n$ distances? Altman proved the answer is yes if the points form the vertices of a convex polyhedron (see [660] for a stronger form of this), and Szemerédi proved the answer is yes if there are no four points on a plane. The second stronger question has a negative answer: there is a construction of $8$ points such that each point has exactly three distinct distances to the others. This first appeared in the literature in a paper of Erdős and Fishburn [ErFi97b] , where they credit the construction to Harborth. This configuration is studied in detail by Fishburn [Fi02] . (This construction was later found by DeepMind. An earlier construction was also given by Xichuan in the comments, who gave a set of $42$ points in $\mathbb{R}^2$, with no three on a line, such that each point determines only $20$ distinct distances.)
+ Additional thanks to : Stijn Cambie, Sharvil Kesarwani, and Xichuan
+ Proof expositions (0) 
+If you would like to contribute an exposition of a proof related to this problem, please message a moderator or leave your exposition as a comment. 
+ No proof expositions yet.
+ Comments (21) 
+ Proof claims (0) 
+ More information and links 
+This page was last edited 11 April 2026.
+ ( View history ) ( View the LaTeX source ) 
+When referring to this problem, please use the original sources of Erdős. If you wish to acknowledge this website, the recommended citation format is:
+T. F. Bloom, Erdős Problem #1082, https://www.erdosproblems.com/1082, accessed 2026-08-29
+From the external database . (You can
+ help update
+ this.)
+ Formalised statement? 
+ Yes
+ OEIS 
+ Possible
+ Reactions 
+ Likes
+ Dogmachine 
+ Open to collaboration
+ None 
+ Currently working on
+ None 
+ Looks difficult
+ None 
+ Looks tractable
+ None 
+ Could be formalisable
+ None 
+ Working on formalising
+ None 
+ Previous 
+ Next

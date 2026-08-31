@@ -1,0 +1,56 @@
+{
+ "problem": 982,
+ "label": "lattice_Z2_n8_R5_near_near0",
+ "coords_kind": "int",
+ "coords": [
+  [
+   -2,
+   -3
+  ],
+  [
+   0,
+   -2
+  ],
+  [
+   1,
+   0
+  ],
+  [
+   0,
+   2
+  ],
+  [
+   -2,
+   3
+  ],
+  [
+   -4,
+   2
+  ],
+  [
+   -5,
+   0
+  ],
+  [
+   -4,
+   -2
+  ]
+ ],
+ "n": 8,
+ "claim": "near_miss",
+ "claimed_per_vertex": [
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4,
+  4
+ ],
+ "claimed_max_per_vertex": 4,
+ "claimed_convex": true,
+ "target_floor_n_2": 4,
+ "producer": "python lattice.py 8 5 Z2 4 4",
+ "notes": "best lattice near-miss: max per-vertex 4, counterexample needs <= 3"
+}

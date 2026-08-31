@@ -1,0 +1,39 @@
+{
+ "problem": 982,
+ "label": "lattice_A2_n6_R3_near_near2",
+ "coords_kind": "sympy",
+ "coords": [
+  [
+   "-2+1/2",
+   "1*sqrt(3)/2"
+  ],
+  [
+   "-1+1/2",
+   "1*sqrt(3)/2"
+  ],
+  [
+   "-1+2/2",
+   "2*sqrt(3)/2"
+  ],
+  [
+   "-2+3/2",
+   "3*sqrt(3)/2"
+  ],
+  [
+   "-3+3/2",
+   "3*sqrt(3)/2"
+  ],
+  [
+   "-3+2/2",
+   "2*sqrt(3)/2"
+  ]
+ ],
+ "n": 6,
+ "claim": "near_miss",
+ "claimed_per_vertex": null,
+ "claimed_max_per_vertex": null,
+ "claimed_convex": true,
+ "target_floor_n_2": 3,
+ "producer": "python lattice.py 6 3 A2 4 3",
+ "notes": "triangular-lattice near-miss: max per-vertex 3, counterexample needs <= 2"
+}

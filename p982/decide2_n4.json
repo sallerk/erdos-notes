@@ -1,0 +1,12 @@
+{
+ "n": 4,
+ "k": 1,
+ "nvars": 12,
+ "nconstraints": 20,
+ "tactic": "qfnra-nlsat",
+ "timeout_ms": 60000,
+ "elapsed_s": 0.0,
+ "z3_version": "5.1.0",
+ "verdict": "unsat",
+ "status": "COMPLETED"
+}

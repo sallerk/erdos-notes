@@ -16,10 +16,22 @@ Two jobs:
 """
 import json, sys, time
 from itertools import combinations
-import math, random
+import math, random, os
 
 def load_danzer():
-    d = json.load(open('../p97/artifact_danzer9_t0.json'))[0]
+    # The artifact sits one level up in the published repo (p97/k3-minimality -> p97)
+    # and in ../p97 in the working tree.  Try both rather than assume a layout.
+    here = os.path.dirname(os.path.abspath(__file__))
+    cands = [os.path.join(here, '..', 'artifact_danzer9_t0.json'),
+             os.path.join(here, '..', 'p97', 'artifact_danzer9_t0.json'),
+             os.path.join(here, 'artifact_danzer9_t0.json')]
+    for p in cands:
+        if os.path.exists(p):
+            d = json.load(open(p))[0]
+            break
+    else:
+        raise SystemExit('artifact_danzer9_t0.json not found; looked in:\n  '
+                         + '\n  '.join(os.path.normpath(c) for c in cands))
     pts = [(float(a), float(b)) for a, b in d['coords_float']]
     tri = {e['vertex']: sorted(e['equidistant_set']) for e in d['verified_per_vertex']}
     return pts, tri

@@ -7,10 +7,16 @@
 
   > "Finally I conjectured that every convex polygon always has a vertex which does
   > not have three vertices equidistant from it. DANZER to my great surprise disproved
-  > this conjecture. In fact he showed that to every k there is a convex polygon of n
+  > this conjecture. In fact be showed that to every k there is a convex polygon of n_k
   > vertices so that every vertex has k other vertices equidistant from it. **Danzer's
   > example is not yet published. It would be of interest to determine or estimate the
-  > smallest possible value of n.**"
+  > smallest possible value of n_k.**"
+
+  Transcribed as printed. "In fact be showed" is a typo in the original. The
+  subscripts are n_k in both places, not n; an earlier draft of this note quoted the
+  last sentence as "smallest possible value of n", which was wrong. n_k is the least
+  number of vertices of a convex polygon in which every vertex has k others
+  equidistant from it, so the k = 3 case is exactly what this note bounds below.
 
   Scan: https://users.renyi.hu/~p_erdos/1975-25.pdf
   *[VERIFIED AT SOURCE: PDF text layer extracted and read 2026-08-31]*
@@ -33,16 +39,41 @@
   since Danzer's k = 3 construction is not in doubt; that is the only case this note
   addresses.
 
-  The same page also states "This conjecture was proved by ALTMAN", i.e. that a convex
-  n-gon determines at least floor(n/2) distinct distances; this is the Altman result
-  relied on in the #982 and #1082 notes.  *[VERIFIED AT SOURCE, same read]*
+  The same page also states, of the first of the three conjectures, "This conjecture
+  was proved by ALTMAN", the conjecture being that a convex n-gon determines at least
+  floor(n/2) distinct distances IN TOTAL. This is the Altman result relied on in the
+  #982 and #1082 notes. The full reference is in the same paper's bibliography:
+  "E. ALTMAN, On a problem of P. Erdos, Amer. Math. Monthly, 70 (1963), pp. 148-157".
+  Note that the SECOND of the three conjectures on the same page, max_i d_2(x_i) >=
+  n/2, which Erdos there calls "not yet settled", is problem #982; the total-distance
+  result and problem #982 are neighbours in one paragraph.
+  *[VERIFIED AT SOURCE: PDF text layer extracted and read 2026-08-31]*
 
 * **P. Erdős**, "Some combinatorial and metric problems in geometry", Intuitive
   Geometry (Siófok 1985), Colloq. Math. Soc. J. Bolyai **48**, North-Holland (1987),
-  167-177, p. 175. Where Danzer's construction is written out with a figure; it is a
-  one-parameter family, not a rigid configuration. Danzer's construction appears never
-  to have been published separately.
-  Scan: https://users.renyi.hu/~p_erdos/1987-27.pdf  *[secondary]*
+  167-177. **p. 175** is where Danzer's construction is written out, as Figure 5 plus
+  three distance relations for the convex nonagon A1 B1 C1 A2 B2 C2 A3 B3 C3 of
+  threefold rotational symmetry:
+
+  > "This conjecture was disproved by Danzer, his example appears in Fig.5. This is a
+  > convex nonagon A1B1C1A2B2C2A3B3C3 of threefold rotational symmetry, satisfying
+  > A1A2 = A1A3 = A1B3, B1B2 = B1C2 = B1B3, C1C2 = C1A3 = C1C3."
+
+  No coordinates are printed. The artifact in this directory satisfies exactly those
+  three relations; `audit.py` checks that correspondence explicitly rather than only
+  checking that all nine counts are 3. Danzer appears never to have published the
+  construction himself: Erdos says so outright in 1975, and Er87b carries no Danzer
+  entry in its reference list. So it is published, but by Erdos on Danzer's behalf.
+
+  **p. 176** of the same paper, immediately after, has Erdos posing the k = 4 question:
+
+  > "Perhaps in every convex polygon there is a vertex which does not have four other
+  > vertices equidistant from it."
+
+  That is direct evidence for the problem page's "presumably Erdős was mistaken here"
+  about the 1975 all-k claim; by 1987 he is treating k = 4 as open.
+  Scan: https://users.renyi.hu/~p_erdos/1987-27.pdf
+  *[VERIFIED AT SOURCE: page images read 2026-08-31]*
 
 ## The non-convex analogue
 

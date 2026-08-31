@@ -12,6 +12,10 @@ artifacts behind it.
 | p982 | #982 distinct distances from a vertex | the conjecture for n <= 7 (unconditional to n <= 6) |
 | p1082 | #1082 no three collinear | the first question for n <= 15 |
 
+Where a directory has a `REPRODUCE.md`, every command in it was run from a fresh copy
+of that directory and the output quoted is what it actually printed, including where a
+control fails. p64, p97, p982 and p1082 have one; p506 does not yet.
+
 Every claim carries a status: VERIFIED (re-checked by an independent code path),
 ASSERTED (search output only), CITED (from the literature), or CONDITIONAL. Searches
 that found nothing are reported as searches, not as proofs. Each `REFERENCES.md`

@@ -1,0 +1,200 @@
+{
+ "name": "convex9_k3_t0",
+ "n": 9,
+ "k_version": 3,
+ "convex_position": true,
+ "per_vertex": [
+  {
+   "vertex": 0,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    1,
+    2,
+    5
+   ],
+   "radius_sq": "Integer(3)",
+   "radius_sq_num": "1.73205080756887729352744634151",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 1,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    0,
+    2,
+    3
+   ],
+   "radius_sq": "Integer(3)",
+   "radius_sq_num": "1.73205080756887729352744634151",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 2,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    0,
+    1,
+    4
+   ],
+   "radius_sq": "Integer(3)",
+   "radius_sq_num": "1.73205080756887729352744634151",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 3,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    4,
+    5,
+    7
+   ],
+   "radius_sq": "Add(Integer(12), Mul(Integer(-1), Integer(3), Pow(Integer(3), Rational(1, 2))))",
+   "radius_sq_num": "2.60841859702260367844194411891",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 4,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    3,
+    5,
+    8
+   ],
+   "radius_sq": "Add(Integer(12), Mul(Integer(-1), Integer(3), Pow(Integer(3), Rational(1, 2))))",
+   "radius_sq_num": "2.60841859702260367844194411891",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 5,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    3,
+    4,
+    6
+   ],
+   "radius_sq": "Add(Integer(12), Mul(Integer(-1), Integer(3), Pow(Integer(3), Rational(1, 2))))",
+   "radius_sq_num": "2.60841859702260367844194411891",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 6,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    2,
+    7,
+    8
+   ],
+   "radius_sq": "Add(Rational(-3, 5), Mul(Rational(9, 5), Pow(Add(Integer(-116), Mul(Integer(67), Pow(Integer(3), Rational(1, 2)))), Rational(1, 2))), Mul(Rational(6, 5), Pow(Add(Integer(-348), Mul(Integer(201), Pow(Integer(3), Rational(1, 2)))), Rational(1, 2))), Mul(Integer(3), Pow(Integer(3), Rational(1, 2))))",
+   "radius_sq_num": "2.33250717619343961741995530813",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 7,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    0,
+    6,
+    8
+   ],
+   "radius_sq": "Add(Rational(-3, 5), Mul(Rational(9, 5), Pow(Add(Integer(-116), Mul(Integer(67), Pow(Integer(3), Rational(1, 2)))), Rational(1, 2))), Mul(Rational(6, 5), Pow(Add(Integer(-348), Mul(Integer(201), Pow(Integer(3), Rational(1, 2)))), Rational(1, 2))), Mul(Integer(3), Pow(Integer(3), Rational(1, 2))))",
+   "radius_sq_num": "2.33250717619343961741995530813",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "vertex": 8,
+   "max_equidistant_count": 3,
+   "equidistant_set": [
+    1,
+    6,
+    7
+   ],
+   "radius_sq": "Add(Rational(-3, 5), Mul(Rational(9, 5), Pow(Add(Integer(-116), Mul(Integer(67), Pow(Integer(3), Rational(1, 2)))), Rational(1, 2))), Mul(Rational(6, 5), Pow(Add(Integer(-348), Mul(Integer(201), Pow(Integer(3), Rational(1, 2)))), Rational(1, 2))), Mul(Integer(3), Pow(Integer(3), Rational(1, 2))))",
+   "radius_sq_num": "2.33250717619343961741995530813",
+   "all_class_sizes": [
+    3,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  }
+ ],
+ "min_multiplicity": 3,
+ "deficient_vertices_k3": [],
+ "deficient_vertices_k4": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8
+ ],
+ "arithmetic_methods": [
+  "is_zero",
+  "minimal_polynomial",
+  "minpoly+bound",
+  "syntactic"
+ ],
+ "exact": true,
+ "VERDICT": "VERIFIED"
+}

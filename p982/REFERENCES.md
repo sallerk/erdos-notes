@@ -17,9 +17,26 @@ read 2026-08-31.  *[VERIFIED AT SOURCE]*
 * **E. Altman**, "On a problem of P. Erdős", Amer. Math. Monthly **70** (1963),
   148-157. Any convex n-gon determines at least floor(n/2) distinct distances in total.
   The pattern enumeration uses this as a prune, so the n = 7 case is conditional on it;
-  n <= 6 was additionally run unfiltered and is unconditional. Erdős's own 1975 survey
-  (p. 100) attributes this result to Altman.
-  *[secondary for the paper itself; the attribution is VERIFIED AT SOURCE via Erdős 1975]*
+  n <= 6 was additionally run unfiltered and is unconditional.
+
+  Two things to keep straight. Altman's bound counts distances **among all vertices**;
+  problem #982 asks for floor(n/2) **from a single vertex**, which is why #982 is still
+  open. And Altman's result is in fact an equality, D_conv(n) = floor(n/2); only the
+  lower half is used here.
+
+  The attribution is verified at source twice over. Erdos, Ann. Mat. Pura Appl. 103
+  (1975), p. 100, writing of the first of three conjectures about convex polygons:
+  "This conjecture was proved by ALTMAN", with the full reference in the same paper's
+  bibliography as "E. ALTMAN, On a problem of P. Erdos, Amer. Math. Monthly, 70 (1963),
+  pp. 148-157". Problem #982 is the SECOND conjecture in that same paragraph, which
+  Erdos there calls "not yet settled". Independently, [NPPZ13] states "The weaker
+  statement that every set of n points in convex position determines floor(n/2) distinct
+  distances was proved by Altman."
+  *[attribution VERIFIED AT SOURCE (Erdos 1975 scan, read 2026-08-31, and NPPZ13);
+  the Altman paper itself is secondary, not obtained]*
+
+  Note also that the #982 problem page carries no Altman reference of its own; the
+  citation here comes from the two sources above, not from the page.
 
 See `LITERATURE.md` for the fuller search record.
 

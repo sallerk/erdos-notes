@@ -1,0 +1,47 @@
+{
+ "problem": 982,
+ "label": "harborth_H8_nonconvex",
+ "coords_kind": "sympy",
+ "coords": [
+  [
+   "1",
+   "1"
+  ],
+  [
+   "-1",
+   "1"
+  ],
+  [
+   "-1",
+   "-1"
+  ],
+  [
+   "1",
+   "-1"
+  ],
+  [
+   "0",
+   "1+sqrt(3)"
+  ],
+  [
+   "0",
+   "-1-sqrt(3)"
+  ],
+  [
+   "1+sqrt(3)",
+   "0"
+  ],
+  [
+   "-1-sqrt(3)",
+   "0"
+  ]
+ ],
+ "n": 8,
+ "claim": "reference",
+ "claimed_per_vertex": null,
+ "claimed_max_per_vertex": null,
+ "claimed_convex": false,
+ "target_floor_n_2": 4,
+ "producer": "python export_artifacts.py",
+ "notes": "Harborth 8-point set: every point sees 3 distinct distances (so it refutes the second question of Erdos #1082) but it is NOT in convex position, so it says nothing about #982."
+}

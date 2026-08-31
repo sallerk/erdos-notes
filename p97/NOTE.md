@@ -18,7 +18,8 @@ Why $k = 4$ is hard. Under any finite symmetry a vertex gets at most $2$ equidis
 
 The least overdetermined survivor is $D_m$ with one mirror and one generic orbit, $n = 3m$, where two of the three ways to place the extra pair die for every $m$. A dense grid over $m = 3, \dots, 8$ found nothing. Converting that last step to an exact resultant over $\mathbb{Q}(e^{2\pi i/m})$ is small (two unknowns, low degree); and would close the family outright. That is the concrete next step, and I did not run it.
 
-An artifact others may want. Danzer's theorem is usually cited without coordinates, so: a constructive $C_3$-symmetric convex $9$-gon with equilateral orbits, six of its vertices at $(1,0)$, $(-1/2, \sqrt{3}/2)$, $(-1/2, -\sqrt{3}/2)$, $(-1/2+\sqrt{3},\ \sqrt{3}/2)$, $(-\sqrt{3}/2-1/2,\ 3/2-\sqrt{3}/2)$, $(1-\sqrt{3}/2,\ -3/2)$, the other three in a field of degree at most $4$ over $\mathbb{Q}$. All nine vertices have maximum equidistant count exactly $3$, verified in exact arithmetic, and every one is exactly one short of $k = 4$. The full coordinates, exact, are in `artifact_danzer9_t0.json` in this directory, and `verify_p97.py` re-checks them.
+An artifact others may want. Danzer never published his construction himself; Erdos printed it on his behalf in [Er87b, p.175] as Figure 5 plus three distance relations, for the convex nonagon $A_1B_1C_1A_2B_2C_2A_3B_3C_3$ of threefold rotational symmetry:
+$A_1A_2 = A_1A_3 = A_1B_3$, $B_1B_2 = B_1C_2 = B_1B_3$, $C_1C_2 = C_1A_3 = C_1C_3$. No coordinates are given there. The nonagon below satisfies exactly those three relations, which `audit.py` checks by sorting the vertices into cyclic order, labelling them $A_1 B_1 C_1 A_2 \dots$ in that order and comparing the equidistant sets against the relations as printed. It is $C_3$-symmetric with equilateral orbits, six of its vertices at $(1,0)$, $(-1/2, \sqrt{3}/2)$, $(-1/2, -\sqrt{3}/2)$, $(-1/2+\sqrt{3},\ \sqrt{3}/2)$, $(-\sqrt{3}/2-1/2,\ 3/2-\sqrt{3}/2)$, $(1-\sqrt{3}/2,\ -3/2)$, the other three in a field of degree at most $4$ over $\mathbb{Q}$. All nine vertices have maximum equidistant count exactly $3$, verified in exact arithmetic, and every one is exactly one short of $k = 4$. The full coordinates, exact, are in `artifact_danzer9_t0.json` in this directory, and `verify_p97.py` re-checks them.
 
 The theorem was checked symbolically and numerically at 50 digits for $m \le 60$, and against an independent screen to $m = 200$; which initially disagreed, and the theorem is what exposed the bug in it. The search results are searches, not proofs, and are stated as such.
 
@@ -30,7 +31,11 @@ Erdos raised this alongside the k = 4 question in "On some problems of elementar
 combinatorial geometry", Ann. Mat. Pura Appl. (4) 103 (1975), 99-108, at p. 100:
 
 > "Danzer's example is not yet published. It would be of interest to determine or
-> estimate the smallest possible value of n."
+> estimate the smallest possible value of n_k."
+
+(n_k is the least number of vertices of a convex polygon in which every vertex has
+k others equidistant from it.  The quote is from the printed page; "In fact be
+showed" a line earlier is a typo in the original.)
 
 (That passage also contains a wider claim, that Danzer settled every k, which the
 problem page already discounts as a presumed error since Erdos never repeated it. See
@@ -58,9 +63,11 @@ realisable pattern would invalidate every conclusion), and 300 randomly chosen
 prune-rejected patterns were handed to z3, which agreed all were unsatisfiable
 (298 unsat, 2 timeouts, 0 satisfiable).
 
-**n = 7 is NOT settled.** That run was stopped at 5.27% coverage, with 9,539 of
-184,424 pattern classes decided and no configuration found. Finding nothing in 5% of a
-space rules out only that 5%. The honest statement stops at n <= 6; see
+**n = 7 is NOT settled.** At the stop, 9,539 of 184,424 pattern classes had been
+processed and 9,496 of them DECIDED (5,489 by a unit Groebner ideal, 4,007 unsat),
+which is 5.15% of the space; 43 came back z3-unknown and a further 171 were skipped
+as over budget. No configuration was found in any of them. Finding nothing in 5% of
+a space rules out only that 5%. The honest statement stops at n <= 6; see
 `k3-minimality/STATUS_n7_AT_STOP.json`.
 
 A trap worth recording: requiring only consecutive-triple orientations to be positive
@@ -71,10 +78,38 @@ correct all-triples constraint.
 
 ## Files in this directory
 
-* `COMMENT_FULL.md`
-* `REFERENCES.md`
-* `RESULTS.md`
-* `artifact_danzer9_t0.json`
-* `k3-minimality`
-* `theorem_alt.py`
-* `verify_p97.py`
+Documentation: `REPRODUCE.md` (step-by-step, with the actual output of each command),
+`REFERENCES.md`, `RESULTS.md`, `COMMENT_FULL.md`.
+
+Verification: `audit.py` (standalone re-derivation of every checkable claim, sharing no
+code with the searches) and `verify_p97.py` (the earlier independent artifact verifier).
+
+The theorem: `theorem_alt.py`, symbolic reduction plus numeric cross-check.
+
+The artifact: `artifact_danzer9_t0.json`, exact coordinates for a convex nonagon
+satisfying the three relations Erdos prints for Danzer's construction in [Er87b, p.175].
+
+`k3-minimality/` holds the k = 3 minimality work: `verify_prune.py` (unpruned brute force
+at n = 4 and n = 5, and the prune-rejection sample), `enum2.py` and `enum_nb.py`
+(pattern enumeration), `numsearch.py` (independent numerical search), `control.py` and
+`cmlemma.py` (soundness controls), and the run records including
+`STATUS_n7_AT_STOP.json`, which records the incomplete n = 7 run as incomplete.
+
+## Two things the reference check turned up
+
+**Erdos posed k = 4 himself, in print.** The problem page notes that Erdos's 1975
+claim (that Danzer had settled every k) "was not repeated in later papers, presumably
+Erdos was mistaken here". That is stronger than silence: in [Er87b, p.176], having
+just described only the k = 3 disproof, Erdos writes "Perhaps in every convex polygon
+there is a vertex which does not have four other vertices equidistant from it." So by
+1987 he was posing k = 4 as open.
+
+**The k = 3 bound n >= 7 is not the forum counting bound restated.** The counting
+argument in this thread runs: if every vertex has at least k equidistant partners, each
+of the C(k,2) pairs among them has its perpendicular bisector through that vertex, and
+a line meets a convex curve at most twice, so each pair serves at most 2 vertices;
+hence C(k,2) n <= 2 C(n,2) = n(n-1), i.e. n >= C(k,2) + 1. At k = 4 that is n >= 7,
+which is the posted result. At k = 3 it gives only n >= 4. The n >= 7 established here
+for k = 3 therefore does not follow from it, and the numerical agreement at 7 is a
+coincidence of the two problems, not the same theorem twice. `audit.py` re-derives both
+numbers.
