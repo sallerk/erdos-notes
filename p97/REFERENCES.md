@@ -15,10 +15,23 @@
   Scan: https://users.renyi.hu/~p_erdos/1975-25.pdf
   *[VERIFIED AT SOURCE: PDF text layer extracted and read 2026-08-31]*
 
-  Note the wider claim in that passage, that Danzer settled **every** k. Later sources
-  treat the k = 4 case as open, and Bloom's commentary records that the "every k"
-  claim was not repeated in Erdős's later writing. The minimality question is
-  well-posed for k = 3 regardless, since Danzer's k = 3 construction is not in doubt.
+  Note the wider claim in that passage, that Danzer settled **every** k. This is
+  already known to the site and already discounted there. The #97 page says, verbatim:
+  "In [Er75f] Erdős claimed that Danzer proved that this false for every constant - in
+  fact, for any k there is a convex polygon such that every vertex has k vertices
+  equidistant from it. Since this claim was not repeated in later papers, presumably
+  Erdős was mistaken here."  [Er75f,p.100] is already in the page's citation list, so
+  locating this passage is not a new observation.
+
+  The reasoning for "mistaken" is circumstantial rather than proved: Erdős re-posed the
+  k = 4 question in [Er90], [Er92e], [Er95] and [Er97e], which he would not have done
+  had Danzer settled every k. No general-k construction of Danzer's has ever surfaced,
+  and no proof that one cannot exist has either.
+
+  The **minimality** sentence is a separate claim in the same paragraph, and the page
+  does not mention it. It is well-posed for k = 3 regardless of the "every k" question,
+  since Danzer's k = 3 construction is not in doubt; that is the only case this note
+  addresses.
 
   The same page also states "This conjecture was proved by ALTMAN", i.e. that a convex
   n-gon determines at least floor(n/2) distinct distances; this is the Altman result
