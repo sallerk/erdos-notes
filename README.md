@@ -9,7 +9,7 @@ artifacts behind it.
 | p64 | #64 Erdos-Gyarfas powers-of-two cycles | no cubic bipartite counterexample on at most 62 vertices |
 | p97 | #97 four equidistant vertices | a dihedral-symmetry exclusion theorem; exact Danzer coordinates; k=3 impossible for n <= 6 |
 | p506 | #506 minimum circles from n points | Wang arXiv:2608.19844 Thm 1.2 already settles the thread's values; two 17-circle witnesses verified, isomorphic but not similar |
-| p982 | #982 distinct distances from a vertex | the conjecture for n <= 7 (unconditional to n <= 6) |
+| p982 | #982 distinct distances from a vertex | **SHELVED** - correct and reproducible but not new; n <= 7 already follows from Moser 1952 and Erdos-Fishburn 1994, and n = 8 is out of reach |
 | p1082 | #1082 no three collinear | the first question for n <= 15 |
 
 Where a directory has a `REPRODUCE.md`, every command in it was run from a fresh copy

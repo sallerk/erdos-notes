@@ -2,6 +2,23 @@
 
 Problem page: https://www.erdosproblems.com/982
 
+**STATUS: SHELVED, 2026-08-31. No forum comment was posted from this work, and none
+should be.** Everything here is correct and reproducible, but none of it is new:
+
+* The n <= 7 certification is already implied by bounds cited on the problem page
+  (Moser 1952 settles n = 7, Erdos-Fishburn 1994 settles n = 6, Dumitrescu 2006
+  settles n = 9). See the table below and `audit.py` check 8.
+* The concyclic remark is elementary.
+* The pigeonhole structure result is the contrapositive of an implication already on
+  the problem page, and is marked "it is not new" in `RESULTS.md` section 4.
+* The two-ring family, the lattice pools and the numerical searches are negative
+  results over restricted families, not over the reals.
+
+The first genuinely open case is **n = 8**, and it is out of reach by this method.
+This directory is kept public because the record is honest and reproducible, and
+because the literature table in `audit.py` check 8 is the useful part for anyone who
+attacks n = 8 later. Read it as a negative report, not as a result.
+
 This is the full note. The forum comment is a summary of it. Bibliography with provenance for every reference is in `REFERENCES.md` alongside.
 
 The conjecture holds for every convex $n$-gon with $n \le 7$, and a near-miss family that gets exactly halfway.
