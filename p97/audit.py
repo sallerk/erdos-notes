@@ -22,6 +22,35 @@ def ck(label, ok, detail=''):
         FAIL.append(label)
 
 
+def strictly_convex_pts(P):
+    """Is this point SET in strictly convex position, regardless of the order it
+    was handed to us in?
+
+    The all-triples-same-sign test is only meaningful once the points are in
+    cyclic order, so sort by angle about the centroid first; for a set in convex
+    position that is the hull order.  Then require every one of the C(n,3)
+    orientations to agree and none to vanish.  (Testing only consecutive triples
+    would be wrong in the other direction: it also admits star polygons.)"""
+    n = len(P)
+    fx = [float(sp.N(p[0])) for p in P]
+    fy = [float(sp.N(p[1])) for p in P]
+    cx, cy = sum(fx) / n, sum(fy) / n
+    order = sorted(range(n), key=lambda i: math.atan2(fy[i] - cy, fx[i] - cx))
+    Q = [P[i] for i in order]
+    sgn = None
+    for i, j, k in itertools.combinations(range(n), 3):
+        d = sp.simplify((Q[j][0] - Q[i][0]) * (Q[k][1] - Q[i][1])
+                        - (Q[j][1] - Q[i][1]) * (Q[k][0] - Q[i][0]))
+        if d == 0:
+            return False
+        s = 1 if d > 0 else -1
+        if sgn is None:
+            sgn = s
+        elif s != sgn:
+            return False
+    return True
+
+
 print('=' * 72)
 print('AUDIT OF THE #97 NOTE   (independent re-derivation)')
 print('=' * 72)
@@ -267,15 +296,26 @@ ck('the equidistant sets are EXACTLY the three relations Erdos prints in [Er87b,
 # ------------------------------------------------------------------------ 5
 print()
 print('5. Is the k = 3 minimality bound n >= 7 just a restatement of the forum')
-print('   counting bound?  Re-derive that counting bound at k = 3.')
-print('   Argument: if every vertex has >= k equidistant partners, each of the')
-print('   C(k,2) pairs among them has its perpendicular bisector through that')
-print('   vertex; a line meets a convex curve at most twice, so each pair serves')
-print('   at most 2 vertices.  Hence  C(k,2) n <= 2 C(n,2) = n(n-1).')
+print('   counting bound?  Re-derive that bound, along the argument actually given')
+print('   in the thread (TheAbandonedThinker, 00:23 on 09 Jun 2026), which is a')
+print('   Cauchy-Schwarz count and NOT the perpendicular-bisector count an earlier')
+print('   version of the note attributed to it.')
+print('     Q_i = k vertices equidistant from v_i;  d(v) = #{i : v in Q_i}')
+print('     sum_v d(v) = k n;  distinct centres give distinct circles, so')
+print('     |Q_i cap Q_j| <= 2;  sum_{i<j} |Q_i cap Q_j| = sum_v C(d(v),2)')
+print('     Cauchy-Schwarz: sum_v d(v)^2 >= (kn)^2/n = k^2 n')
+print('     so sum_v C(d(v),2) >= (k^2 n - k n)/2 = C(k,2) n <= 2 C(n,2) = n(n-1)')
 for k in (3, 4):
-    # C(k,2) n <= n(n-1)  <=>  n >= C(k,2) + 1
+    # Verify the chain symbolically in n rather than just quoting the endpoint.
+    nn = sp.Symbol('n', positive=True, integer=True)
+    lower = (k ** 2 * nn - k * nn) / 2          # Cauchy-Schwarz lower bound
+    upper = nn * (nn - 1)                        # pair-intersection upper bound
+    assert sp.simplify(lower - math.comb(k, 2) * nn) == 0, 'CS step wrong at k=%d' % k
+    sol = sp.solve(sp.Eq(lower, upper), nn)      # equality point
     bound = math.comb(k, 2) + 1
-    print('     k = %d:  C(%d,2) = %d  =>  n >= %d' % (k, k, math.comb(k, 2), bound))
+    assert any(sp.simplify(r - bound) == 0 for r in sol if r != 0), 'bound wrong'
+    print('     k = %d:  C(%d,2) = %d  =>  %d n <= n(n-1)  =>  n >= %d'
+          % (k, k, math.comb(k, 2), math.comb(k, 2), bound))
 ck('the counting bound gives n >= 7 at k = 4 (the forum result) but only n >= 4 at '
    'k = 3, so n >= 7 at k = 3 does not follow from it',
    math.comb(4, 2) + 1 == 7 and math.comb(3, 2) + 1 == 4)
@@ -323,6 +363,110 @@ if st7:
     print('     decided fraction = %d / %d = %.2f%%' % (dec, tot, 100.0 * dec / tot))
     ck('n = 7 found no configuration in what it did cover, and is NOT settled',
        st7['SAT'] == 0 and dec < tot)
+
+# ------------------------------------------------------------------------ 7
+print()
+print('7. Does the k = 3 minimality result contradict a published one?')
+print('   Erdos and Fishburn (Comput. Geom. 7 (1997), 207-218) determine the least')
+print('   n with every point having k others equidistant, WITHOUT any convexity')
+print('   requirement, and get 6 for k = 3, realised by two similarly-oriented')
+print('   equilateral triangles of side d translated by a vector of length d.')
+print('   If that set were in convex position, n_3 >= 7 here would be FALSE.')
+r3 = sp.sqrt(3)
+TRI = [(sp.Integer(0), sp.Integer(0)), (sp.Integer(1), sp.Integer(0)),
+       (sp.Rational(1, 2), r3 / 2)]
+
+
+def ef_set(t):
+    return TRI + [(a + t[0], b + t[1]) for a, b in TRI]
+
+
+def has_k3(P):
+    for i in range(len(P)):
+        m = {}
+        for j in range(len(P)):
+            if i != j:
+                d = sp.radsimp(sp.simplify((P[i][0] - P[j][0]) ** 2
+                                           + (P[i][1] - P[j][1]) ** 2))
+                m[d] = m.get(d, 0) + 1
+        if max(m.values()) < 3:
+            return False
+    return True
+
+
+trans = [(sp.Integer(1), sp.Integer(0)), (sp.Integer(-1), sp.Integer(0)),
+         (sp.Rational(1, 2), r3 / 2), (sp.Rational(-1, 2), r3 / 2),
+         (sp.Rational(1, 2), -r3 / 2), (sp.Rational(-1, 2), -r3 / 2)]
+# controls on the convexity test itself, so "not convex" is not a vacuous verdict
+ctrl_hex = [(sp.cos(2 * sp.pi * i / 6), sp.sin(2 * sp.pi * i / 6)) for i in range(6)]
+scrambled = [ctrl_hex[i] for i in (3, 0, 5, 1, 4, 2)]
+ck('control: a regular hexagon handed over in SCRAMBLED order is still detected '
+   'as convex (so the test is order-independent)', strictly_convex_pts(scrambled))
+ck('control: a hexagon with one vertex pushed to the centre is detected as NOT '
+   'convex', not strictly_convex_pts(ctrl_hex[:5] + [(sp.Rational(1, 10),
+                                                      sp.Rational(1, 10))]))
+
+k3ok = all(has_k3(ef_set(t)) for t in trans)
+cxany = any(strictly_convex_pts(ef_set(t)) for t in trans)
+ck('the Erdos-Fishburn 6-point set really does have the k = 3 property', k3ok)
+ck('and it is NOT in convex position, for any of the 6 unit translations, so it '
+   'does not contradict n_3 >= 7 for convex polygons', not cxany)
+
+# The abstract says EVERY realiser of g(3) = 6 is this configuration, but the
+# DIRECTION of the translation is free, so the realisers form a one-parameter
+# family.  Six exact cases do not cover it; sweep the whole circle numerically.
+def k3_f(P, tol=1e-9):
+    for i in range(len(P)):
+        d = sorted(math.dist(P[i], P[j]) for j in range(len(P)) if j != i)
+        best = run = 1
+        for x, y in zip(d, d[1:]):
+            if abs(y - x) < tol:
+                run += 1
+                best = max(best, run)
+            else:
+                run = 1
+        if best < 3:
+            return False
+    return True
+
+
+def convex_f(P, tol=1e-9):
+    n = len(P)
+    cx = sum(p[0] for p in P) / n
+    cy = sum(p[1] for p in P) / n
+    Q = sorted(P, key=lambda p: math.atan2(p[1] - cy, p[0] - cx))
+    sg = None
+    for i, j, k in itertools.combinations(range(n), 3):
+        d = ((Q[j][0] - Q[i][0]) * (Q[k][1] - Q[i][1])
+             - (Q[j][1] - Q[i][1]) * (Q[k][0] - Q[i][0]))
+        if abs(d) < tol:
+            return False
+        s = 1 if d > 0 else -1
+        if sg is None:
+            sg = s
+        elif s != sg:
+            return False
+    return True
+
+
+AF = [(0.0, 0.0), (1.0, 0.0), (0.5, math.sqrt(3) / 2)]
+STEPS = 3600
+nk3 = ncx = ndeg = 0
+for st in range(STEPS):
+    th = 2 * math.pi * st / STEPS
+    t = (math.cos(th), math.sin(th))
+    P = AF + [(a + t[0], b + t[1]) for a, b in AF]
+    if len(set((round(x, 9), round(y, 9)) for x, y in P)) < 6:
+        ndeg += 1
+        continue
+    if k3_f(P):
+        nk3 += 1
+    if convex_f(P):
+        ncx += 1
+ck('numeric sweep of the WHOLE family (3600 translation directions): the k = 3 '
+   'property holds in every one', nk3 == STEPS - ndeg, '%d/%d' % (nk3, STEPS - ndeg))
+ck('and not one of them is in convex position', ncx == 0, '%d convex' % ncx)
+print('     (so convexity costs at least one point: 6 without it, >= 7 with it)')
 
 print()
 print('=' * 72)

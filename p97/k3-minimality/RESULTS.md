@@ -4,7 +4,8 @@
 strictly convex n-gon in which **every vertex has at least 3 other vertices equidistant
 from it**?  Danzer's unpublished construction gives n = 9, so the answer is at most 9.
 See `LITERATURE.md` — Erdos wrote "It would be of interest to determine or estimate the
-smallest possible value of n" and no source found since answers it.
+smallest possible value of n_k" (the subscript is in the printed text; an earlier
+draft here dropped it) and no source found since answers it.
 
 Why this project reached the question: a #982 counterexample on n points has budget
 floor(n/2)-1 distinct distances among the other n-1, so pigeonhole forces some distance
@@ -103,16 +104,18 @@ at best be narrowed to n in {8, 9} by this route.
 
 ## n=7: STOPPED, not completed -- exactly what was and was not covered
 
-The run was halted by the user at 5.27% coverage.  Recorded state at the stop
+The run was halted by the user. Recorded state at the stop
 (`STATUS_n7_AT_STOP.json`):
 
-    classes decided           9,539  of 184,424
+    classes processed         9,539  of 184,424
+    classes DECIDED           9,496  of 184,424   (unit ideal + nlsat unsat)
     of which unit ideal       5,489   (refuted exactly over Q, no solver)
     of which nlsat unsat      4,007
     SAT                           0   <-- no realisable pattern found
     z3 unknown                   43
     skipped over budget         171   (Groebner blow-ups, killed by the supervisor)
-    coverage                   5.27%
+    decided coverage           5.15%   (9,496 / 184,424)
+    processed incl. skipped    5.26%   ((9,539 + 171) / 184,424)
     wall                      2,470 s on 5 workers
 
 Plus 2,700 classes decided by the earlier stalled run (`dead_run/SUMMARY.json`:

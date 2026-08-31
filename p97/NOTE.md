@@ -43,6 +43,15 @@ problem page already discounts as a presumed error since Erdos never repeated it
 
 **Result: the smallest n for the k = 3 property is at least 7, and at most 9 by Danzer.**
 
+Without convexity this question is solved: Erdos and Fishburn (Comput. Geom. 7 (1997),
+207-218) show the least n with every point having 3 others equidistant is 6, realised
+by two similarly-oriented equilateral triangles of side d translated by a vector of
+length d. That set is NOT in convex position, which `audit.py` check 7 verifies in
+exact arithmetic for all six unit translations (with controls confirming the convexity
+test detects a scrambled convex hexagon as convex and a dented one as not). So the two
+results are consistent and convexity costs at least one point: 6 without it, at least
+7 with it.
+
 No strictly convex 4-gon, 5-gon or 6-gon has every vertex with three other vertices
 equidistant from it.
 
@@ -104,12 +113,25 @@ just described only the k = 3 disproof, Erdos writes "Perhaps in every convex po
 there is a vertex which does not have four other vertices equidistant from it." So by
 1987 he was posing k = 4 as open.
 
-**The k = 3 bound n >= 7 is not the forum counting bound restated.** The counting
-argument in this thread runs: if every vertex has at least k equidistant partners, each
-of the C(k,2) pairs among them has its perpendicular bisector through that vertex, and
-a line meets a convex curve at most twice, so each pair serves at most 2 vertices;
-hence C(k,2) n <= 2 C(n,2) = n(n-1), i.e. n >= C(k,2) + 1. At k = 4 that is n >= 7,
-which is the posted result. At k = 3 it gives only n >= 4. The n >= 7 established here
-for k = 3 therefore does not follow from it, and the numerical agreement at 7 is a
-coincidence of the two problems, not the same theorem twice. `audit.py` re-derives both
-numbers.
+**The k = 3 bound n >= 7 is not the forum counting bound restated.** TheAbandonedThinker's
+argument in this thread (00:23, 09 Jun 2026) runs as follows. Suppose every vertex v_i of
+a convex n-gon has some distance occurring at least k times among the others; pick k such
+vertices for each i and call that set Q_i. Let d(v) be the number of sets Q_i containing
+v, so sum_v d(v) = kn. Distinct centres give distinct circles, which meet in at most two
+points, so |Q_i ^ Q_j| <= 2. Counting incidences two ways,
+sum_{i<j} |Q_i ^ Q_j| = sum_v C(d(v), 2), and by Cauchy-Schwarz
+sum_v d(v)^2 >= (kn)^2 / n = k^2 n, so sum_v C(d(v),2) >= (k^2 n - kn)/2 = C(k,2) n.
+Against sum_{i<j} |Q_i ^ Q_j| <= 2 C(n,2) = n(n-1) this gives C(k,2) n <= n(n-1), i.e.
+
+    n >= C(k,2) + 1 .
+
+At k = 4 that is n >= 7, which is the posted result. At k = 3 it gives only n >= 4. The
+n >= 7 established here for k = 3 therefore does not follow from it, and the numerical
+agreement at 7 is a coincidence of the two problems, not the same theorem twice.
+`audit.py` re-derives both numbers along the argument above.
+
+(An earlier version of this note described that argument as a perpendicular-bisector
+count: that each of the C(k,2) pairs inside Q_i has its bisector through v_i, and a line
+meets a convex curve twice, so each pair serves at most two vertices. That is a valid
+proof of the same inequality, but it is not the argument in the thread, which is the
+Cauchy-Schwarz one above. The misattribution is corrected here.)

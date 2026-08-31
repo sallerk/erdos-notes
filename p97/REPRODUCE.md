@@ -32,13 +32,31 @@ about 20 minutes. Ends:
 
     ALL CHECKS PASSED
 
-Two checks in it are worth singling out, because they are the ones that would catch a
+Three checks in it are worth singling out, because they are the ones that would catch a
 wrong claim rather than confirm a right one:
 
     [PASS] the equidistant sets are EXACTLY the three relations Erdos prints in
            [Er87b, p.175]   cyclic order [0, 3, 6, 1, 4, 7, 2, 5, 8]
     [PASS] the counting bound gives n >= 7 at k = 4 (the forum result) but only
            n >= 4 at k = 3, so n >= 7 at k = 3 does not follow from it
+    [PASS] and it is NOT in convex position, for any of the 6 unit translations, so
+           it does not contradict n_3 >= 7 for convex polygons
+
+The last of those is the novelty check. Erdos and Fishburn (Comput. Geom. 7 (1997),
+207-218) determined the least n with every point having 3 others equidistant to be 6,
+without any convexity requirement. Had their realiser been in convex position, n_3 >= 7
+would be false. Check 7 confirms it has the k = 3 property and is not convex, and
+carries its own controls: a regular hexagon handed over in scrambled order must still
+be detected as convex, and a hexagon with one vertex pushed to the centre must not.
+Those controls matter because the all-triples orientation test is only meaningful once
+the points are sorted into cyclic order; without the sort it would report "not convex"
+for every set and the check would be vacuous.
+
+The middle check re-derives the bound along the argument actually posted in the thread
+(Cauchy-Schwarz on the incidence degrees d(v), using that two distinct circles meet at
+most twice). An earlier version of NOTE.md described that argument as a
+perpendicular-bisector count. That is a valid proof of the same inequality but it is
+not the argument in the thread; the misattribution is corrected in NOTE.md.
 
 ## 2. The nonagon, checked by the separate verifier
 

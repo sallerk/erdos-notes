@@ -80,8 +80,24 @@
 * **P. Erdős and P. Fishburn**, "Minimum planar sets with maximum equidistance counts",
   Comput. Geom. **7** (1997), 207-218, doi:10.1016/0925-7721(95)00050-X. Defines the
   smallest n for which n planar points each have k others equidistant, and proves the
-  values 3, 6, 8 for k = 2, 3, 4 and an upper bound 16 for k = 5. Same question without
-  convexity.  *[secondary: abstract only]*
+  values 3, 6, 8 for k = 2, 3, 4 and an upper bound 16 for k = 5.
+
+  This is the same question **without** convexity, so it does not settle Erdős's n_k,
+  which is about convex polygons. The novelty check that matters: their k = 3 realiser
+  is two similarly-oriented equilateral triangles of side d translated by a vector of
+  length d, and if that set were in convex position then n_3 = 6 and the bound n_3 >= 7
+  proved here would be false. `audit.py` check 7 confirms in exact arithmetic that the
+  set does have the k = 3 property and is **not** in convex position, for all six unit
+  translations, with controls showing the convexity test accepts a scrambled convex
+  hexagon and rejects a dented one. The translation DIRECTION is free, so the
+  realisers are a one-parameter family and six exact cases do not cover it; the same
+  check therefore also sweeps all 3600 directions numerically, finding the k = 3
+  property in every one and convex position in none. So their value 6 and the bound n_3 >= 7 proved here are
+  consistent, and convexity costs at least one point. (Their symbol g(k) is NOT the
+  g(k) of the #1082 note, which is the largest set with at most k distinct distances;
+  the two are unrelated and the symbol is avoided here.)
+  *[secondary: abstract only for the paper itself; the realiser's non-convexity is
+  VERIFIED here in exact arithmetic]*
 
 ## Prior work on the k = 4 question
 
@@ -97,6 +113,9 @@
 
 ## Artifacts here
 
+`REPRODUCE.md` (step-by-step, with the output each command actually printed),
 `RESULTS.md`, `COMMENT_FULL.md`, `artifact_danzer9_t0.json` (exact Danzer coordinates),
-`verify_p97.py`, `theorem_alt.py`, and `k3-minimality/` holding the n = 4, 5, 6
-exclusion, including the incomplete n = 7 run recorded honestly as incomplete.
+`audit.py` (standalone re-derivation of every checkable claim, sharing no code with the
+searches), `verify_p97.py`, `theorem_alt.py`, and `k3-minimality/` holding the
+n = 4, 5, 6 exclusion, including the incomplete n = 7 run recorded honestly as
+incomplete.
