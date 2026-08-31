@@ -84,9 +84,37 @@ the distance count and the multiplicity multiset from the definitions.
 
 ## 5. The full n = 9 ladder
 
-The ladder is driven by `super217.py` / `ladder.sh` and runs five independent shards
-per rung; the sweep is exhaustive only if every shard reaches COMPLETED, and the driver
-records that. A single rung can be reproduced directly, for example
+`super217.py` is the driver. It runs the shards as independent OS processes (no
+multiprocessing pool, and no shell, so there is nothing to misresolve), and records a
+health checkpoint; the sweep is exhaustive only if every shard reaches COMPLETED, and
+the driver reports that. Verified from a clean clone:
+
+    python super217.py 9 2 25
+
+printed
+
+    R2=25: launched 2 shards
+      R2=25 60s alive=0 done=2/2 nodes=1.664e+07 (+1.66e+07) sols=0 healthy=True
+    R2=25 COMPLETE: nodes=16636430 solutions=0 in 60s
+
+Note the node total on 2 shards is 16,636,430, identical to the 1-shard run in step 3.
+The shard counts add up exactly, which is what makes the union-of-shards argument for
+exhaustiveness checkable rather than merely asserted.
+
+The full ladder is
+
+    python super217.py 9 5 100 144 196 256 324 400
+
+`ladder.sh` is a small single-process alternative for the cheap rungs:
+
+    ./ladder.sh 25 64
+
+printed
+
+    n=9 R2=25 shard 0: nodes=16636430 solutions=0 2.65s
+    n=9 R2=64 shard 0: nodes=1391779545 solutions=0 160.92s
+
+both matching the recorded ladder exactly. A single rung can also be run directly:
 
     ./crescent2.exe 9 100 out100.txt 0 1
 
@@ -125,6 +153,15 @@ digit for digit:
 
 Run these two after any change to the search; they are fast and they pin both the
 negative and the positive behaviour.
+
+## Fixed while testing this file against a clean clone
+
+`ladder.sh` began with `source "../tools/env.sh"`, a MinGW/nauty PATH setup from the
+author's machine. That file is not in this repository, so the script failed with exit 2
+for anyone who cloned it, while `REPRODUCE.md` named it as a driver. It is now
+self-contained, checks for the binary, and exits 1 with a build hint if it is missing.
+`super217.py` was unaffected: it invokes the binary directly through subprocess with no
+shell.
 
 ## Standing limits
 
