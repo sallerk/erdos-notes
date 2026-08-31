@@ -1,0 +1,16 @@
+n=62  class=CUBIC BIPARTITE  incremental-forbidden=(4, 8, 16)  full-forbidden=[4, 8, 16, 32]  workers=10  split_depth=24
+  task 0: nodes=    1436690493 survivors=       0    8404.4s
+  task 1: nodes=    1393130533 survivors=       0    8521.0s
+  task 2: nodes=    1556104549 survivors=       0    9044.1s
+  task 3: nodes=    1204719990 survivors=       0    7665.6s
+  task 4: nodes=     736397298 survivors=       0    4911.4s
+  task 5: nodes=    1811026460 survivors=       0   11220.0s
+  task 6: nodes=     947927872 survivors=       0    6560.9s
+  task 7: nodes=     931723300 survivors=       0    6550.6s
+  task 8: nodes=     740223382 survivors=       0    5454.2s
+  task 9: nodes=    1426356980 survivors=       0    8830.2s
+TOTAL nodes=12184300857 (includes the shared prefix above split_depth, counted once per worker) survivors_of_C4C8C16=0  wall=11220.9s
+
+CERTIFIED: no connected cubic bipartite graph on 62 vertices avoids all of [4, 8, 16, 32].  (0 graphs reached the final check.)
+
+[exited with code 0]

@@ -1,0 +1,64 @@
+{
+ "sat": [],
+ "unsat": 1834,
+ "unknown": [],
+ "n": 6,
+ "total_patterns": 1834,
+ "timeout_ms": 60000,
+ "workers": 3,
+ "status": "COMPLETED",
+ "slowest": [
+  {
+   "sec": 51.28,
+   "idx": 1811,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.43,
+   "idx": 1810,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.4,
+   "idx": 1812,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.38,
+   "idx": 1805,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.31,
+   "idx": 1831,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.3,
+   "idx": 1508,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.27,
+   "idx": 1806,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.27,
+   "idx": 1809,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.26,
+   "idx": 1800,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 50.24,
+   "idx": 1801,
+   "verdict": "unsat"
+  }
+ ],
+ "use_altman": false,
+ "elapsed_s": 899.8
+}

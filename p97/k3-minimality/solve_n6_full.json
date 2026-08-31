@@ -1,0 +1,13 @@
+{
+ "n": 6,
+ "total": 66,
+ "sat": [],
+ "unsat": 66,
+ "unknown": [],
+ "timeout_ms": 120000,
+ "workers": 12,
+ "fullcx": true,
+ "status": "COMPLETED",
+ "elapsed_s": 170.4,
+ "slowest_s": 55.24
+}

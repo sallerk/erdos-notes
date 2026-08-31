@@ -1,0 +1,11 @@
+{
+ "n": 5,
+ "mode": "brute_all_patterns",
+ "total": 1024,
+ "sat": 0,
+ "unsat": 1024,
+ "unknown": 0,
+ "unknown_idx": [],
+ "seconds": 51.4,
+ "status": "COMPLETED"
+}

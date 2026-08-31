@@ -1,0 +1,12 @@
+{
+ "n": 6,
+ "mode": "sample_of_prune_rejected",
+ "sampled": 300,
+ "draws": 300,
+ "unsat": 298,
+ "unknown": 2,
+ "sat": 0,
+ "verdict": "PRUNE SOUND ON SAMPLE",
+ "seconds": 140.4,
+ "status": "COMPLETED"
+}

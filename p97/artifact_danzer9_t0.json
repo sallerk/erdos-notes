@@ -1,0 +1,193 @@
+[
+ {
+  "name": "convex9_k3_t0",
+  "source": "own construction (C_3 symmetric); reproduces Danzer's theorem",
+  "k_version": 3,
+  "n": 9,
+  "parameter_t": "0",
+  "q_exact": "-1/2 + sqrt(3)*(2 + I)/2",
+  "r_exact": "(1 - 2*I)*(-7 - 2*I + sqrt(-348 + 201*sqrt(3))*(2 + 3*I) + sqrt(-116 + 67*sqrt(3))*(3 + 6*I) + sqrt(3)*(2 + 3*I))/10",
+  "convexity_margin_float": 0.21314351628227107,
+  "coords_exact": [
+   [
+    "1",
+    "0"
+   ],
+   [
+    "-1/2",
+    "sqrt(3)/2"
+   ],
+   [
+    "-1/2",
+    "-sqrt(3)/2"
+   ],
+   [
+    "-1/2 + sqrt(3)",
+    "sqrt(3)/2"
+   ],
+   [
+    "-sqrt(3)/2 - 1/2",
+    "3/2 - sqrt(3)/2"
+   ],
+   [
+    "1 - sqrt(3)/2",
+    "-3/2"
+   ],
+   [
+    "-11/10 + 4*sqrt(3)*sqrt(-116 + 67*sqrt(3))/5 + 3*sqrt(-116 + 67*sqrt(3))/2 + 4*sqrt(3)/5",
+    "-sqrt(3)/10 - sqrt(3)*sqrt(-116 + 67*sqrt(3))/10 + 6/5"
+   ],
+   [
+    "-sqrt(3) - 2*sqrt(3)*sqrt(-116 + 67*sqrt(3))/5 - 3*sqrt(-116 + 67*sqrt(3))/5 + 7/10",
+    "-sqrt(3)/2 + 6*sqrt(-116 + 67*sqrt(3))/5 + 4*sqrt(3)*sqrt(-116 + 67*sqrt(3))/5 + 3/5"
+   ],
+   [
+    "-9*sqrt(-116 + 67*sqrt(3))/10 - 2*sqrt(3)*sqrt(-116 + 67*sqrt(3))/5 + sqrt(3)/5 + 2/5",
+    "-9/5 - 7*sqrt(3)*sqrt(-116 + 67*sqrt(3))/10 - 6*sqrt(-116 + 67*sqrt(3))/5 + 3*sqrt(3)/5"
+   ]
+  ],
+  "coords_float": [
+   [
+    1.0,
+    0.0
+   ],
+   [
+    -0.5,
+    0.8660254037844386
+   ],
+   [
+    -0.5,
+    -0.8660254037844386
+   ],
+   [
+    1.2320508075688772,
+    0.8660254037844386
+   ],
+   [
+    -1.3660254037844386,
+    0.6339745962155614
+   ],
+   [
+    0.13397459621556135,
+    -1.5
+   ],
+   [
+    0.9139163017136579,
+    0.9890838702860313
+   ],
+   [
+    -1.3135299089979646,
+    0.2969327990737358
+   ],
+   [
+    0.3996136072843066,
+    -1.286016669359767
+   ]
+  ],
+  "arithmetic": "exact: coordinates lie in a field of degree <= 4 over Q",
+  "verified_per_vertex": [
+   {
+    "vertex": 0,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     1,
+     2,
+     5
+    ],
+    "radius_numeric": "1.73205080756887729352744634151"
+   },
+   {
+    "vertex": 1,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     0,
+     2,
+     3
+    ],
+    "radius_numeric": "1.73205080756887729352744634151"
+   },
+   {
+    "vertex": 2,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     0,
+     1,
+     4
+    ],
+    "radius_numeric": "1.73205080756887729352744634151"
+   },
+   {
+    "vertex": 3,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     4,
+     5,
+     7
+    ],
+    "radius_numeric": "2.60841859702260367844194411891"
+   },
+   {
+    "vertex": 4,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     3,
+     5,
+     8
+    ],
+    "radius_numeric": "2.60841859702260367844194411891"
+   },
+   {
+    "vertex": 5,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     3,
+     4,
+     6
+    ],
+    "radius_numeric": "2.60841859702260367844194411891"
+   },
+   {
+    "vertex": 6,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     2,
+     7,
+     8
+    ],
+    "radius_numeric": "2.33250717619343961741995530813"
+   },
+   {
+    "vertex": 7,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     0,
+     6,
+     8
+    ],
+    "radius_numeric": "2.33250717619343961741995530813"
+   },
+   {
+    "vertex": 8,
+    "max_equidistant_count": 3,
+    "equidistant_set": [
+     1,
+     6,
+     7
+    ],
+    "radius_numeric": "2.33250717619343961741995530813"
+   }
+  ],
+  "verified_min_multiplicity": 3,
+  "verified_convex_position": true,
+  "verified_exact": true,
+  "verified_methods": [
+   "is_zero",
+   "minimal_polynomial",
+   "minpoly+bound",
+   "syntactic"
+  ],
+  "verifier": "verify_p97.py",
+  "producer": "python exact9.py --tmax 6 --out artifact_danzer9_test.json  (then t=0 record extracted)",
+  "status": "COMPLETED"
+ }
+]

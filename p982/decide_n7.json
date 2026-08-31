@@ -1,0 +1,232 @@
+{
+ "sat": [],
+ "unsat": 5348,
+ "unknown": [
+  {
+   "idx": 4843,
+   "colouring": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "idx": 5349,
+   "colouring": [
+    0,
+    1,
+    0,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    2,
+    0,
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    1
+   ]
+  },
+  {
+   "idx": 5350,
+   "colouring": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "idx": 5351,
+   "colouring": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2
+   ]
+  },
+  {
+   "idx": 5352,
+   "colouring": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    1,
+    1,
+    2
+   ]
+  },
+  {
+   "idx": 5353,
+   "colouring": [
+    0,
+    1,
+    0,
+    1,
+    2,
+    1,
+    0,
+    0,
+    0,
+    1,
+    0,
+    2,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2
+   ]
+  }
+ ],
+ "n": 7,
+ "total_patterns": 5354,
+ "timeout_ms": 30000,
+ "workers": 16,
+ "status": "COMPLETED",
+ "slowest": [
+  {
+   "sec": 34.67,
+   "idx": 4843,
+   "verdict": "unknown"
+  },
+  {
+   "sec": 30.15,
+   "idx": 5353,
+   "verdict": "unknown"
+  },
+  {
+   "sec": 30.14,
+   "idx": 5349,
+   "verdict": "unknown"
+  },
+  {
+   "sec": 30.14,
+   "idx": 5351,
+   "verdict": "unknown"
+  },
+  {
+   "sec": 30.11,
+   "idx": 5350,
+   "verdict": "unknown"
+  },
+  {
+   "sec": 30.11,
+   "idx": 5352,
+   "verdict": "unknown"
+  },
+  {
+   "sec": 24.78,
+   "idx": 4432,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 24.72,
+   "idx": 4438,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 24.35,
+   "idx": 4403,
+   "verdict": "unsat"
+  },
+  {
+   "sec": 24.33,
+   "idx": 4439,
+   "verdict": "unsat"
+  }
+ ],
+ "elapsed_s": 465.0,
+ "retry": {
+  "timeout_ms": 2400000,
+  "workers": 6,
+  "elapsed_s": 50.8,
+  "unsat": 6,
+  "sat": [],
+  "unknown": [],
+  "status": "COMPLETED"
+ },
+ "unsat_total": 5354,
+ "unknown_remaining": [],
+ "sat_total": []
+}

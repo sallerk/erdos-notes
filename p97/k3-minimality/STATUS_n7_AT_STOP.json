@@ -1,0 +1,28 @@
+{
+ "n": 7,
+ "workers": 5,
+ "gb_budget_s": 25.0,
+ "z3_ms": 20000,
+ "wall_s": 2469.8,
+ "done": 9539,
+ "skipped_over_budget": 171,
+ "unit_ideal": 5489,
+ "unsat": 4007,
+ "SAT": 0,
+ "z3_unknown": 43,
+ "errors": 0,
+ "delta_last_interval": 201,
+ "rate_per_s": 3.337,
+ "HEALTHY": true,
+ "heartbeat_age_s": {
+  "0": 28.5,
+  "1": 2.1,
+  "2": 24.3,
+  "3": 10.9,
+  "4": 0.3
+ },
+ "kills": 171,
+ "finished_workers": [],
+ "eta_hours": 14.54,
+ "status": "RUNNING"
+}
