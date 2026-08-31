@@ -1,0 +1,39 @@
+{
+ "problem": 583,
+ "n": 12,
+ "nshards": 7,
+ "status": "STAGE 1 COMPLETE AND VERIFIED; STAGE 2 ABANDONED AS INFEASIBLE",
+ "stage1": {
+  "graphs_swept": 164059830476,
+  "expected_A001349_12": 164059830476,
+  "sweep_exhaustive": true,
+  "shards_completed": 7,
+  "hard_residue": 35633639,
+  "sweep_seconds": 17460.7,
+  "note": "the shard counts sum exactly to OEIS A001349(12), so the seven geng res/mod shards are a verified exhaustive partition of the space"
+ },
+ "stage2": {
+  "outcome": "ABANDONED by the user on 2026-08-31 after 10684 s (0.08% of the work)",
+  "counterexamples_found_before_stop": 0,
+  "measured_decider_cost": {
+   "sample": "400 graphs drawn at random from hard_n12_0.g6",
+   "total_seconds": 1044.88,
+   "mean_s_per_graph": 2.6122,
+   "worst_s_per_graph": 98.455,
+   "decomposable": 387,
+   "NOT_decomposable": 0,
+   "undecided_at_cap": 13
+  },
+  "projected_wall_on_7_cores_days": 153.9,
+  "projected_undecided_graphs": 1158093,
+  "why_abandoned": [
+   "at a measured 2.61 s/graph the residue needs ~154 days on 7 cores",
+   "13/400 = 3.25%% of sampled graphs exceed the 5e8-node cap and come back UNDECIDED, projecting ~1.16e6 undecided graphs, so even a completed run would NOT yield a verification",
+   "COST.md set the feasibility threshold at 10 ms/graph; the measurement is 261x past it"
+  ]
+ },
+ "what_is_established": [
+  "n <= 11: VERIFIED, every connected graph decomposes into at most ceil(n/2) paths (n=10: 11,716,571 graphs; n=11: 1,006,700,565 graphs; both equal to A001349, 7/7 shards, 0 counterexamples, 0 undecided)",
+  "n = 12: the generate-and-filter sweep is complete and provably exhaustive, but the residual decision is NOT done and nothing is claimed for n = 12"
+ ]
+}

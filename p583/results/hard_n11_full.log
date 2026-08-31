@@ -1,0 +1,3 @@
+graphs=1006700565  killed: delta<=5 21503340, even<=1 11191161, even-forest 261681648
+survived filters=712324416  greedy<=ceil(n/2)=712323112  NEEDS SEARCH=1304
+time=420.285s  rate=2395281 graphs/sec  (0.417 us/graph)

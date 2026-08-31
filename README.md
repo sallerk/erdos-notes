@@ -11,6 +11,7 @@ artifacts behind it.
 | p506 | #506 minimum circles from n points | Wang arXiv:2608.19844 Thm 1.2 already settles the thread's values; two 17-circle witnesses verified, isomorphic but not similar |
 | p982 | #982 distinct distances from a vertex | **SHELVED** - correct and reproducible but not new; n <= 7 already follows from Moser 1952 and Erdos-Fishburn 1994, and n = 8 is out of reach |
 | p1082 | #1082 no three collinear | the first question for n <= 15 |
+| p583 | #583 Gallai path decomposition | verified for every connected graph on n <= 11; the cited theorems already cover n <= 6, but not a majority of graphs by n = 10 |
 | p217 | #217 crescent configurations | no 9-point configuration on the triangular lattice with squared diameter <= 400; extends the published 91-point search 16-fold |
 
 Where a directory has a `REPRODUCE.md`, every command in it was run from a fresh copy

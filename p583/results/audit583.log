@@ -1,0 +1,79 @@
+==========================================================================
+AUDIT OF THE #583 WORK   (independent re-derivation)
+==========================================================================
+
+1. Are we solving the stated problem?
+
+   erdosproblems.com/583, verbatim:
+     "Every connected graph on n vertices can be partitioned into at most
+      ceil(n/2) edge-disjoint paths."
+
+   PATHS, not trails.  The distinction is the whole difficulty: a connected
+   graph with 2t > 0 odd-degree vertices decomposes into exactly t TRAILS by
+   an Euler argument, which would make the conjecture easy.  decide5.c tracks
+   a VERTEX bitmask (adj[vend] & ~used), so it enforces simple paths, and the
+   decider in this file does the same via its `seen` set.
+  [PASS] bowtie (two triangles sharing a vertex) needs 2 simple paths, e.g. 0-1-2-3-4 together with 0-2-4  min_paths = 2
+     Every degree is even, so ONE closed trail covers it; requiring simple
+     paths forces 2. A decider that accepted trails would answer 1 here, so
+     this separates the two notions.
+  [PASS] and 2 <= ceil(5/2) = 3, so the bowtie satisfies Gallai with room to spare
+
+2. Known values, from the definition.
+  [PASS] star K_{1,5}: 6 odd-degree vertices force >= 3 paths, and 3 suffice  min_paths = 3
+  [PASS] 5-cycle needs 2: a cycle is not itself a path (written as (i,(i+1)%5), which is the unnormalised form that exposed the bug above)  min_paths = 2
+  [PASS] a 5-vertex path needs exactly 1
+  [PASS] K_4 needs 2 = ceil(4/2)  min_paths = 2
+  [PASS] K_5 needs 3 = ceil(5/2)  min_paths = 3
+
+3. The independent decider must agree with the C one on EVERY small graph.
+   Exhaustive over all connected graphs on 4..7 vertices.
+     n=4: 6 connected graphs, all decomposable into <= 2 paths
+     n=5: 21 connected graphs, all decomposable into <= 3 paths
+     n=6: 112 connected graphs, all decomposable into <= 3 paths
+     n=7: 853 connected graphs, all decomposable into <= 4 paths
+  [PASS] every connected graph on 4..7 vertices satisfies Gallai, by an independent decider written from the definition  992 graphs checked
+
+4. The odd-degree lower bound, which the C decider uses as a prune.
+   Every odd-degree vertex must be an endpoint of some path, and each path has
+   two endpoints, so P >= ceil(odd/2).  Check the prune never over-prunes.
+  [PASS] min_paths >= ceil(odd/2) on every graph tested, so the prune is sound
+
+5. The recorded runs, against OEIS A001349.
+  [PASS] n=12 stage 1 swept exactly A001349(12) = 164,059,830,476 connected graphs  164059830476
+  [PASS] all 7 shards completed
+  [PASS] stage 2 is recorded as ABANDONED, not as a verification
+  [PASS] and the reason is recorded with the measurement behind it  153.9 days, 1158093 undecided projected
+
+6. NOVELTY. Checks 1-5 can all pass on a result already implied by theory.
+   Do the published theorems already settle every connected graph at small n?
+
+     Lo68   Lovasz            at most one vertex of even degree
+     Py96   Pyber             even-degree-induced subgraph is a forest
+     BoPe19 Bonamy-Perrett    maximum degree <= 5
+     BBB21  Blanche-Bonamy-Bonichon   planar
+     AnBa23 Anto-Basavaraju   2-degenerate
+     CFZ26  Chu-Fan-Zhou      even-degree-induced subgraph is K_m, m <= 15, n odd
+
+     n   connected    settled by NO cited theorem
+     4            6            0   (0%)
+     5           21            0   (0%)
+     6          112            0   (0%)
+     7          853           36   (4%)
+     8        11117         2058   (19%)
+     9       261080        89757   (34%)
+    10     11716571      6666730   (57%)
+  [PASS] the cited theorems settle EVERY connected graph on n <= 6, so verification there adds nothing
+  [PASS] but from n = 7 upward there are graphs no cited theorem settles, and the fraction grows to a majority by n = 10  6666730 of 11716571 at n=10 = 57%
+
+     These counts come from coverage.py, which implements all six theorems and
+     runs them over every connected graph from geng. Re-run it to regenerate.
+
+   WHAT IS CLAIMED: the conjecture is verified for every connected graph on at
+   most 11 vertices, which for n = 7..11 covers graphs no cited partial result
+   reaches. n = 12 is NOT verified: the sweep is complete and provably
+   exhaustive, but the residual decision was abandoned as infeasible.
+
+==========================================================================
+ALL CHECKS PASSED
+==========================================================================
