@@ -4,8 +4,33 @@
   Source of the Q(sqrt 15) eight-point witness and of the quoted descent argument.
   *[VERIFIED AT SOURCE: thread fetched and the passage read verbatim 2026-08-31]*
 
-* **Liyan Wang**, "Circles determined by planar point sets", arXiv:2608.19844,
-  section 7.3. Source of the rational eight-point witness. The eight coordinates and
+* **Liyan Wang**, "Circles determined by planar point sets", arXiv:2608.19844v1
+  [math.CO], **posted 20 Aug 2026** (paper internally dated 2026.08.18).
+
+  **This paper solves the problem, and that is the single most important fact for
+  this note.** Theorem 1.2, verbatim from the PDF:
+
+  > "For every n>=4, one has c(n) = F(n), with precisely three exceptions:
+  > c(6) = 8 = F(6)-1, c(7) = 11 = F(7)-2, c(8) = 17 = F(8)-2."
+
+  with F(n) = 1 + C(n-1,2) - floor((n-1)/2). The three exceptional orders are exactly
+  the m(6) = 8, m(7) = 11, m(8) = 17 reported in the forum thread, whose author wrote
+  "I did not find any of these values in the literature ... If any of this is known, I
+  would be glad to be told." Wang additionally gives c(9) = F(9) = 25, settling the
+  n = 9 case the thread leaves open, and solves the no-three-collinear variant, where
+  he reports a single exceptional order. The abstract states the scope: "We determine
+  c(n) for every n >= 4: it equals F(n) apart from three exceptional orders."
+
+  Chronology, so that nobody is made to look careless: the forum comment is dated
+  01:48 on 18 Aug 2026; the arXiv posting is 20 Aug 2026. The values were not findable
+  by search when the comment was written.
+
+  I have NOT checked Wang's proof. What is checked here is only the section 7.3
+  witness, re-derived from his coordinates.
+  *[Theorem 1.2 and the abstract VERIFIED AT SOURCE: PDF read 2026-08-31. The proof
+  itself is taken on trust.]*
+
+  Section 7.3 is also the source of the rational eight-point witness. The eight coordinates and
   the list of 17 circles were read directly from the paper and match the values used
   here exactly:
 

@@ -16,6 +16,34 @@ One convention should be stated, since it is live on the neighbouring problem [9
 
 > For every $n \le 7$, every convex $n$-gon in the plane has a vertex with at least $\lfloor n/2 \rfloor$ distinct distances to the other vertices.
 
+**This result is correct but NOT new, and the note originally failed to say so.**
+The novelty check that should have run first is arithmetic on bounds already cited on
+the problem page. Moser 1952 gives f(n) >= floor((n+2)/3), equal to floor(n/2) at
+n = 7. Erdos and Fishburn 1994 prove g(n) = floor(n/3)+1 for the minimum-over-n-gons
+maximum RUN length; a run of length k gives k distinct distances from its base point,
+so f(n) >= g(n), equal to floor(n/2) at n = 6. Dumitrescu 2006 gives
+ceil((13n-6)/36), equal to floor(n/2) at n = 9. Evaluating all three:
+
+| n | floor(n/2) | best published | status |
+|---|---|---|---|
+| 4, 5 | 2 | 2 | already settled |
+| 6 | 3 | 3 (ErFi94) | already settled |
+| 7 | 3 | 3 (Moser 1952) | already settled |
+| **8** | 4 | 3 | **OPEN** |
+| 9 | 4 | 4 (ErFi94, Du06b) | already settled |
+
+So the certification below re-derives, with 316 + 5354 SMT instances, what follows
+from evaluating published formulas at small n, and it is not even the frontier since
+n = 9 is settled too. The first genuinely open case is **n = 8**. `audit.py` check 8
+prints this table beside the claim so it cannot be overlooked again. What those bounds
+do not cover is the two-ring near-miss family and the concyclic remark.
+
+n = 8 was then attempted and is far out of reach. `count8.py` runs the same recursion
+without storing anything (it reproduces the n = 6 and n = 7 counts of 3,115 and 71,547
+exactly); at n = 8 it passed 7.4e8 colourings and was still running, against the
+~3 million estimated below. `enumerate_patterns(8)` reached 23 GB of RAM before being
+killed.
+
 This is over the reals, not over a lattice or a finite pool. The cases $n = 4, 5$ need a single formula; $n = 6$ took $316$ pattern classes and $n = 7$ took all $5354$, with no unknowns left. As a guard against the encoding being vacuously unsatisfiable I also substituted explicit polygons into every constraint by hand, without the solver, and confirmed the constraints are the intended ones. The obstruction to going further is combinatorial rather than the solver: the pattern enumeration passes three million colourings at $n = 8$.
 
 One dependency should be declared. The enumeration prunes using Altman's theorem (the vertices of a convex $n$-gon determine at least $\lfloor n/2 \rfloor$ distinct distances in total (Altman, "On a problem of P. Erdős", Amer. Math. Monthly 70 (1963), 148-157)); to bound the number of distance classes a pattern may use. Dropping that filter multiplies the enumeration by about fifteen: $1834$ classes instead of $316$ at $n = 6$, and $81278$ instead of $5354$ at $n = 7$. I ran the unfiltered enumeration at $n = 6$ and all $1834$ classes are likewise unsatisfiable, so $n \le 6$ is unconditional; $n = 7$ rests on Altman's theorem, which is of course not in doubt, but the reader should know the statement is not self-contained.

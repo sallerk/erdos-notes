@@ -15,7 +15,9 @@ read 2026-08-31.  *[VERIFIED AT SOURCE]*
   not examined the claim itself.]*
 
 * **E. Altman**, "On a problem of P. Erdős", Amer. Math. Monthly **70** (1963),
-  148-157. Any convex n-gon determines at least floor(n/2) distinct distances in total.
+  148-157. Bibliographic data independently confirmed via Crossref
+  (doi:10.1080/00029890.1963.11990057): The American Mathematical Monthly, volume 70,
+  issue 2, pages 148-157, February 1963, author Altman. Any convex n-gon determines at least floor(n/2) distinct distances in total.
   The pattern enumeration uses this as a prune, so the n = 7 case is conditional on it;
   n <= 6 was additionally run unfiltered and is unconditional.
 
@@ -35,8 +37,23 @@ read 2026-08-31.  *[VERIFIED AT SOURCE]*
   *[attribution VERIFIED AT SOURCE (Erdos 1975 scan, read 2026-08-31, and NPPZ13);
   the Altman paper itself is secondary, not obtained]*
 
-  Note also that the #982 problem page carries no Altman reference of its own; the
-  citation here comes from the two sources above, not from the page.
+  **Correction to an earlier draft of this file.** It said "the #982 problem page carries
+  no Altman reference of its own", which is true of that page but gave the wrong
+  impression about the site. Altman is on the site: the theorem is **problem [93]**,
+  "If n distinct points in R^2 form a convex polygon then they determine at least
+  floor(n/2) distinct distances", recorded there as "Solved by Altman [Al63]" and
+  carrying the site's status badge PROVED (LEAN). The bibliography entry reads, verbatim:
+
+  > "[Al63] Altman, E., On a problem of P. Erdős. Amer. Math. Monthly (1963), 148-157.
+  > (MR 154192)"
+
+  The #93 page also states the total-versus-single-vertex distinction in the site's own
+  words: "The stronger variant that says there is one point which determines at least
+  floor(n/2) distinct distances (see [982]) is still open." The comment therefore cites
+  Altman as [Al63] and points at problem [93], which is both shorter and the site's own
+  convention.
+  *[VERIFIED AT SOURCE: erdosproblems.com/93 and erdosproblems.com/bibs/Al63, read
+  2026-08-31]*
 
 See `LITERATURE.md` for the fuller search record.
 

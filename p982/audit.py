@@ -239,3 +239,42 @@ if FAIL:
     sys.exit(1)
 print('ALL CHECKS PASSED')
 print('=' * 72)
+
+# ------------------------------------------------------------------------ 8
+print()
+print('8. NOVELTY: is the n <= 7 result already implied by the published bounds?')
+print('   This check exists because nothing in checks 1-7 asks it. Every claim can')
+print('   be correct and reproducible and still be a re-derivation of known work.')
+print()
+print('   f(n) = min over convex n-gons of max over vertices of #distinct distances.')
+print('   The conjecture is f(n) >= floor(n/2).  Published lower bounds:')
+print('     Moser 1952 [Mo52]      f(n) >= floor((n+2)/3)')
+print('     Erdos-Fishburn [ErFi94] proves g(n) = floor((n+3)/3) for all n >= 4,')
+print('       where g(n) is the min-over-n-gons of the max RUN length (consecutive')
+print('       vertices at strictly increasing distance from x0).  A run of length k')
+print('       gives k DISTINCT distances from x0, so f(n) >= g(n) = floor(n/3)+1.')
+print('     Dumitrescu 2006 [Du06b] f(n) >= ceil((13n-6)/36)')
+print()
+rows = []
+for n in range(4, 13):
+    tgt = n // 2
+    mo = (n + 2) // 3
+    ef = n // 3 + 1
+    du = -(-(13 * n - 6) // 36)          # ceil
+    rows.append((n, tgt, mo, ef, du, max(mo, ef, du) >= tgt))
+print('    n  floor(n/2)  Moser  ErFi94  Du06b   already settled in the literature?')
+for n, tgt, mo, ef, du, done in rows:
+    print('   %2d      %2d       %2d      %2d      %2d     %s'
+          % (n, tgt, mo, ef, du, 'YES' if done else 'no  <-- OPEN'))
+settled = [n for n, _, _, _, _, d in rows if d]
+openn = [n for n, _, _, _, _, d in rows if not d]
+ck('the published bounds already settle n = 4,5,6,7 and 9',
+   set([4, 5, 6, 7, 9]).issubset(set(settled)), 'settled: %s' % settled)
+ck('so the n <= 7 certification in this note is NOT new; it re-derives '
+   'Moser 1952 and Erdos-Fishburn 1994', 7 in settled)
+ck('the first genuinely open case is n = 8, which this enumeration does not reach',
+   openn and openn[0] == 8, 'open: %s' % openn)
+print()
+print('   CONCLUSION, recorded so it cannot be overlooked again: the n <= 7 result')
+print('   here is correct and reproducible but redundant. What is not covered by the')
+print('   bounds above is the two-ring near-miss family and the concyclic remark.')
