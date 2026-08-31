@@ -150,11 +150,28 @@ if s8:
         if {k * f: v for k, v in pal_int.items()} == dict(cnt):
             match = f
             break
-    ck('the first n=8 solution found here IS Palasti\'s configuration, scaled',
+    ck('the first n=8 solution found here has Palasti\'s distance multiset, scaled',
        match is not None,
        'squared distances scale by %s' % match)
     print('     Palasti     : %s' % dict(sorted(pal_int.items())))
     print('     found here  : %s' % dict(sorted(cnt.items())))
+    # A shared distance multiset does NOT imply similarity: two different point sets
+    # can realise the same multiset.  Find an explicit distance-preserving bijection.
+    Dm = [[N(pts[i][0] - pts[j][0], pts[i][1] - pts[j][1]) for j in range(8)]
+          for i in range(8)]
+    Dp = [[sp.nsimplify(sp.expand((PAL[i][0] - PAL[j][0]) ** 2
+                                  + (PAL[i][1] - PAL[j][1]) ** 2)) for j in range(8)]
+          for i in range(8)]
+    bij = None
+    if match:
+        for perm in itertools.permutations(range(8)):
+            if all(Dm[i][j] == match * Dp[perm[i]][perm[j]]
+                   for i in range(8) for j in range(i + 1, 8)):
+                bij = perm
+                break
+    ck('and the two point sets are genuinely SIMILAR: an explicit bijection matches '
+       'all 28 pairwise distances, not merely the multiset',
+       bij is not None, 'bijection %s' % (bij,))
 else:
     ck('sol_n8.txt present', False)
 
