@@ -96,8 +96,24 @@
   consistent, and convexity costs at least one point. (Their symbol g(k) is NOT the
   g(k) of the #1082 note, which is the largest set with at most k distinct distances;
   the two are unrelated and the symbol is avoided here.)
-  *[secondary: abstract only for the paper itself; the realiser's non-convexity is
-  VERIFIED here in exact arithmetic]*
+  **Sourcing, stated exactly.** The bibliographic data is VERIFIED AT SOURCE via the
+  Crossref record for doi:10.1016/0925-7721(95)00050-X: "Minimum planar sets with
+  maximum equidistance counts", Computational Geometry, volume 7, issue 4, pages
+  207-218, published March 1997, authors Erdos, Paul and Fishburn, Peter. The
+  MATHEMATICAL CONTENT is not verified at source: ScienceDirect serves a CAPTCHA,
+  and neither OpenAlex nor Semantic Scholar holds the abstract, so the values
+  (3, 6, 8 for k = 2, 3, 4 and <= 16 for k = 5) come only from search-engine
+  summaries of the abstract, which I could not read directly.
+
+  What IS verified here, in exact arithmetic by `audit.py`, is everything the #97
+  argument actually leans on: that six points in the stated configuration do have the
+  k = 3 property, and that the configuration is not in convex position. MINIMALITY --
+  that five points cannot do it -- is NOT verified and is NOT needed: the point is only
+  that the unrestricted answer is at most 6 and is achieved off convex position, so it
+  cannot conflict with n_3 >= 7. The comment therefore says "six points suffice" rather
+  than "the answer is 6".
+  *[bibliographic data VERIFIED AT SOURCE (Crossref); mathematical content SECONDARY;
+  the configuration's k=3 property and non-convexity VERIFIED here in exact arithmetic]*
 
 ## Prior work on the k = 4 question
 

@@ -43,10 +43,13 @@ problem page already discounts as a presumed error since Erdos never repeated it
 
 **Result: the smallest n for the k = 3 property is at least 7, and at most 9 by Danzer.**
 
-Without convexity this question is solved: Erdos and Fishburn (Comput. Geom. 7 (1997),
-207-218) show the least n with every point having 3 others equidistant is 6, realised
-by two similarly-oriented equilateral triangles of side d translated by a vector of
-length d. That set is NOT in convex position, which `audit.py` check 7 verifies in
+Without convexity the question is answered elsewhere: Erdos and Fishburn (Comput. Geom.
+7 (1997), 207-218) give 6 for the least n with every point having 3 others equidistant,
+realised by two similarly-oriented equilateral triangles of side d translated by a
+vector of length d. (The citation is verified at source via Crossref; the VALUE is from
+the abstract as summarised by search engines, since ScienceDirect serves a CAPTCHA and
+no open index carries the abstract. Minimality is not relied on here -- see
+`REFERENCES.md`. All that matters below is that six points suffice off convex position.) That set is NOT in convex position, which `audit.py` check 7 verifies in
 exact arithmetic for all six unit translations (with controls confirming the convexity
 test detects a scrambled convex hexagon as convex and a dented one as not). So the two
 results are consistent and convexity costs at least one point: 6 without it, at least
