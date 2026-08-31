@@ -1,5 +1,7 @@
 # Erdos #506 (minimum number of distinct circles determined by n points)
 
+Problem page: https://www.erdosproblems.com/506
+
 Full note. The forum comment is a summary of this page.
 
 A small clarification on the arithmetic of the eight-point, seventeen-circle configuration, with an independent check of both witnesses.
@@ -21,7 +23,7 @@ Taken together: $u^2 = 15$ is forced within mzn's family, exactly as their desce
 Verification script and artifact:
 https://github.com/sallerk/erdos-notes/blob/main/p506/NOTE.md
 
-Disclosure: the computations and the drafting of this comment were done with AI assistance. The verification script is short and self-contained and can be re-run by anyone.
+Disclosure: the computations and the drafting of this note were done with AI assistance. The verification script is short and self-contained and can be re-run by anyone.
 
 ## How to re-run
 
@@ -29,3 +31,13 @@ Disclosure: the computations and the drafting of this comment were done with AI 
 
 Prints the circle counts for both witnesses, the four designation-preserving
 relabellings, and the similarity test. Needs only sympy. Exact throughout.
+
+## Files in this directory
+
+* `REFERENCES.md`
+* `RESULTS.md`
+* `artifact_iso_n8.json`
+* `circles.py`
+* `designs.py`
+* `gridsearch.py`
+* `verify_iso.py`
