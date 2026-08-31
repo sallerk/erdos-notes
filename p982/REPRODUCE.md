@@ -62,7 +62,16 @@ state and is not a setup error on your part.** What passes and what does not:
 * **Control B fails on 3 of its 4 cases.** It feeds z3 the colouring induced by a convex
   lattice polygon, which after normalisation has a rational model and so must be SAT.
   The lattice pentagon comes back SAT; the hexagon, heptagon and octagon come back
-  `unknown` at the script's 60 s budget.
+  `unknown` at the script's 60 s budget. Raising the budget does not rescue it: re-run
+  at 900 s per instance, the results were
+
+      lattice hexagon      n=6  -> unknown   900.3s
+      lattice pentagon     n=5  -> sat         0.0s
+      lattice heptagon     n=7  -> unknown  1033.6s
+
+  so this is a genuine wall at n >= 6, not an unlucky 60-second cutoff. (The heptagon
+  overran its own 900 s budget by two minutes; z3 checks the timeout only at certain
+  points, so treat the budget as approximate.)
 * Control D is informational and expected: z3 returns `unknown` on colourings whose only
   models are irrational.
 
