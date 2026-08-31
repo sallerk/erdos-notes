@@ -21,7 +21,13 @@
 #include <string.h>
 #include <time.h>
 
-#define MAXP 2048
+/* MAXP must exceed the number of lattice points with norm <= R2.  It was 2048,
+ * which is enough only up to R2 = 558 (2029 points); at R2 = 559 the pool is 2053
+ * and the generator below used to drop the excess SILENTLY, which would have made
+ * the search report "0 solutions" for a region it never covered.  The completed
+ * R2 = 400 ladder used 1459 points and is unaffected.  The cap is now generous and,
+ * more importantly, exceeding it is a hard error rather than a silent truncation. */
+#define MAXP 8192
 #define MAXW (MAXP/64)
 #define MAXN 12
 
@@ -167,7 +173,15 @@ int main(int argc, char **argv)
         for (int b = -lim; b <= lim; b++) {
             if (!a && !b) continue;
             long long N = (long long)a*a + (long long)a*b + (long long)b*b;
-            if (N <= R2 && NP < MAXP) { PA[NP]=a; PB[NP]=b; NP++; }
+            if (N <= R2) {
+                if (NP >= MAXP) {
+                    fprintf(stderr, "FATAL: lattice pool exceeds MAXP=%d at R2=%lld."
+                            " Raise MAXP and rebuild; do NOT trust a truncated run.\n",
+                            MAXP, R2);
+                    return 2;
+                }
+                PA[NP]=a; PB[NP]=b; NP++;
+            }
         }
     for (int i = 0; i < NP; i++) {
         PX[i]=2LL*PA[i]+PB[i]; PY[i]=PB[i];

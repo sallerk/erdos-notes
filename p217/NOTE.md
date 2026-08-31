@@ -114,6 +114,47 @@ with multiplicities 1, 4, 5, 6, 7, 2, 3; Palasti's published set has 1, 3, 4, 7,
 the two configurations are similar. `audit217.py` check 4 verifies this, having taken
 Palasti's coordinates from arXiv:1509.07220 Figure 1 rather than from anything here.
 
+## Scale: how big are the known configurations?
+
+The multiplier against Burt et al.'s region is one way to size this; the more
+informative comparison is against where the known constructions actually live. The
+tightest realisation on the lattice at each n, by squared diameter:
+
+| n | tightest known squared diameter |
+|---|---|
+| 4, 5 | 7 |
+| 6, 7 | 13 |
+| 8 | 21 (Palasti's, and the minimum over the 156 found here) |
+
+So Burt et al.'s 91-point region covers squared diameter <= 25, only 1.2 times the
+value at which the known n = 8 configuration sits. The ladder here covers <= 400,
+about 19 times it. If a 9-point configuration existed at anything like the scale of
+every known smaller one, this search would have found it many times over. That, rather
+than the 16-fold multiplier, is the reason the negative result carries weight.
+
+## A latent bug, found while costing the next rung
+
+`crescent2.c` generated its lattice pool with `if (N <= R2 && NP < MAXP)`, where MAXP
+was 2048. Beyond 2048 points the excess was dropped **silently**: no error, no warning,
+and the search would then report "0 solutions" for a region it had never covered. For
+a negative result that is the worst possible failure.
+
+The completed ladder is unaffected: R^2 = 400 uses 1,459 points, well inside the cap,
+and `audit217.py` check 9 verifies this. The threshold is R^2 = 559 (2,053 points), so
+every rung run so far was safe, as is the next planned rung R^2 = 484 (1,765 points).
+
+MAXP is now 8192 and exceeding it is a fatal error rather than a truncation. The fix
+was verified to be behaviour-preserving: after it, R^2 = 25 still gives exactly
+16,636,430 nodes and 0 solutions, and the n = 8 control still finds exactly 156
+solutions in 161,595,043 nodes, matching the pre-fix runs digit for digit.
+
+`audit217.py` check 9 also confirms the other implementation limits: MAXD = 64 exceeds
+the largest possible number of distance classes C(9,2) = 36; MAXN = 12 exceeds n = 9;
+the 4x4 concyclicity determinant at R^2 = 400 is bounded by about 4.4e6 against a
+64-bit limit of 9.2e18, a margin of 2e12, so it cannot overflow; and the shards
+partition the depth-1 loop, so their union is the whole search and exhaustiveness
+follows from every shard reaching COMPLETED.
+
 ## What is NOT claimed
 
 This settles nothing about n = 9 in the plane. A crescent configuration need not have

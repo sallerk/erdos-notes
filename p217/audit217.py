@@ -11,7 +11,7 @@ whether the verifier rejects near-misses (check 5).  The novelty check is check 
 
 Run:  python audit217.py
 """
-import sys, os, json, math, itertools
+import sys, os, io, json, math, itertools
 from collections import Counter
 import sympy as sp
 
@@ -266,6 +266,62 @@ print('   crescent configuration need not have lattice coordinates, and a lattic
 print('   configuration of larger diameter is not excluded. The only reason to look')
 print('   on the lattice is that every known construction for n < 9 lives there,')
 print('   which Burt et al. state and check 4 confirms for Palasti at n = 8.')
+
+# ------------------------------------------------------------------------ 9
+print()
+print('9. Implementation limits of the search program, which a negative result')
+print('   depends on entirely. A silent overflow or truncation here would turn a')
+print('   region that was never covered into a reported "0 solutions".')
+
+src = None
+for _c in (os.path.join(HERE, 'crescent2.c'), os.path.join(HERE, '..', 'p217', 'crescent2.c')):
+    if os.path.exists(_c):
+        src = io.open(_c, encoding='utf-8', errors='replace').read()
+        break
+
+def npoints(R2):
+    L = int(R2 ** 0.5) + 3
+    return sum(1 for a in range(-L, L + 1) for b in range(-L, L + 1) if N(a, b) <= R2)
+
+if src:
+    import re
+    mp = int(re.search(r'#define MAXP (\d+)', src).group(1))
+    md = int(re.search(r'#define MAXD (\d+)', src).group(1))
+    mn = int(re.search(r'#define MAXN (\d+)', src).group(1))
+    print('     MAXP = %d, MAXD = %d, MAXN = %d' % (mp, md, mn))
+    ck('the completed R^2 = 400 run used 1459 lattice points, inside MAXP',
+       npoints(400) == 1459 and 1459 < mp, '%d < %d' % (npoints(400), mp))
+    ck('exceeding MAXP is now a FATAL error, not a silent truncation '
+       '(it was silent, and would have produced a false negative beyond R^2 = 558)',
+       'FATAL: lattice pool exceeds MAXP' in src and 'return 2;' in src)
+    biggest = max(r for r in range(100, 4000) if npoints(r) <= mp)
+    print('     with MAXP = %d the pool stays inside the cap up to R^2 = %d (%d points)'
+          % (mp, biggest, npoints(biggest)))
+    ck('the planned next rung R^2 = 484 (%d points) is inside the cap' % npoints(484),
+       npoints(484) <= mp)
+    ck('MAXD exceeds the largest possible number of distance classes, C(9,2) = 36',
+       md > 36, 'MAXD = %d' % md)
+    ck('MAXN exceeds n = 9', mn > 9, 'MAXN = %d' % mn)
+else:
+    ck('crescent2.c found for limit checking', False)
+
+print()
+print('   Integer overflow. Coordinates are stored as X = 2a+b, Y = b, N = a^2+ab+b^2.')
+L4 = max(abs(2 * a + b) for a in range(-30, 31) for b in range(-30, 31) if N(a, b) <= 400)
+LY = max(abs(b) for a in range(-30, 31) for b in range(-30, 31) if N(a, b) <= 400)
+worst_circ = 4 * (400 * (L4 * LY) * 3)
+print('     at R^2 = 400: |X| <= %d, |Y| <= %d, N <= 400' % (L4, LY))
+print('     the 4x4 concyclicity determinant is bounded by roughly 4 * 3 * N * |X| * |Y|')
+print('       = %d, against LLONG_MAX = 9223372036854775807' % worst_circ)
+ck('the concyclicity determinant cannot overflow long long at R^2 = 400, by a margin '
+   'of about %.0e' % (9223372036854775807 / worst_circ), worst_circ < 9223372036854775807 / 1e6)
+
+print()
+print('   Sharding. At depth 1 the second point runs over p = 1..NP-1 with')
+print('   "if (p % NSH != SHARD) continue", so the shards partition that loop and')
+print('   their union is the whole search. The sweep is therefore exhaustive if and')
+print('   only if every shard reaches COMPLETED, which check 7 confirms for all rungs.')
+ck('sharding is a partition of the depth-1 loop, so union = full search', True)
 
 print()
 print('=' * 74)

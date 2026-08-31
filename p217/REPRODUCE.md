@@ -111,6 +111,21 @@ R^2**, which is the claim to quote and is stronger than "fits inside the disc".
 Configurations of squared diameter between 400 and 1600 are partly covered but not
 exhaustively, and nothing is claimed about them.
 
+## Regression test after the MAXP fix
+
+`crescent2.c` had a silent pool truncation above 2048 points (see NOTE.md). After
+raising MAXP to 8192 and making the overflow fatal, both reference runs reproduce
+digit for digit:
+
+    ./crescent2.exe 9 25 f25.txt 0 1
+    n=9 R2=25 shard 0: nodes=16636430 solutions=0 2.72s      (pre-fix: 16636430, 0)
+
+    ./crescent2.exe 8 49 f8.txt 0 1
+    n=8 R2=49 shard 0: nodes=161595043 solutions=156 15.48s  (pre-fix: 161595043, 156)
+
+Run these two after any change to the search; they are fast and they pin both the
+negative and the positive behaviour.
+
 ## Standing limits
 
 Nothing here settles n = 9 in the plane. A crescent configuration need not have lattice
