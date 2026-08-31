@@ -28,7 +28,7 @@ A conditional remark on the triangular lattice. Searching the lattice $A_2$ over
 
 Convex position is already settled, and worth stating explicitly. Altman is cited on the problem page, but for the three-dimensional case ("Altman proved the answer is yes if the points form the vertices of a convex polyhedron"); it is his planar theorem that bears on the first question here, and that does not seem to have been noted. Altman ("On a problem of P. Erdős", Amer. Math. Monthly 70 (1963), 148-157) proved that the vertices of any convex $n$-gon determine at least $\lfloor n/2 \rfloor$ distinct distances, with equality for odd $n$ only for the regular $n$-gon. Points in convex position are automatically no-three-collinear, so Altman's theorem is exactly the first question restricted to convex position, and it has been true since 1963. Hence any counterexample must be non-convex. That also subsumes the concyclic case: a set on one circle is in convex position, which is the real reason both known counterexamples to the second question need two concentric circles rather than one.
 
-So the search has to allow non-convex configurations, and the natural place to look is a highly symmetric convex core with extra points inside. Taking the core to be a subset of a regular polygon: every subset $S$ of a regular $m$-gon with $m \le 24$, $|S| \ge 9$ and at most $7$ distinct distances was enumerated (since the distances of $\{\zeta_m^j : j \in S\}$ are the circular differences $\min(d, m-d)$, this is a pure computation in $\mathbb{Z}_m$); giving $656$ subsets up to the dihedral group, none at all for $m = 16, 17, 19, 23$, and $380$ of them subsets of the regular $15$-gon. The regular $15$-gon itself admits no $16$th point anywhere in the plane. It already realises all $7$ chord lengths, so a new point must sit at a chord distance from every vertex, in particular from two fixed adjacent vertices, which pins it to one of the circle-circle intersections of the $7 \times 7$ radius pairs about those two. That enumeration is complete, and it gives $46$ intersection points, $33$ of them not already vertices; the best still misses having all $15$ of its distances be chord lengths by $0.1464$.
+So the search has to allow non-convex configurations, and the natural place to look is a highly symmetric convex core with extra points inside. The regular odd polygon is the one configuration known to meet the bound exactly, and it turns out to be rigid: `extend.py` shows that for every regular $m$-gon with $m$ odd up to $41$ there is no point at a polygon distance from all $m$ vertices, so none admits a further point at all. Taking $m = 15$, the case relevant to $n = 16$: the regular $15$-gon itself admits no $16$th point anywhere in the plane. It already realises all $7$ chord lengths, so a new point must sit at a chord distance from every vertex, in particular from two fixed adjacent vertices, which pins it to one of the circle-circle intersections of the $7 \times 7$ radius pairs about those two. That enumeration is complete, and it gives $46$ intersection points, $33$ of them not already vertices; the best still misses having all $15$ of its distances be chord lengths by $0.1464$.
 
 Natural next step, which I have not done: classify the $(2k+1)$-point, $k$-distance, no-three-collinear configurations at $k = 7$; is the regular $15$-gon the only one? Combined with a circle-intersection extension test, which is complete and pool-free once those sets are known, that would settle $n = 16$ outright. One warning for anyone attempting it by exact algebra: fixing three base points and pinning each further point by its distance triple gives $k^3$ candidates of which $2k-2$ are needed, so the $17{,}550$ four-subsets at $k = 3$ become about $4.6 \times 10^{21}$ twelve-subsets at $k = 7$. A Gröbner-basis search over the $k = 3$ case terminates in about an hour; that route does not reach $k = 7$.
 
@@ -36,10 +36,23 @@ A note on what is verified. The $k = 5$ computation was checked four independent
 
 Disclosure: the searches, computations and the drafting of this note were done with AI assistance.
 
+## How to check this yourself
+
+See `REPRODUCE.md`, which was executed end to end on 2026-08-31 and quotes what
+it actually printed, with a table mapping each claim to the script that produces
+it. The two quickest:
+
+    python audit.py               # re-derives every checkable claim, sympy only
+    python verify_machinery.py    # recovers published g(k) with the search code
+
 ## Files in this directory
 
 * `REFERENCES.md`
+* `REPRODUCE.md`
 * `RESULTS.md`
+* `__pycache__/extend.cpython-312.pyc`
+* `__pycache__/geo.cpython-312.pyc`
+* `__pycache__/search.cpython-312.pyc`
 * `audit.py`
 * `check_two_classes.py`
 * `concentric.py`
