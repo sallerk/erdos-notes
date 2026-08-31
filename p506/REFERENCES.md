@@ -37,7 +37,9 @@ It verifies both witnesses, shows their designs are isomorphic (lines to lines,
 circles to circles), and shows the point sets are **not similar**. It checks no lower
 bound and does not claim m(8) = 17.
 
-An earlier draft asserted mzn's non-rationalizability remark was false. **That was
-withdrawn.** The similarity test showed the design has moduli, and mzn's descent is
-explicitly about similarities, so their argument can be correct for their own family
-while a rational realisation exists elsewhere in the moduli space.
+**It is not a refutation of mzn's non-rationalizability remark, and should not be read
+as one.** mzn's descent argument is explicitly about *similarities* of their own
+configuration. The similarity test here shows the design has moduli, so a rational
+realisation existing elsewhere in the moduli space is entirely compatible with that
+argument being correct. What the note establishes is narrower: the arithmetic
+obstruction attaches to the parametrisation, not to the configuration type.
