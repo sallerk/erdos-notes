@@ -65,7 +65,8 @@ statement are about the **pinned** maximum. The two agree at the trivial bound, 
 probably why they get run together. Any claim of the form "no non-trivial bound is known"
 should say which of the two functions is meant.
 
-The table shows the bound is **not** tight at `n = 4, 5, 6, 7`: the excess is `+1` at each.
+The table shows the bound is **not** tight at `n = 4, 5, 6, 7`: the excess is `+1` at
+`n = 4, 5, 6`, and at least `+1` at `n = 7`, where only the lower bound is known.
 That is weak evidence in the direction of (3), and it is the reason exact small values are
 worth having. It is only evidence: a bounded excess is exactly what a negative answer to
 (3) would also look like at small `n`.
@@ -178,18 +179,21 @@ removes 21.
 * `n = 7` and `n = 8` are open here, both bracketed as `[3, 4]`. Settling them means
   deciding whether `M = 3` is achievable. A single witness would close both (`f(8) = 3`
   would match the trivial bound exactly); a completed `m=3` enumeration would prove `= 4`.
-* Lattice searches found no `M = 3` configuration, but **only these sweeps actually
-  completed**, and the `n=7` coverage is much thinner than the `n=8` coverage:
+* Lattice searches found no `M = 3` configuration. **Every sweep below ran in mode `g`**,
+  and that matters: general position is the *stronger* hypothesis, so these searches explore
+  a strict subset of the mode-`n4` configuration space and a negative among them says
+  nothing whatever about `f_N4`. They bear on `f_G` only. Only these sweeps actually
+  completed, and the `n=7` coverage is much thinner than the `n=8` coverage:
 
-  | n | lattice | squared radius | target | shards complete | found |
-  |---|---|---|---|---|---|
-  | 5 | `A_2` | 49 | `M < 3` | 1/1 | none |
-  | 6 | `A_2` | 49 | `M < 3` | 1/1 | none |
-  | 7 | `A_2` | 49 | `M < 4` | 2/2 | none |
-  | 7 | `A_2` | 121 | `M < 4` | **0/2 — abandoned** | — |
-  | 8 | `A_2` | 49 | `M < 4` | 4/4 | none |
-  | 8 | `A_2` | 121 | `M < 4` | 3/3 | none |
-  | 8 | `Z^2` | 100 | `M < 4` | 2/2 | none |
+  | n | lattice | squared radius | mode | target | shards complete | found |
+  |---|---|---|---|---|---|---|
+  | 5 | `A_2` | 49 | `g` | `M < 3` | 1/1 | none |
+  | 6 | `A_2` | 49 | `g` | `M < 3` | 1/1 | none |
+  | 7 | `A_2` | 49 | `g` | `M < 4` | 2/2 | none |
+  | 7 | `A_2` | 121 | `g` | `M < 4` | **0/2 — abandoned** | — |
+  | 8 | `A_2` | 49 | `g` | `M < 4` | 4/4 | none |
+  | 8 | `A_2` | 121 | `g` | `M < 4` | 3/3 | none |
+  | 8 | `Z^2` | 100 | `g` | `M < 4` | 2/2 | none |
 
   So for `n = 7` the lattice statement is only "nothing in `A_2` within squared radius 49",
   with no `Z^2` sweep at all; the wider `R^2 = 121` run was killed to free cores and its
@@ -201,9 +205,13 @@ removes 21.
   and the `D_gen(5)` optimum is exactly such a configuration (#98 assumption A12).
 
 * The off-lattice search (`numM.py`) found no `M = 3` configuration either, in 12,600
-  restarts across `n=7` and `n=8`. **This is worth nothing as evidence, and the
+  restarts across `n=7` and `n=8`. Split by hypothesis: **10,000 in mode `g`** (3 seeds x
+  2,400 at `n=7`, 2 x 1,400 at `n=8`) and **2,600 in mode `n4`**, all at `n=7`. So `n=8` was
+  never searched under the weaker hypothesis at all, and the `n4` coverage is thin. **This is worth nothing as evidence, and the
   control is what shows it.** Run the same search at `n=6`, where an `M=3` configuration is
-  known and has been verified in exact coordinates: it finds **zero leads in 512 restarts**.
+  known and has been verified in exact coordinates: it finds **zero leads in 512 restarts** (`results/numM_n6_m3_g_s1.json`, the archived
+  run; the shorter 200-second run quoted in `REPRODUCE.md` reaches 284 restarts and also
+  finds none).
   A method that cannot find a solution known to exist cannot testify to the absence of one
   that might. An earlier version of this file claimed the negative was evidence for
   `f(7) = 4`; that claim was wrong and is withdrawn.
@@ -221,7 +229,11 @@ removes 21.
   `k`-class and the configuration admissible are separate conditions. The bug produced an
   apparent `M=3` configuration at `n=7` in mode `n4` with residual `4.4e-16`, in which
   classes 1 and 2 had collapsed to one value and classes 3 and 4 to another (so the six
-  classes were really four), and three quadruples were exactly concyclic. The exact decider
+  classes were really four), and **five** quadruples were concyclic. (Three of the five have
+  a 4x4 determinant that is exactly `0.0` in floating point and two are of order `1e-16`;
+  all five are far below the scale-normalised threshold `1e-9 * max(d^2)^2 = 8.6e-08`, so
+  all five are concyclic. An earlier version of this file said "three", which counted only
+  the exact float zeros and mistook a rounding artefact for a structural fact.) The exact decider
   rejected it. **Both** leads the `n=7` mode-`n4` search produced were degenerate in exactly
   this way: one claimed 6 classes and the other 5, both actually had only **4** distinct
   distances, and both had **5** concyclic quadruples. So `f_N4(7) = 3` is *not* established
@@ -233,7 +245,7 @@ removes 21.
   leads that survive the tightened test, the exact decider calls **three unsat**, and z3
   times out on all five at a 120-second cap, so the disagreement is unresolved: it could be
   false unsats from the decider's chain enumeration (the same incompleteness as #98's
-  assumption A8, and these patterns carry 6 to 10 classes, far beyond the sizes where that
+  assumption A8, and these patterns carry 7 to 10 classes, far beyond the sizes where that
   decider was validated) or near-solutions that a float residual of `1e-15` cannot
   distinguish from solutions. Nothing in the table above depends on these leads.
 

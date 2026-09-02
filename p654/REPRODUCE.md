@@ -108,8 +108,21 @@ No ordering is imposed on the class values (see the header of `pz3.py` for why t
 matters). Both modes must return `unsat`, giving `f(5) > 2`.
 
 ```
-  mode g :    unsat     1
-  mode n4:    unsat     1
+z3 on 1 patterns, n=5 mode=g
+  1 patterns, cap 120s, 1 workers -> wall ceiling 120s (0.0 h)
+   [  1/  1] unsat    [0, 0, 0, 1, 2, 2, 0, 2, 0, 0]
+
+   unsat     1
+   written: out_g.json
+```
+
+```
+z3 on 1 patterns, n=5 mode=n4
+  1 patterns, cap 120s, 1 workers -> wall ceiling 120s (0.0 h)
+   [  1/  1] unsat    [0, 0, 0, 1, 2, 2, 0, 2, 0, 0]
+
+   unsat     1
+   written: out_n4.json
 ```
 
 ## 5. The standalone audit
@@ -139,7 +152,13 @@ Pinned counts of the #98 witnesses in exact coordinates, then the improvement ob
 deleting points. This is where `M` and `D` visibly diverge: the `n=8` witness has `D=7` but
 `M=4`, better than the `D`-optimal `n=7` witness's `M=5`.
 
+`python pinned.py`, in full:
+
 ```
+==============================================================================
+PHASE 0 -- pinned distance counts M(X) of the verified #98 witnesses
+==============================================================================
+
   n   D   M = max_i d(x_i)   per-point counts        N3  N4  max on a circle
   --------------------------------------------------------------------------
   3    1    1                 [1, 1, 1]              ok  ok  2
@@ -150,6 +169,31 @@ deleting points. This is where `M` and `D` visibly diverge: the `n=8` witness ha
   7    5    5                 [3, 5, 4, 4, 4, 5, 4]  ok  ok  3
   8    7    4                 [3, 4, 4, 3, 4, 4, 4, 4] ok  ok  3
 
+  (row "4c" is the equilateral triangle plus its centre, added by hand)
+
+  Trivial lower bound under N4: every circle centred at x holds at most 3 other
+  points, so d(x) >= (n-1)/3 and therefore f(n) >= ceil((n-1)/3).
+
+  n   ceil((n-1)/3)   best upper bound from a witness above
+  --------------------------------------------------------------------------
+  3   1               1   (witness 3)   <-- SETTLED
+  4   1               2   (witness 4)
+  5   2               3   (witness 5)
+  6   2               4   (witness 6)
+  7   2               5   (witness 7)
+  8   3               4   (witness 8)
+
+  written: phase0_pinned.json
+```
+
+`python subsets.py`, in full. Note the `n=7` row: deleting a point from the `n=8` witness
+gives `M=4`, beating the `M=5` of the `D`-optimal `n=7` witness above.
+
+```
+==============================================================================
+UPPER BOUNDS BY DELETION from the verified #98 witnesses
+==============================================================================
+
   n   ceil((n-1)/3)   best M found   witness   subset
   --------------------------------------------------------------------
   3   1               1              4         (0, 1, 2)   <-- MATCHES THE BOUND
@@ -158,6 +202,16 @@ deleting points. This is where `M` and `D` visibly diverge: the `n=8` witness ha
   6   2               4              6         (0, 1, 2, 3, 4, 5)
   7   2               4              8         (0, 1, 2, 3, 4, 5, 6)
   8   3               4              8         (0, 1, 2, 3, 4, 5, 6, 7)
+
+  re-verifying each champion subset in exact coordinates:
+    n=3  M=1  D=1  pinned=[1, 1, 1]  collinear=0 cocircular=0  [OK]
+    n=4  M=2  D=2  pinned=[1, 1, 2, 2]  collinear=0 cocircular=0  [OK]
+    n=5  M=3  D=3  pinned=[2, 2, 3, 2, 2]  collinear=0 cocircular=0  [OK]
+    n=6  M=4  D=4  pinned=[3, 4, 4, 3, 4, 3]  collinear=0 cocircular=0  [OK]
+    n=7  M=4  D=6  pinned=[3, 4, 3, 3, 4, 4, 4]  collinear=0 cocircular=0  [OK]
+    n=8  M=4  D=7  pinned=[3, 4, 4, 3, 4, 4, 4, 4]  collinear=0 cocircular=0  [OK]
+
+  written: upper_by_deletion.json
 ```
 
 ## 7. The searches (long; not needed for any claim in the table)
@@ -168,8 +222,9 @@ python latM.py 8 121 a2 g 4 0 3      # one shard of the n=8 lattice sweep
 python numM.py 6 3 g 100000 1 200    # the off-lattice control, n=6
 ```
 
-The lattice controls must reproduce known pinned maxima. The `n=8` sweep takes roughly 45
-minutes per shard and finds nothing.
+The lattice controls must reproduce known pinned maxima. The three archived `n=8`
+`R^2=121` shards took 1637.9, 1500.9 and 1410.9 seconds, i.e. **23 to 27 minutes each**, and
+found nothing.
 
 **The `numM.py` control is the important one, and it FAILS to find a configuration that
 exists.** At `n=6` an `M=3` configuration is known and verified exactly (`results/
@@ -178,6 +233,11 @@ witness_n6_M3.json`), and the search finds nothing: zero leads in the 284 restar
 off-lattice negatives at `n=7` and `n=8` are reported in `NOTE.md` as carrying no
 evidential weight. It is quoted here precisely because it is a negative result about our
 own method.
+
+**Two of the three commands are quoted below**, `latM.py controls` and `numM.py`. The
+middle one, the `n=8 R^2=121` shard, is not: it runs for 23 to 27 minutes and its result is
+archived in `results/latM_n8_a2_g_R121_t4_s*.json` instead (`best_M: null`, `completed:
+true` for all three shards).
 
 The lattice controls in the same block did not always pass. An earlier version of
 `latM.py` expected `M <= 3` at `n=7`, which contradicts our own finding that no `M=3`
@@ -208,7 +268,7 @@ off-lattice search n=6, target M<=3, mode g, seed 1, budget 200.0s
 | `phase0_pinned.json`, `upper_by_deletion.json` | pinned counts of the #98 witnesses, and of every subset |
 | `witness_n6_M3.json` | the `n=6`, `M=3` configuration, exact-verified |
 | `penum_n*.json` | the enumerated pattern sets |
-| `pdec_n*_m2_*.json` | the per-pattern verdicts for the four rungs, both modes |
+| `pdec_n4_m1_*.json`, `pdec_n*_m2_*.json` | the per-pattern verdicts for the four rungs, both modes (the `n=4` rung is at `m=1`) |
 | `audit_n5_incon_*.json` | z3's verdicts on the one inconclusive pattern |
 | `latM_*.json` | every lattice shard, with its completion status |
 | `numM_*.json` | every off-lattice run, with restart counts and leads |

@@ -163,9 +163,20 @@ if __name__ == '__main__':
           % (n, R2, kind, mode, target, shard, nsh))
     fn = 'latM_n%d_%s_%s_R%d_t%d_s%d.json' % (n, kind, mode, R2, target, shard)
     b, s, nd, dt = search(n, R2, kind, mode, target, shard, nsh, ckpt=fn)
+    # 'completed' must not be hard-coded True: search() can leave the first-point loop
+    # early via its `1 >= best[0]` guard, in which case the shard did NOT exhaust its
+    # firsts and a stored True would misreport an incomplete sweep as exhaustive.  Read
+    # the flag back from the checkpoint the search itself wrote.
+    try:
+        done = json.load(open(fn))
+        finished = bool(done.get('completed'))
+        fdone, ftot = done.get('firsts_done'), done.get('firsts_total')
+    except Exception:
+        finished, fdone, ftot = False, None, None
     out = {'n': n, 'R2': R2, 'lattice': kind, 'mode': mode, 'target': target,
-           'shard': shard, 'nshards': nsh, 'best_M': (b if s else None), 'points': s,
-           'nodes': nd, 'seconds': round(dt, 1), 'completed': True}
+           'shard': shard, 'nshards': nsh, 'firsts_done': fdone, 'firsts_total': ftot,
+           'best_M': (b if s else None), 'points': s,
+           'nodes': nd, 'seconds': round(dt, 1), 'completed': finished}
     json.dump(out, open(fn, 'w'), indent=1)
     print('  shard COMPLETE: best M %s, nodes %d, %.1fs'
           % ((b if s else 'none found'), nd, dt))

@@ -1,16 +1,25 @@
 """Standalone audit of the #654 pinned-distance results.
 
-Re-derives every claim from scratch in exact arithmetic, sharing NO code with the scripts
-that produced them (nothing is imported from penum.py, pdecide.py, latM.py, numM.py or
-pinned.py).  Run:  python auditM.py
+Re-derives, in exact arithmetic and sharing NO code with the scripts that produced them
+(nothing is imported from penum.py, pdecide.py, latM.py, numM.py or pinned.py):
 
-Claims audited:
-    f(3) = 1, f(4) = 2, f(5) = 3, f(6) = 3     in both hypothesis modes
-    f(7), f(8) in [3, 4]
-    monotonicity of f, and the trivial bound f(n) >= ceil((n-1)/3)
-    the n=7, m=2 rung, by a structural argument that needs no solver at all
+    Run:  python audit654.py
+
+WHAT THIS AUDIT COVERS:
+    every upper-bound witness, from exact coordinates: its pinned counts, total count,
+        no-three-collinear and no-four-concyclic
+    monotonicity of f under deletion, and the trivial bound f(n) >= ceil((n-1)/3)
+    f(4) > 1, by the rank of the all-equal Gram matrix
+    f(7) > 2, by the structural argument, with no solver
+    the consistency of the published table with the two above and with the witnesses
+
+WHAT IT DOES NOT COVER, and must not be described as covering:
+    the lower bounds f(5) > 2 and f(6) > 2.  Those come from the pattern enumeration and
+    the Groebner/z3 deciders, and re-deriving them here would mean re-implementing exactly
+    the code this audit is supposed to be independent of.  Reproduce them with the commands
+    in REPRODUCE.md sections 3 and 4 instead.
 """
-import sys, itertools
+import sys, os, json, itertools
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 import sympy as sp
@@ -182,7 +191,14 @@ remark('the argument above uses no hypothesis beyond "at most 3 per circle", so 
        'holds in BOTH modes; that is a statement about the reasoning, not a computation')
 
 # cross-check: the pattern the enumerator produced really does have this structure
-PAT7 = (0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2)
+# Loaded from the enumerator's artifact, not transcribed: a hard-coded copy cannot
+# detect a future divergence, which is the one thing this cross-check exists to do.
+with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       'results', 'penum_n7_m2.json'), encoding='utf-8') as fh:
+    _blob = json.load(fh)
+ck('results/penum_n7_m2.json holds exactly one canonical pattern',
+   len(_blob['patterns']) == 1, 'holds %d' % len(_blob['patterns']))
+PAT7 = tuple(_blob['patterns'][0])
 PR = list(itertools.combinations(range(7), 2))
 cls = {}
 for e, pr in enumerate(PR):
@@ -196,7 +212,6 @@ isk4 = [c for c, (s, e, d) in shape.items() if (s, e, d) == (4, 6, [3])]
 isk33 = [c for c, (s, e, d) in shape.items() if (s, e, d) == (6, 9, [3])]
 ck('the single enumerated n=7,m=2 pattern is exactly two K_4 and one 3-regular 6-vertex '
    'class', len(isk4) == 2 and len(isk33) == 1, 'class shapes %s' % shape)
-sh = sorted(set(cls[isk4[0]][0]) | {v for pr in cls[isk4[0]] for v in pr})
 A = {v for pr in cls[isk4[0]] for v in pr}
 B = {v for pr in cls[isk4[1]] for v in pr}
 ck('and the two K_4 share exactly one vertex, as the argument requires',

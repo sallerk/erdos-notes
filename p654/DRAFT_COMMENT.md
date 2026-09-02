@@ -12,9 +12,12 @@ distance degrees over UNRESTRICTED sets, (Sigma_3..Sigma_8) = (3,6,10,15,19,24).
 ~90%, resting on searches failing to find them; its full text is behind a 403 and only the
 zbMATH review was read, and Brass-Moser-Pach was readable only in snippet view.
 
-Before posting, note forum Rules 1 and 2: audit654.py re-derives every claim below from
-scratch in exact arithmetic, sharing no code with the searches that produced them, and
-prints ALL CHECKS PASSED.
+Before posting, note forum Rules 1 and 2. audit654.py re-derives, in exact arithmetic and
+sharing no code with the searches that produced them: every witness and its pinned counts,
+monotonicity, the trivial bound, $f(4)>1$, and the whole structural argument for $f(7)>2$;
+it prints ALL CHECKS PASSED. It does NOT re-derive $f(5)>2$ and $f(6)>2$, which rest on the
+pattern enumeration and the exact decider (with one pattern settled by z3); those are
+reproduced by the commands in REPRODUCE.md instead.
 
 ---
 

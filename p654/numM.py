@@ -1,7 +1,10 @@
 """Off-lattice search for a configuration with a small PINNED maximum, for Erdos #654.
 
-WHY THIS AND NOT MORE LATTICE.  latM.py has now swept A_2 to squared radius 121 and Z^2
-to 100 at n=7 and n=8 with no M=3 hit.  That is much weaker evidence than it looks: every
+WHY THIS AND NOT MORE LATTICE.  latM.py found no M=3 hit in any completed sweep.  Be
+precise about which sweeps those are, because the coverage is uneven: A_2 to squared radius
+121 completed at n=8 only (at n=7 both R121 shards were abandoned at 3 firsts of 23 and 22),
+and the only Z^2 sweep, to radius 100, was also n=8.  At n=7 the completed lattice coverage
+is A_2 to radius 49 and nothing else.  Every sweep ran in mode 'g'.  That is much weaker evidence than it looks: every
 squared distance in either lattice is an integer, so no configuration whose distance
 ratios are irrational can ever appear there, and the extremal 5-point configuration for
 the #98 problem is exactly of that kind (its squared distances are 1, 2+sqrt3, 4+2sqrt3).
@@ -195,7 +198,8 @@ if __name__ == '__main__':
             # collinear triples, and it produced a false lead at n=7: a configuration whose
             # polish residual was 4.4e-16 but in which classes 1 and 2 had collapsed to the
             # same value, classes 3 and 4 likewise (so the "6 classes" were really 4), and
-            # three quadruples were exactly concyclic.  The exact decider rejected it.  A
+            # five quadruples were concyclic (three with a float-exact zero determinant and
+            # two of order 1e-16, all far below the threshold used below).  The exact decider rejected it.  A
             # tiny residual only says the points fit the EQUALITIES; it says nothing about
             # the INEQUALITIES that make the pattern and the hypothesis meaningful.  Both
             # are now tested here.

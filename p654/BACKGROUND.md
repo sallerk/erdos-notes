@@ -4,7 +4,10 @@ Written before any computation, per the standing rule that the literature comes 
 (lesson L53: substitute your own `n` into the published bounds *before* spending compute).
 Everything below is read at source or explicitly flagged as unverified.
 
-**Status: no calculations started.** #98 must complete first.
+**Status when first written: no calculations started; #98 had to complete first.** The
+file has since been updated in place with material that post-dates the computation, namely
+the #655 resolution in section 0 and the cross-references to `PAGE_NOTES.md`. Sections 1-12
+otherwise stand as written before any calculation.
 
 ---
 
