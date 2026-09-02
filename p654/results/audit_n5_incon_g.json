@@ -1,0 +1,29 @@
+{
+ "n": 5,
+ "mode": "g",
+ "cap": 120,
+ "done": 1,
+ "total": 1,
+ "counts": {
+  "unsat": 1
+ },
+ "seconds": 14.3,
+ "results": [
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    2,
+    2,
+    0,
+    2,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "model": null
+  }
+ ]
+}

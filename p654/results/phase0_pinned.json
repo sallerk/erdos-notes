@@ -1,0 +1,109 @@
+{
+ "3": {
+  "n": 3,
+  "D": 1,
+  "M": 1,
+  "pinned": [
+   1,
+   1,
+   1
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 2
+ },
+ "4": {
+  "n": 4,
+  "D": 2,
+  "M": 2,
+  "pinned": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 3
+ },
+ "4c": {
+  "n": 4,
+  "D": 2,
+  "M": 2,
+  "pinned": [
+   2,
+   2,
+   2,
+   1
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 3
+ },
+ "5": {
+  "n": 5,
+  "D": 3,
+  "M": 3,
+  "pinned": [
+   2,
+   2,
+   3,
+   2,
+   2
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 3
+ },
+ "6": {
+  "n": 6,
+  "D": 4,
+  "M": 4,
+  "pinned": [
+   3,
+   4,
+   4,
+   3,
+   4,
+   3
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 3
+ },
+ "7": {
+  "n": 7,
+  "D": 5,
+  "M": 5,
+  "pinned": [
+   3,
+   5,
+   4,
+   4,
+   4,
+   5,
+   4
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 3
+ },
+ "8": {
+  "n": 8,
+  "D": 7,
+  "M": 4,
+  "pinned": [
+   3,
+   4,
+   4,
+   3,
+   4,
+   4,
+   4,
+   4
+  ],
+  "collinear_triples": 0,
+  "cocircular_quads": 0,
+  "max_equidistant_from_a_point": 3
+ }
+}

@@ -1,0 +1,256 @@
+{
+ "n": 6,
+ "m": 2,
+ "mode": "n4",
+ "done": 11,
+ "total": 11,
+ "counts": {
+  "sat": 0,
+  "unsat": 11,
+  "inconclusive": 0
+ },
+ "detail": [
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    2,
+    0,
+    2,
+    0,
+    2,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or the no-4-concyclic rule",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    0,
+    0,
+    2,
+    0,
+    0,
+    0,
+    0,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or the no-4-concyclic rule",
+   "points": null
+  }
+ ]
+}

@@ -1,0 +1,41 @@
+{
+ "n": 7,
+ "mode": "n4",
+ "cap": 240,
+ "done": 1,
+ "total": 1,
+ "counts": {
+  "unsat": 1
+ },
+ "seconds": 3.4,
+ "results": [
+  {
+   "pattern": [
+    3,
+    3,
+    5,
+    0,
+    0,
+    3,
+    3,
+    4,
+    4,
+    0,
+    0,
+    0,
+    0,
+    1,
+    0,
+    4,
+    4,
+    0,
+    0,
+    2,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or the no-4-concyclic rule",
+   "points": null
+  }
+ ]
+}

@@ -1,0 +1,252 @@
+{
+ "n": 5,
+ "m": 2,
+ "mode": "g",
+ "done": 14,
+ "total": 14,
+ "counts": {
+  "sat": 0,
+  "unsat": 13,
+  "inconclusive": 1
+ },
+ "detail": [
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1,
+    2
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    2,
+    2
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    1,
+    0,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    2,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or general position",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    1,
+    2,
+    2,
+    2
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or general position",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    0,
+    2,
+    1,
+    1,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "no real solutions",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    1,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or general position",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    2,
+    2,
+    0,
+    2,
+    0,
+    0
+   ],
+   "verdict": "inconclusive",
+   "info": "basis not triangular / root-finding failed",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    1,
+    1,
+    0,
+    1,
+    1,
+    2,
+    2,
+    2
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or general position",
+   "points": null
+  },
+  {
+   "pattern": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "every real branch fails positivity, distinctness, planarity or general position",
+   "points": null
+  }
+ ]
+}

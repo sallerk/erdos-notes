@@ -1,0 +1,272 @@
+{
+ "3": {
+  "M": 1,
+  "D": 1,
+  "pinned": [
+   1,
+   1,
+   1
+  ],
+  "source": "4",
+  "subset": [
+   0,
+   1,
+   2
+  ],
+  "points": [
+   [
+    "Integer(0)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(-1)",
+    "Integer(0)"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ]
+  ],
+  "general_position": true
+ },
+ "4": {
+  "M": 2,
+  "D": 2,
+  "pinned": [
+   1,
+   1,
+   2,
+   2
+  ],
+  "source": "4",
+  "subset": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "points": [
+   [
+    "Integer(0)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(-1)",
+    "Integer(0)"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Integer(-1), Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ]
+  ],
+  "general_position": true
+ },
+ "5": {
+  "M": 3,
+  "D": 3,
+  "pinned": [
+   2,
+   2,
+   3,
+   2,
+   2
+  ],
+  "source": "5",
+  "subset": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "points": [
+   [
+    "Integer(0)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(1)",
+    "Integer(0)"
+   ],
+   [
+    "Rational(1, 2)",
+    "Mul(Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Mul(Integer(-1), Rational(1, 2), Pow(Integer(3), Rational(1, 2)))",
+    "Rational(-1, 2)"
+   ],
+   [
+    "Rational(1, 2)",
+    "Add(Integer(-1), Mul(Integer(-1), Rational(1, 2), Pow(Integer(3), Rational(1, 2))))"
+   ]
+  ],
+  "general_position": true
+ },
+ "6": {
+  "M": 4,
+  "D": 4,
+  "pinned": [
+   3,
+   4,
+   4,
+   3,
+   4,
+   3
+  ],
+  "source": "6",
+  "subset": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5
+  ],
+  "points": [
+   [
+    "Integer(0)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(-1)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(0)",
+    "Pow(Integer(3), Rational(1, 2))"
+   ],
+   [
+    "Rational(-5, 2)",
+    "Mul(Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Integer(-2)",
+    "Pow(Integer(3), Rational(1, 2))"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Rational(3, 2), Pow(Integer(3), Rational(1, 2)))"
+   ]
+  ],
+  "general_position": true
+ },
+ "7": {
+  "M": 4,
+  "D": 6,
+  "pinned": [
+   3,
+   4,
+   3,
+   3,
+   4,
+   4,
+   4
+  ],
+  "source": "8",
+  "subset": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6
+  ],
+  "points": [
+   [
+    "Integer(0)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(-1)",
+    "Integer(0)"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Integer(-1), Rational(3, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(1, 2)",
+    "Mul(Integer(-1), Rational(3, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(5, 2)",
+    "Mul(Integer(-1), Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Integer(-3)",
+    "Mul(Integer(-1), Pow(Integer(3), Rational(1, 2)))"
+   ]
+  ],
+  "general_position": true
+ },
+ "8": {
+  "M": 4,
+  "D": 7,
+  "pinned": [
+   3,
+   4,
+   4,
+   3,
+   4,
+   4,
+   4,
+   4
+  ],
+  "source": "8",
+  "subset": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "points": [
+   [
+    "Integer(0)",
+    "Integer(0)"
+   ],
+   [
+    "Integer(-1)",
+    "Integer(0)"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(-1, 2)",
+    "Mul(Integer(-1), Rational(3, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(1, 2)",
+    "Mul(Integer(-1), Rational(3, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Rational(5, 2)",
+    "Mul(Integer(-1), Rational(1, 2), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Integer(-3)",
+    "Mul(Integer(-1), Pow(Integer(3), Rational(1, 2)))"
+   ],
+   [
+    "Integer(0)",
+    "Mul(Integer(-1), Integer(2), Pow(Integer(3), Rational(1, 2)))"
+   ]
+  ],
+  "general_position": true
+ }
+}

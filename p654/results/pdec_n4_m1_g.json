@@ -1,0 +1,27 @@
+{
+ "n": 4,
+ "m": 1,
+ "mode": "g",
+ "done": 1,
+ "total": 1,
+ "counts": {
+  "sat": 0,
+  "unsat": 1,
+  "inconclusive": 0
+ },
+ "detail": [
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "verdict": "unsat",
+   "info": "one class: all C(n,2) distances equal, impossible for n >= 4",
+   "points": null
+  }
+ ]
+}

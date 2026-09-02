@@ -1,0 +1,42 @@
+{
+ "n": 7,
+ "m": 2,
+ "mode": "g",
+ "done": 1,
+ "total": 1,
+ "counts": {
+  "sat": 0,
+  "unsat": 1,
+  "inconclusive": 0
+ },
+ "detail": [
+  {
+   "pattern": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0,
+    1,
+    1,
+    1,
+    0,
+    1,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2,
+    2,
+    2
+   ],
+   "verdict": "unsat",
+   "info": "ideal is trivial: no complex solutions at all",
+   "points": null
+  }
+ ]
+}

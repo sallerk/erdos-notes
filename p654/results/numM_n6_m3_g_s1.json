@@ -1,0 +1,10 @@
+{
+ "n": 6,
+ "m": 3,
+ "mode": "g",
+ "seed": 1,
+ "restarts_done": 512,
+ "best_obj": 3.9997879168031216e-08,
+ "leads": [],
+ "finished": true
+}
