@@ -11,7 +11,7 @@ from a 4x4 determinant, distances as exact algebraic numbers.
 
 Usage:  python verify.py
 """
-import sys, itertools, json, glob, os
+import sys, os, itertools, json, glob, os
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 import sympy as sp
@@ -104,11 +104,40 @@ W5 = [(sp.Integer(0), sp.Integer(0)), (sp.Integer(1), sp.Integer(0)),
       (sp.Rational(1, 2), -(2 + r3) / 2)]
 check_set(W5, 'solver witness n=5 (algebraic, Q(sqrt3))', 3)
 
-# every lattice witness on disk
-for fn in sorted(glob.glob('latmin_n*.json')):
+# Every lattice witness on disk.  The glob searches results/ as well as the cwd: an
+# earlier version looked only in the cwd, so when run from the repository root it found
+# NOTHING, checked only the algebraic n=5 witness above, and still printed "ALL WITNESSES
+# VERIFIED".  A verifier that silently verifies less than it claims is worse than none, so
+# the count is now asserted rather than left implicit.
+HERE = os.path.dirname(os.path.abspath(__file__))
+cands = sorted(set(glob.glob('latmin_n*.json')
+                   + glob.glob(os.path.join(HERE, 'latmin_n*.json'))
+                   + glob.glob(os.path.join(HERE, 'results', 'latmin_n*.json'))))
+seen = set()
+nlat = 0
+for fn in cands:
+    if os.path.basename(fn) in seen:
+        continue
+    seen.add(os.path.basename(fn))
     d = json.load(open(fn))
     P = to_plane([tuple(p) for p in d['points']], d['lattice'])
-    check_set(P, '%s  (lattice %s, R2=%d)' % (fn, d['lattice'], d['R2']), d['distinct'])
+    check_set(P, '%s  (lattice %s, R2=%d)'
+              % (os.path.basename(fn), d['lattice'], d['R2']), d['distinct'])
+    nlat += 1
+
+# the n=8 witness lives in its own file and was never covered by the glob at all
+for w8 in (os.path.join(HERE, 'results', 'witness_n8.json'),
+           os.path.join(HERE, 'witness_n8.json'), 'witness_n8.json'):
+    if os.path.exists(w8):
+        d = json.load(open(w8))
+        P = to_plane([tuple(p) for p in d['points']], d['lattice'])
+        check_set(P, 'witness_n8.json  (lattice %s)' % d['lattice'], d['distinct'])
+        nlat += 1
+        break
+
+if nlat < 4:
+    FAIL.append('only %d witness file(s) found; expected the four lattice witnesses plus '
+                'the n=8 witness. Run this from the p98 directory.' % nlat)
 
 print()
 print('=' * 74)

@@ -54,7 +54,12 @@ the integer embedding the search used.
 ## A7. z3's verdicts are sound
 
 z3's `nlsat` is a decision procedure for real closed fields, so both `sat` and `unsat`
-are proofs; only `unknown` is uninformative. Used for 4 of the 7 surviving n=7 candidates.
+are proofs; only `unknown` is uninformative. **But the 4 verdicts this was used for at
+n=7 came from `z3run.py`, whose class-ordering constraint makes its unsat verdicts
+non-proofs (A8), and they were never re-run without it.** That is moot for the result,
+since section 3j retires the whole z3 stage and disposes of all 28 candidates with lemmas
+plus monotonicity; it is recorded because the label "sound" on that stage is wrong as
+written.
 **Status: CITED** (standard property of the algorithm).
 
 ## A8. `hard.py`'s unsat verdicts are sound; THE WEAKEST LINK
@@ -62,7 +67,10 @@ are proofs; only `unknown` is uninformative. Used for 4 of the 7 surviving n=7 c
 `hard.py` reports unsat when the Groebner basis is trivial (sound), or when its triangular
 chain finds no admissible real branch (sound only if the chain enumeration is complete).
 Its predecessor `gram.py` was caught emitting FALSE unsats, so this was tested rather than
-assumed. All **153** n=5,k=4 patterns `hard.py` called unsat were re-decided.
+assumed. `hard.py` returned **198** unsat verdicts at n=5,k=4 (of 449;
+`results/xcheck_n5_k4.json`); the **153** whose rejection rests on A8 rather than on a
+trivial ideal were re-decided. An earlier version of this file said "all 153 patterns
+hard.py called unsat", which conflated the subset with the whole.
 
 **A DESIGN FAULT IN THE CHECK ITSELF, found while working on #654.** `z3run.py` adds
 `d_0 < d_1 < ... < d_{k-1}` to its encoding. But the patterns it is fed are CANONICAL
@@ -145,7 +153,12 @@ than 4 classes and die by A3, 4 were decided by z3 (A7), 2 by the equilateral-ce
 lemma, and 1 by a trivial Groebner ideal. **Re-derived since:** all 28 fall to the
 combinatorial lemmas plus monotonicity alone, with no solver, and L3 independently rejects
 the pattern the Groebner argument killed.
-**Status: PROVED**, and now independent of A8.
+**Status: PROVED for the disposal, CONDITIONAL for the generation.** The 28 candidates
+are disposed of without a solver, so that half is independent of A8. But the 28 were
+*generated* by augmenting the cleaned n=6 seed set, which was pruned with `hard.py`
+verdicts; a false unsat among the 96 still resting on A8 could mean a 29th candidate was
+never generated. An earlier version of this line read "PROVED, and now independent of A8",
+which contradicted A8 four lines above and overstated exactly the dependency A8 records.
 
 ## A14. Novelty
 

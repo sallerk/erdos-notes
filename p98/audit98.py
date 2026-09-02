@@ -126,18 +126,24 @@ for n in sorted(WIT):
         worst = max(worst, max(cnt.values()))
 ck('no point of any witness has 4 others equidistant from it', worst <= 3,
    'max multiplicity %d' % worst)
-for n in (4, 7, 10, 100, 1000):
-    pass
-ck('the bound ceil((n-1)/3) is LINEAR, so Guth-Katz (n/log n) is not the binding '
-   'constraint here', all(-(-(n - 1) // 3) >= 1 for n in range(4, 50)))
+
+# This was ck('... Guth-Katz is not the binding constraint ...',
+# all(ceil((n-1)/3) >= 1 for n in 4..49)) -- an assertion that is trivially true and has
+# nothing to do with the sentence it printed.  The real content is a comparison of growth
+# rates, so it is asserted as one: ceil((n-1)/3) exceeds n/log2(n) for all n past a small
+# threshold, hence the linear bound is the binding one.
+import math
+_bind = [n for n in range(16, 4000) if -(-(n - 1) // 3) <= n / math.log2(n)]
+ck('ceil((n-1)/3) exceeds n/log2(n) for every 16 <= n < 4000, so the LINEAR bound is the '
+   'binding constraint here, not Guth-Katz', not _bind,
+   'exceptions: %s' % (_bind[:5],))
 print('   Counting cannot beat 1/3: with m(p,d)<=3 and t(p) classes at p,')
 print('     sum_d C(m,2) = (n-1-t(p)) + a(p)   where a(p) = #classes of size 3,')
 print('   while each pair has at most 2 apexes (perpendicular bisector is a line and no')
 print('   three points are collinear), so I <= 2*C(n,2) = n(n-1).  Combining gives')
 print('     sum_p a(p) <= sum_p t(p),')
 print('   which is true by definition.  VACUOUS.')
-ck('a(p) <= t(p) holds termwise by definition, so the combined inequality is vacuous',
-   True)
+remark('a(p) <= t(p) holds termwise by definition, so the combined inequality is vacuous')
 
 # --------------------------------------------------------------------------- 4
 print()
@@ -153,7 +159,9 @@ ck('and they are at squared distance 3 from each other, not 1, so no 4th point e
 
 # --------------------------------------------------------------------------- 5
 print()
-print('5. D_gen(5) > 2: the pentagon pattern is the only survivor, and it is cocircular.')
+print('5. D_gen(5) > 2: the pentagon eliminant and its roots.')
+print('   (This section checks the algebra. That the pentagon is the ONLY survivor of the')
+print('    18 patterns is established by pentagon.py, not re-enumerated here.)')
 u = sp.symbols('u', real=True)
 x2, y2, x3, y3, x4, y4, t = sp.symbols('x2 y2 x3 y3 x4 y4 t', real=True)
 Q = {0: (sp.Integer(0), sp.Integer(0)), 1: (sp.Integer(1), sp.Integer(0)),
@@ -179,7 +187,11 @@ print('    above are the regular pentagon and the pentagram, both inscribed in a
 
 # --------------------------------------------------------------------------- 6
 print()
-print('6. D_gen(6) > 3: the only surviving pattern is six vertices of a regular heptagon.')
+print('6. D_gen(6) > 3: the heptagon-minus-a-vertex pattern.')
+print('   (NOTE: this pattern comes from the SUPERSEDED gram-seeded run of section 3c.')
+print('    The corrected three-candidate set of section 3e does NOT contain it; see')
+print('    results/six2_result.json. It is checked here because the algebra is still a')
+print('    valid independent exercise, not because it is one of the live candidates.)')
 PAIRS6 = list(itertools.combinations(range(6), 2))
 hept = tuple(min(abs(i - j), 7 - abs(i - j)) - 1 for (i, j) in PAIRS6)
 cand = (0, 0, 1, 1, 2, 1, 0, 2, 1, 2, 0, 2, 2, 0, 1)
@@ -283,8 +295,13 @@ has_b = any(sp.simplify(m - sp.Rational(3, 8) * (u - 10)) == 0 or
             sp.simplify(m + sp.Rational(3, 8) * (u - 10)) == 0 for m in mins)
 ck('its 3x3 Gram minors include a multiple of (2u - 11)', has_a)
 ck('and a multiple of (u - 10)', has_b)
-ck('both must vanish, forcing u = 11/2 and u = 10 at once: impossible',
-   sp.Rational(11, 2) != sp.Integer(10))
+# Was ck('both must vanish ...', Rational(11,2) != 10) -- a tautology that tested the
+# distinctness of two numbers, not the claim.  Assert the actual content: the two minors
+# have no common root, so the ideal they generate is trivial.
+_gb = sp.groebner([sp.Rational(3, 8) * (2 * u - 11), sp.Rational(3, 8) * (u - 10)],
+                  u, order='lex')
+ck('the two minors generate the trivial ideal, so they cannot both vanish',
+   list(_gb.exprs) == [sp.Integer(1)], 'basis %s' % (list(_gb.exprs),))
 GB7 = sp.groebner(sorted(mins, key=sp.count_ops), v, u, order='lex')
 ck('the lex Groebner basis is [1]: no solution even over C',
    list(GB7.exprs) == [sp.Integer(1)], str(list(GB7.exprs))[:60])
@@ -322,7 +339,7 @@ print('   * D_gen(8) is NOT settled: 5 <= D_gen(8) <= 7.  The upper bound is a')
 print('     verified witness; 6 is merely UNFOUND, not excluded.  Ruling out 5- and')
 print('     6-class patterns at n=8 is beyond the current decider (4-5 unknowns).')
 print('   * Nothing here bears on whether D_gen(n)/n -> infinity, the actual content')
-print('     of Erdos #98.  Section 3 shows counting alone cannot even beat the')
+print('     of Erdos #98.  NOTE.md sections 2 and 2a show counting alone cannot beat the')
 print('     constant 1/3, which has stood since Szemeredi in the 1970s.')
 print('   * The small values appear to be unpublished, but that rests on a literature')
 print('     search failing to find them, which is weaker than knowing they are absent.')

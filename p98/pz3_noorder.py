@@ -15,7 +15,7 @@ THREE THINGS THIS FIXES relative to p98/z3run.py.
 
 (2) THE PER-PATTERN CAP IS REAL.  z3's `timeout` parameter is advisory: nlsat does not
     poll for cancellation inside deep real-algebraic arithmetic.  On the last #98 run it
-    overran by 95% (87,797 CPU-seconds spent against a 45,000 ceiling).  Here each pattern
+    overran by 95% (87,797 worker-seconds occupied (6 workers x 14,632.9 s wall; about 85,000 CPU-seconds at the 0.967 utilisation measured mid-run) against a 45,000 ceiling).  Here each pattern
     runs in its own child process which is TERMINATED by wall clock, so the ceiling
     `len(pats) * cap / workers` is a bound that actually holds.
 
@@ -27,7 +27,7 @@ MODES.  'g' is general position.  'n4' forbids only genuinely concyclic quadrupl
 4x4 determinant also vanishes for collinear quadruples, which under #654's own hypothesis
 are legal, so the constraint is "determinant nonzero OR all four collinear".
 
-Usage:  python pz3.py <n> <mode> <candfile> <outfile> [cap_seconds] [workers]
+Usage:  python pz3_noorder.py <n> <mode> <candfile> <outfile> [cap_seconds] [workers]
 """
 import sys, os, json, time, itertools
 import multiprocessing as mpr

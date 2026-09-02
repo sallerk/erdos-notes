@@ -5,8 +5,8 @@ Two elementary consequences of the computed table, both checkable here.
 PART 1.  Monotonicity beats the published bound in a range.
 D_gen is non-decreasing (deleting a point keeps general position and cannot add
 distances), so an exact value at m is a lower bound for every n >= m.  The published
-lower bound is Szemeredi's ceil((n-1)/3).  Since D_gen(6) = 4 and (n-1)/3 does not reach
-4 until n = 13, the computed values give a STRICTLY BETTER lower bound for a range of n.
+lower bound is Szemeredi's ceil((n-1)/3).  Since D_gen(7) = 5 and ceil((n-1)/3) does not
+reach 5 until n = 14, the computed values give a STRICTLY BETTER lower bound on 4 <= n <= 13.
 
 PART 2.  The extremal profile is far more rigid than the counting suggests.
 To attain D_gen(n) = (n-1)/3 exactly, every point must see every one of the (n-1)/3
@@ -35,7 +35,7 @@ def ck(label, ok, detail=''):
         FAIL.append(label)
 
 
-EXACT = {3: 1, 4: 2, 5: 3, 6: 4}          # proved; 7 is 4 or 5, not used here
+EXACT = {3: 1, 4: 2, 5: 3, 6: 4, 7: 5}    # all proved; see NOTE.md 3c, 3h, 3j
 
 
 def pigeon(n):
@@ -64,13 +64,14 @@ for n in range(4, 20):
     print('  %3d   %11d   %12d   %s' % (n, p, b, mark))
 print()
 ck('D_gen(6) = 4 exceeds ceil(5/3) = 2', EXACT[6] > pigeon(6))
-ck('the computed values give a STRICTLY better lower bound on the window 4..10',
-   gain == list(range(4, 11)), 'range %s' % gain)
-print('   So the small table is not only data: for 4 <= n <= 10 it is the best known')
-print('   lower bound, beating Szemeredi in that window.')
+ck('the computed values give a STRICTLY better lower bound on the window 4..13',
+   gain == list(range(4, 14)), 'range %s' % gain)
+print('   So the small table is not only data: for 4 <= n <= 13 it is the best known')
+print('   lower bound, beating Szemeredi in that window.  ceil((n-1)/3) does not reach 5')
+print('   until n = 14, which is where the window closes.')
 print()
-print('   And each further exact value extends the window:')
-for hyp, name in ((5, 'if D_gen(7) = 5'), (6, 'if D_gen(8) = 6')):
+print('   And a further exact value would extend it:')
+for hyp, name in ((6, 'if D_gen(8) = 6'),):
     m = 7 if hyp == 5 else 8
     last = max(n for n in range(m, 40) if pigeon(n) < hyp)
     print('     %-18s then D_gen(n) >= %d for n >= %d, beating the bound up to n = %d'
@@ -92,8 +93,15 @@ ck('for n = 4 mod 6, ((n-1)/3) classes x 3n/2 edges = C(n,2) exactly', ok_edges)
 # which is not a whole number when n is odd, so no such graph exists.
 ck('odd n is excluded by parity, not by counting: 3n/2 is not an integer',
    all((3 * n) % 2 == 1 for n in (7, 13, 19, 25)))
-ck('and the total-edge identity itself is vacuous, holding for every n',
-   all(((n - 1) * 3 * n) == 3 * n * (n - 1) for n in range(4, 60)))
+# This was ck('the identity is vacuous', all((n-1)*3*n == 3*n*(n-1))) -- i.e. a*b == b*a,
+# a tautology dressed as a check.  The content is that the identity carries no arithmetic
+# obstruction, which is shown by exhibiting odd n where it holds yet no 3-regular graph
+# exists; that, not commutativity, is the point.
+_odd_ok = [n for n in range(5, 60, 2)
+           if ((n - 1) * 3 * n) == 3 * n * (n - 1) and (3 * n) % 2 == 1]
+ck('the edge identity holds for odd n too, so it is NOT what excludes them: %d such n '
+   'in 5..59, every one blocked instead by 3n/2 being non-integral' % len(_odd_ok),
+   len(_odd_ok) == len(range(5, 60, 2)))
 ck('3-regular needs n even; (n-1)/3 integral needs n = 1 mod 3; together n = 4 mod 6',
    all((n % 2 == 0 and n % 3 == 1) == (n % 6 == 4) for n in range(1, 400)))
 att = [n for n in range(4, 40) if n % 6 == 4]
@@ -113,9 +121,10 @@ for n in att[:4]:
 ck('n = 10 is ruled out: (10-1)/3 = 3 but D_gen(10) >= D_gen(6) = 4',
    best_known(10) > (10 - 1) // 3)
 print()
-print('   n = 16 is the first case monotonicity does NOT settle: it needs D_gen(16) = 5,')
-print('   and we only know D_gen(16) >= 4. Settling D_gen(7) = 5 would rule it out too,')
-print('   since then D_gen(16) >= 5 would have to be EQUALITY, forcing the rigid')
+print('   n = 16 is the first case monotonicity does NOT settle: attaining (n-1)/3 there')
+print('   needs D_gen(16) = 5 exactly, and D_gen(7) = 5 gives D_gen(16) >= 5.')
+print('   So D_gen(7) = 5 does NOT rule n = 16 out; it forces EXACT EQUALITY there,')
+print('   which is a sharper constraint than a bound, since equality forces the rigid')
 print('   3-regular profile at n = 16 -- a strong, checkable structure.')
 
 print()

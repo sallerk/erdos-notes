@@ -13,8 +13,9 @@ verified here**, and what is **still open in this working directory**.
 ## 1. Where the literature actually stands (verified at source)
 
 * **Lower bound: `D_gen(n) ≥ ⌈(n−1)/3⌉`, and nothing better is published.** Due to
-  **Szemerédi** (unpublished, communicated by Erdős in [Er75f]). It requires only *no
-  three collinear*. Sheffer's survey, Table 1, lists the `D_gen(n)` lower bound as
+  **Szemerédi** (unpublished). The `(n−1)/3` form is stated in Erdős–Hickerson–Pach 1989,
+  p. 571; [Er75f] p. 101 prints `[n/3]` for a *pinned* quantity, a form discrepancy recorded
+  in `REFERENCES.md`. It requires only *no three collinear*. Sheffer's survey, Table 1, lists the `D_gen(n)` lower bound as
   **"Ω(n) (trivial)"** and notes `D_gen(n) ≥ D_no3(n) = Ω(n)`.
   → arXiv:1406.1949
 * **The no-four-cocircular hypothesis buys nothing published.** Every published lower
@@ -150,9 +151,13 @@ point.
 Method. Upper bounds come from explicit witnesses, which are certificates valid however
 they were found: exhaustive lattice search (`latmin.py`, exact integers, square and
 triangular lattices) and a real-closed-field solver (`direct.py`, `witness.py`). Lower
-bounds come from deciding realisability over ℝ: `direct.py` encodes the whole question
-as one formula (each pairwise distance must equal one of `k` class variables, plus
-non-collinearity and non-cocircularity), so UNSAT means `D_gen(n) > k`.
+bounds come from deciding realisability over ℝ. The first attempt, `direct.py`, encodes
+the whole question as one formula (each pairwise distance must equal one of `k` class
+variables, plus non-collinearity and non-cocircularity), so that UNSAT would mean
+`D_gen(n) > k`. **That attempt failed** and supports none of the lower bounds here: it
+returned UNKNOWN after 872 s on a provably unsatisfiable instance (section 3b,
+`results/direct_n5_k2.json`). The lower bounds actually come from the pattern enumeration
+plus the Gram rank-2 decider (`hard.py`), with `pz3_noorder.py` as the sound cross-check.
 
 Every witness is re-checked by `verify.py`, which converts to **real plane coordinates**
 and redoes collinearity, cocircularity and distance counts symbolically in sympy, sharing
@@ -244,7 +249,8 @@ with ratio 1 : (2 - sqrt 3), distinct from the diamond's 1 : 3.
 ### 3c. `D_gen(6) = 4`
 
 **Augmentation collapses the question to a single pattern.** Seeding from the 5-point
-patterns that are not provably unsatisfiable (1 sat, 2 undecided, minus the pentagon
+patterns that are not provably unsatisfiable (1 sat, 3 undecided per
+`results/sweep_n5_k3.json`, minus the pentagon
 which §3a refutes) and extending by a sixth point leaves, after the subset filter,
 **exactly one** canonical 6-point 3-class candidate out of the 3^15 = 14,348,907 raw
 colourings. Its three distance classes are each a Hamiltonian path on the six points:
@@ -289,7 +295,13 @@ branches were silently discarded as non-real. The roots are all real. Redone wit
 The verdict is unchanged; the reasoning that first produced it was not sound.
 
 
-### 3d. `D_gen(7)`: not settled, and what the evidence says
+### 3d. `D_gen(7)`: SUPERSEDED by sections 3h and 3j
+
+> **This section records the state before `D_gen(7) = 5` was proved.** Its verdict of
+> "unknown" for `n=7, k=4`, and its reading of the numerical evidence, were both overtaken:
+> section 3h settles the case and section 3j re-derives it with no solver. The section is
+> kept because the calibration data in it is still the honest record of what the search
+> looked like beforehand, but nothing below should be read as a current claim.
 
 `D_gen(7) >= D_gen(6) = 4` by monotonicity, and a triangular-lattice witness with squared
 distances `{1,7,12,13,19}` gives `<= 5` (verified independently in real plane coordinates:
@@ -317,7 +329,7 @@ where none exists it floors near 1e-7. `n=7, k=4` sits with the impossible case.
 
 **This is not a proof.** A validated heuristic finding nothing is evidence of difficulty,
 not of nonexistence. `D_gen(7) = 5` would need the augmentation chain at four classes, and
-the exact decider leaves **22%** of 5-point 4-class patterns undecided (52 inconclusive,
+`gram.py` leaves **22%** of 5-point 4-class patterns undecided (52 inconclusive,
 39 timeout, 7 error out of 449) against 3% at three classes. Undecided patterns must be
 carried as possibly-realisable seeds, so the subset filter that reduced 14,348,907
 colourings to a single candidate at `n=6` would be far blunter here.
@@ -391,19 +403,24 @@ The first two candidates fall to what we already have:
 The parity/divisibility constraint is classical graph factorization, not geometry, and
 appears not to have been applied to this problem.
 
-### 3g. The small values are the best known lower bound for 4 <= n <= 10
+### 3g. The small values are the best known lower bound for 4 <= n <= 13
 
 Monotonicity turns each exact value into a lower bound for all larger `n`. Against
-Szemeredi's `ceil((n-1)/3)`:
+Szemeredi's `ceil((n-1)/3)`, using `D_gen(7) = 5` from section 3h:
 
-| n | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 |
-|---|---|---|---|---|---|---|---|---|
-| `ceil((n-1)/3)` | 1 | 2 | 2 | 2 | 3 | 3 | 3 | 4 |
-| ours | **2** | **3** | **4** | 4 | 4 | 4 | 4 | 4 |
+| n | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| `ceil((n-1)/3)` | 1 | 2 | 2 | 2 | 3 | 3 | 3 | 4 | 4 | 4 | **5** |
+| ours | **2** | **3** | **4** | **5** | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
 
-So the table is not merely data: on `4 <= n <= 10` it is the **best known lower bound**.
-Each further exact value extends the window — `D_gen(7) = 5` would push it to `n <= 13`,
-`D_gen(8) = 6` to `n <= 16`. Verified by `lowerbound.py`.
+So the table is not merely data: on `4 <= n <= 13` it is the **best known lower bound**,
+`ceil((n-1)/3)` not reaching 5 until `n = 14`. A further exact value would extend the
+window: `D_gen(8) = 6` would push it to `n <= 16`. Verified by `lowerbound.py`.
+
+*An earlier version of this section gave the window as `4 <= n <= 10` with an `ours` row of
+`4,4,4,4,4` from `n = 7`. That predated section 3h and was stale; `REPRODUCE.md`,
+`DRAFT_COMMENT.md` and `audit98.py` all carried the corrected window while this section did
+not.*
 
 
 ### 3h. `D_gen(7) = 5`
@@ -436,7 +453,8 @@ via classes 0 and 1).
 **The last candidate.** Pattern `0,0,0,1,1,2,1,3,0,0,3,3,2,2,3,2,2,1,1,0,2`. The lemma
 applies once: class 1 holds the triangle `(0,4,5)` and vertex 1 joins all three in class
 0, giving `D_0 = D_1/3`. Scaling `D_0 = 1` forces `D_1 = 3` and leaves only `D_2 = u`,
-`D_3 = v`. Among the 170 nonzero 3x3 minors of the 6x6 Gram matrix are
+`D_3 = v`. Among the 3x3 minors of the 6x6 Gram matrix (400 in all, 389 of them nonzero, falling
+into 170 distinct values after factoring) are
 
     3(2u - 11)/8    and    3(u - 10)/8
 
@@ -448,8 +466,9 @@ the independently verified 5-distance witness, **`D_gen(7) = 5`**.
 
 **Soundness of the chain.** Every seed set was built by discarding patterns `hard.py`
 called unsat, and an earlier decider (`gram.py`) was caught emitting false unsats, so this
-was checked rather than assumed. All **153** `n=5, k=4` patterns `hard.py` rejected were
-re-decided.
+was checked rather than assumed. `hard.py` returned **198** unsat verdicts at `n=5, k=4`
+(of 449 patterns; `results/xcheck_n5_k4.json`). The **153** of them whose rejection actually
+rests on assumption A8, rather than on a trivial ideal, were re-decided.
 
 That check itself had a fault, found later while working on #654: `z3run.py` constrains the
 class values to increase with the class index, but canonical patterns number their classes
@@ -504,7 +523,7 @@ honest statement is:
 
 and whether `D_gen(8)` is 6 (off-lattice) or 7 is open.
 
-**An upper bound at n=8 (requirement (a)).** A witness with SEVEN distances exists and is
+**An upper bound at n=8.** A witness with SEVEN distances exists and is
 verified in exact plane coordinates:
 
     (0,0) (-1,0) (-1,1) (1,-3) (2,-3) (3,-1) (-2,-2) (2,-4)     [triangular lattice]
@@ -527,7 +546,10 @@ So an off-lattice search was run to completion: six independent seeds, each give
 5400-second wall-clock budget (time-bounded rather than restart-bounded, so the run
 always finishes and records what it actually did), all six writing completion records.
 
-    4858 restarts performed in total, 0 genuine witnesses.
+    4858 restarts archived (results/numsearch_hits_n8_k6_s130*.json), 0 genuine
+    witnesses.  An earlier capped run contributed roughly 1700 more restarts, also with no
+    witness, but wrote no artifact; the "roughly 6600" quoted in the summary below is the
+    two together, and only the 4858 are reproducible from this directory.
 
 Calibrating against cases whose truth is known:
 
@@ -542,7 +564,9 @@ Where a configuration exists the objective collapses to about 1e-16; where none 
 floors near 1e-6 to 1e-7. **n=8 with 6 classes behaves like the proved-impossible cases.**
 That is evidence, not proof: a heuristic finding nothing can never rule anything out.
 
-**Summary for n=8.** Three exhaustive lattice searches (complete) and roughly 6600
+**Summary for n=8.** Three lattice searches (exhaustive only within their radii,
+`R^2 = 121` on `A_2` and `R^2 = 100` on `Z^2`; by A12 a lattice negative is not evidence of
+nonexistence) and roughly 6600
 off-lattice restarts (incomplete) found nothing. That is real evidence for
 `D_gen(8) = 7`, hence that the `n-2` family is FINITE and breaks at n = 8 -- which would
 make Erdős's hoped-for `h(n) >= n` plausible again. It is **not** a proof. Settling it
@@ -574,6 +598,14 @@ fewer than 4 classes so monotonicity kills it. This retires the 1318-second z3 s
 both bespoke algebraic arguments of section 3h. It is also a cross-check: L3 independently
 rejects the very pattern `last7.py` killed by exhibiting a trivial ideal, two unrelated
 methods agreeing.
+
+**A caveat on the k=4 versus k=5 comparison below.** The two runs are not like-for-like:
+the k=4 figures come from L1+L2 filtering on decider-pruned seeds, the k=5 figures from the
+full lemma set on lemma-only seeds. Re-running k=4 the same way as k=5 (lemma-only seeds,
+all five lemmas) gives `raw 347,136 -> 163,391 -> 163,391 -> 23,763`, i.e. **the subset test
+kills nothing at k=4 either**, which contradicts the claim below that it was "the workhorse"
+at k=4. The mechanism described is right; the numeric contrast supporting it is an artifact
+of comparing two different pipelines.
 
 **Result 2: the cut rate depends on BOTH parameters, in opposite directions.**
 
@@ -627,7 +659,8 @@ that have been generated, and wall 1 says those cannot be generated. The tool is
 exactly where it cannot be used.
 
 **Wall 3, witness extension.** Any 8th point added to the verified 7-point 5-distance
-witness must sit at one of the five existing distances from all seven points, hence on the
+witness **while keeping the total at five distances** must sit at one of the five existing
+distances from all seven points, hence on the
 intersection of two circles for any chosen pair. That candidate set is finite and was
 enumerated completely: **886 intersections, 552 distinct points, 0 admissible**. So that
 witness does not extend. This is a complete negative for that configuration only; another
@@ -636,9 +669,29 @@ witness does not extend. This is a complete negative for that configuration only
 **Net.** `5 <= D_gen(8) <= 7`, with the upper bound a verified witness. Closing it needs a
 decider for 4-5 unknowns (CAD or regular chains), which is a tooling build, not compute.
 
+### 3l. Which numbers in this note are archived, and which are not
+
+Re-running the directory turned up a class of figures that were printed to a terminal and
+quoted here, but never written to any artifact. They are not wrong so far as is known, and
+several were re-derived during the audit, but they cannot be checked from `results/` and
+are flagged rather than removed:
+
+* every "best raw objective" from `numsearch.py` (the 9.7e-17, 1.2e-07, 3.9e-07 and
+  6.4e-07 to 3.6e-06 figures in sections 3d and 3i, and the "800 restarts"). `numsearch.py`
+  prints `bestobj` but writes only `{"n","k","hits"}`. The one archived raw objective is
+  `results/numsearch_n5_k3.json` at 3.9999e-08; the 5.55e-17 in
+  `results/numsearch_hits_n5_k3_s7.json` is a post-polish residual, not a raw objective.
+* the timings: "the 1318-second z3 stage", "1198 s" for the n=5,k=3 z3 sweep, "n=7 in 23 s",
+  "failed to finish in 117 minutes". None of the corresponding JSONs record time.
+* the intermediate counts 207,509 and 1,484,087, whose file (`cand_n6_k5.json`, 23 MB) is
+  deliberately not archived.
+
+The archived figures that were re-checked and do hold are listed in `REPRODUCE.md`.
+
 ## 4. Still open here
 
-* `D_gen(8)`: is it 6 or 7? `>= 5` by monotonicity, and no 6-distance witness exists on
+* `D_gen(8)`: is it 5, 6 or 7? Only `>= 5` (monotonicity) and `<= 7` (verified witness)
+  are established; nothing here excludes 5. No 6-distance witness exists on
   the triangular lattice within `R^2 = 121` (§3i). Settling it needs either an
   off-lattice witness or the augmentation chain at 5 classes.
 

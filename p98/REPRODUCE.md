@@ -18,6 +18,31 @@ pip install sympy z3-solver mpmath numpy scipy
 No compiler, no external tool, no lattice or floating-point step is load-bearing for any
 claim. Everything decisive is exact arithmetic.
 
+## READ THIS BEFORE RUNNING THE CHAIN: it no longer reproduces its own intermediates
+
+Two things were found by re-running every command in this file from a clone.
+
+**(a) Four steps have no input as written.** The chain names files that no script in this
+directory produces: `sweep_n5_k3_robust.json` (read by `six2.py`), `seeds_n5_k4.json` and
+`seeds_n5_k4_lemmaonly.json` (read by `aug.py`), `cand_n7_k4_real.json` and
+`cand_n7_stubborn.json` (read by `z3run.py` and `equilateral.py`). They were produced by
+intermediate hand steps that were not recorded. All of them are archived in `results/`, so
+the chain runs if you stage them first, as described below, but it does not run end to end
+from a bare clone.
+
+**(b) `aug.py` has since been strengthened, so its output no longer matches the archive.**
+`aug.py` now filters with all five lemmas (`lemmas.survives`), where the archived
+intermediates were generated with L1+L2 only. Re-running the documented commands today
+gives **1,066** candidates at `n=6, k=4` instead of the archived 2,254, and **1** at
+`n=7, k=4` instead of 28. Nothing here is unsound: the new filter is strictly stronger, and
+the new output was checked to be a subset of the old. But the archived artifacts and the
+current code are from different filter generations, and the note's cut-rate figures in
+section 3j are the L1+L2 numbers. Restricting the filter to `l1_degree and l2_k23`
+reproduces 2,254 and 28 exactly, set-for-set.
+
+`python audit98.py` is unaffected by all of this: it reads no artifact and re-derives its
+checks from scratch, which is why it is the command to run first.
+
 ## Where the artifacts live, and how to re-run a step that consumes one
 
 Every JSON this directory produced is archived under `results/`. **The scripts read and
@@ -38,6 +63,10 @@ python aug.py 5 4 seeds_n5_k4.json cand_n6_k4.json
 
 `python audit98.py` needs none of this: it re-derives everything from scratch and reads no
 artifact at all, which is why it is the command to run first.
+
+`python lemmas.py` takes well over five minutes: its soundness check over the 104
+known-realisable patterns is quick, but the measured-cut-rate table after it enumerates
+patterns exhaustively.
 
 Two intermediates are **not** archived because they are large and regenerable:
 `cand_n6_k5.json` (23 MB) and `cand_n6_k4_lemmaonly.json` (2.7 MB).
@@ -128,13 +157,17 @@ pattern as a literal and shows its Gram minors include multiples of `(2u - 11)` 
 **`gram.py` is unsound for negative verdicts and must not be used for lower bounds.** It
 calls `sympy.solve` and reports `unsat` when nothing usable comes back, but `sympy.solve`
 can silently omit branches. Cross-checking found **17 patterns at n=5, k=4** it called
-impossible that are in fact realisable. Use `hard.py` (Groebner plus guaranteed-real
-`CRootOf` roots) or `z3run.py` instead. `gram.py` is kept only because `xcheck.py`
+impossible that are in fact realisable. Use `hard.py` or `pz3_noorder.py` (Groebner plus guaranteed-real
+`CRootOf` roots) instead. **Not `z3run.py`:** its class-ordering constraint makes its unsat verdicts non-proofs (see ASSUMPTIONS.md A8). `gram.py` is kept only because `xcheck.py`
 documents the discrepancy.
 
-**`hard.py`'s unsat verdicts are validated only partially.** A 40-pattern sample of its
-`n=5, k=4` unsats was re-decided by z3, which is a decision procedure for real closed
-fields: **22 unsat, 18 unknown, 0 sat**. No contradiction, but 18 remain unconfirmed.
+**`hard.py`'s unsat verdicts are validated only partially.** An early 40-pattern sample of
+its `n=5, k=4` unsats was re-decided by z3: **22 unsat, 18 unknown, 0 sat**. **That figure
+is superseded.** All 153 A8-dependent rejections have since been examined, of which **57
+are independently settled and 96 are not** (ASSUMPTIONS.md A8). Note also that the
+40-pattern sample used `z3run.py`'s ordered encoding, so most of its 22 "unsat" verdicts
+are not proofs either; only verdicts from a trivial Groebner ideal or from
+`pz3_noorder.py` count.
 
 **Heuristic searches prove nothing.** `numsearch.py` finds candidate configurations by
 optimisation; anything it produces is re-derived exactly before it counts. Its controls
@@ -149,8 +182,11 @@ which is why `maxpts.py 3` returns 4 rather than 5.
 ## What is NOT claimed
 
 Nothing here bears on whether `D_gen(n)/n -> infinity`, which is what Erdős #98 actually
-asks. The values are the finite end of an asymptotic problem. `DERIVATION.md` sections 2,
+asks. The values are the finite end of an asymptotic problem. `NOTE.md` sections 2,
 2a and 2b explain why the elementary route to the constant is exhausted, including a
 measurement suggesting the isosceles bound is close to tight.
 
-`D_gen(8)` is open here: `>= 5` by monotonicity, with no witness found.
+`D_gen(8)` is open here: `>= 5` by monotonicity and `<= 7` from a witness that is verified
+in exact coordinates (`results/witness_n8.json`; `verify.py` checks it). Nothing excludes 5,
+and no 6-distance witness was found. An earlier version of this line said "with no witness
+found", which contradicted the directory's own artifact.

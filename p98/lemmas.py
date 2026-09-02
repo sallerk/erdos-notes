@@ -35,7 +35,7 @@ L5 EQUILATERAL-CENTRE.  If a class X holds a triangle (all three mutual distance
 
 Usage:  python lemmas.py            (soundness checks and measured cut rates)
 """
-import sys, itertools, collections
+import sys, os, json, itertools, collections
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
 
@@ -142,13 +142,26 @@ if __name__ == '__main__':
     KNOWN = []
     # every pattern proved realisable in this project
     KNOWN.append(((0, 0, 0, 0, 1, 1), 4, 'n=4 diamond'))
+    # These artifacts live in results/ but the scripts write bare filenames, so look in
+    # both.  An earlier version wrapped this in `try/except: pass`, which meant that run
+    # from the repository root the check silently covered 4 patterns instead of 104 and
+    # still reported PASS.  A missing artifact is now a loud failure, not a quiet one.
+    _here = os.path.dirname(os.path.abspath(__file__))
+    _missing = []
     for f, n in (('sweep_n5_k3.json', 5), ('sweep_n5_k4_robust.json', 5)):
-        try:
-            d = json.load(open(f))
-            for p in d.get('sat', []):
-                KNOWN.append((tuple(p), n, f))
-        except Exception:
-            pass
+        for cand in (f, os.path.join(_here, f), os.path.join(_here, 'results', f)):
+            if os.path.exists(cand):
+                d = json.load(open(cand))
+                for p in d.get('sat', []):
+                    KNOWN.append((tuple(p), n, f))
+                break
+        else:
+            _missing.append(f)
+    if _missing:
+        print('  ABORT: cannot find %s. This check is meaningless without them; it would '
+              'otherwise "pass" over a handful of patterns instead of 104.'
+              % ', '.join(_missing))
+        sys.exit(1)
     # and the patterns of the verified witnesses
     def pat_of(pts, n):
         def nrm(p, q):
