@@ -213,12 +213,34 @@ only 5-point two-distance set in the plane.
 Four encodings were tried. The choice matters more than the hardware, so the numbers are
 recorded rather than summarised.
 
-| encoding | unknowns | n=4,k=2 | n=5,k=2 (UNSAT) | n=5,k=3 (106 patterns) |
+**The two rows do not run on the same workload, and the table is only fair once that is
+said.** `sweep2.py` pre-filters candidates with `vertex_ok` (the degree bound: no point may
+have four others equidistant from it, else four are concyclic); `hdecide.py`'s z3 driver
+does not. The filter is sound, but it changes the population:
+
+| n, k | full canonical space | after `vertex_ok` |
+|---|---|---|
+| 5, 2 | 18 | **7** |
+| 5, 3 | 142 | **106** |
+| 5, 4 | 513 | **449** |
+
+So the z3 row below decided all **18** patterns at `n=5, k=2` while the Gram row decided
+**7**, and the "106 patterns" column heading is the post-filter count, not the 142 the
+enumerator produces. A speed ratio read straight off this table therefore overstates the
+Gram method's advantage by roughly the workload ratio. The advantage is real (the
+`unknowns` column is the reason, and the `n=5,k=3` column compares like with like at 106
+patterns each), but it is not 76x.
+
+| encoding | unknowns | n=4,k=2 | n=5,k=2 (UNSAT) | n=5,k=3 |
 |---|---|---|---|---|
-| z3 on coordinates, per pattern | 2n + k | 21 s | 152 s, **1 undecided** | 1198 s: 1 sat, 77 unsat, **28 unknown** |
+| z3 on coordinates, per pattern | 2n + k | 21 s | 152 s over **18** patterns, **1 undecided** | 1198 s over 106: 1 sat, 77 unsat, **28 unknown** |
 | z3 single formula (`direct.py`) | 2n + k | 21 s | **872 s, UNKNOWN** | not attempted |
 | Groebner elimination by hand (`pentagon.py`) | 2n + k | n/a | settles the 1 leftover | not scalable |
-| **Gram matrix (`gram.py`)** | **k − 1** | **0.2 s** | **2.0 s, all decided** | running |
+| **Gram matrix (`gram.py`)** | **k − 1** | **0.2 s** | **2.0 s over 7 patterns**, all decided | completed: 102 unsat, 1 sat, 2 inconclusive, 1 timeout |
+
+(The last cell read "running" until the audit; that sweep finished long ago and its result
+is `results/sweep_n5_k3.json`. Note also that `gram.py` is the decider later found to emit
+false unsats, section 3e, so its *speed* is what this table measures, not its reliability.)
 
 The coordinate encodings carry `2n` unknowns and degree-4 cocircularity constraints, and
 z3 degrades badly: a 26% unknown rate at n=5 with three classes, and *unknown* after
