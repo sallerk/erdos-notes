@@ -134,9 +134,15 @@ if __name__ == '__main__':
         print('CONTROLS -- must reproduce pinned maxima we have already verified exactly')
         print('=' * 74)
         bad = 0
-        # (n, R2, mode, target, expected best M)  from p654/phase0_pinned.json
-        for n, R2, mode, tgt, want in ((4, 13, 'g', 3, 2), (6, 49, 'g', 5, 3),
-                                       (7, 49, 'g', 5, 3), (4, 13, 'n4', 3, 2)):
+        # (n, R2, mode, target, expected best M).  The expectations come from the
+        # exact-verified witnesses in results/upper_by_deletion.json, NOT from guesswork:
+        # n=4 -> 2, n=6 -> 3, n=7 -> 4.  An earlier version of this list expected 3 at
+        # n=7, which contradicted our own finding that no M=3 configuration exists in A_2
+        # at that size, so the control failed by construction.  Radii are the smallest
+        # that contain the known witnesses (all their points have a2-norm <= 12 about the
+        # origin), which also takes the n=7 control from 357s down to about 1s.
+        for n, R2, mode, tgt, want in ((4, 13, 'g', 3, 2), (6, 13, 'g', 5, 3),
+                                       (7, 13, 'g', 5, 4), (4, 13, 'n4', 3, 2)):
             b, s, nd, dt = search(n, R2, kind='a2', mode=mode, target=tgt, quiet=True)
             ok = (s is not None and b <= want)
             bad += (not ok)
