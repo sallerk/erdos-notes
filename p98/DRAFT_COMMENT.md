@@ -32,6 +32,8 @@ Two consequences seem worth recording. Since $h$ is non-decreasing, these values
 
 One remark on why the constant is stuck. The no-four-cocircular hypothesis caps each class at $3$ per vertex, giving $Z(P)\le n(n-1)$ isosceles triples, which is *exactly* the perpendicular-bisector bound from no-three-collinear alone. The two hypotheses give the same number, so this hypothesis is inert for the counting argument, and a search for the true maximum of $Z$ found the ratio rising ($0.500$ at $n=5$, $0.600$ at $n=6$), suggesting the bound is close to tight.
 
+One caveat I would rather state than hide. The reduction of $4^{21}$ colourings to $28$ used seed sets pruned by an exact decider whose completeness is an assumption; the *disposal* of the $28$ is solver-free, but their *generation* is not. Of the $153$ borderline rejections that pruning rests on, $57$ have since been re-confirmed by independent sound methods (a trivial Groebner ideal, or z3's nlsat with no ordering imposed on the class values) and $96$ have not. No false rejection has been found, but the possibility that a $29$th candidate was never generated is not excluded.
+
 Nothing here bears on $h(n)/n\to\infty$.
 
 Code, witnesses and a standalone audit:
