@@ -1,0 +1,13 @@
+{
+ "n": 8,
+ "R2": 121,
+ "lattice": "a2",
+ "target": 7,
+ "shard": 0,
+ "nshards": 7,
+ "best": null,
+ "points": null,
+ "nodes": 361292,
+ "seconds": 2688.4,
+ "completed": true
+}

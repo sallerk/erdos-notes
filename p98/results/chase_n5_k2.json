@@ -1,0 +1,12 @@
+{
+ "(0, 0, 1, 1, 1, 0, 1, 1, 0, 0)": {
+  "nlsat": {
+   "result": "unknown",
+   "seconds": 600.0
+  },
+  "default": {
+   "result": "unknown",
+   "seconds": 628.3
+  }
+ }
+}

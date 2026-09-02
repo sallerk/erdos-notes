@@ -1,0 +1,12 @@
+{
+ "n": 8,
+ "k": 6,
+ "seed": 1303,
+ "restarts_requested": 1000000,
+ "restarts_done": 835,
+ "budget_seconds": 5400.0,
+ "stopped_on_budget": true,
+ "complete": true,
+ "elapsed": 5419.7,
+ "hits": []
+}

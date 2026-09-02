@@ -1,0 +1,50 @@
+{
+ "n": 8,
+ "lattice": "a2",
+ "points": [
+  [
+   0,
+   0
+  ],
+  [
+   -1,
+   0
+  ],
+  [
+   -1,
+   1
+  ],
+  [
+   1,
+   -3
+  ],
+  [
+   2,
+   -3
+  ],
+  [
+   3,
+   -1
+  ],
+  [
+   -2,
+   -2
+  ],
+  [
+   2,
+   -4
+  ]
+ ],
+ "distinct": 7,
+ "squared_distances": [
+  1,
+  7,
+  9,
+  12,
+  13,
+  19,
+  31
+ ],
+ "verified": "exact plane coordinates, sympy: 7 distances, 0 collinear triples, 0 cocircular quadruples, max 3 equidistant from any point",
+ "note": "a witness is a certificate however it was found; the search that produced it was killed by its time cap before writing its own artefact"
+}

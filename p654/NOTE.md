@@ -250,3 +250,22 @@ python pdecide.py selftest   # decider reproduces four known #98 verdicts
 python penum.py 7 2      # the single n=7, m=2 pattern
 python pdecide.py 7 2 g  # and its refutation
 ```
+
+---
+
+## Companion: the total-count version, in `../p98`
+
+Erdős #98 asks for `D_gen(n)`, the minimum **total** number of distinct distances among `n`
+points in general position, where this note's `f(n)` is the minimum over sets of the
+**maximum over points** of the per-point count. That directory establishes
+`D_gen(3..7) = 1, 2, 3, 4, 5` with `D_gen(8)` in `[5, 7]`, and supplies the witnesses used
+here as upper bounds, the rank-2 Gram decider (`hard.py`, re-implemented as `pdecide.py`
+with no class-ordering assumption), the lattice search and its symmetry reduction
+(`latmin2.py`, re-aimed at the pinned objective as `latM.py`), and lemmas L2-L5.
+
+The functions actually imported are vendored here in `common.py`, so this directory runs
+standalone; `common.py` names the #98 file each block came from.
+
+**They are different functions.** The `n=8` witness has `D = 7` but `M = 4`; the `n=6`
+witness found here has `M = 3` and `D = 7`. A configuration optimised for one is not
+optimised for the other, which is why the searches had to be re-aimed rather than reused.

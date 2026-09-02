@@ -112,3 +112,28 @@ there exists `ε > 0` such that `v_no-4-circ(n) ≥ (1/3 + ε)n`"). The problem 
 bound, because `⌈(n−1)/3⌉` for the total count is derived from the pinned argument, which is
 presumably how they came to be run together. Any "no non-trivial bound is known" claim
 needs to say which function it means.
+
+## Not the same problem: the convex case, and `../p982` in this repository
+
+`../p982` in this repository studies **the pinned count under CONVEX position**, Erdős
+#982, and was **shelved for lack of novelty**: its `n <= 7` certification already follows
+from Moser 1952, Erdős-Fishburn 1994 and Dumitrescu 2006. Since that is the obvious place
+to suspect an overlap, the distinction is worth stating.
+
+The hypothesis classes are **incomparable**, so no bound transfers in either direction:
+
+* A convex polygon need not satisfy no-four-concyclic; the regular `n`-gon is convex and
+  has *every* four of its vertices on a circle. This is exactly why the regular `n`-gon
+  disproves #655 as stated but is inadmissible here.
+* A set with no four concyclic need not be convex; nothing in the hypothesis constrains the
+  convex hull.
+
+So Moser's `⌊(n+2)/3⌋`, Erdős-Fishburn's run-length bound and Dumitrescu's
+`⌈(13n-6)/36⌉` are all statements about `M_C(n)` and say nothing about `f_N4(n)` or
+`f_G(n)`. The convex row and the general-position row of the landscape table are separate
+open problems; the convex one has non-trivial published bounds and the general-position one,
+per Sheffer, has none.
+
+Numerically the two do not even agree on the values: Moser gives `M_C(7) >= 3` while the
+trivial bound here is only `⌈6/3⌉ = 2`, and the conjectured convex answer `⌊n/2⌋` is 3 at
+`n = 6, 7` where we prove `f(6) = 3` and `f(7) >= 3` by a completely different route.
