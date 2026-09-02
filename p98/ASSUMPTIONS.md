@@ -96,9 +96,13 @@ this does and does not touch: the disposal of the 28 surviving n=7 candidates is
 solver-free, but their GENERATION came from seed sets pruned with `hard.py` verdicts, so a
 single false unsat among the 96 could mean a 29th candidate was never generated.
 
-*A second caveat on the original runs.* z3's `timeout` is advisory: the residual run burned
-87,797 CPU-seconds on 75 patterns against a design ceiling of 75 x 600 = 45,000, so nlsat
-overran its cap on many of them. Those `unknown` verdicts do not mean "undecided within
+*A second caveat on the original runs.* z3's `timeout` is advisory. The residual run held 6
+workers for 14,632.9 seconds of wall clock on 75 patterns, i.e. up to **87,797
+worker-seconds**; measured utilisation partway through the run was 0.967, so the actual CPU
+consumed was about **85,000 seconds**. Either figure exceeds the design ceiling of
+75 x 600 = 45,000, so nlsat overran its cap on many patterns. (The 87,797 figure is
+occupancy, not a measurement of CPU; an earlier version of this file called it
+"CPU-seconds".) Those `unknown` verdicts do not mean "undecided within
 600s"; they mean "undecided within an unbounded amount of time that happened to be spent".
 
 ## A9. The augmentation is complete

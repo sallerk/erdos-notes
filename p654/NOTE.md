@@ -149,7 +149,7 @@ vertex). So every vertex sees **exactly** two colours, each exactly **3** times.
 
 Hence `f(7) > 2`. The argument assumes nothing beyond "at most 3 points on a circle centred
 at a point of the set", so it holds in **both** modes, and step 4 is exactly the argument
-that gives `f(4) > 1`. `auditM.py` checks each step, and confirms that the single pattern
+that gives `f(4) > 1`. `audit654.py` checks each step, and confirms that the single pattern
 the enumerator produced does have precisely this shape: classes `K_4` on `{0,1,2,3}`, `K_4`
 on `{3,4,5,6}`, and `K_{3,3}` between `{0,1,2}` and `{4,5,6}`.
 
@@ -259,9 +259,9 @@ Erdős #98 asks for `D_gen(n)`, the minimum **total** number of distinct distanc
 points in general position, where this note's `f(n)` is the minimum over sets of the
 **maximum over points** of the per-point count. That directory establishes
 `D_gen(3..7) = 1, 2, 3, 4, 5` with `D_gen(8)` in `[5, 7]`, and supplies the witnesses used
-here as upper bounds, the rank-2 Gram decider (`hard.py`, re-implemented as `pdecide.py`
+here as upper bounds, the rank-2 Gram decider (`../p98/hard.py`, re-implemented as `pdecide.py`
 with no class-ordering assumption), the lattice search and its symmetry reduction
-(`latmin2.py`, re-aimed at the pinned objective as `latM.py`), and lemmas L2-L5.
+(`../p98/latmin2.py`, re-aimed at the pinned objective as `latM.py`), and lemmas L2-L5.
 
 The functions actually imported are vendored here in `common.py`, so this directory runs
 standalone; `common.py` names the #98 file each block came from.

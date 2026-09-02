@@ -24,6 +24,16 @@ def ck(label, ok, detail=''):
         FAIL.append(label)
 
 
+def remark(text):
+    """A statement of reasoning, printed WITHOUT a verdict.
+
+    ck() prints [PASS] and is for assertions this script actually evaluates.  Passing it a
+    literal True prints [PASS] for something untested, which is exactly the failure this
+    audit is supposed to catch elsewhere, so meta-claims go through remark() instead.
+    """
+    print('  [note] ' + text)
+
+
 def tri(a, b):
     """triangular-lattice point (a,b) as an exact plane point"""
     return (sp.Rational(a) + sp.Rational(b, 2), sp.Rational(b) * sp.sqrt(3) / 2)
@@ -168,8 +178,8 @@ print('       exactly one.  The 9 remaining edges join the two triples: that is 
 print('       which is indeed 3-regular on 6 vertices.')
 print('   (c) So SOME colour class is a K_4: four points pairwise equidistant.')
 print('       By step 3 that is impossible in the plane.  Hence f(7) > 2.')
-ck('the argument needs no hypothesis beyond "at most 3 per circle", so it holds in '
-   'BOTH modes', True)
+remark('the argument above uses no hypothesis beyond "at most 3 per circle", so it '
+       'holds in BOTH modes; that is a statement about the reasoning, not a computation')
 
 # cross-check: the pattern the enumerator produced really does have this structure
 PAT7 = (0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 2, 2, 2, 2, 2, 2)
@@ -204,9 +214,19 @@ rows = [(3, 1, '1', '1', 'M=1 witness; trivial bound is 1'),
         (6, 2, '3', '3', 'enumeration gives > 2; M=3 witness'),
         (7, 2, '[3,4]', '[3,4]', 'step 4 gives > 2; M=4 witness'),
         (8, 3, '[3,4]', '[3,4]', 'trivial bound is 3; M=4 witness')]
+WITM = {n: CLAIM_M[n] for n in CLAIM_M}
 for n, t, a, b, why in rows:
-    ck('n=%d: trivial bound %d is consistent with the claimed value %s'
-       % (n, t, a), True, '')
+    # This used to be ck(..., True): it printed [PASS] for a row of a table without
+    # testing anything.  Now it tests the two things the row actually asserts.
+    lo = int(a.strip('[]').split(',')[0])
+    hi = int(a.strip('[]').split(',')[-1])
+    ck('n=%d: the trivial bound ceil((n-1)/3) = %d does not exceed the claimed lower end %d'
+       % (n, -(-(n - 1) // 3), lo),
+       -(-(n - 1) // 3) <= lo and t == -(-(n - 1) // 3),
+       'row says trivial %d' % t)
+    ck('n=%d: the claimed upper end %d equals the verified witness M = %d'
+       % (n, hi, WITM[n]), hi == WITM[n])
+    ck('n=%d: both hypothesis columns agree' % n, a == b)
     print('        %-9s %-9s %-8s %s' % (t, a, b, why))
 
 print()

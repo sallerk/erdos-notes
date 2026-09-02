@@ -12,7 +12,7 @@ distance degrees over UNRESTRICTED sets, (Sigma_3..Sigma_8) = (3,6,10,15,19,24).
 ~90%, resting on searches failing to find them; its full text is behind a 403 and only the
 zbMATH review was read, and Brass-Moser-Pach was readable only in snippet view.
 
-Before posting, note forum Rules 1 and 2: auditM.py re-derives every claim below from
+Before posting, note forum Rules 1 and 2: audit654.py re-derives every claim below from
 scratch in exact arithmetic, sharing no code with the searches that produced them, and
 prints ALL CHECKS PASSED.
 
@@ -34,10 +34,13 @@ v1, and **v3 (2 July 2018, the current version) drops the paragraph and the prob
 the body text**, keeping only a row in Table 1.
 
 Every upper bound is an explicit configuration re-verified in exact plane coordinates, and
-each happens to be in general position, so it bounds both versions at once. The $n=6$ witness is the triangular-lattice set $(0,0)$, $(-1,0)$,
-$(1,1)$, $(-2,3)$, $(1,-3)$, $(3,-2)$, which has $M=3$ but seven distinct distances in
-total: minimising the per-point maximum is genuinely a different problem from minimising
-the total count, and the configurations that do it are different.
+each happens to be in general position, so it bounds both versions at once. The $n=6$
+witness is the triangular-lattice set $(0,0)$, $(-1,0)$, $(1,1)$, $(-2,3)$, $(1,-3)$,
+$(3,-2)$, in the basis $(a,b)\mapsto\bigl(a+\tfrac b2,\ \tfrac{\sqrt3}{2}b\bigr)$; its
+squared distances are $1,3,7,12,16,25,27$. It has $M=3$ but **seven** distinct distances in
+total, which is the point: minimising the per-point maximum is a genuinely different
+problem from minimising the total count. The $n=8$ set that is optimal for the total count
+has $D=7$ and $M=4$, which beats the $M=5$ of the total-optimal $n=7$ set.
 
 The lower bounds come from enumerating distance patterns. The hypothesis $\max_i d(x_i)\le
 m$ is purely local on the pattern: at most $m$ colours at each vertex, and at most $3$
@@ -57,8 +60,17 @@ $K_4$ and we are back to four pairwise equidistant points. No solver is needed f
 and neither uses no-three-collinear, so both hold for $f$ as stated on this page.
 
 One thing the table shows: the trivial bound $\lceil (n-1)/3\rceil$ is **not** tight, and
-the excess is $+1$ at each of $n=4,5,6$ and at least $+1$ at $n=7$. That is the direction
-of Erdős's (3), though small $n$ cannot distinguish a growing excess from a bounded one.
+the excess is $+1$ at each of $n=4,5,6$ and at least $+1$ at $n=7$. That is the direction of
+[Er87b, p. 168] (3), $\max_i d(x_i) > (1+c)n/3$, though small $n$ cannot distinguish a
+growing excess from a bounded one.
+
+Two remarks on sources, from reading for this. The at-most-2 condition on this page appears
+in Erdős, *Some old and new problems in combinatorial geometry*, p. 35, question (6) — but
+there it is attached to $(1+c)n/2$, not to $(1-o(1))n$, and it carries a \$25 prize. And the
+neighbouring problem #655 omits the "no four on a circle" hypothesis that Erdős states in
+that same question, where he also writes that it is needed "since otherwise the regular
+polygon gives a counterexample" — which is the counterexample #655 was later disproved by.
+Details in `PAGE_NOTES.md` in the repository below.
 
 Nothing here bears on the asymptotics, and this page notes that the problem cannot be
 resolved by a finite computation.

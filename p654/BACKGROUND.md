@@ -19,6 +19,18 @@ Everything below is read at source or explicitly flagged as unverified.
   with at most `3n/4` distances from any point. That set lies on **two lines**, so it does
   not touch the general-position version.
 
+**The #655 ambiguity has a documented answer, in Erdős's own words.** The page says
+"presumably some kind of assumption that the points are in general position (e.g. no three
+on a line and no four on a circle) was intended". Erdős 1988 p. 35 question (6) (section 3
+below, read at source) states the hypothesis as "**no four on a circle** and every circle
+whose center is one of the `x_i` contains at most two of our points", and adds "we need the
+assumption that no four of our points are on a circle since **otherwise the regular polygon
+gives a counterexample**". So Erdős included the hypothesis and named in advance the exact
+configuration Hunter later used. Two further mismatches with the page: Erdős's (6) is the
+**pinned** `max_i d(x_i)`, while the page asks for the **total** count; and the page cites
+only `[Er97e]`, not the 1988 source with its $25 prize. Written up for the maintainers in
+`PAGE_NOTES.md`.
+
 **#655 is additionally flagged AMBIGUOUS.** Terence Tao added that flag to the database;
 Thomas Bloom declined to fix an interpretation ("I'd rather not guess"). *Choosing an
 interpretation is choosing the problem*, and any writeup must say which variant it means.

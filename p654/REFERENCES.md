@@ -35,9 +35,30 @@ total distinct-distance count; conflating the two is the standing hazard in this
 
 * **[Er97e]** cited by the problem page as p. 530. **[NOT OBTAINED]**.
 
-* **Erdős, SIAM Clemson 1988**, *Some Old and New Problems in Combinatorial Geometry*,
-  **p. 35**: the same asymptotic question under a stronger hypothesis, carrying a **$25
-  prize**, plus a caveat limiting how many points may lie on a line.
+* **[Er88]** P. Erdős, *Some old and new problems in combinatorial geometry*, printed folio
+  **35**, <https://users.renyi.hu/~p_erdos/1988-32.pdf>. *[VERIFIED AT SOURCE, against the
+  page image at 400 dpi as well as the extracted text, because the OCR mangles every
+  fraction on this page.]* Question (6):
+
+  > "Let `x_1,...,x_n` be n points in the plane, **no four on a circle** and every circle
+  > whose center is one of the `x_i` contains at most two of our points. Clearly for every
+  > `x_i` we then have `d(x_i) ≥ (n−1)/2`. Is it true that there is an absolute constant `c`
+  > so that **(6) `max_{1≤i≤n} d(x_i) > (1+c)n/2`**? **I offer 25 dollars for a solution.**
+  > We need the assumption that no four of our points are on a circle since otherwise the
+  > regular polygon gives a counterexample."
+
+  followed by "It should certainly hold if we only assume that no `k` of our points are on a
+  circle where `k` is independent of `n` … We also assume that not too many of our points
+  are on a line."
+
+  Three things this settles. The **at-most-two** hypothesis is attached to **`(1+c)n/2`**,
+  not to `(1-o(1))n` and not to `(1+c)n/3`. Erdős's quantity is the **pinned** maximum. And
+  the "no four on a circle" hypothesis, absent from the #655 page, is present here together
+  with Erdős's reason for it: the regular polygon. See `PAGE_NOTES.md`.
+
+  The same page also carries "Pach just told me that `h(2^n) ≤ 3^n`. The projection of the
+  n-dimensional cube shows this. Perhaps `h(n)/n → ∞`, but as far as I know this is still
+  open." — a primary source for #98's upper bound and a statement of #98 itself.
 
 ## The quantity, named and declared open
 

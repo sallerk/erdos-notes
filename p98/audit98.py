@@ -26,6 +26,16 @@ def ck(label, ok, detail=''):
         FAIL.append(label)
 
 
+def remark(text):
+    """A statement of reasoning, printed WITHOUT a verdict.
+
+    ck() prints [PASS] and is for assertions this script actually evaluates.  Passing it a
+    literal True prints [PASS] for something untested, which is exactly the failure this
+    audit is supposed to catch elsewhere, so meta-claims go through remark() instead.
+    """
+    print('  [note] ' + text)
+
+
 def a2(a, b):
     """triangular-lattice point (a,b) as an exact plane point"""
     return (sp.Rational(a) + sp.Rational(b, 2), sp.Rational(b) * sp.sqrt(3) / 2)
@@ -244,7 +254,7 @@ for tri, ctr, want in (((1, 2, 3), 0, 0), ((4, 5, 6), 0, 1)):
        and {cls7(CAND0, ctr, t) for t in tri} == {want})
 print('    so D_0 = D_2/3 and D_1 = D_2/3, forcing classes 0 and 1 to be the SAME')
 print('    distance. Contradiction, no solver needed.')
-ck('classes 0 and 1 are distinct by definition, so candidate 0 is unsatisfiable', True)
+remark('classes 0 and 1 are distinct by definition, so candidate 0 is unsatisfiable')
 
 # the last candidate: two minors that cannot both vanish
 u, v = sp.symbols('u v', positive=True)
@@ -316,7 +326,7 @@ print('     of Erdos #98.  Section 3 shows counting alone cannot even beat the')
 print('     constant 1/3, which has stood since Szemeredi in the 1970s.')
 print('   * The small values appear to be unpublished, but that rests on a literature')
 print('     search failing to find them, which is weaker than knowing they are absent.')
-ck('the audit asserts exact values only for n = 3,4,5,6,7', True)
+remark('the audit asserts exact values only for n = 3,4,5,6,7')
 
 print()
 print('=' * 74)
