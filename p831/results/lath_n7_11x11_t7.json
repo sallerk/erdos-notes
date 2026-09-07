@@ -1,0 +1,11 @@
+{
+ "n": 7,
+ "W": 11,
+ "H": 11,
+ "target": 7,
+ "best": null,
+ "witness": null,
+ "nodes": 8022790,
+ "seconds": 671.2,
+ "completed": true
+}

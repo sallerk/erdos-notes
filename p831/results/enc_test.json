@@ -1,0 +1,23 @@
+{
+ "budget_ms": 30000,
+ "pattern": 0,
+ "rows": [
+  {
+   "encoding": "A 9var deg6",
+   "verdict": "unknown",
+   "seconds": 30.1
+  },
+  {
+   "encoding": "B 6var deg10",
+   "verdict": "unknown",
+   "seconds": 30.12
+  },
+  {
+   "encoding": "C centres deg2",
+   "verdict": "unknown",
+   "seconds": 30.1
+  }
+ ],
+ "completed": true,
+ "note": "A budget this short cannot distinguish \"the algebra is hard\" from \"the budget is short\". The 1800 s run in pdecide_n5_k3.json is the evidence; this is only a record of which encodings were tried."
+}
