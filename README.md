@@ -27,5 +27,15 @@ ASSERTED (search output only), CITED (from the literature), or CONDITIONAL. Sear
 that found nothing are reported as searches, not as proofs. Each `REFERENCES.md`
 marks whether I read a source myself or have it only secondhand.
 
+## What is and is not in this repository
+
+Each directory holds the published record for one problem: `NOTE.md` with the claims and
+their status, `REFERENCES.md` with the bibliography and its provenance, `REPRODUCE.md`
+with the commands, the code, and the artifacts under `results/`.
+
+Working material is deliberately absent: comment drafts, planning documents, process
+notes and run logs. `.gitignore` keeps them out. If a claim here rests on something, that
+something is in `results/` and a script re-derives it.
+
 Disclosure: the computations and the drafting of these notes were done with AI
 assistance.

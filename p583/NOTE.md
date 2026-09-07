@@ -41,7 +41,7 @@ graphs drawn at random from that residue, the exhaustive decider averages **2.61
 graph** (total 1044.88 s, worst single graph 98.5 s), which is about 154 days on 7
 cores; and 13 of the 400 exceeded the 5e8-node cap and returned UNDECIDED, projecting
 roughly 1.16 million graphs that the decider cannot settle at all. So even a completed
-run would not have produced a verification. Details in `COST.md`.
+run would not have produced a verification.
 
 ## Why this is not already implied by the literature
 
@@ -114,7 +114,7 @@ assistance.
 
 ## Files in this directory
 
-Documentation: `REPRODUCE.md`, `REFERENCES.md`, `COST.md`.
+Documentation: `REPRODUCE.md`, `REFERENCES.md`.
 
 Verification: `audit583.py` (standalone, independent decider, includes the novelty
 check) and `coverage.py` (the six cited theorems applied to every connected graph).

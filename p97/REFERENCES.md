@@ -130,7 +130,7 @@
 ## Artifacts here
 
 `REPRODUCE.md` (step-by-step, with the output each command actually printed),
-`RESULTS.md`, `COMMENT_FULL.md`, `artifact_danzer9_t0.json` (exact Danzer coordinates),
+`RESULTS.md`, `artifact_danzer9_t0.json` (exact Danzer coordinates),
 `audit.py` (standalone re-derivation of every checkable claim, sharing no code with the
 searches), `verify_p97.py`, `theorem_alt.py`, and `k3-minimality/` holding the
 n = 4, 5, 6 exclusion, including the incomplete n = 7 run recorded honestly as

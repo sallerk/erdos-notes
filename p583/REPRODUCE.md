@@ -26,7 +26,7 @@ Windows 10. The outputs quoted are what it actually printed.
 | every checkable claim, re-derived independently | `audit583.py` |
 | the published theorems already cover n <= 6 | `coverage.py`, `audit583.py` check 6 |
 | the conjecture holds for all connected graphs on n vertices | `run583.py N 7` |
-| the n = 12 residual decision is infeasible | `COST.md` |
+| the n = 12 residual decision is infeasible | measured, see NOTE.md |
 
 ## 1. The whole note, independently re-derived
 
@@ -102,7 +102,7 @@ after sweeping zero graphs; see NOTE.md.
 n = 12 stage 1 is 164,059,830,476 graphs and took 17,461 s on 7 cores. It is
 reproducible with `python run583.py 12 7`, but the run will then stop: stage 2 is
 infeasible, at a measured 2.61 s per residual graph over 35,633,639 of them, with 3.25 %
-of them exceeding the decider's node cap. `COST.md` records the measurement. The 476 MB
+of them exceeding the decider's node cap. The 476 MB
 of residue graphs are not shipped; the command above regenerates them.
 
 ## Standing limits

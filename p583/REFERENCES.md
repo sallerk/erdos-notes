@@ -85,4 +85,4 @@ exhaustive (164,059,830,476 graphs, equal to A001349(12), all seven shards COMPL
 but the residual decision was abandoned: measured at 2.61 s per residual graph over
 35,633,639 of them, that is about 154 days on 7 cores, and 3.25 % of a random sample
 exceeded the decider's node cap, so even a completed run would have left roughly 1.16
-million graphs undecided and produced no verification. See `COST.md`.
+million graphs undecided and produced no verification.

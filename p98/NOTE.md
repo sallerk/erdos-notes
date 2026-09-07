@@ -441,7 +441,7 @@ window: `D_gen(8) = 6` would push it to `n <= 16`. Verified by `lowerbound.py`.
 
 *An earlier version of this section gave the window as `4 <= n <= 10` with an `ours` row of
 `4,4,4,4,4` from `n = 7`. That predated section 3h and was stale; `REPRODUCE.md`,
-`DRAFT_COMMENT.md` and `audit98.py` all carried the corrected window while this section did
+`audit98.py` and the comment draft all carried the corrected window while this section did
 not.*
 
 

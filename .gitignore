@@ -1,2 +1,33 @@
+# Internal working files. This repository holds the published record for each
+# problem: the note, its bibliography, the reproduction instructions, the code and
+# the artifacts under results/. Drafts and process notes stay out.
+
+# Comment drafts, in every naming variant used so far
+DRAFT_COMMENT*
+DRAFT_CLARIFYING_COMMENT*
+COMMENT_FULL*
+COMMENT_PLAIN*
+*_DRAFT.md
+DRAFT_*.md
+
+# Planning and process notes
+PLAN.md
+LESSONS.md
+TODO.md
+todo.md
+COST.md
+NOTES_INTERNAL.md
+SCRATCH*
+
+# Run logs and checkpoints: results/ carries the completion artifacts, and a
+# checkpoint must never be mistaken for a finished run
+logs/
+*.log
+*.ck.json
+
+# Local clutter
 __pycache__/
 *.pyc
+.DS_Store
+Thumbs.db
+*.stackdump

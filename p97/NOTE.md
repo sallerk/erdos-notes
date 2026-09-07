@@ -91,7 +91,7 @@ correct all-triples constraint.
 ## Files in this directory
 
 Documentation: `REPRODUCE.md` (step-by-step, with the actual output of each command),
-`REFERENCES.md`, `RESULTS.md`, `COMMENT_FULL.md`.
+`REFERENCES.md`, `RESULTS.md`.
 
 Verification: `audit.py` (standalone re-derivation of every checkable claim, sharing no
 code with the searches) and `verify_p97.py` (the earlier independent artifact verifier).

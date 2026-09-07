@@ -218,7 +218,10 @@ there too. Its size-4 class has support 5, so by Lemma 3 it is NOT an orthocentr
 (The n=6 witness's size-4 class has support 6, not 5 as an earlier draft of this note
 said; the conclusion that it is not an orthocentric quadruple holds a fortiori.) The
 orthocentric route is a dead end above n = 4 for the SEARCH that starts from it, not as
-a theorem about h: see LESSONS.md P4.
+a theorem about h: the best n = 4 configuration is the worst possible seed for a
+greedy search, because Lemma 3 says an orthocentric quadruple saturates both circles
+of its radius through every one of its pairs and so can never be extended within its
+own class.
 
 ## 5. n = 5: the case analysis, and where it stands
 
