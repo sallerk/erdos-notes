@@ -19,10 +19,12 @@ COST.md
 NOTES_INTERNAL.md
 SCRATCH*
 
-# Run logs and checkpoints: results/ carries the completion artifacts, and a
-# checkpoint must never be mistaken for a finished run
+# Run logs and checkpoints. A blanket *.log rule would have contradicted five logs
+# already committed under results/ and cited from the notes as evidence, so the rule
+# excludes the working logs/ directory and stray top-level logs, and leaves anything
+# deliberately archived under results/ alone.
 logs/
-*.log
+/*.log
 *.ck.json
 
 # Local clutter
