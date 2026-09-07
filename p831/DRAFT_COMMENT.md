@@ -26,6 +26,6 @@ Upper bounds, from exact integer witnesses: $h(5)\le 4$ at $(0,0),(0,7),(2,6),(4
 
 Two notes on the page text. [Er75h] asks a second question that the statement here omits: "How does $h(n)$ get modified if we only assume that not all our points are on a circle?" And Erdős writes "in general position", which this page renders as no three on a line and no four on a circle, whereas Martínez and Roldán-Pensado (Acta Math. Hungar. 145 (2015)), treating the companion Ramsey-type quantity from the same paper, read general position as no four on a line or circle.
 
-Code, exact witnesses, the lemmas behind the $n = 5$ analysis, and three adversarial audits of my own work, which found two fatal defects in my instruments, both since fixed: https://github.com/sallerk/erdos-notes/tree/main/p831
+Code, exact witnesses and the lemmas behind the $n = 5$ analysis: https://github.com/sallerk/erdos-notes/tree/main/p831
 
 Disclosure: the computations and the drafting of this comment were done with AI assistance.
