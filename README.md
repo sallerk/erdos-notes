@@ -15,6 +15,7 @@ artifacts behind it.
 | p583 | #583 Gallai path decomposition | verified for every connected graph on n <= 11; the cited theorems already cover n <= 6, but not a majority of graphs by n = 10 |
 | p217 | #217 crescent configurations | no 9-point configuration on the triangular lattice with squared diameter <= 400; extends the published 91-point search 16-fold |
 | p98 | #98 distinct distances in general position | exact values D_gen(3..7) = 1, 2, 3, 4, 5, the best known lower bound for 4 <= n <= 13; D_gen(8) in [5,7] |
+| p100 | #100 diameter of a distance-separated set | first table of Erdos's delta(n): exact at n = 3, 4, 5; Piepmeyer verified two ways; two page corrections |
 | p831 | #831 fewest distinct circumradii | h(4) = 1 (Erdos's own remark, never recorded as a value); h(5) in {3,4}, h(6) <= 6; six lemmas including a parallelogram structure; the exact-value form of the #104 lower bound |
 | p654 | #654 pinned distinct distances | exact values f(3..6) = 1, 2, 3, 3 under both hypotheses; f(7), f(8) in [3,4]; a solver-free proof that f(7) > 2; two discrepancies to check on the problem page |
 

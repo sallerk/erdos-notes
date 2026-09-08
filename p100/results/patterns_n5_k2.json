@@ -1,0 +1,159 @@
+{
+ "n": 5,
+ "k": 2,
+ "patterns": 17,
+ "realised": 1,
+ "shapes": 1,
+ "best_delta": 2.618033988749895,
+ "best": {
+  "i": 16,
+  "delta": 2.618033988749895,
+  "values": [
+   1.0,
+   1.618033988749895
+  ],
+  "binding": "gap_1",
+  "spread": 0.0,
+  "ok": true
+ },
+ "points": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   1.0,
+   0.0
+  ],
+  [
+   -0.3090169943749474,
+   0.9510565162951536
+  ],
+  [
+   1.3090169943749475,
+   0.9510565162951536
+  ],
+  [
+   0.5,
+   1.5388417685876268
+  ]
+ ],
+ "results": [
+  {
+   "i": 0,
+   "realised": false,
+   "residual": 0.3170825154585806,
+   "n_shapes": 0
+  },
+  {
+   "i": 1,
+   "realised": false,
+   "residual": 0.2335625139581257,
+   "n_shapes": 0
+  },
+  {
+   "i": 2,
+   "realised": false,
+   "residual": 1.3643099223658176e-05,
+   "n_shapes": 0
+  },
+  {
+   "i": 3,
+   "realised": false,
+   "residual": 0.26435557998796666,
+   "n_shapes": 0
+  },
+  {
+   "i": 4,
+   "realised": false,
+   "residual": 1.08336782814564e-08,
+   "n_shapes": 0
+  },
+  {
+   "i": 5,
+   "realised": false,
+   "residual": 0.07515367541195231,
+   "n_shapes": 0
+  },
+  {
+   "i": 6,
+   "realised": false,
+   "residual": 0.08006654256526907,
+   "n_shapes": 0
+  },
+  {
+   "i": 7,
+   "realised": false,
+   "residual": 0.06683977704685676,
+   "n_shapes": 0
+  },
+  {
+   "i": 8,
+   "realised": false,
+   "residual": 0.13980243292306238,
+   "n_shapes": 0
+  },
+  {
+   "i": 9,
+   "realised": false,
+   "residual": 0.24264068712303002,
+   "n_shapes": 0
+  },
+  {
+   "i": 10,
+   "realised": false,
+   "residual": 0.11972061306797663,
+   "n_shapes": 0
+  },
+  {
+   "i": 11,
+   "realised": false,
+   "residual": 0.23606798056563993,
+   "n_shapes": 0
+  },
+  {
+   "i": 12,
+   "realised": false,
+   "residual": 0.08221843019240715,
+   "n_shapes": 0
+  },
+  {
+   "i": 13,
+   "realised": false,
+   "residual": 0.070920155214494,
+   "n_shapes": 0
+  },
+  {
+   "i": 14,
+   "realised": false,
+   "residual": 0.23841160130807326,
+   "n_shapes": 0
+  },
+  {
+   "i": 15,
+   "realised": false,
+   "residual": 2.0900978170365754e-06,
+   "n_shapes": 0
+  },
+  {
+   "i": 16,
+   "realised": true,
+   "residual": 0.0,
+   "n_shapes": 1,
+   "shapes": [
+    {
+     "delta": 2.618033988749895,
+     "values": [
+      1.0,
+      1.618033988749895
+     ],
+     "binding": "gap_1",
+     "spread": 0.0,
+     "ok": true
+    }
+   ]
+  }
+ ],
+ "seconds": 526.8,
+ "completed": true
+}
