@@ -218,10 +218,7 @@ there too. Its size-4 class has support 5, so by Lemma 3 it is NOT an orthocentr
 (The n=6 witness's size-4 class has support 6, not 5 as an earlier draft of this note
 said; the conclusion that it is not an orthocentric quadruple holds a fortiori.) The
 orthocentric route is a dead end above n = 4 for the SEARCH that starts from it, not as
-a theorem about h: the best n = 4 configuration is the worst possible seed for a
-greedy search, because Lemma 3 says an orthocentric quadruple saturates both circles
-of its radius through every one of its pairs and so can never be extended within its
-own class.
+a theorem about h: see LESSONS.md P4.
 
 ## 5. n = 5: the case analysis, and where it stands
 
@@ -389,3 +386,40 @@ enumeration of all 198,792,594 five-subsets of the 11x11 grid. Neither is a proo
 h(5), because a lattice is a restriction and one branch of the case analysis is
 untreated. The pattern screen and the Case A search, which the pre-audit version of this
 note also cited, are no longer offered as evidence.
+
+## 6. An attempt to settle one branch by quantifier elimination, and how it ended
+
+The question "is h(5) at least 4" is a sentence about real numbers, so in principle a real
+quantifier elimination decides it. In general that is hopeless here: six coordinate
+unknowns and equations of degree ten. But one branch is small enough to try. In the
+common-point family the class {012, 013, 024, 034} puts all four circles through one
+point, so by Lemma 5 the configuration is P1 = o1+o2, P2 = o1+o3, P3 = o2+o4,
+P4 = o3+o4 with o1..o4 unit vectors; fixing the rotation leaves three angles, and
+Lemma 6 turns two of the six remaining triples into identities, so only two equations
+survive. Writing each angle through the tangent half-angle substitution makes every
+coordinate rational, and the whole branch becomes a sentence about three real variables.
+`mkqe.py` emits it: does there exist (t2, t3, t4) satisfying both equations, with the five
+points distinct, no three collinear, no four concyclic, and the three class radii pairwise
+different? A `false` would settle this branch; a `true` would hand back a configuration
+and prove h(5) = 3.
+
+**It did not finish.** Redlog was run on the sentence twice, once with all eighteen side
+conditions (`qe_typeIII.red`) and once with five (`qe_typeIII_lean.red`), the second in
+the hope that a smaller input would decompose faster. Virtual substitution refuses the
+input at degree three, so both fell through to the cylindrical algebraic decomposition,
+`ofsf_cad`. Both completed the projection phase quickly and then stopped producing output
+altogether: the full sentence projects to 757 factors (15, 45 and 697 at the three levels)
+and the lean one to 210 (9, 21 and 180), after which each printed "Building partial CAD
+tree" and nothing more. They were left running for 20.4 and 19.5 hours of
+processor time respectively, holding about 2 GB each, and were then stopped. Neither
+returned an answer, and the extension phase writes nothing until it completes, so there is
+no partial result to report either.
+
+**So this changes nothing.** h(5) is still 3 or 4, on the evidence in section 5. What the
+attempt does establish is a cost: the branch is not reachable by a general-purpose CAD on
+this input, at least not in a day of one core. Anyone trying again should attack the
+projection rather than the machine. The obvious moves are to exploit the symmetry that
+permutes o1..o4, to eliminate one variable by hand with a resultant before calling the
+decomposition, and to try QEPCAD B, whose projection operators and propagation of
+equational constraints are different from Redlog's and may be better suited to a system
+that is two equations plus many inequations.

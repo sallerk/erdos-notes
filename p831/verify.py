@@ -268,6 +268,19 @@ ck('z3 decided nothing, so it is not evidence in either direction',
    '%d patterns at %d ms, verdicts %s' % (len(vs), p['timeout_ms'], sorted(set(vs))))
 print('   h(5) is 3 or 4; nothing in this directory decides it.')
 
+# The quantifier elimination of section 6 was attempted and abandoned.  These checks are
+# here so that a later edit cannot quietly turn an unfinished run into a result.
+note = io.open('NOTE.md', encoding='utf-8').read()
+flat = ' '.join(note.split())      # the note is hard-wrapped, so match on flattened text
+ck('the elimination attempt is recorded as UNFINISHED, not as a result',
+   'It did not finish' in flat and 'Neither returned an answer' in flat)
+ck('no claim that a branch of h(5) was settled by the elimination',
+   'settles this branch' not in note.replace('would settle this branch', ''))
+ck('the input files for the attempt are present, so it can be picked up again',
+   os.path.exists('mkqe.py') and os.path.exists('qe_typeIII.red')
+   and os.path.exists('qe_typeIII_lean.red'))
+ck('the status sentence still says h(5) is 3 or 4', '**h(5) is 3 or 4.**' in note)
+
 print()
 print('=' * 78)
 if FAIL:

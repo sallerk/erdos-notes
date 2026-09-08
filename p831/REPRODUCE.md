@@ -107,3 +107,24 @@ Read `AUDIT_SUMMARY.md` first. The following supersede entries above.
 reading a flag, excludes checkpoint files, and enforces that the write-up discloses the
 weaknesses the audit found rather than that those weaknesses are absent. Where a
 limitation cannot be removed, the check asserts that NOTE.md states it.
+
+## The quantifier elimination that did not finish (2026-09-07 to 2026-09-08)
+
+`mkqe.py` writes the surviving common-point pattern as a real quantifier-elimination
+problem in three variables, `qe_typeIII.red` with all eighteen side conditions and
+`qe_typeIII_lean.red` with five. To run them you need Reduce with Redlog; the build used
+here was Free PSL revision 7327 of 2026-03-08, unpacked into a scratch directory:
+
+    cd reduce
+    ./psl/bpsl.exe -td 3000000000 -f ./red/reduce.img < ../qe_typeIII.red > ../qe_out.log
+
+Two traps. The input must have Unix line endings; a carriage return makes Redlog answer
+"Declare ? operator?" and stop. And the output is buffered, so the log file's size stays
+at whatever the projection phase wrote and tells you nothing about progress; track
+processor time instead, which is what `qewatch.py` does after the fix recorded in
+LESSONS P17.
+
+Neither run finished. Both reached the extension phase within a minute and then produced
+no further output for 20.4 and 19.5 hours of processor time, at about 2 GB each,
+and were stopped on 2026-09-08. NOTE.md section 6 says what that does and does not mean.
+Do not repeat the runs as they stand; change the projection first.
