@@ -22,6 +22,8 @@ its artifact under `results/`; `verify.py` reads them all back and fails on a mi
     python lat.py 9 4 100     # the two lattice 9-point 4-distance sets
     python lat.py 7 4 100; python lat.py 8 4 100
     python polygons.py        # delta for R_n, R_n+centre, R_n-vertex, n <= 14
+    python e9.py              # the four 9-point 4-distance sets (Erdos-Fishburn) -> delta(9)
+    python e78.py             # the 42 seven-point and 15 eight-point 4-distance sets -> delta(7), delta(8), ~2 min
     python verify.py          # audits every claim in NOTE.md against results/
 
 `pexact.py` is the authority on what is PROVED: a pattern is unrealisable when its
@@ -58,7 +60,9 @@ not be quoted. The subset bounds in `results/piepmeyer_subsets.json` are re-deri
 | E_5(<=3), complete and exact | results/pexact_n5_k3.json |
 | delta(6) = 2+sqrt2, proved; the nine 6-point 3-distance sets | results/e6_k3.json |
 | E_7(3) = {R_7, R_6+centre}; E_8(3) empty | results/e7_k3.json, results/e8_k3.json |
-| delta(7), delta(8), delta(9) <= 4.6639 | results/piepmeyer_subsets.json, results/piepmeyer.json |
+| delta(9) = 4.6639, proved; three-triangle set = Piepmeyer | results/e9_k4.json |
+| delta(7) = delta(8) = 4.6639, proved | results/e78_k4.json, results/lat_n7_k4.json, results/lat_n8_k4.json |
+| delta(7), delta(8), delta(9) <= 4.6639 (the witnesses) | results/piepmeyer_subsets.json, results/piepmeyer.json |
 | no 10th point on Piepmeyer beats 8.2909 | results/ext2_piepmeyer.json |
 | delta(10) <= 8.2909 | results/seeded_n10_k5.json, results/polygons.json |
 | delta(11), delta(12) <= 6+3sqrt3; delta(13) <= 6+4sqrt3 | results/lat_n11_k5.json, lat_n12_k5.json, lat_n13_k6.json |

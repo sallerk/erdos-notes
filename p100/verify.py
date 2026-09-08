@@ -106,6 +106,9 @@ def exact_ok(fn, n, k, npat, expect_infeasible, expect_shapes, expect_best):
 exact_ok('results/pexact_n4_k2.json', 4, 2, 5, 0, 6, 2.0731321850)
 exact_ok('results/pexact_n5_k2.json', 5, 2, 17, 16, 1, 2.6180339887)
 r53 = exact_ok('results/pexact_n5_k3.json', 5, 3, 124, 104, None, 2.6180339887)
+if r53:
+    n3 = sum(1 for k in r53[1] if len(k) == 6)
+    ck('E_5(3) CONTROL: 34 five-point 3-distance sets, Shinohara 2004 Theorem 1', n3 == 34, 'found %d' % n3)
 phi = (1 + sp.sqrt(5)) / 2
 d5 = load('results/pexact_n5_k2.json')
 if d5:
@@ -139,7 +142,7 @@ if e6:
        any(abs(float(r['values'][1]) - 1.9318516526) < 1e-8 and abs(float(r['values'][2]) - 2.7320508076) < 1e-8 for r in w))
 if e7:
     ck('E_7(3) CONTROL: exactly two sets, the regular heptagon and hexagon plus centre '
-       '(Erdos-Fishburn 1996, as quoted by Wei 2012)',
+       '(Erdos-Fishburn 1996 Thm 1; Shinohara 2004 Thm 2)',
        e7['completed'] and len(e7['rejected']) == 0 and len(e7['sets']) == 2 and
        sorted(round(float(r['delta']), 6) for r in e7['sets']) == [5.048917, 7.464102])
 if e8:
@@ -205,12 +208,47 @@ if d:
        d['similarity_classes'] == 2 and all(abs(float(r['delta_num']) - 9.874078317085) < 1e-9 for r in d['sets']))
 
 print()
-print('9. What is bounded but NOT proved')
-print('   delta(7), delta(8), delta(9) rest on Piepmeyer subsets plus the floor 4; the')
-print('   7-point 4-distance sets and the 9-point 4-distance sets are classified in the')
-print('   literature (Lan-Wei 2013, Erdos-Fishburn 1996) but those lists were not obtained.')
-ck('the note does not claim those as exact',
-   'bracketed' in note or 'upper bound' in note)
+print('9. delta(7), delta(8), delta(9) from the published classifications')
+print('   Erdos-Fishburn 1996 Thm 1 (9 points), Shinohara 2008 Thm 1.2(a) (8 points),')
+print('   Lan-Wei 2013 Thm 8 (7 points); a competitor has exactly 4 distances (delta >= k,')
+print('   and E_7(3) = {R_7, R_6+} has delta >= 5.049).')
+e9 = load('results/e9_k4.json')
+if e9:
+    ck('E_9(4): all four sets built exactly and each has exactly 4 distances',
+       e9['completed'] and len(e9['sets']) == 4 and all(v['k'] == 4 for v in e9['sets'].values()))
+    ck('the three-triangle set of Erdos-Fishburn IS the Piepmeyer set (equal multisets, exact)',
+       bool(e9['three_triangles_is_piepmeyer']))
+    ck('delta(9) = 4.6639024601, attained by Piepmeyer and by nothing else in E_9(4)',
+       abs(float(e9['delta9_num']) - 4.66390246015) < 1e-9 and e9['best'] == 'three triangles (c)' and
+       sum(1 for v in e9['sets'].values() if abs(float(v['delta_num']) - 4.66390246015) < 1e-9) == 1)
+    ck('the other three (R_9, two lattice sets) have delta 8.2909, 9.8741, 9.8741',
+       sorted(round(float(v['delta_num']), 4) for v in e9['sets'].values()) == [4.6639, 8.2909, 9.8741, 9.8741])
+e78 = load('results/e78_k4.json')
+if e78:
+    ck('E_7(4): 40 sets built explicitly + 2 by their stated ratios = the 42 of Lan-Wei',
+       e78['E7_classes'] + len(e78['E7_ratio_only']) == 42 and e78['E7_classes'] == 40)
+    ck('E_8(4): 15 sets built explicitly (R_8, R_7+, square+apexes, R_9-1, 8 lattice, 3 Piepmeyer subsets)',
+       e78['E8_classes'] == 15)
+    ck('delta(7) = 4.6639024601, from Piepmeyer 7-subsets only',
+       abs(float(e78['delta7']) - 4.66390246015) < 1e-9 and 'Piepmeyer' in e78['delta7_from'] and
+       all(float(r['delta']) > 4.664 or 'Piepmeyer' in r['family'] for r in e78['E7']) and
+       all(float(r['delta']) > 4.664 for r in e78['E7_ratio_only']))
+    ck('delta(8) = 4.6639024601, from Piepmeyer 8-subsets only',
+       abs(float(e78['delta8']) - 4.66390246015) < 1e-9 and
+       all(float(r['delta']) > 4.664 or 'Piepmeyer' in r['family'] for r in e78['E8']))
+    ck('every 7-point 4-distance set built has exactly 4 distances', all(len(r['ratios']) == 4 for r in e78['E7']))
+ck('NOTE.md marks n = 7, 8, 9 as PROVED and states the sources', 'Lan-Wei' in note and 'Erdos-Fishburn (1996' in note and 'Theorem 1)' in note and '| 9 | 4 | **4.6639024601**' in note)
+print()
+print('10. The floors at n = 10, 11, 12 (Wei 2012 Thm 11, Wei 2011 Thm 13, Shinohara 2008)')
+d10 = load('results/lat_n10_k5.json'); d11 = load('results/lat_n11_k5.json'); s10 = load('results/seeded_n10_k5.json')
+pg = load('results/polygons.json')
+if d10 and d11 and s10 and pg:
+    ck('every 10-point 5-distance set has delta >= 8.2909 (the nonagon+centre value)',
+       all(float(r['delta_num']) >= 8.29 for r in d10['sets']) and
+       float(pg['R10']['delta']) >= 8.29 and float(pg['R11-vertex']['delta']) >= 8.29 and 9.21 >= 8.29)
+    ck('every 11-point 5-distance set has delta >= 11.196 (R_11 and the three lattice sets)',
+       d11['similarity_classes'] == 3 and all(float(r['delta_num']) >= 11.19 for r in d11['sets']) and float(pg['R11']['delta']) >= 11.19)
+    ck('NOTE.md states the floor 6 at n = 10, 11, 12 with its source', 'delta(11), delta(12) >= 6' in note)
 
 print()
 print('=' * 78)

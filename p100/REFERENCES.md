@@ -66,36 +66,70 @@ report I checked against the source; [SECONDHAND] = seen only as a citation or a
   - Theorem 11: "Every 10-point 5-distance set in the plane is isomorphic to R_9^+,
     R_10, R_11 - 1, double R_5 with the same center as shown in Figure 2q, or one of
     the sixteen 10-point configurations in L_triangle as shown in Figure 2a-2p." The
-    sixteen appear only as figures (page 4, rendered and looked at; not compared point
-    by point). lat.py finds fifteen up to similarity with diameter <= 10.
+    sixteen appear only as figures. lat.py finds fifteen up to similarity; extracting
+    the dot coordinates of Figure 2 from the PDF (the agent's computation) shows panels
+    2c and 2h are mirror images, so the figure holds one duplicate. The double R_5 is
+    the regular pentagon with its five diagonal intersections (the only concentric
+    doubling of R_5 with five distances; my computation and the agent's agree).
   - Figure 1: the 13-point 6-distance lattice set (lat.py finds exactly one).
   - Its reference list, which is where the classification papers below were found.
 
+The five papers below were obtained in full text by a retrieval agent restricted to
+curl and WebFetch (no browser); each theorem quoted here was then checked by me against
+the text extraction of the PDF. Copies are kept outside the repository.
+
 * **P. Erdos and P. Fishburn, *Maximum planar sets that determine k distances*, Discrete
-  Math. **160** (1996) 115-125.** g(k) for k <= 5 and the classification of maximum
-  k-distance sets for k <= 4, hence the list of 9-point 4-distance sets that would
-  settle delta(9). [NOT OBTAINED]; known through Wei's summary above. A search snippet
-  says the 9-point 4-distance sets are the regular nonagon "or one of three other
-  configurations"; that phrase was not verified against the paper.
+  Math. **160** (1996) 115-125.** Wayback Machine copy of the CORE mirror of the
+  Elsevier open-archive PDF (web.archive.org/web/20190320071006id_/https://core.ac.uk/
+  download/pdf/82120885.pdf). [READ]
+  Theorem 1: "g(2) = 5, g(3) = 7, g(4) = 9 and g(5) = 12. R5 is the only 5-point set with
+  exactly two interpoint distances; the only 7-point sets that determine three
+  distances are R7 and R6+; a 9-point set with exactly four distances must be R9 or one
+  of the configurations at the top of Fig. 1". Fig. 1 top: "Three 9-point
+  configurations that determine 4 distances": two lattice sets and one "composed of
+  three equilateral triangles with the same center and a horizontal edge", with the
+  distance rules on p. 116 that fix its radii (used verbatim in e9.py). That set is
+  Piepmeyer's set; the paper does not mention Piepmeyer. Also p. 117: it "is a
+  curiosity in that it is the only verified or conjectured realizer of a g(k) that is
+  not an Rn or Rn+ or subset of L_triangle".
 
 * **M. Shinohara, *Classification of three-distance sets in two dimensional Euclidean
-  space*, European J. Combin. **25** (2004) 1039-1058.** Classifies every planar
-  3-distance set with at least five points. [NOT OBTAINED]; cited by Wei. The exact
-  chain here rebuilds E_5(3), E_6(3), E_7(3) from scratch (35 distinct distance
-  multisets with 3 values at n = 5, nine at n = 6, two at n = 7) and could be compared
-  with Shinohara's counts if the paper is obtained.
+  space*, European J. Combin. **25** (2004) 1039-1058.** Wayback copy of the CORE
+  mirror (web.archive.org/web/20240708032538id_/https://core.ac.uk/download/pdf/
+  82573075.pdf). [READ]
+  Theorem 1: "There are thirty four three-distance sets having five points in R2 to
+  within isomorphism." Theorem 2: no 3-distance set has more than seven points; two
+  maximal ones with seven points (R_7, R_6^+); six maximal ones with six points;
+  sixteen maximal ones with five points. The exact chain here finds 34 five-point,
+  9 six-point and 2 seven-point 3-distance sets, in agreement (the nine are the six
+  maximal ones plus the three 6-point subsets of R_7 and R_6^+).
 
 * **M. Shinohara, *Uniqueness of maximum planar five-distance sets*, Discrete Math.
-  **308** (2008) 3048-3055.** [SECONDHAND] via Wei; the uniqueness is reproduced by
-  lat.py among lattice sets.
+  **308** (2008) 3048-3055.** Wayback copy of the CORE mirror
+  (web.archive.org/web/20240414142032id_/https://core.ac.uk/download/pdf/82675961.pdf).
+  [READ]
+  Theorem 1.2: "(a) Every 8-point four-distance set in R2 is isomorphic to R8, R7+,
+  Fig. 1(e) or an 8-point subsets of a 9-point four-distance set. (b) The configuration
+  given in Fig. 1(d) is the only 12-point five-distance set in R2." Fig. 1(e) is a
+  square with an equilateral triangle erected on each side; Fig. 1(d) is the lattice set
+  lat.py finds. Used in e78.py for delta(8).
 
-* **W. Lan and X. Wei, *Classification of four-distance seven-point sets in the plane*,
-  Mathematical Notes 93 (2013).** Would settle delta(7) by a finite check. [NOT
-  OBTAINED]; cited by Wei as "[8] ... to appear".
+* **W. Lan and X. Wei, *Classification of seven-point four-distance sets in the plane*,
+  Mat. Zametki **93**:4 (2013) 492-508 (Russian; English in Math. Notes 93 (2013)
+  510-522).** Russian original from mathnet.ru (mzm10172). [READ] in Russian.
+  Theorem 8: up to isomorphism there are exactly 42 seven-point four-distance sets
+  (Fig. 4). The closing paragraph (pp. 507-508) identifies them by family: four R_9 - 2,
+  R_7^+ - 1, R_8 - 1, nine subsets of the three-triangle 9-set, twenty lattice sets, two
+  subsets of the square-with-apexes 8-set, two "R_5 plus two points" inside the doubled
+  R_5, and three more given by their distance ratios 1 : sqrt2 : 2 : sqrt5,
+  1 : sqrt(2+sqrt3) : sqrt(4+2sqrt3) : sqrt(5+2sqrt3), 1 : sqrt2 : sqrt(2+sqrt3) :
+  sqrt(4+sqrt3). e78.py rebuilds every family with the stated counts.
 
 * **X. Wei, *Classification of eleven-point five-distance sets in the plane*, Ars
-  Combin. **102** (2011) 505-515.** [NOT OBTAINED]; cited by Wei 2012 as the source of
-  its Lemmas 6 and 7.
+  Combin. **102** (2011) 505-515.** Scanned PDF from combinatorialpress.com, read from
+  page images by the agent. [READ] by the agent only.
+  Theorem 13: four 11-point 5-distance sets, R_11 and three lattice sets (Figure 4);
+  lat.py finds exactly three lattice ones, all subsets of the 12-point set.
 
 * **F. Szollosi and P. R. J. Ostergard, *Constructions of maximum few-distance sets in
   Euclidean spaces*, Electron. J. Combin. 27(1) (2020) #P1.23, arXiv:1804.06040.**
