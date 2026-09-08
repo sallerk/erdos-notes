@@ -1,54 +1,66 @@
 # Reproducing p100
 
-Python 3.13 with numpy, scipy, sympy. Run from this directory.
+Python 3.13 with numpy, scipy, sympy, mpmath. Run from this directory. Every script writes
+its artifact under `results/`; `verify.py` reads them all back and fails on a missing one.
 
-## Exact, seconds
+## Exact, seconds to minutes
 
-    python piepmeyer.py     # Piepmeyer's 9 points, two independent derivations, exact
-    python verify.py        # audits every claim in NOTE.md against results/
+    python piepmeyer.py       # Piepmeyer's 9 points, two independent derivations, exact
+    python pexact.py 4 2      # all 5 two-distance patterns on 4 points, Groebner-decided
+    python pexact.py 5 2      # 17 patterns; 16 proved unrealisable; the pentagon
+    python pexact.py 5 3      # 124 patterns; 104 unrealisable; E_5(<=3), ~3 min
+    python ext3.py 5 3        # E_6(<=3): nine sets, all certified -> delta(6) = 2+sqrt2
+    python ext3.py 6 3        # E_7(<=3) CONTROL: heptagon and hexagon+centre only
+    python ext3.py 7 3        # E_8(<=3) CONTROL: empty (g(3) = 7)
+    python ext2.py piepmeyer 10   # every 10th point added to Piepmeyer: best 9.903
+    python ext2.py nonagon 10     # CONTROL: finds nonagon + centre, 8.2909
+    python ext2.py r9plus 12      # no 11th point with delta <= 12
+    python lat.py 12 5 100    # CONTROL: the 12-point 5-distance set is unique
+    python lat.py 13 6 100    # CONTROL: one 13-point 6-distance lattice set
+    python lat.py 10 5 100    # fifteen lattice sets (Wei's figure shows sixteen)
+    python lat.py 11 5 100    # the n = 11 witness, delta = 6+3sqrt3
+    python lat.py 9 4 100     # the two lattice 9-point 4-distance sets
+    python lat.py 7 4 100; python lat.py 8 4 100
+    python polygons.py        # delta for R_n, R_n+centre, R_n-vertex, n <= 14
+    python verify.py          # audits every claim in NOTE.md against results/
 
-`piepmeyer.py` rebuilds the set from Erdos's verbal description and separately from the
-closed-form coordinates, checks the two agree as exact distance multisets, and reports
-the four distances, the three gaps and which gap binds. `verify.py` re-reads every
-artifact and fails on a missing one.
+`pexact.py` is the authority on what is PROVED: a pattern is unrealisable when its
+saturated ideal has Groebner basis [1], and a feasible pattern's solution list is
+certified complete when its length equals the quotient-ring dimension. `ext3.py`'s
+completeness argument is in its docstring; every set it keeps is re-decided exactly.
 
-## The proved values, minutes
+## Numerical witness finders, minutes to an hour
 
-    python patterns.py 4 2 200      # all 5 two-distance patterns on 4 points -> 2.0731321850
-    python patterns.py 5 2 300      # all 17 on 5 points; exactly one realisable -> phi^2
-
-These are exhaustive over every canonical colouring of the pairs, with every distinct
-realisation shape collected per pattern. They are what "PROVED" means in NOTE.md.
-
-## The bracketed values, minutes to an hour each
-
+    python patterns.py 4 2 200      # numerical realisation of the same patterns (6 shapes)
+    python patterns.py 5 2 300
     python seeded.py 6 3 4          # -> 3.4142135624
     python seeded.py 9 4 4          # CONTROL: must report 4.6639024601 from "Piepmeyer first 9"
-    python seeded.py 10 5 4
+    python seeded.py 10 5 4         # -> 8.2908593694 (nonagon + centre)
+    python seeded.py 11 5 4         # -> 12.3435375197 (regular 11-gon); lat.py does better
 
-`seeded.py` starts from structured configurations and polishes each. Read the hit rate
-it prints; a run whose n = 9 control does not recover Piepmeyer may not be quoted. The
-subset bounds come from
+`seeded.py` prints its hit rate; a run whose n = 9 control does not recover Piepmeyer may
+not be quoted. The subset bounds in `results/piepmeyer_subsets.json` are re-derived by
+`verify.py` from the exact coordinates.
 
-    python -c "..."                 # the block in the session that wrote results/piepmeyer_subsets.json
+## Kept for the record, not for use
 
-and are re-derived by `verify.py` from the exact coordinates.
-
-## Two instruments kept for the record, not for use
-
-* `search.py` minimised delta over coordinates with a penalty on the integer class count.
-  It cannot work (the penalty is a step function) and reported no 2-distance set on four
-  points. Kept because the failure mode is instructive.
-* `fewdist.py` is the solver that `seeded.py` uses; run on its own with random starts its
-  hit rate is under 1%, which is why `seeded.py` exists.
+* `search.py` minimised delta with a penalty on the integer class count. It cannot work
+  (the penalty is a step function) and reported no 2-distance set on four points.
+* `fewdist.py` is the solver `seeded.py` uses; on random starts its hit rate is under 1%.
+* `ext1.py` is the first extension search (at most one new value); `ext2.py` supersedes it.
 
 ## What each artifact supports
 
 | claim | artifact |
 |---|---|
-| delta(4) = 2.0731321850, proved | results/patterns_n4_k2.json |
-| delta(5) = phi^2, proved; pentagon unique | results/patterns_n5_k2.json |
-| delta(6) <= 2+sqrt2 | results/seeded_n6_k3.json, results/piepmeyer_subsets.json |
-| delta(7), delta(8) <= 4.6639 | results/piepmeyer_subsets.json |
-| delta(9) <= 4.6639, Piepmeyer exact | results/piepmeyer.json |
-| the n = 9 control | results/seeded_n9_k4.json |
+| delta(4) = 2.0731321850, proved; the six 2-distance sets | results/pexact_n4_k2.json |
+| delta(5) = phi^2, proved; pentagon unique | results/pexact_n5_k2.json |
+| E_5(<=3), complete and exact | results/pexact_n5_k3.json |
+| delta(6) = 2+sqrt2, proved; the nine 6-point 3-distance sets | results/e6_k3.json |
+| E_7(3) = {R_7, R_6+centre}; E_8(3) empty | results/e7_k3.json, results/e8_k3.json |
+| delta(7), delta(8), delta(9) <= 4.6639 | results/piepmeyer_subsets.json, results/piepmeyer.json |
+| no 10th point on Piepmeyer beats 8.2909 | results/ext2_piepmeyer.json |
+| delta(10) <= 8.2909 | results/seeded_n10_k5.json, results/polygons.json |
+| delta(11), delta(12) <= 6+3sqrt3; delta(13) <= 6+4sqrt3 | results/lat_n11_k5.json, lat_n12_k5.json, lat_n13_k6.json |
+| lattice controls (12-point unique, 13-point unique) | results/lat_n12_k5.json, results/lat_n13_k6.json |
+| the n = 9 seeded control | results/seeded_n9_k4.json |

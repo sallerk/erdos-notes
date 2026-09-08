@@ -119,6 +119,7 @@ def realise(n, pairs, labels, k, restarts, rng):
     f, byc = make_res(n, pairs, labels, k)
     best = np.inf
     sols = {}
+    degenerate = [0]
     for _ in range(restarts):
         v0 = rng.uniform(-2.0, 2.0, size=2 * (n - 2))
         try:
@@ -131,12 +132,23 @@ def realise(n, pairs, labels, k, restarts, rng):
             continue
         P = unpack(s.x, n)
         d = np.array([np.hypot(*(P[a] - P[b])) for a, b in pairs])
-        vals = np.sort(np.array([float(np.mean(d[idx])) for idx in byc.values()]))
-        if vals[0] <= 0:
+        if d.min() < 1e-6 * d.max():
+            # A configuration with two points merged is an exact solution of the
+            # equations (both merged pairs' classes take value 0), so the solver can
+            # converge toward it with a residual that shrinks quadratically in the
+            # separation.  Such a limit is not a point set.  It is excluded here on a
+            # relative threshold; pexact.py excludes it exactly by saturation and is
+            # the authority on the count of shapes.
+            degenerate[0] += 1
             continue
-        key = tuple(np.round(vals / vals[0], 9))     # scale-free signature
+        # scale-free signature: the FULL sorted distance multiset, not the sorted class
+        # values.  Two shapes can share the class values with different multiplicities
+        # (the two 2-distance kites on 4 points both have values 1 : 1.932) and they are
+        # different point sets.
+        key = tuple(np.round(np.sort(d) / d.min(), 9))
         if key not in sols:
             sols[key] = s.x.copy()
+    realise.last_degenerate = degenerate[0]
     return best, sols, byc
 
 
@@ -166,8 +178,10 @@ if __name__ == '__main__':
     res = []
     best = (np.inf, None, None)
     nsol_total = 0
+    ndegen = 0
     for i, lab in enumerate(pats):
         c, sols, byc = realise(n, pairs, lab, k, restarts, rng)
+        ndegen += realise.last_degenerate
         if not sols:
             res.append(dict(i=i, realised=False, residual=float(c), n_shapes=0))
             continue
@@ -187,7 +201,9 @@ if __name__ == '__main__':
                         n_shapes=len(sols), shapes=rows))
     nre = sum(1 for r in res if r.get('realised'))
     print('  distinct realisation shapes found across all patterns: %d' % nsol_total)
+    print('  converged-to-degenerate solutions discarded: %d' % ndegen)
     json.dump(dict(n=n, k=k, patterns=len(pats), realised=nre, shapes=nsol_total,
+                   degenerate_discarded=ndegen,
                    best_delta=(float(best[0]) if np.isfinite(best[0]) else None),
                    best=best[2], points=(best[1].tolist() if best[1] is not None else None),
                    results=res, seconds=round(time.time() - t0, 1), completed=True),
