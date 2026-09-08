@@ -127,9 +127,12 @@ the text extraction of the PDF. Copies are kept outside the repository.
 
 * **X. Wei, *Classification of eleven-point five-distance sets in the plane*, Ars
   Combin. **102** (2011) 505-515.** Scanned PDF from combinatorialpress.com, read from
-  page images by the agent. [READ] by the agent only.
-  Theorem 13: four 11-point 5-distance sets, R_11 and three lattice sets (Figure 4);
-  lat.py finds exactly three lattice ones, all subsets of the 12-point set.
+  page images. [READ]; page 514 checked by me on the page image: Lemma 11 restates the
+  Erdos-Fishburn 9-point classification (Figure 3a-3c), Lemma 12 restates Shinohara's
+  8-point one (Figure 3d is the square with four apexes), and Theorem 13 reads "There
+  are four 11-point 5-distance sets in the plane to within isomorphism, that are R11
+  and the three configurations given in Figure 4." lat.py finds exactly three lattice
+  ones, all subsets of the 12-point set.
 
 * **F. Szollosi and P. R. J. Ostergard, *Constructions of maximum few-distance sets in
   Euclidean spaces*, Electron. J. Combin. 27(1) (2020) #P1.23, arXiv:1804.06040.**
@@ -152,8 +155,19 @@ the text extraction of the PDF. Copies are kept outside the repository.
 
 ## Not obtained
 
+* **P. Brass, *On the Erdos-diameter of sets*, Discrete Math. **150** (1996) 415-419.**
+  The one dedicated paper on the planar problem. Publisher abstract [SECONDHAND]: "Let
+  delta(n) denote the minimum diameter of a set of n points in the plane in which any
+  two positive distances, if they are different, differ by at least one. Erdos
+  conjectured that for n sufficiently big delta(n) = n - 1, the extremal configuration
+  being n equidistant points on a line. We prove an asymptotic version of this
+  conjecture for the special case of sets which lie in a parallel half-strip." Full
+  text [NOT OBTAINED]: OpenAlex lists it as closed with no repository copy, there is no
+  Wayback snapshot of the ScienceDirect page and no CORE record. Whether it contains
+  exact values of delta(n) for small n is therefore unknown; the draft comment names
+  the paper and does not claim priority for the table.
 * Brass, Moser, Pach, *Research Problems in Discrete Geometry*, the distances chapter.
 * P. Brass, *Erdos distance problems in normed spaces*, Comput. Geom. **6** (1996), which
-  cites Piepmeyer and Kanold and reportedly names the minimum-diameter function.
+  cites Piepmeyer and Kanold.
 * Harborth and Piepmeyer, *Three distinct distances in the plane*, Geom. Dedicata **61**
   (1996) 315-327.

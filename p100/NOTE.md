@@ -81,19 +81,30 @@ sentence on the problem page for n = 9, and its 7- and 8-point subsets are optim
   set), Lan-Wei (2013, Theorem 8) for 7 points (42 sets, listed by family in `e78.py`).
   `e9.py` builds the four 9-point sets exactly and finds delta = 8.291, 9.874, 9.874,
   4.664; the three-triangle set IS Piepmeyer's set (equal distance multisets, exactly).
-  `e78.py` builds all 15 eight-point sets and 40 of the 42 seven-point sets explicitly
-  (the last two only by the distance ratios Lan-Wei state, which is all delta needs),
-  reproducing every family's count, and finds the minimum 4.664 in both cases, attained
-  only by subsets of Piepmeyer's set.
+  `e78.py` builds all 15 eight-point sets and all 42 seven-point sets explicitly (the two
+  that Lan-Wei give only by their distance ratios were found by `chain4.py`, which
+  extends every 5-point set with at most 3 distances by two points; that chain also
+  finds nothing outside Lan-Wei's list), reproducing every family's count, and finds
+  the minimum 4.664 in both cases, attained only by subsets of Piepmeyer's set.
 
 **The floors at n = 10, 11, 12.** Wei (2012, Theorem 11) classifies the 10-point
 5-distance sets: nonagon plus centre (8.291), regular decagon (20.432), 11-gon minus a
-vertex (12.344), the "double R_5" (the pentagon with its five diagonal intersections,
-9.216) and the lattice ones (all 11.196). So any 10-point set with delta below 8.291
-has at least 6 distances, hence delta >= 6. Likewise Wei (2011) gives the four 11-point
-5-distance sets (R_11 and three lattice sets, delta 12.344 and 11.196) and Shinohara
-(2008) the unique 12-point one (11.196), so `delta(11), delta(12) >= 6` with the same
-argument, and `delta(13) >= 6` from `g(5) = 12`.
+vertex (12.344), a "double R_5 with the same center" and the lattice ones (all 11.196).
+So any 10-point set with delta below 8.291 has at least 6 distances, hence delta >= 6.
+Likewise Wei (2011) gives the four 11-point 5-distance sets (R_11 and three lattice sets,
+delta 12.344 and 11.196) and Shinohara (2008) the unique 12-point one (11.196), so
+`delta(11), delta(12) >= 6` with the same argument, and `delta(13) >= 6` from `g(5) = 12`.
+
+**One dependency in that argument, stated plainly.** Wei's "double R_5" appears in his
+paper only as a drawing, with no parameters in the text. Read here as the regular
+pentagon together with the five intersection points of its diagonals, it has exactly five
+distances and delta 9.216, above the floor. That reading is not the paper's words, so
+`AUDIT_EXTRA.py` sweeps the whole family the phrase can denote (a pentagon and a
+concentric copy scaled by any factor and turned by any angle) on a grid of 8000 by 801,
+and finds only two members with five distances: the one just described, and the regular
+decagon. A sweep is evidence and not a proof, so the floor of 6 at n = 10 rests on it.
+The floor of 5 there is unconditional, since it needs only `g(4) = 9`, and nothing in the
+exact part of the table depends on any of this.
 
 **Monotonicity.** Any m-subset of an admissible set is admissible with no larger
 diameter, so delta is non-decreasing in n. This caught an error early: a first search at

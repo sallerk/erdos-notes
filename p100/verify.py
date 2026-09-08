@@ -225,8 +225,16 @@ if e9:
        sorted(round(float(v['delta_num']), 4) for v in e9['sets'].values()) == [4.6639, 8.2909, 9.8741, 9.8741])
 e78 = load('results/e78_k4.json')
 if e78:
-    ck('E_7(4): 40 sets built explicitly + 2 by their stated ratios = the 42 of Lan-Wei',
-       e78['E7_classes'] + len(e78['E7_ratio_only']) == 42 and e78['E7_classes'] == 40)
+    ck('E_7(4): all 42 sets of Lan-Wei built explicitly (sets 741, 742 via the chain in chain4.py)',
+       e78['E7_classes'] == 42 and len(e78['E7_ratio_only']) == 0)
+    c4 = load('results/chain4.json')
+    if c4:
+        fams = [r['family'] for r in c4['sets']]
+        ck('chain4: every 7-point 4-distance set with a 5-point <=3-distance subset is among the 42 '
+           '(nothing outside the list)', c4['completed'] and not any('NOT IN' in f for f in fams))
+        ck('chain4: sets 741 and 742 found explicitly and proved realisable by a Groebner basis',
+           sum(1 for r in c4['sets'] if 'RATIO-ONLY' in r['family'] or '74' in r['family']) >= 2 and
+           all(r.get('groebner', 'feasible').startswith('feasible') for r in c4['sets'] if 'groebner' in r))
     ck('E_8(4): 15 sets built explicitly (R_8, R_7+, square+apexes, R_9-1, 8 lattice, 3 Piepmeyer subsets)',
        e78['E8_classes'] == 15)
     ck('delta(7) = 4.6639024601, from Piepmeyer 7-subsets only',
@@ -249,6 +257,11 @@ if d10 and d11 and s10 and pg:
     ck('every 11-point 5-distance set has delta >= 11.196 (R_11 and the three lattice sets)',
        d11['similarity_classes'] == 3 and all(float(r['delta_num']) >= 11.19 for r in d11['sets']) and float(pg['R11']['delta']) >= 11.19)
     ck('NOTE.md states the floor 6 at n = 10, 11, 12 with its source', 'delta(11), delta(12) >= 6' in note)
+    ck('NOTE.md discloses that the floor at n = 10 depends on reading Wei\'s figure, and '
+       'that the sweep behind that reading is evidence rather than proof',
+       'evidence and not a proof' in note and 'double R_5' in note)
+    ck('the two audit scripts that check this directory from outside are present',
+       os.path.exists('AUDIT_RECHECK.py') and os.path.exists('AUDIT_EXTRA.py'))
 
 print()
 print('=' * 78)

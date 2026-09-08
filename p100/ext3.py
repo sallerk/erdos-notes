@@ -2,13 +2,32 @@
 
 Every (n+1)-point set with at most K distances contains n-point subsets with at most K
 distances, so extending every member of E_n(<= K) by one point finds every member of
-E_{n+1}(<= K).  A new point P is pinned by two independent conditions among "P is at an
-old distance from a base point" (a circle) and "P is at the same new distance from two
-base points" (a bisector), unless P has fewer than two such conditions, in which case
-its n distances to the base are all new and pairwise distinct except at most one pair,
-giving at least n - 1 new values; that exceeds K - k_base whenever n - 1 > K - 1, i.e.
-n > K, which holds for every step used here (n >= 5, K = 3).  So the candidate set
-(circle-circle, circle-line, line-line intersections) is complete.
+E_{n+1}(<= K).
+
+WHY THE CANDIDATE SET IS COMPLETE.  Let X be the base, with k_base distinct distances,
+and let P be the new point.  Write t for the number of base points whose distance to P is
+one of the old values, and v for the number of NEW values among P's other n - t
+distances; the extended set has k_base + v distances, so v <= K - k_base.
+
+  * t >= 2: P lies on circles about two different base points, so P is one of at most two
+    points.  Found by the circle-circle intersections.
+  * t = 1: the other n - 1 distances take v values.  If two of them are equal, P lies on a
+    bisector as well as on a circle and is found by the circle-line intersections.  If
+    they are all distinct then v = n - 1, which needs n <= K - k_base + 1.
+  * t = 0: all n distances are new.  If some value occurs three times, P is the
+    circumcentre of three base points, hence lies on two DISTINCT bisectors (two bisectors
+    coincide only if two of the three points coincide), and is found.  If instead two
+    values each occur exactly twice, P lies on two bisectors, which are distinct unless
+    the two pairs are reflections of each other in one line; in that case P is not pinned,
+    but then v <= n - 2, which needs n <= K - k_base + 2.
+
+So the enumeration is complete whenever n > K - k_base + 2.  Here K = 3 with k_base = 3
+at n = 6 and 7 (so the bound is n > 2), and K = 3 with k_base = 2 or 3 at n = 5 (bound
+n > 3 or n > 2).  The one boundary case is n = 5 with k_base = 2, that is the regular
+pentagon: there t = 0 forces all five distances from P to be equal, so P is the centre of
+the pentagon, which the bisector-bisector intersections do find.  chain4.py uses the same
+enumeration with K = 4 at n = 5 and 6, where k_base >= 2 makes the bound n > 4 and n > 3
+except for the pentagon again, handled the same way.
 
 Candidates are evaluated at 60 digits.  Every extension that survives is CERTIFIED
 exactly afterwards: its colouring of the pairs is a pattern, and pexact.system() plus a

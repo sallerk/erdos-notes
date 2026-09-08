@@ -23,8 +23,22 @@ its artifact under `results/`; `verify.py` reads them all back and fails on a mi
     python lat.py 7 4 100; python lat.py 8 4 100
     python polygons.py        # delta for R_n, R_n+centre, R_n-vertex, n <= 14
     python e9.py              # the four 9-point 4-distance sets (Erdos-Fishburn) -> delta(9)
+    python chain4.py          # E_5(<=3) -> 6 -> 7 points with <= 4 distances; finds Lan-Wei's 741, 742
     python e78.py             # the 42 seven-point and 15 eight-point 4-distance sets -> delta(7), delta(8), ~2 min
     python verify.py          # audits every claim in NOTE.md against results/
+    python AUDIT_RECHECK.py   # 56 checks, importing nothing from this directory, ~40 s
+    python AUDIT_EXTRA.py     # the pentagon sweep and the duplicate-solution check, ~3 min
+
+Run them in the order above: `e78.py` uses `results/chain4.json` to build the two 7-point
+sets that Lan and Wei give only by their distance ratios, and `verify.py` requires all 42
+to be explicit.
+
+A note on tolerances. `ext2.py`, `ext3.py` and `chain4.py` work at 60 digits and treat two
+distances within 1e-45 as equal; `e78.py` works at 50 digits with 1e-35; `e9.py` groups at
+80 digits and then verifies each group exactly. In the extension scripts the tolerance
+only steers the search, since every set that survives is re-decided exactly by a Groebner
+basis on its own pattern. In `e78.py` it decides how many distances a constructed set has,
+on sets whose values are separated by a factor of at least 1.05. AUDIT_CODE.md says more.
 
 `pexact.py` is the authority on what is PROVED: a pattern is unrealisable when its
 saturated ideal has Groebner basis [1], and a feasible pattern's solution list is

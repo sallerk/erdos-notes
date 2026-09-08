@@ -156,9 +156,22 @@ if __name__ == '__main__':
         w = sorted(w)
         for kk, T in seen.items():
             v = values_of(T, TOL)
-            if all(abs(v[i] / v[0] - w[i] / w[0]) < mp.mpf('1e-30') for i in range(4)):
+            if all(abs(v[i] / v[0] - w[i] / w[0]) < mp.mpf('1e-20') for i in range(4)):
                 found[nm] = T
                 break
+    # the two-step chain in chain4.py (E_5(<=3) -> 6 points -> 7 points, at most 4
+    # distances) finds both; take them from its artifact when it exists
+    try:
+        ch = json.load(open('results/chain4.json'))
+        for r in ch['sets']:
+            T = [(mp.mpf(x), mp.mpf(y)) for x, y in r['points']]
+            v = values_of(T, TOL)
+            for nm, w in want.items():
+                w = sorted(w)
+                if nm not in found and all(abs(v[i] / v[0] - w[i] / w[0]) < mp.mpf('1e-20') for i in range(4)):
+                    found[nm] = T
+    except FileNotFoundError:
+        pass
     for nm in ('741', '742'):
         if nm in found:
             fam7[nm + ' (found as extension)'] = {key(found[nm]): found[nm]}
