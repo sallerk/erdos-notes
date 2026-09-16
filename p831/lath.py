@@ -7,7 +7,7 @@ lattice circumradii are constrained; the search is reported as a search.
 
 Usage:  python lath.py <n> <grid W> <grid H> [target]
         target = prune as soon as the running radius count reaches it (default n).
-Writes results/lath_n<n>_<W>x<H>.json
+Writes results/lath_n<n>_<W>x<H>_t<target>.json
 """
 import sys, json, os, time
 from math import gcd

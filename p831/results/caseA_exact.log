@@ -1,0 +1,337 @@
+2026-09-14 21:35:03 gen: wrote 20 jobs to exact/
+2026-09-14 21:35:04 msolve F1_control: start (timeout 600 s, threads 7)
+2026-09-14 21:45:04 msolve F1_control: KILLED at timeout  (600.1 s)
+2026-09-14 21:45:04 msolve F2_control: start (timeout 600 s, threads 7)
+2026-09-14 21:45:18 msolve F2_control: real solutions  (14.0 s)  real roots: 32
+2026-09-14 21:49:39 gen: wrote 20 jobs to exact/
+2026-09-14 21:49:45 msolve F1_control: start (timeout 900 s, threads 6); progress in exact/F1_control.msolve.live
+2026-09-14 21:49:47 singular F1_control: start (timeout 1800 s, threads 1); progress in exact/F1_control.singular.live
+2026-09-14 21:52:56 msolve F1_control: real solutions  (191.3 s)  real roots: 32
+2026-09-14 21:52:57 msolve F2_control: start (timeout 900 s, threads 6); progress in exact/F2_control.msolve.live
+2026-09-14 21:53:37 msolve F2_control: real solutions  (40.4 s)  real roots: 32
+2026-09-14 21:53:38 msolve F2_split4: start (timeout 3600 s, threads 6); progress in exact/F2_split4.msolve.live
+2026-09-14 21:57:05 msolve F2_split4: no complex solution  (206.9 s)  real roots: 0
+2026-09-14 21:57:05 msolve F2_split1: start (timeout 3600 s, threads 6); progress in exact/F2_split1.msolve.live
+2026-09-14 21:59:59 msolve F2_split1: no complex solution  (174.5 s)  real roots: 0
+2026-09-14 21:59:59 msolve F2_split2: start (timeout 3600 s, threads 6); progress in exact/F2_split2.msolve.live
+2026-09-14 22:00:38 xcheck split [2, 3]|[0, 1, 4, 5]: caseA2 residual 1.45e-05, max relative equation 2.40e-05, min |factor| 1.17e-04
+2026-09-14 22:00:38 genrab: wrote 18 exact-over-Q Singular inputs
+2026-09-14 22:00:39 xcheck split [0, 2, 3]|[1, 4, 5]: caseA2 residual 6.66e-04, max relative equation 1.10e-03, min |factor| 4.55e-01
+2026-09-14 22:00:39 xcheck split [1, 2, 3]|[0, 4, 5]: caseA2 residual 5.70e-04, max relative equation 1.11e-03, min |factor| 1.02e-01
+2026-09-14 22:00:39 xcheck split [1, 4]|[0, 2, 3, 5]: caseA2 residual 1.25e-05, max relative equation 2.19e-05, min |factor| 1.01e-04
+2026-09-14 22:00:39 xcheck split [0, 1, 4]|[2, 3, 5]: caseA2 residual 6.82e-04, max relative equation 1.24e-03, min |factor| 3.62e-02
+2026-09-14 22:00:39 xcheck split [1, 2, 4]|[0, 3, 5]: caseA2 residual 5.57e-04, max relative equation 9.23e-04, min |factor| 2.64e-01
+2026-09-14 22:00:39 singrab F2_split4: start (timeout 21600 s, threads 1); progress in exact/F2_split4.singrab.live
+2026-09-14 22:00:39 xcheck split [1, 3, 4]|[0, 2, 5]: caseA2 residual 6.20e-04, max relative equation 1.02e-03, min |factor| 5.69e-02
+2026-09-14 22:00:39 xcheck split [2, 3, 4]|[0, 1, 5]: caseA2 residual 5.84e-04, max relative equation 9.87e-04, min |factor| 3.88e+00
+2026-09-14 22:00:40 xcheck split [1, 2, 3, 4]|[0, 5]: caseA2 residual 3.55e-04, max relative equation 5.47e-04, min |factor| 3.73e+00
+2026-09-14 22:01:49 genrelax: wrote 6 relaxed copies of split 4
+2026-09-14 22:02:57 msolve F2_split2: no complex solution  (177.5 s)  real roots: 0
+2026-09-14 22:02:57 msolve F2_split5: start (timeout 3600 s, threads 6); progress in exact/F2_split5.msolve.live
+2026-09-14 22:06:01 msolve F2_split5: no complex solution  (184.7 s)  real roots: 0
+2026-09-14 22:06:01 msolve F2_split6: start (timeout 3600 s, threads 6); progress in exact/F2_split6.msolve.live
+2026-09-14 22:09:08 msolve F2_split6: no complex solution  (186.9 s)  real roots: 0
+2026-09-14 22:09:08 msolve F2_split7: start (timeout 3600 s, threads 6); progress in exact/F2_split7.msolve.live
+2026-09-14 22:12:21 msolve F2_split7: no complex solution  (192.4 s)  real roots: 0
+2026-09-14 22:12:21 msolve F2_split0: start (timeout 3600 s, threads 6); progress in exact/F2_split0.msolve.live
+2026-09-14 22:15:00 singrab F1_split4: start (timeout 21600 s, threads 1); progress in exact/F1_split4.singrab.live
+2026-09-14 22:15:01 singstd F2_split4: start (timeout 21600 s, threads 1); progress in exact/F2_split4.singstd.live
+2026-09-14 22:15:11 msolve F2_split0: no complex solution  (170.1 s)  real roots: 0
+2026-09-14 22:15:11 msolve F2_split3: start (timeout 3600 s, threads 6); progress in exact/F2_split3.msolve.live
+2026-09-14 22:18:22 msolve F2_split3: no complex solution  (190.9 s)  real roots: 0
+2026-09-14 22:18:22 msolve F2_split8: start (timeout 3600 s, threads 6); progress in exact/F2_split8.msolve.live
+2026-09-14 22:21:31 msolve F2_split8: no complex solution  (189.6 s)  real roots: 0
+2026-09-14 22:21:32 msolve F1_split4: start (timeout 3600 s, threads 6); progress in exact/F1_split4.msolve.live
+2026-09-14 22:23:44 msolve F1_split4: no complex solution  (132.2 s)  real roots: 0
+2026-09-14 22:23:44 msolve F1_split1: start (timeout 3600 s, threads 6); progress in exact/F1_split1.msolve.live
+2026-09-14 22:25:57 msolve F1_split1: no complex solution  (133.2 s)  real roots: 0
+2026-09-14 22:25:57 msolve F1_split2: start (timeout 3600 s, threads 6); progress in exact/F1_split2.msolve.live
+2026-09-14 22:28:12 msolve F1_split2: no complex solution  (134.8 s)  real roots: 0
+2026-09-14 22:28:12 msolve F1_split5: start (timeout 3600 s, threads 6); progress in exact/F1_split5.msolve.live
+2026-09-14 22:30:00 msolve F1_split5: no complex solution  (108.1 s)  real roots: 0
+2026-09-14 22:30:00 msolve F1_split6: start (timeout 3600 s, threads 6); progress in exact/F1_split6.msolve.live
+2026-09-14 22:31:52 singstd F2_split4: ERROR  (1011.2 s)
+2026-09-14 22:32:09 msolve F1_split6: no complex solution  (129.3 s)  real roots: 0
+2026-09-14 22:32:09 msolve F1_split7: start (timeout 3600 s, threads 6); progress in exact/F1_split7.msolve.live
+2026-09-14 22:32:26 note: singstd F2_split4 was stopped by hand at 1011 s (pkill), not a failure of the input: plain std had ~35,000 pairs pending and 3.4 GB resident, the least promising of the three exact runs and a memory risk to the other two
+2026-09-14 22:32:28 genscreen: wrote 14 mod-p screening copies of F2 split 4
+2026-09-14 22:32:40 msolve F2_scr4_all: start (timeout 7200 s, threads 1); progress in exact/F2_scr4_all.msolve.live
+2026-09-14 22:34:00 msolve F1_split7: no complex solution  (111.0 s)  real roots: 0
+2026-09-14 22:34:00 msolve F1_split0: start (timeout 3600 s, threads 6); progress in exact/F1_split0.msolve.live
+2026-09-14 22:35:11 msolve F1_split0: no complex solution  (70.2 s)  real roots: 0
+2026-09-14 22:35:11 msolve F1_split3: start (timeout 3600 s, threads 6); progress in exact/F1_split3.msolve.live
+2026-09-14 22:36:21 msolve F1_split3: no complex solution  (70.6 s)  real roots: 0
+2026-09-14 22:36:21 msolve F1_split8: start (timeout 3600 s, threads 6); progress in exact/F1_split8.msolve.live
+2026-09-14 22:40:16 msolve F1_split8: no complex solution  (234.7 s)  real roots: 0
+2026-09-14 22:40:17 msolve F2_relax4_d0: start (timeout 1800 s, threads 6); progress in exact/F2_relax4_d0.msolve.live
+2026-09-14 22:45:07 note: relaxed controls F2_relax4_d* stopped by hand after d0 reached 5.6 GB at degree 7 (378827 x 490721 matrix): a positive-dimensional system is far harder for F4 than a unit ideal, and the container was at 12.8 of 15.5 GB with the exact runs at risk. Replaced by hyperplane sections (genhyp), which are zero-dimensional.
+2026-09-14 22:45:28 genhyp: wrote 2 hyperplane-section controls of F2 split 4
+2026-09-14 22:45:28 msolve F2_hyp4_d0: start (timeout 1800 s, threads 6); progress in exact/F2_hyp4_d0.msolve.live
+2026-09-14 22:45:42 msolve F2_scr4_all: no solution mod p  (782.2 s)
+2026-09-14 22:45:58 singrab F1_split0: start (timeout 21600 s, threads 1); progress in exact/F1_split0.singrab.live
+2026-09-14 23:10:12 note: hyperplane control F2_hyp4_d0 stopped by hand after 24 min (5.7 GB, still at degree 5 with thousands of new basis elements: the curve has high degree, so its section has many points). Container at 12.9 of 15.5 GB. Replaced by planted splits (genplant): same variables, equations and saturations as split 4, with the class constants rescaled so a rational configuration solves it exactly.
+2026-09-14 23:10:34 genplant: wrote planted copies of split 4 in F1 and F2
+2026-09-14 23:10:34 msolve F2_plant4: start (timeout 2400 s, threads 6); progress in exact/F2_plant4.msolve.live
+2026-09-14 23:14:54 singrab F2_split4: ERROR  (4455.0 s)
+2026-09-14 23:14:54 note: singrab F2_split4 (slimgb, F2 gauge) stopped by hand at 74 min: resident memory went from 5.5 to 8.2 GB in five minutes and the container reached 12.9 of 15.5 GB. The F1 gauge runs are far lighter (under 2 GB) and continue; F1 split 5 takes the freed core.
+2026-09-14 23:15:06 singrab F1_split5: start (timeout 21600 s, threads 1); progress in exact/F1_split5.singrab.live
+2026-09-14 23:42:08 msolve F2_plant4: ERROR  (1893.9 s)
+2026-09-14 23:42:08 note: planted-split control F2_plant4 stopped by hand at 31 min (9.6 GB, degree 6, 134382 x 149195 matrices; container at 13.2 of 15.5 GB). A system WITH solutions is far heavier for F4 than the unit ideals: the generic constants give it many solutions. Replaced by a pinned version (genpin): the same file with the triangle fixed to its planted values, which keeps every saturated factor and the class structure but leaves only a handful of solutions.
+2026-09-14 23:42:09 msolve F2_scr4_x0: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x0.msolve.live
+2026-09-14 23:42:29 genplant: wrote planted copies of split 4 in F1 and F2
+2026-09-14 23:42:30 msolve F1_pin4: start (timeout 1200 s, threads 1); progress in exact/F1_pin4.msolve.live
+2026-09-14 23:42:30 msolve F1_pin4: real solutions  (0.2 s)  real roots: 2
+2026-09-14 23:42:31 msolve F2_pin4: start (timeout 1200 s, threads 1); progress in exact/F2_pin4.msolve.live
+2026-09-14 23:42:31 msolve F2_pin4: real solutions  (0.1 s)  real roots: 1
+2026-09-14 23:45:04 msolve F2_scr4_x0: no solution mod p  (175.1 s)
+2026-09-14 23:45:04 msolve F2_scr4_x1: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x1.msolve.live
+2026-09-14 23:47:46 msolve F2_scr4_x1: no solution mod p  (162.6 s)
+2026-09-14 23:47:46 msolve F2_scr4_x2: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x2.msolve.live
+2026-09-14 23:48:26 msolve F2_scr4_x2: no solution mod p  (39.3 s)
+2026-09-14 23:48:26 msolve F2_scr4_x3: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x3.msolve.live
+2026-09-14 23:49:17 msolve F2_scr4_x3: no solution mod p  (51.5 s)
+2026-09-14 23:49:17 msolve F2_scr4_x4: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x4.msolve.live
+2026-09-14 23:54:11 msolve F2_scr4_x4: no solution mod p  (294.1 s)
+2026-09-14 23:54:11 msolve F2_scr4_x5: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x5.msolve.live
+2026-09-15 00:00:12 msolve F2_scr4_x5: no solution mod p  (360.3 s)
+2026-09-15 00:00:12 msolve F2_scr4_x6: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x6.msolve.live
+2026-09-15 00:01:51 msolve F2_scr4_x6: no solution mod p  (99.7 s)
+2026-09-15 00:01:51 msolve F2_scr4_x7: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x7.msolve.live
+2026-09-15 00:03:36 msolve F2_scr4_x7: no solution mod p  (104.5 s)
+2026-09-15 00:03:36 msolve F2_scr4_x8: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x8.msolve.live
+2026-09-15 00:05:09 msolve F2_scr4_x8: no solution mod p  (93.4 s)
+2026-09-15 00:05:09 msolve F2_scr4_x9: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x9.msolve.live
+2026-09-15 00:05:42 msolve F2_scr4_x9: no solution mod p  (32.5 s)
+2026-09-15 00:05:42 msolve F2_scr4_x10: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x10.msolve.live
+2026-09-15 00:08:07 msolve F2_scr4_x10: no solution mod p  (145.7 s)
+2026-09-15 00:08:07 msolve F2_scr4_x11: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x11.msolve.live
+2026-09-15 00:12:03 msolve F2_scr4_x11: no solution mod p  (235.7 s)
+2026-09-15 00:12:03 msolve F2_scr4_x12: start (timeout 3600 s, threads 6); progress in exact/F2_scr4_x12.msolve.live
+2026-09-15 00:15:58 msolve F2_scr4_x12: no solution mod p  (234.4 s)
+2026-09-15 00:16:37 greedy F2 split 4: drop factor 9 -> still no solution mod p, DROPPED (31.8 s); keeping [0, 1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12]
+2026-09-15 00:17:38 greedy F2 split 4: drop factor 2 -> still no solution mod p, DROPPED (61.2 s); keeping [0, 1, 3, 4, 5, 6, 7, 8, 10, 11, 12]
+2026-09-15 00:21:05 greedy F2 split 4: drop factor 3 -> still no solution mod p, DROPPED (207.0 s); keeping [0, 1, 4, 5, 6, 7, 8, 10, 11, 12]
+2026-09-15 00:21:40 greedy F2 split 4: drop factor 8 -> still no solution mod p, DROPPED (34.3 s); keeping [0, 1, 4, 5, 6, 7, 10, 11, 12]
+2026-09-15 00:21:56 greedy F2 split 4: drop factor 6 -> still no solution mod p, DROPPED (16.0 s); keeping [0, 1, 4, 5, 7, 10, 11, 12]
+2026-09-15 00:22:05 greedy F2 split 4: drop factor 7 -> still no solution mod p, DROPPED (9.2 s); keeping [0, 1, 4, 5, 10, 11, 12]
+2026-09-15 00:22:15 greedy F2 split 4: drop factor 10 -> still no solution mod p, DROPPED (9.9 s); keeping [0, 1, 4, 5, 11, 12]
+2026-09-15 00:22:23 greedy F2 split 4: drop factor 1 -> still no solution mod p, DROPPED (7.9 s); keeping [0, 4, 5, 11, 12]
+2026-09-15 00:22:34 greedy F2 split 4: drop factor 0 -> still no solution mod p, DROPPED (11.1 s); keeping [4, 5, 11, 12]
+2026-09-15 00:22:45 greedy F2 split 4: drop factor 11 -> solutions appear, KEPT (11.2 s); keeping [4, 5, 11, 12]
+2026-09-15 00:22:59 greedy F2 split 4: drop factor 4 -> still no solution mod p, DROPPED (13.3 s); keeping [5, 11, 12]
+2026-09-15 00:23:02 greedy F2 split 4: drop factor 5 -> solutions appear, KEPT (3.1 s); keeping [5, 11, 12]
+2026-09-15 00:23:09 greedy F2 split 4: drop factor 12 -> still no solution mod p, DROPPED (7.5 s); keeping [5, 11]
+2026-09-15 00:24:08 genreduced: F2_red4 keeps factors [5, 11] of 13
+2026-09-15 00:24:15 singrab F2_red4: start (timeout 21600 s, threads 1); progress in exact/F2_red4.singrab.live
+2026-09-15 00:24:16 singstd F2_red4: start (timeout 21600 s, threads 1); progress in exact/F2_red4.singstd.live
+2026-09-15 00:24:18 msolve F2_red4: start (timeout 3600 s, threads 4); progress in exact/F2_red4.msolve.live
+2026-09-15 00:24:29 msolve F2_red4: no complex solution  (10.3 s)  real roots: 0
+2026-09-15 00:24:32 singrab F2_red4: no complex solution  (16.8 s)
+2026-09-15 00:25:56 note: full-system singrab runs F1_split4 (2h10), F1_split0 (1h40), F1_split5 (1h10) stopped by hand: superseded by the reduced systems, which Singular decides in seconds (F2_red4 unit ideal over Q in 16.8 s).
+2026-09-15 00:26:28 gencand: wrote the candidate reduced system of all 9 splits in F1 and F2
+2026-09-15 00:26:28 singrab F2_cand0: start (timeout 21600 s, threads 1); progress in exact/F2_cand0.singrab.live
+2026-09-15 00:26:28 singrab F2_cand6: start (timeout 21600 s, threads 1); progress in exact/F2_cand6.singrab.live
+2026-09-15 00:26:28 singrab F2_cand3: start (timeout 21600 s, threads 1); progress in exact/F2_cand3.singrab.live
+2026-09-15 00:26:28 singrab F1_cand3: start (timeout 21600 s, threads 1); progress in exact/F1_cand3.singrab.live
+2026-09-15 00:26:28 singrab F1_cand0: start (timeout 21600 s, threads 1); progress in exact/F1_cand0.singrab.live
+2026-09-15 00:26:28 singrab F1_cand6: start (timeout 21600 s, threads 1); progress in exact/F1_cand6.singrab.live
+2026-09-15 00:26:28 msolve F2_cand0: start (timeout 3600 s, threads 2); progress in exact/F2_cand0.msolve.live
+2026-09-15 00:26:38 msolve F2_cand0: positive dimensional  (10.1 s)  real roots: None
+2026-09-15 00:26:38 msolve F2_cand1: start (timeout 3600 s, threads 2); progress in exact/F2_cand1.msolve.live
+2026-09-15 00:27:22 msolve F2_cand1: no complex solution  (43.8 s)  real roots: 0
+2026-09-15 00:27:22 msolve F2_cand2: start (timeout 3600 s, threads 2); progress in exact/F2_cand2.msolve.live
+2026-09-15 00:28:06 msolve F2_cand2: no complex solution  (43.6 s)  real roots: 0
+2026-09-15 00:28:06 msolve F2_cand3: start (timeout 3600 s, threads 2); progress in exact/F2_cand3.msolve.live
+2026-09-15 00:28:17 msolve F2_cand3: positive dimensional  (11.2 s)  real roots: None
+2026-09-15 00:28:17 msolve F2_cand4: start (timeout 3600 s, threads 2); progress in exact/F2_cand4.msolve.live
+2026-09-15 00:28:25 singrab F2_cand0: ERROR  (116.9 s)
+2026-09-15 00:28:25 singrab F2_cand1: start (timeout 21600 s, threads 1); progress in exact/F2_cand1.singrab.live
+2026-09-15 00:28:25 note: singrab F2_cand0 stopped by hand: msolve found F2_cand0 positive dimensional, so this candidate saturation set is too small for split 0 (its extra solutions lie on the dropped degenerate loci, since the full split-0 system is inconsistent). Split 0 gets the greedy screen instead.
+2026-09-15 00:29:00 msolve F2_cand4: no complex solution  (42.8 s)  real roots: 0
+2026-09-15 00:29:00 msolve F2_cand5: start (timeout 3600 s, threads 2); progress in exact/F2_cand5.msolve.live
+2026-09-15 00:29:02 note: singrab F2_cand3 stopped by hand for the same reason as F2_cand0 (msolve: positive dimensional). Both are (4,2) splits.
+2026-09-15 00:29:02 singrab F2_cand3: ERROR  (154.3 s)
+2026-09-15 00:29:02 singrab F2_cand4: start (timeout 21600 s, threads 1); progress in exact/F2_cand4.singrab.live
+2026-09-15 00:29:43 singstd F2_red4: ERROR  (326.1 s)
+2026-09-15 00:29:43 note: singstd F2_red4 stopped by hand: slimgb already decided F2_red4 exactly (unit ideal, 16.8 s) and the core goes to the cofactor certificate (liftstd + independent python-flint check), which is the stronger confirmation.
+2026-09-15 00:29:44 msolve F2_cand5: no complex solution  (44.7 s)  real roots: 0
+2026-09-15 00:29:44 msolve F2_cand6: start (timeout 3600 s, threads 2); progress in exact/F2_cand6.msolve.live
+2026-09-15 00:29:46 singlift F2_red4: start (timeout 14400 s, threads 1); progress in exact/F2_red4.singlift.live
+2026-09-15 00:30:28 msolve F2_cand6: no complex solution  (43.9 s)  real roots: 0
+2026-09-15 00:30:28 msolve F2_cand7: start (timeout 3600 s, threads 2); progress in exact/F2_cand7.msolve.live
+2026-09-15 00:31:09 msolve F2_cand7: no complex solution  (40.3 s)  real roots: 0
+2026-09-15 00:31:09 msolve F2_cand8: start (timeout 3600 s, threads 2); progress in exact/F2_cand8.msolve.live
+2026-09-15 00:31:21 msolve F2_cand8: positive dimensional  (12.5 s)  real roots: None
+2026-09-15 00:31:22 msolve F1_cand0: start (timeout 3600 s, threads 2); progress in exact/F1_cand0.msolve.live
+2026-09-15 00:31:35 msolve F1_cand0: positive dimensional  (13.6 s)  real roots: None
+2026-09-15 00:31:35 msolve F1_cand1: start (timeout 3600 s, threads 2); progress in exact/F1_cand1.msolve.live
+2026-09-15 00:31:42 singrab F1_cand0: ERROR  (314.0 s)
+2026-09-15 00:31:42 singrab F1_cand1: start (timeout 21600 s, threads 1); progress in exact/F1_cand1.singrab.live
+2026-09-15 00:31:42 note: singrab F1_cand0 stopped by hand (msolve: positive dimensional; (4,2) split, goes to the greedy screen).
+2026-09-15 00:32:28 msolve F1_cand1: no complex solution  (52.4 s)  real roots: 0
+2026-09-15 00:32:28 msolve F1_cand2: start (timeout 3600 s, threads 2); progress in exact/F1_cand2.msolve.live
+2026-09-15 00:32:32 msolve F1_cand2: no complex solution  (4.1 s)  real roots: 0
+2026-09-15 00:32:32 msolve F1_cand3: start (timeout 3600 s, threads 2); progress in exact/F1_cand3.msolve.live
+2026-09-15 00:32:46 msolve F1_cand3: positive dimensional  (14.4 s)  real roots: None
+2026-09-15 00:32:46 msolve F1_cand4: start (timeout 3600 s, threads 2); progress in exact/F1_cand4.msolve.live
+2026-09-15 00:32:53 singrab F1_cand3: ERROR  (385.1 s)
+2026-09-15 00:32:53 singrab F1_cand4: start (timeout 21600 s, threads 1); progress in exact/F1_cand4.singrab.live
+2026-09-15 00:32:53 note: singrab F1_cand3 stopped by hand (msolve: positive dimensional; (4,2) split, goes to the greedy screen).
+2026-09-15 00:33:40 msolve F1_cand4: no complex solution  (54.1 s)  real roots: 0
+2026-09-15 00:33:40 msolve F1_cand5: start (timeout 3600 s, threads 2); progress in exact/F1_cand5.msolve.live
+2026-09-15 00:34:07 msolve F1_cand5: no complex solution  (26.6 s)  real roots: 0
+2026-09-15 00:34:07 msolve F1_cand6: start (timeout 3600 s, threads 2); progress in exact/F1_cand6.msolve.live
+2026-09-15 00:34:11 msolve F1_cand6: no complex solution  (4.3 s)  real roots: 0
+2026-09-15 00:34:11 msolve F1_cand7: start (timeout 3600 s, threads 2); progress in exact/F1_cand7.msolve.live
+2026-09-15 00:34:38 msolve F1_cand7: no complex solution  (27.1 s)  real roots: 0
+2026-09-15 00:34:38 msolve F1_cand8: start (timeout 3600 s, threads 2); progress in exact/F1_cand8.msolve.live
+2026-09-15 00:34:43 msolve F1_cand8: positive dimensional  (4.6 s)  real roots: None
+2026-09-15 00:39:42 singrab F1_cand1: no complex solution  (479.7 s)
+2026-09-15 00:39:42 singrab F1_cand2: start (timeout 21600 s, threads 1); progress in exact/F1_cand2.singrab.live
+2026-09-15 00:41:10 greedy F2 split 0: drop factor 0 -> still no solution mod p, DROPPED (307.5 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:41:18 greedy F2 split 0: drop factor 1 -> still no solution mod p, DROPPED (7.6 s); keeping [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:42:01 greedy F2 split 0: drop factor 2 -> solutions appear, KEPT (43.2 s); keeping [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:42:04 greedy F2 split 0: drop factor 3 -> still no solution mod p, DROPPED (2.5 s); keeping [2, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:42:08 greedy F2 split 0: drop factor 4 -> still no solution mod p, DROPPED (4.2 s); keeping [2, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:42:10 greedy F2 split 0: drop factor 5 -> still no solution mod p, DROPPED (1.4 s); keeping [2, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:42:22 greedy F2 split 0: drop factor 6 -> still no solution mod p, DROPPED (12.0 s); keeping [2, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:42:26 greedy F2 split 0: drop factor 7 -> still no solution mod p, DROPPED (4.0 s); keeping [2, 8, 9, 10, 11, 12]
+2026-09-15 00:42:28 greedy F2 split 0: drop factor 8 -> still no solution mod p, DROPPED (2.1 s); keeping [2, 9, 10, 11, 12]
+2026-09-15 00:42:37 greedy F2 split 0: drop factor 9 -> still no solution mod p, DROPPED (8.7 s); keeping [2, 10, 11, 12]
+2026-09-15 00:42:49 greedy F2 split 0: drop factor 10 -> solutions appear, KEPT (12.1 s); keeping [2, 10, 11, 12]
+2026-09-15 00:42:57 greedy F2 split 0: drop factor 11 -> still no solution mod p, DROPPED (8.0 s); keeping [2, 10, 12]
+2026-09-15 00:43:13 greedy F2 split 0: drop factor 12 -> solutions appear, KEPT (16.2 s); keeping [2, 10, 12]
+2026-09-15 00:43:29 genreduced: F2_red0 keeps factors [2, 10, 12] of 13
+2026-09-15 00:43:29 singrab F2_red0: start (timeout 21600 s, threads 1); progress in exact/F2_red0.singrab.live
+2026-09-15 00:45:10 note: remaining singrab cand runs (F2 cand1, cand4, cand6; F1 cand2, cand4, cand6; 5 to 18 min, 0.6 to 3.3 GB each) stopped by hand with the container at 12.9 of 15.5 GB. F1_cand1 had already finished (unit ideal over Q). The other (3,3) splits go the split-4 route instead: a greedy screen starting from the candidate factors, then the exact decision on the smaller system.
+2026-09-15 00:46:29 greedy F2 split 1: drop factor 5 -> still no solution mod p, DROPPED (19.5 s); keeping [7, 8, 11, 12]
+2026-09-15 00:46:35 greedy F1 split 2: drop factor 2 -> still no solution mod p, DROPPED (4.4 s); keeping [5, 7, 8, 11, 12]
+2026-09-15 00:46:41 greedy F1 split 2: drop factor 5 -> solutions appear, KEPT (5.4 s); keeping [5, 7, 8, 11, 12]
+2026-09-15 00:46:55 greedy F2 split 1: drop factor 7 -> solutions appear, KEPT (26.4 s); keeping [7, 8, 11, 12]
+2026-09-15 00:47:20 greedy F1 split 2: drop factor 7 -> solutions appear, KEPT (38.9 s); keeping [5, 7, 8, 11, 12]
+2026-09-15 00:47:24 greedy F2 split 1: drop factor 8 -> still no solution mod p, DROPPED (28.8 s); keeping [7, 11, 12]
+2026-09-15 00:47:25 greedy F1 split 2: drop factor 8 -> still no solution mod p, DROPPED (5.5 s); keeping [5, 7, 11, 12]
+2026-09-15 00:47:37 greedy F1 split 2: drop factor 11 -> solutions appear, KEPT (12.2 s); keeping [5, 7, 11, 12]
+2026-09-15 00:47:40 greedy F1 split 2: drop factor 12 -> still no solution mod p, DROPPED (2.2 s); keeping [5, 7, 11]
+2026-09-15 00:47:40 genreduced: F1_red2 keeps factors [5, 7, 11] of 13
+2026-09-15 00:47:40 singrab F1_red2: start (timeout 21600 s, threads 1); progress in exact/F1_red2.singrab.live
+2026-09-15 00:47:41 greedy F2 split 1: drop factor 11 -> still no solution mod p, DROPPED (17.1 s); keeping [7, 12]
+2026-09-15 00:48:02 greedy F2 split 1: drop factor 12 -> solutions appear, KEPT (21.2 s); keeping [7, 12]
+2026-09-15 00:48:03 genreduced: F2_red1 keeps factors [7, 12] of 13
+2026-09-15 00:48:03 singrab F2_red1: start (timeout 21600 s, threads 1); progress in exact/F2_red1.singrab.live
+2026-09-15 00:51:06 greedy F2 split 3: drop factor 0 -> still no solution mod p, DROPPED (471.4 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:51:42 greedy F2 split 3: drop factor 1 -> still no solution mod p, DROPPED (36.3 s); keeping [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:52:06 greedy F2 split 3: drop factor 2 -> still no solution mod p, DROPPED (24.2 s); keeping [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:52:15 greedy F2 split 3: drop factor 3 -> still no solution mod p, DROPPED (8.3 s); keeping [4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:52:22 greedy F2 split 3: drop factor 4 -> solutions appear, KEPT (6.8 s); keeping [4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:52:29 greedy F2 split 3: drop factor 5 -> still no solution mod p, DROPPED (7.7 s); keeping [4, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:52:42 greedy F2 split 3: drop factor 6 -> still no solution mod p, DROPPED (12.9 s); keeping [4, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:52:47 greedy F2 split 3: drop factor 7 -> still no solution mod p, DROPPED (4.6 s); keeping [4, 8, 9, 10, 11, 12]
+2026-09-15 00:52:50 greedy F2 split 3: drop factor 8 -> still no solution mod p, DROPPED (3.1 s); keeping [4, 9, 10, 11, 12]
+2026-09-15 00:52:57 greedy F2 split 3: drop factor 9 -> still no solution mod p, DROPPED (6.6 s); keeping [4, 10, 11, 12]
+2026-09-15 00:53:11 greedy F2 split 3: drop factor 10 -> solutions appear, KEPT (13.9 s); keeping [4, 10, 11, 12]
+2026-09-15 00:53:17 greedy F2 split 3: drop factor 11 -> still no solution mod p, DROPPED (6.3 s); keeping [4, 10, 12]
+2026-09-15 00:53:24 greedy F2 split 3: drop factor 12 -> solutions appear, KEPT (7.0 s); keeping [4, 10, 12]
+2026-09-15 00:54:06 greedy F2 split 8: drop factor 0 -> still no solution mod p, DROPPED (40.6 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:54:47 greedy F2 split 8: drop factor 1 -> still no solution mod p, DROPPED (40.8 s); keeping [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:55:10 greedy F2 split 8: drop factor 2 -> still no solution mod p, DROPPED (23.6 s); keeping [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:55:19 greedy F2 split 8: drop factor 3 -> still no solution mod p, DROPPED (8.6 s); keeping [4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:55:24 greedy F2 split 8: drop factor 4 -> still no solution mod p, DROPPED (5.2 s); keeping [5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:55:30 greedy F2 split 8: drop factor 5 -> still no solution mod p, DROPPED (5.6 s); keeping [6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:55:35 greedy F2 split 8: drop factor 6 -> solutions appear, KEPT (5.5 s); keeping [6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:55:40 greedy F2 split 8: drop factor 7 -> still no solution mod p, DROPPED (4.5 s); keeping [6, 8, 9, 10, 11, 12]
+2026-09-15 00:55:43 greedy F2 split 8: drop factor 8 -> still no solution mod p, DROPPED (3.1 s); keeping [6, 9, 10, 11, 12]
+2026-09-15 00:55:49 greedy F2 split 8: drop factor 9 -> still no solution mod p, DROPPED (6.2 s); keeping [6, 10, 11, 12]
+2026-09-15 00:56:03 greedy F2 split 8: drop factor 10 -> solutions appear, KEPT (13.8 s); keeping [6, 10, 11, 12]
+2026-09-15 00:56:10 greedy F2 split 8: drop factor 11 -> solutions appear, KEPT (7.4 s); keeping [6, 10, 11, 12]
+2026-09-15 00:56:16 greedy F2 split 8: drop factor 12 -> still no solution mod p, DROPPED (5.9 s); keeping [6, 10, 11]
+2026-09-15 00:56:45 greedy F1 split 0: drop factor 0 -> still no solution mod p, DROPPED (27.6 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:57:02 greedy F1 split 0: drop factor 1 -> solutions appear, KEPT (16.9 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:57:10 greedy F1 split 0: drop factor 2 -> still no solution mod p, DROPPED (7.8 s); keeping [1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:57:14 greedy F1 split 0: drop factor 3 -> still no solution mod p, DROPPED (4.2 s); keeping [1, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:57:24 greedy F1 split 0: drop factor 4 -> still no solution mod p, DROPPED (10.1 s); keeping [1, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:57:27 greedy F1 split 0: drop factor 5 -> still no solution mod p, DROPPED (3.1 s); keeping [1, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 00:59:14 note: the per-split (3,3) pipelines (prove F2 [1,2,5,6,7], F1 [2,4,5,6,7]) stopped by hand, with F2_red1 (10 min, 4.0 GB) and F1_red2 (11 min, 2.3 GB) killed; container at 12.7 of 15.5 GB. Not needed for the proof: the six (3,3) splits are one orbit under relabelling A,B,C,H (every labelled orthocentric configuration fits either gauge, and relabelling carries solutions of one split to another), and that orbit already has exact proofs in both gauges, F2_red4 and F1_cand1. Capacity goes to the (4,2) orbit, which has no exact proof yet.
+2026-09-15 00:59:43 genreduced: F2_red3 keeps factors [4, 10, 12] of 13
+2026-09-15 00:59:44 genreduced: F2_red8 keeps factors [6, 10, 11] of 13
+2026-09-15 00:59:44 singrab F2_red8: start (timeout 21600 s, threads 1); progress in exact/F2_red8.singrab.live
+2026-09-15 00:59:44 singrab F2_red3: start (timeout 21600 s, threads 1); progress in exact/F2_red3.singrab.live
+2026-09-15 00:59:44 singstd F2_red0: start (timeout 21600 s, threads 1); progress in exact/F2_red0.singstd.live
+2026-09-15 01:00:55 greedy F1 split 0: drop factor 6 -> still no solution mod p, DROPPED (207.3 s); keeping [1, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:02:33 greedy F1 split 0: drop factor 7 -> still no solution mod p, DROPPED (98.8 s); keeping [1, 8, 9, 10, 11, 12]
+2026-09-15 01:02:54 greedy F1 split 0: drop factor 8 -> still no solution mod p, DROPPED (21.0 s); keeping [1, 9, 10, 11, 12]
+2026-09-15 01:03:47 greedy F1 split 0: drop factor 9 -> still no solution mod p, DROPPED (52.4 s); keeping [1, 10, 11, 12]
+2026-09-15 01:04:07 greedy F1 split 0: drop factor 10 -> solutions appear, KEPT (19.9 s); keeping [1, 10, 11, 12]
+2026-09-15 01:04:20 greedy F1 split 0: drop factor 11 -> still no solution mod p, DROPPED (13.2 s); keeping [1, 10, 12]
+2026-09-15 01:04:41 greedy F1 split 0: drop factor 12 -> solutions appear, KEPT (20.8 s); keeping [1, 10, 12]
+2026-09-15 01:05:02 singrab F2_red0: ERROR  (1292.2 s)
+2026-09-15 01:05:02 note: singrab F2_red0 stopped by hand at 21 min (6.4 GB and growing; container at 13.0 of 15.5 GB). The (4,2) orbit is already refuted by hand (Lemmas 5 and 6: the size-4 class through P makes A,B,C,H a parallelogram, and no parallelogram is orthocentric) and by msolve on all six (4,2) systems; an exact computer proof there is a cross-check. F2_red3, F2_red8 (slimgb) and F2_red0 (std) continue.
+2026-09-15 01:05:02 msolve F2_red0: start (timeout 3600 s, threads 1); progress in exact/F2_red0.msolve.live
+2026-09-15 01:05:15 msolve F2_red0: no complex solution  (12.6 s)  real roots: 0
+2026-09-15 01:05:20 greedy F1 split 3: drop factor 0 -> still no solution mod p, DROPPED (37.8 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:05:29 greedy F1 split 3: drop factor 1 -> still no solution mod p, DROPPED (9.2 s); keeping [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:05:32 greedy F1 split 3: drop factor 2 -> still no solution mod p, DROPPED (2.7 s); keeping [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:05:33 greedy F1 split 3: drop factor 3 -> still no solution mod p, DROPPED (1.4 s); keeping [4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:05:35 greedy F1 split 3: drop factor 4 -> solutions appear, KEPT (1.8 s); keeping [4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:05:38 greedy F1 split 3: drop factor 5 -> still no solution mod p, DROPPED (3.3 s); keeping [4, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:06:19 note: results/caseA_exact_msolve.json lost the records F1_split0, F1_split3, F1_split7, F1_split8, F1_pin4, F2_pin4 to concurrent writers that each re-wrote a stale copy (fixed at 00:24 by re-reading before every write, but older runner processes kept the old code). Their verdicts are in this log; the jobs are re-run now so the JSON is complete.
+2026-09-15 01:06:20 msolve F1_pin4: start (timeout 600 s, threads 1); progress in exact/F1_pin4.msolve.live
+2026-09-15 01:06:20 msolve F1_pin4: real solutions  (0.2 s)  real roots: 2
+2026-09-15 01:06:20 msolve F2_pin4: start (timeout 600 s, threads 1); progress in exact/F2_pin4.msolve.live
+2026-09-15 01:06:20 msolve F2_pin4: real solutions  (0.1 s)  real roots: 1
+2026-09-15 01:06:21 msolve F1_split0: start (timeout 3600 s, threads 3); progress in exact/F1_split0.msolve.live
+2026-09-15 01:07:41 msolve F1_split0: no complex solution  (79.7 s)  real roots: 0
+2026-09-15 01:07:41 msolve F1_split3: start (timeout 3600 s, threads 3); progress in exact/F1_split3.msolve.live
+2026-09-15 01:08:58 msolve F1_split3: no complex solution  (77.7 s)  real roots: 0
+2026-09-15 01:08:58 msolve F1_split7: start (timeout 3600 s, threads 3); progress in exact/F1_split7.msolve.live
+2026-09-15 01:09:38 greedy F1 split 3: drop factor 6 -> still no solution mod p, DROPPED (239.8 s); keeping [4, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:10:59 msolve F1_split7: no complex solution  (121.2 s)  real roots: 0
+2026-09-15 01:10:59 msolve F1_split8: start (timeout 3600 s, threads 3); progress in exact/F1_split8.msolve.live
+2026-09-15 01:11:15 singrab F2_red3: ERROR  (690.3 s)
+2026-09-15 01:11:15 singrab F2_red8: ERROR  (690.5 s)
+2026-09-15 01:11:15 note: singrab F2_red3 and F2_red8 ((4,2) reduced systems) stopped by hand at about 17 min with the container at 13.1 of 15.5 GB. The (4,2) orbit rests on Lemmas 5 and 6 plus msolve; F2_red0 (std) and the F2_red4 certificate continue.
+2026-09-15 01:11:24 greedy F1 split 3: drop factor 7 -> still no solution mod p, DROPPED (106.6 s); keeping [4, 8, 9, 10, 11, 12]
+2026-09-15 01:11:50 greedy F1 split 3: drop factor 8 -> still no solution mod p, DROPPED (25.5 s); keeping [4, 9, 10, 11, 12]
+2026-09-15 01:12:45 greedy F1 split 3: drop factor 9 -> still no solution mod p, DROPPED (54.6 s); keeping [4, 10, 11, 12]
+2026-09-15 01:13:06 greedy F1 split 3: drop factor 10 -> solutions appear, KEPT (21.3 s); keeping [4, 10, 11, 12]
+2026-09-15 01:13:22 greedy F1 split 3: drop factor 11 -> still no solution mod p, DROPPED (16.3 s); keeping [4, 10, 12]
+2026-09-15 01:13:48 greedy F1 split 3: drop factor 12 -> solutions appear, KEPT (25.5 s); keeping [4, 10, 12]
+2026-09-15 01:14:46 greedy F1 split 8: drop factor 0 -> still no solution mod p, DROPPED (57.4 s); keeping [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:15:04 msolve F1_split8: no complex solution  (244.5 s)  real roots: 0
+2026-09-15 01:15:20 greedy F1 split 8: drop factor 1 -> still no solution mod p, DROPPED (33.5 s); keeping [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:15:35 greedy F1 split 8: drop factor 2 -> still no solution mod p, DROPPED (15.3 s); keeping [3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:15:46 greedy F1 split 8: drop factor 3 -> still no solution mod p, DROPPED (10.5 s); keeping [4, 5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:15:55 greedy F1 split 8: drop factor 4 -> still no solution mod p, DROPPED (9.7 s); keeping [5, 6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:15:59 greedy F1 split 8: drop factor 5 -> still no solution mod p, DROPPED (3.6 s); keeping [6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:16:02 greedy F1 split 8: drop factor 6 -> solutions appear, KEPT (3.0 s); keeping [6, 7, 8, 9, 10, 11, 12]
+2026-09-15 01:16:09 greedy F1 split 8: drop factor 7 -> still no solution mod p, DROPPED (7.3 s); keeping [6, 8, 9, 10, 11, 12]
+2026-09-15 01:16:21 greedy F1 split 8: drop factor 8 -> still no solution mod p, DROPPED (11.5 s); keeping [6, 9, 10, 11, 12]
+2026-09-15 01:16:22 greedy F1 split 8: drop factor 9 -> still no solution mod p, DROPPED (1.4 s); keeping [6, 10, 11, 12]
+2026-09-15 01:16:25 greedy F1 split 8: drop factor 10 -> solutions appear, KEPT (2.9 s); keeping [6, 10, 11, 12]
+2026-09-15 01:16:26 greedy F1 split 8: drop factor 11 -> solutions appear, KEPT (1.4 s); keeping [6, 10, 11, 12]
+2026-09-15 01:16:27 greedy F1 split 8: drop factor 12 -> still no solution mod p, DROPPED (0.8 s); keeping [6, 10, 11]
+2026-09-15 01:16:54 genreduced: F1_red0 keeps factors [1, 10, 12] of 13
+2026-09-15 01:16:55 genreduced: F1_red3 keeps factors [4, 10, 12] of 13
+2026-09-15 01:16:56 genreduced: F1_red8 keeps factors [6, 10, 11] of 13
+2026-09-15 01:16:57 singrab F1_red8: start (timeout 2700 s, threads 1); progress in exact/F1_red8.singrab.live
+2026-09-15 01:16:57 singrab F1_red0: start (timeout 2700 s, threads 1); progress in exact/F1_red0.singrab.live
+2026-09-15 01:16:57 singrab F1_red3: start (timeout 2700 s, threads 1); progress in exact/F1_red3.singrab.live
+2026-09-15 01:23:43 singstd F2_red0: ERROR  (1438.2 s)
+2026-09-15 01:23:43 note: singstd F2_red0 (24 min, 5.0 GB) and singrab F1_red8 (6.5 min, 3.7 GB and rising fast) stopped by hand with the container at 12.8 of 15.5 GB. Both are (4,2) cross-checks; F1_red0, F1_red3 and the F2_red4 certificate continue.
+2026-09-15 01:23:43 singrab F1_red8: ERROR  (406.1 s)
+2026-09-15 01:23:43 msolve F2_red3: start (timeout 3600 s, threads 1); progress in exact/F2_red3.msolve.live
+2026-09-15 01:23:54 msolve F2_red3: no complex solution  (11.2 s)  real roots: 0
+2026-09-15 01:23:54 msolve F2_red8: start (timeout 3600 s, threads 1); progress in exact/F2_red8.msolve.live
+2026-09-15 01:24:05 msolve F2_red8: no complex solution  (10.4 s)  real roots: 0
+2026-09-15 01:50:15 singrab F1_red0: ERROR  (1998.7 s)
+2026-09-15 01:50:16 singrab F1_red3: ERROR  (1998.8 s)
+2026-09-15 01:50:16 note: singrab F1_red0 (33 min, 4.1 GB) and F1_red3 (33 min, 3.5 GB) stopped by hand with the container at 12.7 of 15.5 GB, to give the F2_red4 certificate (liftstd, 80 min, 5.7 GB) the memory. With this, every exact attempt on a (4,2) system has been stopped unfinished; the (4,2) orbit rests on Lemmas 5 and 6, with msolve in agreement on all of its systems.
+2026-09-15 01:50:16 msolve F1_red0: start (timeout 1800 s, threads 2); progress in exact/F1_red0.msolve.live
+2026-09-15 01:50:29 msolve F1_red0: no complex solution  (13.0 s)  real roots: 0
+2026-09-15 01:50:29 msolve F1_red3: start (timeout 1800 s, threads 2); progress in exact/F1_red3.msolve.live
+2026-09-15 01:50:42 msolve F1_red3: no complex solution  (12.9 s)  real roots: 0
+2026-09-15 01:50:42 msolve F1_red8: start (timeout 1800 s, threads 2); progress in exact/F1_red8.msolve.live
+2026-09-15 01:50:43 msolve F1_red8: no complex solution  (0.8 s)  real roots: 0
+2026-09-15 02:30:18 singlift F2_red4: ERROR  (7232.4 s)
+2026-09-15 02:30:18 note: F2_red4.lift.sing stopped at its budget (02:30), unfinished.
+2026-09-15 02:30:51 note: the certcheck F2_red4 FileNotFoundError that followed is expected: liftstd was stopped before writing exact/F2_red4.cert, so no certificate exists. Nothing is running in the container now.

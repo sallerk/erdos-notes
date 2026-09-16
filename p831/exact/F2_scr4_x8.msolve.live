@@ -1,0 +1,121 @@
+
+--------------- INPUT DATA ---------------
+#variables                      21
+#equations                      21
+#invalid equations               0
+field characteristic    1073741827
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         6
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  2       2      23       5 x 29         26.90%        2 new       0 zero         0.00 | 0.00         
+  3       6      25      58 x 298         3.70%        6 new       0 zero         0.00 | 0.00         
+  4      31      46     504 x 1948        0.74%       30 new       1 zero         0.00 | 0.00         
+  4       5     242      23 x 101         9.73%        5 new       0 zero         0.00 | 0.00         
+  5     187     271    1763 x 8009        0.35%      119 new      68 zero         0.02 | 0.11         
+  5      36    1161     396 x 1933        1.24%       30 new       6 zero         0.01 | 0.00         
+  4       9    1381      62 x 263         4.24%        7 new       2 zero         0.00 | 0.00         
+  5      71    1445    1045 x 4864        0.67%       43 new      28 zero         0.01 | 0.05         
+  3       5    1683      24 x 164        11.79%        4 new       1 zero         0.00 | 0.00         
+  4      27    1545     220 x 1363        2.34%       14 new      13 zero         0.00 | 0.05         
+  4      10    1316     142 x 964         3.06%        9 new       1 zero         0.00 | 0.00         
+  5     273    1274    2568 x 9157        0.48%      126 new     148 zero         0.02 | 0.12         
+  5      44    2036    1237 x 4818        1.29%       30 new      14 zero         0.01 | 0.06         
+  5      18    2298    1463 x 5452        1.18%       12 new       6 zero         0.01 | 0.06         
+  6    2077    2394   23106 x 56380       0.15%      821 new    1256 zero         0.46 | 2.18         
+  4     153    6220     872 x 3511        1.71%       82 new      71 zero         0.06 | 0.36         
+  5    1179    5913    8773 x 22367       0.60%      562 new     618 zero         0.50 | 2.80         
+  4      21    7715     564 x 2318        3.93%       15 new       6 zero         0.03 | 0.18         
+  5     283    7482    6874 x 18467       1.35%      144 new     139 zero         0.21 | 1.02         
+  5     101    8492    6219 x 17581       1.59%       80 new      21 zero         0.14 | 0.61         
+  6    8669    9353   58869 x 96940       0.54%     2409 new    6290 zero        12.17 | 64.92        
+  4     172   18947     859 x 3128        2.76%       95 new      77 zero         0.42 | 2.28         
+  5    1703   18009   12718 x 25495       1.37%      484 new    1219 zero         1.89 | 10.49        
+  5     130   17799    6746 x 17882       2.59%       53 new      77 zero         0.32 | 1.39         
+  6   12327   18150   75621 x 103554      0.90%     2340 new   10082 zero        45.03 | 252.03       
+  4      10   26235     119 x 568        10.54%        2 new       8 zero         0.03 | 0.15         
+  5     342   26235   11598 x 24870       2.28%      139 new     203 zero         1.17 | 5.86         
+  5     125   24745   10415 x 23173       2.71%      103 new      22 zero         1.00 | 4.82         
+  5     111   24085   11877 x 25022       2.54%      110 new       1 zero         1.02 | 4.81         
+  5     167   23887    9171 x 20760       3.40%      132 new      35 zero         1.22 | 6.15         
+  5     675   23474   12547 x 24444       2.91%      522 new     154 zero         4.30 | 23.84        
+  4      14   23582     672 x 3732        7.78%        8 new       6 zero         0.09 | 0.45         
+  5    2012   23559   15242 x 25829       3.16%     1173 new     842 zero        10.67 | 61.15        
+  4    1089   19675    3548 x 5764        4.95%      419 new     670 zero         3.48 | 20.42        
+  3     176   14272     547 x 980         6.71%       47 new     129 zero         0.36 | 2.14         
+  2       9   12193      27 x 45         10.12%        2 new       7 zero         0.02 | 0.12         
+  3      90   12149     460 x 781         6.09%       23 new      68 zero         0.16 | 0.96         
+  4    1906   11382    6013 x 5926        2.58%      230 new    1712 zero         1.63 | 9.56         
+  3      58    9137     325 x 554         7.07%        1 new      58 zero         0.01 | 0.11         
+  4     690    9063    4543 x 5255        1.42%       82 new     612 zero         0.58 | 3.41         
+  3       8    9203      30 x 109         6.27%        0 new       8 zero         0.00 | 0.00         
+  4     139    9195    3615 x 4734        1.40%       14 new     126 zero         0.10 | 0.65         
+  3       8    9205      62 x 185        12.45%        0 new       8 zero         0.00 | 0.00         
+  4      17    9197    1025 x 1728        3.24%        0 new      17 zero         0.01 | 0.06         
+  5    5637    9180   30698 x 28019       1.39%      222 new    5654 zero         4.13 | 23.08        
+  4     208    5857    4202 x 5246        1.49%      142 new      66 zero         1.03 | 6.14         
+  3      75    6347     601 x 904         5.85%       26 new      51 zero         0.19 | 1.13         
+  2      23    5835      80 x 118         6.12%        3 new      20 zero         0.02 | 0.17         
+  3     108    5795     812 x 992         3.98%       40 new      68 zero         0.32 | 1.91         
+  2       5    5227      15 x 32         13.12%        3 new       2 zero         0.02 | 0.12         
+  3     161    5146     906 x 957         2.72%       57 new     104 zero         0.39 | 2.32         
+  2      33    3989     127 x 109         3.19%        6 new      27 zero         0.04 | 0.19         
+------------------------------------------------------------------------------------------------------
+reduce final basis        1 x 1         100.00%        1 new       0 zero         0.01 | 0.06         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)       93.34 sec
+overall(cpu)          518.58 sec
+select                  3.23 sec   3.5%
+symbolic prep.          3.33 sec   3.6%
+update                 43.25 sec  46.3%
+convert                 0.20 sec   0.2%
+linear algebra         43.23 sec  46.3%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                     1
+#terms in basis                   1
+#pairs reduced                41435
+#GM criterion              60989351
+#redundant elements           11048
+#rows reduced                 83701
+#zero reductions              30822
+max. matrix data              75621 x 103554 (0.901%)
+max. symbolic hash table size  2^17
+max. basis hash table size     2^23
+-----------------------------------------
+
+Grobner basis has a single element
+No solution
+Time for rational param:         93.35 (elapsed) sec / 518.64 sec (cpu)
+
+------------------------------------------------------------------------------------
+msolve overall time          93.36 sec (elapsed) / 518.64 sec (cpu)
+------------------------------------------------------------------------------------

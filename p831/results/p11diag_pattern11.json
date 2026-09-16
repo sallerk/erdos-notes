@@ -1,0 +1,10 @@
+{
+ "pattern": 11,
+ "starts": 1500,
+ "converged": 1348,
+ "degenerate": 1348,
+ "nondegenerate": 0,
+ "ranks": [],
+ "real_nondegenerate": 0,
+ "sample": []
+}

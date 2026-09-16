@@ -1,0 +1,320 @@
+Input rows 2
+Irred Mon:5
+red Mon:0
+rank:2
+Input rows 10
+Irred Mon:41
+red Mon:0
+rank:10
+Input rows 15
+Irred Mon:85
+red Mon:4
+rank:14
+Input rows 2
+Irred Mon:5
+red Mon:5
+rank:0
+Input rows 3
+Irred Mon:18
+red Mon:3
+rank:3
+Input rows 27
+Irred Mon:259
+red Mon:68
+rank:19
+Input rows 16
+Irred Mon:56
+red Mon:6
+rank:13
+Input rows 11
+Irred Mon:76
+red Mon:35
+rank:8
+Input rows 39
+Irred Mon:280
+red Mon:164
+rank:14
+Input rows 3
+Irred Mon:29
+red Mon:4
+rank:2
+Input rows 10
+Irred Mon:116
+red Mon:21
+rank:5
+Input rows 34
+Irred Mon:430
+red Mon:133
+rank:14
+Input rows 223
+Irred Mon:2730
+red Mon:1061
+rank:83
+Input rows 8
+Irred Mon:268
+red Mon:67
+rank:6
+Input rows 81
+Irred Mon:2979
+red Mon:840
+rank:47
+Input rows 21
+Irred Mon:497
+red Mon:189
+rank:9
+Input rows 954
+Irred Mon:21819
+red Mon:9881
+rank:357
+Input rows 57
+Irred Mon:1711
+red Mon:446
+rank:29
+Input rows 253
+Irred Mon:11074
+red Mon:3784
+rank:120
+Input rows 15
+Irred Mon:1888
+red Mon:503
+rank:3
+Input rows 1747
+Irred Mon:66610
+red Mon:33328
+rank:805
+Input rows 4
+Irred Mon:25
+red Mon:3
+rank:4
+Input rows 2
+Irred Mon:13
+red Mon:2
+rank:1
+Input rows 6
+Irred Mon:286
+red Mon:33
+rank:3
+Input rows 126
+Irred Mon:7573
+red Mon:2213
+rank:86
+Input rows 8
+Irred Mon:56
+red Mon:9
+rank:6
+Input rows 4
+Irred Mon:15
+red Mon:5
+rank:1
+Input rows 11
+Irred Mon:196
+red Mon:45
+rank:5
+Input rows 67
+Irred Mon:1976
+red Mon:703
+rank:51
+Input rows 9
+Irred Mon:30
+red Mon:10
+rank:3
+Input rows 3
+Irred Mon:2
+red Mon:2
+rank:0
+Input rows 3
+Irred Mon:8
+red Mon:8
+rank:0
+Input rows 7
+Irred Mon:147
+red Mon:54
+rank:6
+Input rows 79
+Irred Mon:1767
+red Mon:819
+rank:39
+Input rows 7
+Irred Mon:123
+red Mon:48
+rank:6
+Input rows 1
+Irred Mon:21
+red Mon:2
+rank:1
+Input rows 86
+Irred Mon:1213
+red Mon:724
+rank:65
+Input rows 18
+Irred Mon:61
+red Mon:29
+rank:10
+Input rows 5
+Irred Mon:14
+red Mon:6
+rank:1
+Input rows 1
+Irred Mon:10
+red Mon:4
+rank:1
+Input rows 15
+Irred Mon:67
+red Mon:47
+rank:6
+Input rows 82
+Irred Mon:399
+red Mon:469
+rank:30
+Input rows 37
+Irred Mon:166
+red Mon:112
+rank:22
+Input rows 12
+Irred Mon:44
+red Mon:29
+rank:3
+Input rows 37
+Irred Mon:189
+red Mon:181
+rank:13
+Input rows 20
+Irred Mon:93
+red Mon:81
+rank:9
+Input rows 10
+Irred Mon:34
+red Mon:46
+rank:1
+Input rows 374
+Irred Mon:2134
+red Mon:3439
+rank:83
+Input rows 14
+Irred Mon:248
+red Mon:119
+rank:4
+Input rows 1246
+Irred Mon:8566
+red Mon:20981
+rank:421
+Input rows 63
+Irred Mon:1632
+red Mon:805
+rank:50
+Input rows 5
+Irred Mon:88
+red Mon:28
+rank:4
+Input rows 90
+Irred Mon:1914
+red Mon:1223
+rank:62
+Input rows 7
+Irred Mon:76
+red Mon:15
+rank:4
+Input rows 49
+Irred Mon:454
+red Mon:227
+rank:17
+Input rows 255
+Irred Mon:3164
+red Mon:2371
+rank:140
+Input rows 95
+Irred Mon:2896
+red Mon:2286
+rank:78
+Input rows 35
+Irred Mon:1875
+red Mon:1616
+rank:32
+Input rows 27
+Irred Mon:561
+red Mon:269
+rank:22
+Input rows 5
+Irred Mon:90
+red Mon:40
+rank:3
+Input rows 46
+Irred Mon:641
+red Mon:461
+rank:28
+Input rows 48
+Irred Mon:539
+red Mon:306
+rank:36
+Input rows 69
+Irred Mon:599
+red Mon:410
+rank:56
+Input rows 19
+Irred Mon:127
+red Mon:64
+rank:11
+Input rows 156
+Irred Mon:771
+red Mon:744
+rank:79
+Input rows 14
+Irred Mon:85
+red Mon:21
+rank:8
+Input rows 227
+Irred Mon:1008
+red Mon:1055
+rank:115
+Input rows 9
+Irred Mon:19
+red Mon:14
+rank:1
+Input rows 70
+Irred Mon:120
+red Mon:163
+rank:4
+Input rows 10
+Irred Mon:83
+red Mon:46
+rank:8
+Input rows 2
+Irred Mon:3
+red Mon:3
+rank:0
+Input rows 8
+Irred Mon:42
+red Mon:25
+rank:3
+Input rows 149
+Irred Mon:416
+red Mon:928
+rank:46
+Input rows 4
+Irred Mon:13
+red Mon:14
+rank:4
+Input rows 5
+Irred Mon:9
+red Mon:6
+rank:5
+Input rows 5
+Irred Mon:6
+red Mon:8
+rank:4
+Input rows 5
+Irred Mon:7
+red Mon:4
+rank:3
+Input rows 2
+Irred Mon:5
+red Mon:0
+rank:2
+Input rows 43
+Irred Mon:3
+red Mon:130
+rank:1
+
+NF:7347 product criterion:1228661, ext_product criterion:926 
+RESULT dim -1
+RESULT unit 1

@@ -1,0 +1,103 @@
+2026-09-15 08:37:37 gen: full systems and pinned controls for patterns [5, 7, 8, 9, 10, 11, 13] in G1 and G2
+2026-09-15 08:37:37 msolve G1_pin5: start (timeout 600 s); progress in exact/G1_pin5.msolve.live
+2026-09-15 08:37:38 msolve G1_pin5: real solutions  (0.4 s)  real roots: 1  planted found: True
+2026-09-15 08:37:38 msolve G1_pin7: start (timeout 600 s); progress in exact/G1_pin7.msolve.live
+2026-09-15 08:37:38 msolve G1_pin7: real solutions  (0.3 s)  real roots: 1  planted found: True
+2026-09-15 08:37:38 msolve G1_pin8: start (timeout 600 s); progress in exact/G1_pin8.msolve.live
+2026-09-15 08:37:38 msolve G1_pin8: real solutions  (0.3 s)  real roots: 1  planted found: True
+2026-09-15 08:37:38 msolve G1_pin9: start (timeout 600 s); progress in exact/G1_pin9.msolve.live
+2026-09-15 08:37:39 msolve G1_pin9: real solutions  (0.3 s)  real roots: 1  planted found: True
+2026-09-15 08:37:39 msolve G1_pin10: start (timeout 600 s); progress in exact/G1_pin10.msolve.live
+2026-09-15 08:37:39 msolve G1_pin10: real solutions  (0.3 s)  real roots: 1  planted found: True
+2026-09-15 08:37:39 msolve G1_pin11: start (timeout 600 s); progress in exact/G1_pin11.msolve.live
+2026-09-15 08:37:40 msolve G1_pin11: real solutions  (0.7 s)  real roots: 1  planted found: True
+2026-09-15 08:37:40 msolve G1_pin13: start (timeout 600 s); progress in exact/G1_pin13.msolve.live
+2026-09-15 08:37:40 msolve G1_pin13: real solutions  (0.4 s)  real roots: 1  planted found: True
+2026-09-15 08:37:40 msolve G2_pin5: start (timeout 600 s); progress in exact/G2_pin5.msolve.live
+2026-09-15 08:37:41 msolve G2_pin5: real solutions  (0.4 s)  real roots: 1  planted found: True
+2026-09-15 08:37:41 msolve G2_pin7: start (timeout 600 s); progress in exact/G2_pin7.msolve.live
+2026-09-15 08:37:41 msolve G2_pin7: real solutions  (0.8 s)  real roots: 1  planted found: True
+2026-09-15 08:37:41 msolve G2_pin8: start (timeout 600 s); progress in exact/G2_pin8.msolve.live
+2026-09-15 08:37:42 msolve G2_pin8: real solutions  (0.5 s)  real roots: 1  planted found: True
+2026-09-15 08:37:42 msolve G2_pin9: start (timeout 600 s); progress in exact/G2_pin9.msolve.live
+2026-09-15 08:37:42 msolve G2_pin9: real solutions  (0.7 s)  real roots: 1  planted found: True
+2026-09-15 08:37:42 msolve G2_pin10: start (timeout 600 s); progress in exact/G2_pin10.msolve.live
+2026-09-15 08:37:43 msolve G2_pin10: real solutions  (0.8 s)  real roots: 1  planted found: True
+2026-09-15 08:37:43 msolve G2_pin11: start (timeout 600 s); progress in exact/G2_pin11.msolve.live
+2026-09-15 08:37:44 msolve G2_pin11: real solutions  (0.7 s)  real roots: 1  planted found: True
+2026-09-15 08:37:44 msolve G2_pin13: start (timeout 600 s); progress in exact/G2_pin13.msolve.live
+2026-09-15 08:37:45 msolve G2_pin13: real solutions  (0.9 s)  real roots: 1  planted found: True
+2026-09-15 08:38:11 greedy G1 pattern 5: all 12 factors -> no solution mod p (10.4 s)
+2026-09-15 08:53:30 note: prove G1 stopped by hand; the greedy trial for pattern 5 without factor 6 (keeping 7..11) reached 13.2 GB in 13 min with the container at 12.7 of 15.5 GB. Such a trial has solutions, and systems with solutions are what F4 finds expensive (Case A lesson P23). Greedy trials now run under a 5 GB memory cap and a 240 s limit; hitting either counts as 'keep the factor', which is safe because the greedy only chooses.
+2026-09-15 08:54:55 greedy G1 pattern 5: all 12 factors -> no solution mod p (10.4 s)
+2026-09-15 09:02:27 greedy G1 pattern 5: done; keeping [6, 7, 8, 9, 11]
+2026-09-15 09:02:27 genreduced: G1_red5 keeps factors [6, 7, 8, 9, 11] of 12
+2026-09-15 09:02:27 singrab G1_red5: start (timeout 21600 s); progress in exact/G1_red5.singrab.live
+2026-09-15 10:17:00 note: prove G1 driver stopped by hand at 10:16 so that one slow exact run does not hold up the other six patterns. The Singular run on G1_red5 (73 min, 5.7 GB) keeps going in the container and is recorded from its live file when it ends. The other patterns go through batch(): all mod-p screens first, then exact runs two at a time.
+2026-09-15 10:17:39 greedy G1 pattern 7: all 12 factors -> no solution mod p (26.1 s)
+2026-09-15 10:26:44 greedy G1 pattern 7: done; keeping [6, 7, 8, 9, 11]
+2026-09-15 10:26:44 genreduced: G1_red7 keeps factors [6, 7, 8, 9, 11] of 12
+2026-09-15 10:27:19 greedy G1 pattern 8: all 12 factors -> no solution mod p (34.8 s)
+2026-09-15 10:36:29 greedy G1 pattern 8: done; keeping [6, 7, 8, 9]
+2026-09-15 10:36:29 genreduced: G1_red8 keeps factors [6, 7, 8, 9] of 12
+2026-09-15 10:37:06 greedy G1 pattern 9: all 12 factors -> no solution mod p (37.1 s)
+2026-09-15 10:46:44 greedy G1 pattern 9: done; keeping [6, 7, 8, 9, 11]
+2026-09-15 10:46:44 genreduced: G1_red9 keeps factors [6, 7, 8, 9, 11] of 12
+2026-09-15 10:47:28 greedy G1 pattern 10: all 12 factors -> no solution mod p (43.6 s)
+2026-09-15 10:57:00 greedy G1 pattern 10: done; keeping [6, 7, 8, 9]
+2026-09-15 10:57:00 genreduced: G1_red10 keeps factors [6, 7, 8, 9] of 12
+2026-09-15 10:58:40 greedy G1 pattern 11: all 12 factors -> KILLED (100.2 s)
+2026-09-15 10:58:40 greedy G1 pattern 11: NOT inconsistent mod p with every factor imposed; keeping [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+2026-09-15 10:58:52 greedy G1 pattern 13: all 12 factors -> no solution mod p (11.2 s)
+2026-09-15 10:59:06 CORRECTION: the two lines above about pattern 11 overstate. The all-factor trial was KILLED at 100 s (the 5 GB memory cap), which leaves pattern 11 UNDECIDED; it was not found to have solutions. It is re-run without the 5 GB cap once the screens finish.
+2026-09-15 11:14:09 greedy G1 pattern 13: done; keeping [3, 5, 7, 9, 10]
+2026-09-15 11:14:09 genreduced: G1_red13 keeps factors [3, 5, 7, 9, 10] of 12
+2026-09-15 11:14:09 singrab G1_red7: start (timeout 21600 s); progress in exact/G1_red7.singrab.live
+2026-09-15 11:14:09 singrab G1_red8: start (timeout 21600 s); progress in exact/G1_red8.singrab.live
+2026-09-15 11:14:10 pattern 11 all-factor system mod p: start, 4 threads, 10 GB cap, 3600 s
+2026-09-15 11:16:14 note: singrab G1_red5 stopped by hand at 2 h 13 min, unfinished: it jumped from 5.7 to 9.1 GB with the container at 13.1 of 15.5 GB, and the undecided pattern 11 (the only place a counterexample could be) needs the memory. Pattern 5 keeps its mod-p verdict; its exact proof is not obtained.
+2026-09-15 11:16:39 singrab G1_red5: ERROR or stopped  (recorded from the live file)
+2026-09-15 11:16:40 msolve G1_red5: start (timeout 3600 s); progress in exact/G1_red5.msolve.live
+2026-09-15 11:17:10 msolve G1_red5: no complex solution  (30.3 s)  real roots: 0
+2026-09-15 11:21:21 pattern 11 all-factor system mod p: ended after 431 s; output: none
+2026-09-15 11:24:32 diagnostic (p11diag.py, numerical, not a proof): pattern 11, 1500 random complex starts, 1348 converged roots, ALL degenerate (a saturated factor below 1e-6). Control pattern 5: 1395 roots, 1394 degenerate, the other at 4e-6 (degenerate to numerical accuracy). So pattern 11's size looks like difficulty for msolve, not genuine solutions; to be decided by other routes.
+2026-09-15 11:24:32 pattern 11 G2 all-factor system mod p: start, 3 threads, 8 GB cap, 3600 s
+2026-09-15 11:24:38 genreduced: G1_red11 keeps factors [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] of 12
+2026-09-15 11:24:38 pattern 11 G1 all-factor system, Singular slimgb mod 32003: start, 1 core, 4 GB cap, 3600 s
+2026-09-15 11:26:56 pattern 11 all-factor system mod 32003 (Singular): ended after 138 s; RESULT dim -1 RESULT unit 1 
+2026-09-15 11:27:21 singrab G1_red11: start (timeout 21600 s); progress in exact/G1_red11.singrab.live
+2026-09-15 11:27:47 singular-modp G1_full5 (all 12 factors, second engine and prime): no solution mod 32003 (2 s)
+2026-09-15 11:27:54 singular-modp G1_full7 (all 12 factors, second engine and prime): no solution mod 32003 (7 s)
+2026-09-15 11:28:08 singular-modp G1_full8 (all 12 factors, second engine and prime): no solution mod 32003 (14 s)
+2026-09-15 11:28:22 singular-modp G1_full9 (all 12 factors, second engine and prime): no solution mod 32003 (14 s)
+2026-09-15 11:28:39 singular-modp G1_full10 (all 12 factors, second engine and prime): no solution mod 32003 (17 s)
+2026-09-15 11:28:42 singular-modp G1_full13 (all 12 factors, second engine and prime): no solution mod 32003 (3 s)
+2026-09-15 11:28:54 note: change of strategy. Singular mod 32003 decides the FULL (12-factor) systems in 2 to 138 s, while exact runs on the REDUCED systems stall (G1_red5 2 h unfinished; G1_red7, G1_red8 stopped now at 14 min). For the third shape the full saturation is what makes the basis collapse, so the exact runs over Q now use the full systems (G1_full<i>, and G1_red11 which keeps all 12). The batch driver and the redundant msolve G2 run on pattern 11 (5.5 GB, near its cap) are stopped.
+2026-09-15 11:28:54 pattern 11 all-factor system mod p (G2): ended after 263 s; output: none
+2026-09-15 11:29:16 singrab G1_full7: start (timeout 21600 s); progress in exact/G1_full7.singrab.live
+2026-09-15 11:29:16 singrab G1_full5: start (timeout 21600 s); progress in exact/G1_full5.singrab.live
+2026-09-15 11:29:16 singrab G1_full9: start (timeout 21600 s); progress in exact/G1_full9.singrab.live
+2026-09-15 11:29:16 singrab G1_full10: start (timeout 21600 s); progress in exact/G1_full10.singrab.live
+2026-09-15 11:29:16 singrab G1_full13: start (timeout 21600 s); progress in exact/G1_full13.singrab.live
+2026-09-15 13:14:14 note: certificate test (liftstd modulo 32003 on G1_full13, to rebuild rational cofactors from several primes and check sum h_i f_i = 1 exactly) stopped by hand after about 11 min near its 6 GB cap with the container at 14.3 of 15.5 GB. Tracking the cofactors is far heavier than the plain basis (3 s mod p), so this route is not faster.
+2026-09-15 13:14:46 singrab G2_full5: start (timeout 21600 s); progress in exact/G2_full5.singrab.live
+2026-09-15 13:42:58 note: singrab G1_full5 stopped by hand at 2 h 13 min (4.9 GB, still degree 6, pair count 58616 -> 61985 in 40 min) with the container at 12.4 of 15.5 GB and all eight runs growing about 4 GB an hour together. Pattern 5 keeps its G2 race (G2_full5, 0.3 GB), so every pattern still has one exact attempt running.
+2026-09-15 13:42:58 singrab G1_full5: ERROR  (8021.4 s)
+2026-09-15 14:54:07 singrab G2_full5: ERROR  (5961.5 s)
+2026-09-15 14:54:07 note: singrab G2_full5 (1 h 38 min, 0.3 -> 3.05 GB in 71 min, back at degree 5 with 177035 pairs) and G1_full9 (3 h 24 min, +0.87 GB in 71 min) stopped by hand with the container at 12.6 of 15.5 GB and about 45 minutes of headroom left. The five slowest-growing runs (patterns 7, 8, 10, 11, 13; about 1.3 GB an hour together) continue to their 6-hour cap. Patterns 5 and 9 keep only their mod-p verdicts (two engines, two primes).
+2026-09-15 14:54:07 singrab G1_full9: ERROR  (12291.2 s)
+2026-09-15 16:04:32 singular-modq pattern 5 (all 12 factors, second prime 2^31-1): no solution mod 2147483647 (1484 s)
+2026-09-15 16:05:01 note: the second-prime sweep modulo 2^31-1 stopped by hand after pattern 5 (no solution, but 1484 s against 2 s modulo 32003: Singular's arithmetic for primes above 2^16 is far slower). Second prime changed to 65521, below 2^16; pattern 5's verdict modulo 2^31-1 stands as a third prime.
+2026-09-15 16:05:50 singular-mods pattern 5 (all 12 factors, second prime 32749): no solution mod 32749 (3 s)
+2026-09-15 16:05:58 singular-mods pattern 7 (all 12 factors, second prime 32749): no solution mod 32749 (8 s)
+2026-09-15 16:06:12 singular-mods pattern 8 (all 12 factors, second prime 32749): no solution mod 32749 (14 s)
+2026-09-15 16:06:26 note: the sweep modulo 65521 stopped by hand (pattern 5 still running after 71 s; Singular's fast arithmetic evidently covers only primes below 2^15). The second prime is 32749, whose sweep runs at the speed of 32003.
+2026-09-15 16:06:28 singular-mods pattern 9 (all 12 factors, second prime 32749): no solution mod 32749 (16 s)
+2026-09-15 16:06:46 singular-mods pattern 10 (all 12 factors, second prime 32749): no solution mod 32749 (18 s)
+2026-09-15 16:09:39 singular-mods pattern 11 (all 12 factors, second prime 32749): no solution mod 32749 (173 s)
+2026-09-15 16:09:42 singular-mods pattern 13 (all 12 factors, second prime 32749): no solution mod 32749 (3 s)
+2026-09-15 17:27:21 singrab G1_red11: KILLED at timeout  (21599.8 s)
+2026-09-15 17:29:16 singrab G1_full7: KILLED at timeout  (21599.8 s)
+2026-09-15 17:29:16 singrab G1_full10: KILLED at timeout  (21599.8 s)
+2026-09-15 17:29:16 singrab G1_full13: KILLED at timeout  (21599.8 s)
+2026-09-15 17:30:12 note: the start and verdict lines for singrab G1_full8 are missing from this log, and its JSON record was missing too: four runners wrote in the same second (17:29:16) and overwrote each other. The record is rebuilt in results/third_exact_singrab.json and flagged as reconstructed; the live file exact/G1_full8.singrab.live has no RESULT line, so that run did not finish either.

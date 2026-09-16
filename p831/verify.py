@@ -227,8 +227,13 @@ if os.path.exists('results/audit_r2_self.json'):
            'floor moves %.0fx across separation, %.1fx across min-distance'
            % (ratio_sep, ratio_mind))
     note = io.open('NOTE.md', encoding='utf-8').read()
+    # The note used to state this as a universal fact about the solution SETS.  It is a
+    # statement about the solutions one numerical search FOUND; the 2026-09-16 audit ranked
+    # the quantified form the worst defect in the directory, so check that it is gone.
     ck('NOTE.md states the corrected reading rather than the OBSTRUCTED one',
-       'Every exact solution of every one of the fifteen surviving patterns' in note)
+       'Every solution this search found, in any of the fifteen surviving patterns' in note)
+    ck('NOTE.md no longer states the universal form, which would settle h(5) = 4',
+       'Every exact solution of every one of the fifteen surviving patterns' not in note)
 else:
     ck('results/audit_r2_self.json exists', False)
 
@@ -236,8 +241,10 @@ if os.path.exists('results/r2_unguarded_roots.json'):
     u = json.load(open('results/r2_unguarded_roots.json'))
     ck('the decisive unguarded-root test is complete and covers all 15 patterns',
        bool(u.get('completed')) and len(u['rows']) == 15)
-    ck('EVERY exact root of EVERY pattern is four-concyclic', bool(u['all_concyclic']),
-       '%d roots, largest concyclicity margin %.2e' % (u['total_roots'], u['worst_margin']))
+    ck('every solution FOUND by r2check is four-concyclic (numerical; not a theorem about '
+       'the solution sets)', bool(u['all_concyclic']),
+       '%d converged solutions from %d random starts, largest concyclicity margin %.2e'
+       % (u['total_roots'], 120 * len(u['rows']), u['worst_margin']))
 else:
     ck('results/r2_unguarded_roots.json exists', False)
 
@@ -280,6 +287,310 @@ ck('the input files for the attempt are present, so it can be picked up again',
    os.path.exists('mkqe.py') and os.path.exists('qe_typeIII.red')
    and os.path.exists('qe_typeIII_lean.red'))
 ck('the status sentence still says h(5) is 3 or 4', '**h(5) is 3 or 4.**' in note)
+
+print()
+print('5a. Case A (one class is the four triples of an orthocentric quadruple), exactly')
+# caseA_exact.py, run in the container of docker/, produced these.  Nothing below imports
+# it: the artifacts are re-read, and the two systems that carry the proof are rebuilt
+# here from the geometry and compared with the files Singular actually read.
+import itertools
+import sympy as sp
+
+PAIRS6 = list(combinations(range(4), 2))
+
+
+def lemma1_splits():
+    out = set()
+    for mask in range(1, 63):
+        c0 = tuple(i for i in range(6) if mask >> i & 1)
+        c1 = tuple(i for i in range(6) if not mask >> i & 1)
+        if all(sum(1 for t in cl if X in PAIRS6[t]) <= 2 for X in range(4) for cl in (c0, c1)):
+            out.add(tuple(sorted([c0, c1])))
+    return out
+
+
+S9 = lemma1_splits()
+shapes = sorted(tuple(sorted((len(a), len(b)), reverse=True)) for a, b in S9)
+ck('Lemma 1 alone leaves 9 splits of the six P-triples: 3 of shape (4,2), 6 of shape (3,3)',
+   shapes == [(3, 3)] * 6 + [(4, 2)] * 3, str(shapes))
+
+
+def relabel(split, perm):
+    idx = {frozenset(PAIRS6[t]): t for t in range(6)}
+    img = [tuple(sorted(idx[frozenset((perm[i], perm[j]))] for i, j in (PAIRS6[t] for t in cl)))
+           for cl in split]
+    return tuple(sorted(img))
+
+
+orbits = []
+for s in sorted(S9):
+    orb = {relabel(s, p) for p in itertools.permutations(range(4))}
+    if orb not in orbits:
+        orbits.append(orb)
+ck('relabelling A,B,C,H makes the six (3,3) splits one case and the three (4,2) one case',
+   sorted(len(o) for o in orbits) == [3, 6], 'orbit sizes %s' % sorted(len(o) for o in orbits))
+
+ms = json.load(open('results/caseA_exact_msolve.json'))
+sr = json.load(open('results/caseA_exact_singrab.json'))
+full = ['%s_split%d' % (g, k) for g in ('F1', 'F2') for k in range(9)]
+ck('msolve (mod-p Groebner, not a proof): all 18 full systems have no complex solution',
+   all(ms.get(j, {}).get('status') == 'no complex solution' for j in full),
+   '%d of 18 recorded' % sum(1 for j in full if j in ms))
+ck('controls: msolve returns the planted configuration (both gauges, full and pinned)',
+   all(ms.get(j, {}).get('planted_found') is True
+       for j in ('F1_control', 'F2_control', 'F1_pin4', 'F2_pin4')))
+for name in ('F2_red4', 'F1_cand1'):
+    live = io.open('exact/%s.singrab.live' % name, encoding='utf-8', errors='replace').read()
+    src = io.open('exact/%s.rab.sing' % name, encoding='ascii').read()
+    ck('%s: Singular over Q (characteristic 0) found the unit ideal' % name,
+       sr.get(name, {}).get('status') == 'no complex solution' and 'RESULT dim -1' in live
+       and 'RESULT unit 1' in live and 'ring R = 0,' in src)
+
+
+def _d2(a, b):
+    return (a[0] - b[0]) ** 2 + (a[1] - b[1]) ** 2
+
+
+def _cr(a, b, c):
+    return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
+
+
+def rebuild(gauge, c0, keep):
+    """own construction of a Case A system; KEEP names the non-degeneracy conditions"""
+    ra, rb = sp.symbols('ra rb')
+    if gauge == 'F1':
+        u, v, w, x, y = sp.symbols('u v w x y')
+        Q, P = [(0, 0), (1, 0), (u, v), (u, w)], (x, y)
+        orth = [v * w - u * (1 - u)]
+    else:
+        p, q, r, s, m, n = sp.symbols('p q r s m n')
+        Q, P = [(1, 0), (p, q), (r, s), (m, n)], (0, 0)
+        A, B, C, H = Q
+        orth = [(H[0] - A[0]) * (B[0] - C[0]) + (H[1] - A[1]) * (B[1] - C[1]),
+                (H[0] - B[0]) * (A[0] - C[0]) + (H[1] - B[1]) * (A[1] - C[1])]
+    eqs = list(orth)
+    for t, (i, j) in enumerate(PAIRS6):
+        rho = ra if t in c0 else rb
+        eqs.append(_d2(Q[i], Q[j]) * _d2(Q[j], P) * _d2(P, Q[i]) - 4 * rho * _cr(P, Q[i], Q[j]) ** 2)
+    K, N = _cr(*Q[:3]), _d2(Q[1], Q[2]) * _d2(Q[2], Q[0]) * _d2(Q[0], Q[1])
+    cond = {'P!=A': _d2(P, Q[0]), 'P!=B': _d2(P, Q[1]), 'P!=C': _d2(P, Q[2]),
+            'P!=H': _d2(P, Q[3]), 'ra!=R2': 4 * ra * K ** 2 - N, 'rb!=R2': 4 * rb * K ** 2 - N}
+    return [sp.expand(e) for e in eqs], [sp.expand(cond[k]) for k in keep]
+
+
+def same_up_to_scalar(f, g):
+    f, g = sp.expand(f), sp.expand(g)
+    if f == 0 or g == 0:
+        return f == g
+    fv = sorted(f.free_symbols | g.free_symbols, key=str)
+    return sp.expand(f * sp.Poly(g, *fv).LC() - g * sp.Poly(f, *fv).LC()) == 0
+
+
+def file_system(name):
+    src = io.open('exact/%s.rab.sing' % name, encoding='ascii').read()
+    body = src.split('ideal I = ')[1].split(';')[0]
+    polys = [sp.expand(sp.sympify(t.replace('^', '**'))) for t in body.split(',')]
+    ts = sorted({v for f in polys for v in f.free_symbols if str(v).startswith('t')}, key=str)
+    eqs = [f for f in polys if not (f.free_symbols & set(ts))]
+    conds = [sp.expand((f + 1) / t) for t in ts for f in polys if t in f.free_symbols]
+    return eqs, conds
+
+
+# the two proofs: F2 split 4 keeping {P!=B, ra!=R^2}; F1 split 1 keeping the six below.
+# The splits are named by their classes, so the index into the split list does not matter.
+for name, gauge, c0, keep in (
+        ('F2_red4', 'F2', (0, 1, 4), ['P!=B', 'ra!=R2']),
+        ('F1_cand1', 'F1', (0, 2, 3), ['P!=A', 'P!=B', 'P!=C', 'P!=H', 'ra!=R2', 'rb!=R2'])):
+    mine_e, mine_c = rebuild(gauge, c0, keep)
+    file_e, file_c = file_system(name)
+    ok_e = len(mine_e) == len(file_e) and all(any(same_up_to_scalar(a, b) for b in file_e)
+                                              for a in mine_e)
+    # what must hold is that every condition Singular IMPOSED is implied by admissibility:
+    # each imposed polynomial must divide one of the admissibility polynomials above, so
+    # that it is non-zero whenever that one is.  (The file keeps irreducible factors.)
+    def divides(b, a):
+        if not b.free_symbols <= a.free_symbols:
+            return False
+        gens = sorted(a.free_symbols, key=str)
+        return sp.rem(sp.Poly(a, *gens), sp.Poly(b, *gens)).is_zero
+    ok_c = all(any(divides(b, a) for a in mine_c) for b in file_c)
+    ck('%s: the equations Singular read are the Case A equations, rebuilt independently'
+       % name, ok_e, '%d equations' % len(mine_e))
+    ck('%s: every condition it imposed is one that admissibility forces (distinct points, '
+       'distinct radius classes)' % name,
+       ok_c and len(file_c) == len(mine_c), '%d conditions' % len(file_c))
+    # control for the comparison itself: one triple moved to the other class must NOT match
+    wrong = tuple(sorted(set(c0) ^ {c0[-1], 5 if c0[-1] != 5 else 2}))
+    bad_e, _ = rebuild(gauge, wrong, keep)
+    ck('%s: control, the comparison rejects a wrong class assignment %s' % (name, wrong),
+       not all(any(same_up_to_scalar(a, b) for b in file_e) for a in bad_e))
+
+print()
+print('5b. The third shape (size-4 classes neither a 4-set nor through one point)')
+# third_exact.py produced these; nothing here imports it.
+TRI5 = list(combinations(range(5), 3))
+pz = json.load(open('results/penum_n5_k3.json'))['patterns']
+
+
+def _shape(cl):
+    if len(set().union(*cl)) == 4:
+        return 'four-set'
+    if set.intersection(*[set(t) for t in cl]):
+        return 'common-point'
+    return 'other'
+
+
+buckets = {'Case A': [], 'common point': [], 'third shape': []}
+for idx, p in enumerate(pz):
+    if not p['f104_ok']:
+        continue
+    cls = [[t for j, t in enumerate(TRI5) if p['labels'][j] == c] for c in range(3)]
+    s4 = [_shape(c) for c in cls if len(c) == 4]
+    buckets['Case A' if 'four-set' in s4 else 'common point' if 'common-point' in s4
+            else 'third shape'].append(idx)
+THIRD3 = buckets['third shape']
+ck('the twelve patterns sort as 2 Case A, 3 common-point, 7 third shape',
+   [len(buckets[k]) for k in ('Case A', 'common point', 'third shape')] == [2, 3, 7],
+   str(buckets))
+ck('in every third-shape pattern each 4-set spreads over at least two classes, so '
+   '"radii distinct" also excludes four concyclic points',
+   all(len({pz[i]['labels'][TRI5.index(t)] for t in combinations(q, 3)}) >= 2
+       for i in THIRD3 for q in combinations(range(5), 4)))
+m3 = json.load(open('results/third_exact_msolve.json'))
+pins = ['%s_pin%d' % (g, i) for g in ('G1', 'G2') for i in THIRD3]
+ck('pinned controls: the planted configuration is returned for all 7 patterns in both gauges',
+   all(m3.get(j, {}).get('planted_found') is True for j in pins),
+   '%d of %d' % (sum(1 for j in pins if m3.get(j, {}).get('planted_found')), len(pins)))
+
+
+def _read(path):
+    return io.open(path, encoding='utf-8', errors='replace').read() if os.path.exists(path) else ''
+
+
+ms_modp = [i for i in THIRD3 if _read('exact/G1_gr%d_all.ms.out' % i).strip().startswith('[-1]')]
+sg_modp = [i for i in THIRD3
+           if 'RESULT unit 1' in _read('exact/G1_full%d_modp.singular.live' % i)
+           or (i == 11 and 'RESULT unit 1' in _read('exact/G1_p11_modp.singular.live'))]
+ck('mod 32003 (Singular): every one of the 7 full systems is the unit ideal (not a proof)',
+   sorted(sg_modp) == sorted(THIRD3), 'patterns %s' % sorted(sg_modp))
+ck('mod 1073741827 (msolve): the unit ideal for every pattern except 11, where msolve gave no '
+   'verdict (G1 crashed when its hash table could not grow; G2 was stopped by hand) (not a proof)',
+   sorted(ms_modp) == [i for i in THIRD3 if i != 11],
+   'patterns %s' % sorted(ms_modp))
+sq_modp = [i for i in THIRD3
+           if 'RESULT unit 1' in _read('exact/G1_full%d_mods.singular.live' % i)
+           and 'ring R = 32749,' in _read('exact/G1_full%d_mods.sing' % i)]
+ck('mod 32749 (Singular, a second prime): every one of the 7 full systems is the unit '
+   'ideal (not a proof)', sorted(sq_modp) == sorted(THIRD3), 'patterns %s' % sorted(sq_modp))
+
+
+def rebuild3(labels):
+    x2, y2, x3, y3, x4, y4, r0, r1, r2 = sp.symbols('x2 y2 x3 y3 x4 y4 r0 r1 r2')
+    Pt, rr = [(0, 0), (1, 0), (x2, y2), (x3, y3), (x4, y4)], (r0, r1, r2)
+    eqs = [sp.expand(_d2(Pt[j], Pt[k]) * _d2(Pt[k], Pt[i]) * _d2(Pt[i], Pt[j])
+                     - 4 * rr[labels[n]] * _cr(Pt[i], Pt[j], Pt[k]) ** 2)
+           for n, (i, j, k) in enumerate(TRI5)]
+    conds = [sp.expand(_d2(Pt[a], Pt[b])) for a, b in combinations(range(5), 2)]
+    conds = [c for c in conds if c.free_symbols] + [r0 - r1, r0 - r2, r1 - r2]
+    return eqs, conds
+
+
+sr3 = json.load(open('results/third_exact_singrab.json')) \
+    if os.path.exists('results/third_exact_singrab.json') else {}
+exact3 = sorted(k for k, v in sr3.items() if v.get('status') == 'no complex solution')
+note_flat = ' '.join(io.open('NOTE.md', encoding='utf-8').read().split())
+ck('NOTE.md claims an exact third-shape proof only where an artifact shows one',
+   (not exact3 and 'No exact decision over Q was obtained for any third-shape pattern'
+    in note_flat) or (exact3 and all(k in note_flat for k in exact3)),
+   'exact over Q: %s' % (exact3 or 'none'))
+ck('NOTE.md calls the third shape evidence, not a proof',
+   'decided modulo primes (2026-09-15); not proved' in note_flat)
+
+for i in THIRD3:
+    name = 'G1_red11' if i == 11 else 'G1_full%d' % i
+    if not os.path.exists('exact/%s.rab.sing' % name):
+        ck('%s: input file present' % name, False)
+        continue
+    mine_e, mine_c = rebuild3(pz[i]['labels'])
+    file_e, file_c = file_system(name)
+    ok_e = len(mine_e) == len(file_e) and all(any(same_up_to_scalar(a, b) for b in file_e)
+                                              for a in mine_e)
+    ok_c = len(file_c) == len(mine_c) and all(any(same_up_to_scalar(a, b) for b in mine_c)
+                                              for a in file_c)
+    wrong = list(pz[i]['labels'])
+    wrong[0] = (wrong[0] + 1) % 3                   # triple 012 moved to another class
+    bad_e, _ = rebuild3(wrong)
+    rej = not all(any(same_up_to_scalar(a, b) for b in file_e) for a in bad_e)
+    ck('pattern %d (%s): the equations and the 12 conditions are the geometry, rebuilt '
+       'independently; a wrong class assignment is rejected' % (i, name), ok_e and ok_c and rej)
+
+print()
+print('5c. The common-point branch (one class is four triples through one point)')
+# The algebra of section 5c is checked by cp_verify.py, which this file does not duplicate.
+# What is checked here is the combinatorics the section rests on, rebuilt from the pattern
+# list with no reference to that script, plus the note's own bookkeeping.
+CP = [2, 12, 14]
+CANON4 = {(0, 1, 2), (0, 1, 3), (0, 2, 4), (0, 3, 4)}
+IDENT = [((1, 2, 3), (2, 3, 4)), ((1, 2, 4), (1, 3, 4))]
+TRI5 = list(combinations(range(5), 3))
+_pz = json.load(open('results/penum_n5_k3.json'))['patterns']
+
+
+def _canon_splits(labels):
+    """every way of relabelling so the size-4 class is CANON4, as splits of the other six"""
+    out = set()
+    for perm in itertools.permutations(range(5)):
+        cls = {}
+        for k, t in enumerate(TRI5):
+            cls.setdefault(labels[k], set()).add(tuple(sorted(perm[v] for v in t)))
+        if any(c == CANON4 for c in cls.values()):
+            out.add(tuple(sorted(tuple(sorted(c)) for c in cls.values() if c != CANON4)))
+    return out
+
+
+_s14 = _canon_splits(_pz[14]['labels'])
+ck('pattern 14 has exactly ONE splitting of the other six triples, so the single '
+   'representative section 5c treats is the whole pattern', len(_s14) == 1,
+   ' | '.join('{' + ','.join(''.join(map(str, t)) for t in c) + '}'
+              for c in sorted(_s14)[0]) if _s14 else 'none')
+ck('that splitting is the crossed pairing the section names, case 7 of its list',
+   _s14 == {(((0, 1, 4), (1, 2, 3), (2, 3, 4)), ((0, 2, 3), (1, 2, 4), (1, 3, 4)))})
+def _splits_an_identity(sp):
+    """does this canonical form put some identically-equal pair in two different classes?"""
+    return any(all(not ({x, y} <= set(c)) for c in sp) for x, y in IDENT)
+
+
+for _i in (2, 12):
+    _sp = _canon_splits(_pz[_i]['labels'])
+    _dead = bool(_sp) and all(_splits_an_identity(sp) for sp in _sp)
+    ck('pattern %d: every canonical form separates a pair Lemma 6 makes identically equal, '
+       'so Lemma 6 alone kills it' % _i, _dead, '%d forms, %d split'
+       % (len(_sp), sum(_splits_an_identity(sp) for sp in _sp)))
+ck('pattern 14 splits no such pair, so Lemma 6 alone does NOT kill it',
+   not any(_splits_an_identity(sp) for sp in _s14))
+ck('the common-point patterns are exactly 2, 12 and 14, and 14 is the only survivor',
+   sorted(CP) == [2, 12, 14] and len(_s14) == 1)
+_n = io.open('NOTE.md', encoding='utf-8').read()
+_nf = ' '.join(_n.split())
+ck('NOTE.md section 5c exists and lists SEVEN placements, not six',
+   '## 5c.' in _n and 'The seven placements' in _nf and 'there are six ways' not in _nf)
+ck('NOTE.md does not claim verify.py checks section 5c',
+   'cp_verify.py` covers 5c' in _nf or 'cp_verify.py covers 5c' in _nf)
+ck('cp_verify.py, which does check section 5c, is present', os.path.exists('cp_verify.py'))
+# cp_verify.py once printed PASS on literal True values.  Check its source, not a promise in
+# the note: no call to ck() may pass a constant as the value being checked.
+import ast
+_consts = []
+for _node in ast.walk(ast.parse(io.open('cp_verify.py', encoding='utf-8').read())):
+    if isinstance(_node, ast.Call) and getattr(_node.func, 'id', None) == 'ck':
+        _ok = _node.args[2] if len(_node.args) > 2 else None
+        if _ok is None or isinstance(_ok, ast.Constant):
+            _consts.append(_node.lineno)
+_nck = sum(1 for _n in ast.walk(ast.parse(io.open('cp_verify.py', encoding='utf-8').read()))
+           if isinstance(_n, ast.Call) and getattr(_n.func, 'id', None) == 'ck')
+ck('cp_verify.py passes a computed value, never a constant, to every one of its ck() calls',
+   _nck > 0 and not _consts, '%d calls; constant at lines %s' % (_nck, _consts or 'none'))
+ck('NOTE.md still says h(5) is open after section 5c', '**h(5) is still 3 or 4.**' in _n)
 
 print()
 print('=' * 78)

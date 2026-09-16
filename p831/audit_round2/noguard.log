@@ -1,0 +1,18 @@
+NO-GUARD PROBE.  400 restarts per pattern, box uniform(-6,6).
+root = max|equality residual| < 1e-10
+ i  old-verdict      roots  best-sep   best-det   best-flat  best-mind  | any root with sep>1e-3 AND det>1e-6 AND flat>1e-6 ?
+  0 DEGENERATE-ONLY    134  2.745e-02  1.253e-13  1.094e+00  1.000e+00  | no
+  1 DEGENERATE-ONLY    131  4.878e-01  7.540e-13  9.696e-01  1.000e+00  | no
+  2 OBSTRUCTED         135  6.058e-14  4.044e-14  1.493e+00  1.000e+00  | no
+  3 OBSTRUCTED         225  1.941e-11  1.088e-12  1.859e+00  1.000e+00  | no
+  4 OBSTRUCTED         135  3.223e-12  8.369e-14  2.606e+00  1.000e+00  | no
+  5 OBSTRUCTED         124  3.311e-13  9.447e-15  1.027e+00  1.000e+00  | no
+  6 OBSTRUCTED         125  1.517e-13  6.608e-14  1.693e+00  1.000e+00  | no
+  7 OBSTRUCTED         119  2.655e-12  7.494e-14  7.337e-01  1.000e+00  | no
+  8 OBSTRUCTED         142  1.962e-13  4.077e-14  1.425e+00  1.000e+00  | no
+  9 OBSTRUCTED         130  2.239e-11  2.050e-14  3.675e+00  1.000e+00  | no
+ 10 OBSTRUCTED         119  5.789e-13  4.821e-14  2.678e+00  1.000e+00  | no
+ 11 OBSTRUCTED         120  1.556e-12  8.084e-14  9.601e-01  1.000e+00  | no
+ 12 OBSTRUCTED         120  3.594e-12  2.331e-14  1.532e+00  1.000e+00  | no
+ 13 OBSTRUCTED         112  1.220e-13  2.353e-14  2.871e+00  1.000e+00  | no
+ 14 OBSTRUCTED         102  9.601e-12  2.409e-13  9.992e-01  1.000e+00  | no

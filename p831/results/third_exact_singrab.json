@@ -1,0 +1,66 @@
+{
+ "G1_red5": {
+  "engine": "singrab",
+  "job": "G1_red5",
+  "seconds": 8050.0,
+  "recorded_from_live_file": true,
+  "status": "ERROR or stopped"
+ },
+ "G1_full5": {
+  "engine": "singrab",
+  "job": "G1_full5",
+  "seconds": 8021.4,
+  "returncode": 143,
+  "status": "ERROR"
+ },
+ "G2_full5": {
+  "engine": "singrab",
+  "job": "G2_full5",
+  "seconds": 5961.5,
+  "returncode": 143,
+  "status": "ERROR"
+ },
+ "G1_full9": {
+  "engine": "singrab",
+  "job": "G1_full9",
+  "seconds": 12291.2,
+  "returncode": 143,
+  "status": "ERROR"
+ },
+ "G1_red11": {
+  "engine": "singrab",
+  "job": "G1_red11",
+  "seconds": 21599.8,
+  "returncode": 137,
+  "status": "KILLED at timeout"
+ },
+ "G1_full7": {
+  "engine": "singrab",
+  "job": "G1_full7",
+  "seconds": 21599.8,
+  "returncode": 137,
+  "status": "KILLED at timeout"
+ },
+ "G1_full10": {
+  "engine": "singrab",
+  "job": "G1_full10",
+  "seconds": 21599.8,
+  "returncode": 137,
+  "status": "KILLED at timeout"
+ },
+ "G1_full13": {
+  "engine": "singrab",
+  "job": "G1_full13",
+  "seconds": 21599.8,
+  "returncode": 137,
+  "status": "KILLED at timeout"
+ },
+ "G1_full8": {
+  "engine": "singrab",
+  "job": "G1_full8",
+  "seconds": 21600.0,
+  "returncode": 137,
+  "status": "KILLED at timeout",
+  "reconstructed": "the runner wrote its start line, its verdict line and its JSON record at the same moment as three sibling runners; all were lost. This record is rebuilt from the live output file (no RESULT line, so the run did not finish) and from the process seen at 5 h 28 min and 2.44 GB."
+ }
+}

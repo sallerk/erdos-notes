@@ -1,0 +1,26 @@
+{
+ "F2_split4": {
+  "engine": "singstd",
+  "job": "F2_split4",
+  "seconds": 1011.2,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_split4.std.sing",
+  "status": "ERROR"
+ },
+ "F2_red4": {
+  "engine": "singstd",
+  "job": "F2_red4",
+  "seconds": 326.1,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_red4.std.sing",
+  "status": "ERROR"
+ },
+ "F2_red0": {
+  "engine": "singstd",
+  "job": "F2_red0",
+  "seconds": 1438.2,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_red0.std.sing",
+  "status": "ERROR"
+ }
+}

@@ -1,0 +1,10 @@
+2026-09-15 19:17:29 common-point pattern 2 (all 12 conditions, Singular mod 32003): no solution mod 32003 (unit ideal) (2 s)
+2026-09-15 19:17:44 common-point pattern 12 (all 12 conditions, Singular mod 32003): no solution mod 32003 (unit ideal) (15 s)
+2026-09-15 19:17:56 common-point pattern 14 (all 12 conditions, Singular mod 32003): NOT the unit ideal mod 32003; dim 1 (12 s)
+2026-09-15 19:18:57 note: the three common-point patterns (penum 2, 12, 14) were built with the same 10 equations and 12 conditions as the third shape (each was checked to have every 4-set spread over at least two classes, so radius distinctness excludes four concyclic points). Mod 32003: patterns 2 and 12 are the unit ideal (2 s, 15 s), pattern 14 is NOT, with dimension 1. So pattern 14 is the survivor NOTE.md section 5 describes, its complex solution set is a curve as the dimension count predicts, and no complex-solution method can close it.
+2026-09-15 19:18:59 common-point pattern 2 mod 32749 (second prime): unit ideal
+2026-09-15 19:19:14 common-point pattern 12 mod 32749 (second prime): unit ideal
+2026-09-15 19:19:27 common-point pattern 14 mod 32749 (second prime): NOT unit; dim 1
+2026-09-15 20:18:57 common-point pattern 2, Singular over Q: UNFINISHED (killed at 3600 s cap) (3600 s)
+2026-09-15 20:18:57 common-point pattern 12, Singular over Q: UNFINISHED (killed at 3600 s cap) (3600 s)
+2026-09-15 23:52:17 cp_verify.py: ALL CHECKS PASSED. Independent exact verification (Laurent identities in z_j with o_j = z_j^2, conjugation z -> 1/z) of the claimed elementary impossibility proof for the surviving common-point pattern: the gauge (four class radii identically 1), both Lemma 6 identities, all four closed forms R^2(014)=D1/(4 sin^2 alpha) etc., the factorisation of A-B, the ideal identity giving sin^4 gamma = sin^2 alpha sin^2 beta, the F2 reduction and factorisation, and the final (X,Y) factorisation with 4X^2-X+1 >= 15/16. Every branch ends in two coincident points or a collinear triple. Adversarial cross-checks still running before anything is written up as proved.

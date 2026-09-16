@@ -1,0 +1,10 @@
+{
+ "F2_red4": {
+  "engine": "singlift",
+  "job": "F2_red4",
+  "seconds": 7232.4,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 14400 Singular -q /work/exact/F2_red4.lift.sing",
+  "status": "ERROR"
+ }
+}

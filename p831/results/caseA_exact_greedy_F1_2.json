@@ -1,0 +1,107 @@
+{
+ "gauge": "F1",
+ "split": 2,
+ "prime": 1073741827,
+ "factors": [
+  "u**2 + v**2",
+  "u**2 + w**2",
+  "x**2 + y**2",
+  "u**2 - 2*u + v**2 + 1",
+  "u**2 - 2*u + w**2 + 1",
+  "x**2 - 2*x + y**2 + 1",
+  "v - w",
+  "u**2 - 2*u*x + v**2 - 2*v*y + x**2 + y**2",
+  "u**2 - 2*u*x + w**2 - 2*w*y + x**2 + y**2",
+  "v",
+  "ra - rb",
+  "-4*ra*v**2 + u**4 - 2*u**3 + 2*u**2*v**2 + u**2 - 2*u*v**2 + v**4 + v**2",
+  "-4*rb*v**2 + u**4 - 2*u**3 + 2*u**2*v**2 + u**2 - 2*u*v**2 + v**4 + v**2"
+ ],
+ "history": [
+  {
+   "try_drop": 2,
+   "factor": "x**2 + y**2",
+   "unit_mod_p": true,
+   "seconds": 4.4,
+   "returncode": 0,
+   "keep": [
+    5,
+    7,
+    8,
+    11,
+    12
+   ]
+  },
+  {
+   "try_drop": 5,
+   "factor": "x**2 - 2*x + y**2 + 1",
+   "unit_mod_p": false,
+   "seconds": 5.4,
+   "returncode": 0,
+   "keep": [
+    5,
+    7,
+    8,
+    11,
+    12
+   ]
+  },
+  {
+   "try_drop": 7,
+   "factor": "u**2 - 2*u*x + v**2 - 2*v*y + x**2 + y**2",
+   "unit_mod_p": false,
+   "seconds": 38.9,
+   "returncode": 0,
+   "keep": [
+    5,
+    7,
+    8,
+    11,
+    12
+   ]
+  },
+  {
+   "try_drop": 8,
+   "factor": "u**2 - 2*u*x + w**2 - 2*w*y + x**2 + y**2",
+   "unit_mod_p": true,
+   "seconds": 5.5,
+   "returncode": 0,
+   "keep": [
+    5,
+    7,
+    11,
+    12
+   ]
+  },
+  {
+   "try_drop": 11,
+   "factor": "-4*ra*v**2 + u**4 - 2*u**3 + 2*u**2*v**2 + u**2 - 2*u*v**2 + v**4 + v**2",
+   "unit_mod_p": false,
+   "seconds": 12.2,
+   "returncode": 0,
+   "keep": [
+    5,
+    7,
+    11,
+    12
+   ]
+  },
+  {
+   "try_drop": 12,
+   "factor": "-4*rb*v**2 + u**4 - 2*u**3 + 2*u**2*v**2 + u**2 - 2*u*v**2 + v**4 + v**2",
+   "unit_mod_p": true,
+   "seconds": 2.2,
+   "returncode": 0,
+   "keep": [
+    5,
+    7,
+    11
+   ]
+  }
+ ],
+ "keep": [
+  5,
+  7,
+  11
+ ]
+}

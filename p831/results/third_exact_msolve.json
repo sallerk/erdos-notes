@@ -1,0 +1,151 @@
+{
+ "G1_pin5": {
+  "engine": "msolve",
+  "job": "G1_pin5",
+  "seconds": 0.4,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_pin7": {
+  "engine": "msolve",
+  "job": "G1_pin7",
+  "seconds": 0.3,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_pin8": {
+  "engine": "msolve",
+  "job": "G1_pin8",
+  "seconds": 0.3,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_pin9": {
+  "engine": "msolve",
+  "job": "G1_pin9",
+  "seconds": 0.3,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_pin10": {
+  "engine": "msolve",
+  "job": "G1_pin10",
+  "seconds": 0.3,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_pin11": {
+  "engine": "msolve",
+  "job": "G1_pin11",
+  "seconds": 0.7,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_pin13": {
+  "engine": "msolve",
+  "job": "G1_pin13",
+  "seconds": 0.4,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin5": {
+  "engine": "msolve",
+  "job": "G2_pin5",
+  "seconds": 0.4,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin7": {
+  "engine": "msolve",
+  "job": "G2_pin7",
+  "seconds": 0.8,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin8": {
+  "engine": "msolve",
+  "job": "G2_pin8",
+  "seconds": 0.5,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin9": {
+  "engine": "msolve",
+  "job": "G2_pin9",
+  "seconds": 0.7,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin10": {
+  "engine": "msolve",
+  "job": "G2_pin10",
+  "seconds": 0.8,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin11": {
+  "engine": "msolve",
+  "job": "G2_pin11",
+  "seconds": 0.7,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G2_pin13": {
+  "engine": "msolve",
+  "job": "G2_pin13",
+  "seconds": 0.9,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "planted_found": true
+ },
+ "G1_red5": {
+  "engine": "msolve",
+  "job": "G1_red5",
+  "seconds": 30.3,
+  "returncode": 0,
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ }
+}

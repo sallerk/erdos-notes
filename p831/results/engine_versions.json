@@ -1,0 +1,21 @@
+{
+ "captured": "2026-09-16",
+ "how": "queried from the running container cas831, which was created before the first logged job (container created 2026-09-15T03:32:10.273000794Z UTC; first line of results/caseA_exact.log, the archived logs/caseA_exact.log, is 2026-09-14 21:35:03 local, UTC-6) and was never rebuilt, so these are the builds that ran every Singular and msolve job",
+ "container": {
+  "name": "cas831",
+  "image": "erdos831-cas",
+  "created_utc": "2026-09-15T03:32:10.273000794Z",
+  "os": "Ubuntu 24.04.4 LTS",
+  "cpu_limit_now": 7.0,
+  "cpu_limit_note": "the limit in force for each run is not recorded; the logs record job thread counts of at most 7"
+ },
+ "singular_banner": [
+  "Singular for x86_64-Linux version 4.3.2 (4330, 64 bit) Apr  1 2024 04:44:00",
+  "with",
+  "\tGMP(6.3.0),NTL(11.5.1),FLINT(3.0.1),"
+ ],
+ "debian_packages": [
+  "msolve 0.6.5-1build2",
+  "singular 1:4.3.2-p10+ds-1.1build1"
+ ]
+}

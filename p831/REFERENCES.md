@@ -48,8 +48,10 @@ text; [SECONDHAND] = seen only as a citation or an abstract; [NOT OBTAINED].
   This solves Erdos's Ramsey-type n_k (the least n such that some k of any n points in
   general position have all C(k,3) circumradii distinct), NOT h(n): n_k = O(k^9),
   n_4 <= 9, n_5 <= 37. It also records that Erdos's 1978 proof that n_k exists has a
-  gap. They define general position as "no four on a line or circle". Three citations
-  on Semantic Scholar, none about h(n).
+  gap. They quote Erdos's problem with his definition of general position ("no three on a
+  line no four on a circle") and then say that for their theorem they changed it, to "no
+  four on a line or circle" (arXiv v1, checked 2026-09-16). Three citations on Semantic
+  Scholar, none about h(n).
 
 * **Erdos's 1978 follow-up**, *Some more problems on elementary geometry*, Austral.
   Math. Soc. Gaz. **5** (1978) no. 2, 52-54, Renyi item 1978-44 **[READ by agent]**
@@ -60,10 +62,13 @@ text; [SECONDHAND] = seen only as a citation or an abstract; [NOT OBTAINED].
   A003829), and Brass-Moser-Pach, *Research Problems in Discrete Geometry*. Both could
   carry a statement relating f and h. **[NOT OBTAINED]**
 
-## Two things to raise with the page maintainers, separately from any result
+## One thing to raise with the page maintainers, separately from any result
 
 1. The page's statement omits Erdos's second question, quoted above.
-2. Erdos writes "in general position"; the page renders that as "no three on a line and
-   no four on a circle", while Martinez and Roldan-Pensado, working on the same family
-   of questions from the same paper, read general position as "no four on a line or
-   circle". The two readings give different functions.
+
+An earlier version listed a second point, that the page's "no three on a line and no four
+on a circle" departs from Erdos's "general position". It was wrong and is withdrawn
+(2026-09-16): [Er75h] itself defines general position, on p. 2, as "no four are on a circle
+and no three on a line", which is the page's wording, and Martinez and Roldan-Pensado use a
+different definition only after saying that they have changed it. The literature report
+(LITERATURE.md section 1.3) had already reached this; the list here was not updated.

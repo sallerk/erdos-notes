@@ -1,0 +1,1007 @@
+{
+ "history": [
+  {
+   "t": 8050.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8110.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8170.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8230.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8290.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8350.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8410.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8470.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8530.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8590.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8650.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8710.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8771.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8831.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8891.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 8951.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9011.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9071.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9131.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9191.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9251.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9311.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9371.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9431.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9491.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9551.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9612.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9672.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9732.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9792.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9852.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9912.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 9972.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10032.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10092.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10152.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10212.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10272.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10332.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10393.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10453.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10513.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10573.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10633.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10693.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10753.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10813.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10873.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10933.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 10993.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11053.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11113.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11174.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11234.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11294.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11354.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11414.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11474.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11534.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11594.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11654.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11714.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11774.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11834.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11894.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 11955.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12015.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12075.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12135.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12195.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12255.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12315.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12375.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12435.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12495.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12555.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12615.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12675.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12736.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12796.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12856.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12916.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 12976.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13036.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13096.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13156.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13216.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13276.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13336.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13396.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13456.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13517.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13577.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13637.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13697.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13757.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13817.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13877.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13937.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 13997.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14057.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14117.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14177.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14237.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14297.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14358.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14418.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14478.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14538.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14598.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14658.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14718.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14778.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14838.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14898.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 14958.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15018.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15078.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15139.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15199.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15259.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15319.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15379.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15439.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15499.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15559.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15619.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15679.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15739.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15799.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15859.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15920.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 15980.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16040.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16100.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16160.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16220.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16280.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16340.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16400.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16460.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16520.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16580.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16640.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16701.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16761.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16821.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16881.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 16941.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17001.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17061.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17121.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17181.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17241.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17301.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17361.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17421.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17482.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17542.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17602.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17662.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17722.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17782.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17842.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17902.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 17962.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18022.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18082.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18142.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18202.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18262.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18323.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18383.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18443.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18503.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18563.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18623.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18683.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18743.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18803.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18863.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18923.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 18983.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19043.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19103.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19164.0,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19224.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19284.1,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19344.2,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19404.3,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19464.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19524.4,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19584.5,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19644.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19704.6,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19764.7,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19824.8,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19884.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 19944.9,
+   "bytes": 8368,
+   "alive": true
+  },
+  {
+   "t": 20005.0,
+   "bytes": 8368,
+   "alive": true
+  }
+ ],
+ "last_tail": "t3:1706] [t4:1236] choose t4\r\n[t2:52789] [t3:52789] choose t2\r\n+ reordered block: (t4 t2 t3)\r\n+ optimized order: -> (t4 t2 t3) -> nil\r\n+++ Preparation Phase\r\n+ Kernel order set to (t4 t2 t3)\r\n+++ Projection Phase\r\n+ projection order: (t4 t2 t3)\r\n+ number of all projection factors: 757\r\n+ number of projection factors of level r,...,1: 15,45,697\r\n+++ Extension Phase\r\n+ Building partial CAD tree...\r\n",
+ "alive": true,
+ "completed": false
+}

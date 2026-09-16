@@ -1,0 +1,86 @@
+
+--- stderr
+
+--------------- INPUT DATA ---------------
+#variables                      15
+#equations                      15
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         7
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 32
+[32, 19], Non trivial / Trivial = 59.38%
+Density of non-trivial part 37.01%
+Time spent to generate sequence (elapsed): 0.00 sec (0.16 Gops/sec)
+Degree of the square-free part: 16
+[32, 16, 16]
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial is not squarefree.
+Ideal not in generic position, parametrizations are not correct
+Time for rational param:          9.60 (elapsed) sec / 63.51 sec (cpu)
+
+
+--------------- INPUT DATA ---------------
+#variables                      15
+#equations                      15
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         7
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 32
+[32, 21], Non trivial / Trivial = 65.62%
+Density of non-trivial part 38.10%
+Time spent to generate sequence (elapsed): 0.00 sec (0.39 Gops/sec)
+Degree of the square-free part: 8
+[32, 8, 8]
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial is not squarefree.
+Time for rational param:          9.39 (elapsed) sec / 62.28 sec (cpu)
+
+
+--------------- INPUT DATA ---------------
+#variables                      16
+#equations                      16
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         7
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 32
+[32, 16], Non trivial / Trivial = 50.00%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.31 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 32.
+
+Starts multi-modular computations
+{8}{15}{22}{29}{36}{64}

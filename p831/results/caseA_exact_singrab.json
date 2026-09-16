@@ -1,0 +1,110 @@
+{
+ "F2_split4": {
+  "engine": "singrab",
+  "job": "F2_split4",
+  "seconds": 4455.0,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_split4.rab.sing",
+  "status": "ERROR"
+ },
+ "F2_red4": {
+  "engine": "singrab",
+  "job": "F2_red4",
+  "seconds": 16.8,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_red4.rab.sing",
+  "dim": -1,
+  "unit": 1,
+  "status": "no complex solution"
+ },
+ "F2_cand0": {
+  "engine": "singrab",
+  "job": "F2_cand0",
+  "seconds": 116.9,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_cand0.rab.sing",
+  "status": "ERROR"
+ },
+ "F2_cand3": {
+  "engine": "singrab",
+  "job": "F2_cand3",
+  "seconds": 154.3,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_cand3.rab.sing",
+  "status": "ERROR"
+ },
+ "F1_cand0": {
+  "engine": "singrab",
+  "job": "F1_cand0",
+  "seconds": 314.0,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F1_cand0.rab.sing",
+  "status": "ERROR"
+ },
+ "F1_cand3": {
+  "engine": "singrab",
+  "job": "F1_cand3",
+  "seconds": 385.1,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F1_cand3.rab.sing",
+  "status": "ERROR"
+ },
+ "F1_cand1": {
+  "engine": "singrab",
+  "job": "F1_cand1",
+  "seconds": 479.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F1_cand1.rab.sing",
+  "dim": -1,
+  "unit": 1,
+  "status": "no complex solution"
+ },
+ "F2_red0": {
+  "engine": "singrab",
+  "job": "F2_red0",
+  "seconds": 1292.2,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_red0.rab.sing",
+  "status": "ERROR"
+ },
+ "F2_red3": {
+  "engine": "singrab",
+  "job": "F2_red3",
+  "seconds": 690.3,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_red3.rab.sing",
+  "status": "ERROR"
+ },
+ "F2_red8": {
+  "engine": "singrab",
+  "job": "F2_red8",
+  "seconds": 690.5,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 21600 Singular -q /work/exact/F2_red8.rab.sing",
+  "status": "ERROR"
+ },
+ "F1_red8": {
+  "engine": "singrab",
+  "job": "F1_red8",
+  "seconds": 406.1,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 2700 Singular -q /work/exact/F1_red8.rab.sing",
+  "status": "ERROR"
+ },
+ "F1_red0": {
+  "engine": "singrab",
+  "job": "F1_red0",
+  "seconds": 1998.7,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 2700 Singular -q /work/exact/F1_red0.rab.sing",
+  "status": "ERROR"
+ },
+ "F1_red3": {
+  "engine": "singrab",
+  "job": "F1_red3",
+  "seconds": 1998.8,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 2700 Singular -q /work/exact/F1_red3.rab.sing",
+  "status": "ERROR"
+ }
+}

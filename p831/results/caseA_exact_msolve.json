@@ -1,0 +1,1126 @@
+{
+ "F1_control": {
+  "engine": "msolve",
+  "job": "F1_control",
+  "seconds": 191.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 900 msolve -t 6 -v 2 -f /work/exact/F1_control.ms -o /work/exact/F1_control.ms.out",
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 32,
+  "real_boxes_midpoints": [
+   [
+    0.24829984331893906,
+    -0.03370613236026261,
+    -5.537479920027086,
+    0.526333825793315,
+    -0.14916173429068239
+   ],
+   [
+    0.24829984331893906,
+    -0.03370613236026261,
+    -5.537479920027086,
+    0.7893088697102885,
+    0.10236471447044242
+   ],
+   [
+    1.0673428521846644,
+    0.013090887459977375,
+    -5.4906829002068465,
+    0.526333825793315,
+    0.14916173429068239
+   ],
+   [
+    1.0673428521846644,
+    0.013090887459977375,
+    -5.4906829002068465,
+    0.7893088697102885,
+    -0.10236471447044242
+   ],
+   [
+    0.7377023006466517,
+    -0.03830371859437315,
+    -5.051666610137268,
+    1.3851628072628779,
+    -0.9750665459457782
+   ],
+   [
+    0.7377023006466517,
+    -0.03830371859437315,
+    -5.051666610137268,
+    1.3687085512393267,
+    0.48791598586093327
+   ],
+   [
+    2.016169057855553,
+    0.4488468414904719,
+    -4.564516050052422,
+    1.3687085512393267,
+    -0.48791598586093327
+   ],
+   [
+    0.3333333333333333,
+    -0.6666666666666666,
+    -0.3333333333333333,
+    -0.1305442656996601,
+    0.1040692156051498
+   ],
+   [
+    2.016169057855553,
+    0.4488468414904719,
+    -4.564516050052422,
+    1.3851628072628779,
+    0.9750665459457782
+   ],
+   [
+    0.5417958685694748,
+    -0.9458156159283825,
+    -0.26247516026350004,
+    0.05499600038420621,
+    -0.033408595241561256
+   ],
+   [
+    0.8791411512992856,
+    -0.1305485053606888,
+    -0.8138889610255713,
+    0.05499600038420621,
+    -0.033408595241561256
+   ],
+   [
+    0.9361224009670066,
+    -0.12926411772818353,
+    -0.4625974510615169,
+    -0.1305442656996601,
+    0.1040692156051498
+   ],
+   [
+    0.9361224009670066,
+    0.12926411772818353,
+    0.4625974510615169,
+    -0.1305442656996601,
+    -0.1040692156051498
+   ],
+   [
+    0.3333333333333333,
+    0.6666666666666666,
+    0.3333333333333333,
+    -0.1305442656996601,
+    -0.1040692156051498
+   ],
+   [
+    0.5417958685694748,
+    -0.9458156159283825,
+    -0.26247516026350004,
+    1.3659410194845543,
+    -1.04295552604751
+   ],
+   [
+    0.3333333333333333,
+    -0.6666666666666666,
+    -0.3333333333333333,
+    1.4,
+    -0.9
+   ],
+   [
+    0.8791411512992856,
+    -0.1305485053606888,
+    -0.8138889610255713,
+    1.3659410194845543,
+    -1.04295552604751
+   ],
+   [
+    0.8791411512992856,
+    0.1305485053606888,
+    0.8138889610255713,
+    0.05499600038420621,
+    0.033408595241561256
+   ],
+   [
+    0.5417958685694748,
+    0.9458156159283825,
+    0.26247516026350004,
+    0.05499600038420621,
+    0.033408595241561256
+   ],
+   [
+    0.9361224009670066,
+    -0.12926411772818353,
+    -0.4625974510615169,
+    1.4,
+    -0.9
+   ],
+   [
+    0.9361224009670066,
+    0.12926411772818353,
+    0.4625974510615169,
+    1.4,
+    0.9
+   ],
+   [
+    0.3333333333333333,
+    0.6666666666666666,
+    0.3333333333333333,
+    1.4,
+    0.9
+   ],
+   [
+    0.8791411512992856,
+    0.1305485053606888,
+    0.8138889610255713,
+    1.3659410194845543,
+    1.04295552604751
+   ],
+   [
+    0.5417958685694748,
+    0.9458156159283825,
+    0.26247516026350004,
+    1.3659410194845543,
+    1.04295552604751
+   ],
+   [
+    0.24829984331893906,
+    0.03370613236026261,
+    5.537479920027086,
+    0.526333825793315,
+    0.14916173429068239
+   ],
+   [
+    1.0673428521846644,
+    -0.013090887459977375,
+    5.4906829002068465,
+    0.526333825793315,
+    -0.14916173429068239
+   ],
+   [
+    2.016169057855553,
+    -0.4488468414904719,
+    4.564516050052422,
+    1.3851628072628779,
+    -0.9750665459457782
+   ],
+   [
+    0.24829984331893906,
+    0.03370613236026261,
+    5.537479920027086,
+    0.7893088697102885,
+    -0.10236471447044242
+   ],
+   [
+    1.0673428521846644,
+    -0.013090887459977375,
+    5.4906829002068465,
+    0.7893088697102885,
+    0.10236471447044242
+   ],
+   [
+    2.016169057855553,
+    -0.4488468414904719,
+    4.564516050052422,
+    1.3687085512393267,
+    0.48791598586093327
+   ],
+   [
+    0.7377023006466517,
+    0.03830371859437315,
+    5.051666610137268,
+    1.3687085512393267,
+    -0.48791598586093327
+   ],
+   [
+    0.7377023006466517,
+    0.03830371859437315,
+    5.051666610137268,
+    1.3851628072628779,
+    0.9750665459457782
+   ]
+  ],
+  "planted_found": true
+ },
+ "F2_control": {
+  "engine": "msolve",
+  "job": "F2_control",
+  "seconds": 40.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 900 msolve -t 6 -v 2 -f /work/exact/F2_control.ms -o /work/exact/F2_control.ms.out",
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 32,
+  "real_boxes_midpoints": [
+   [
+    0.30257037332080994,
+    -0.28807598329950834,
+    -0.07044573454063438,
+    -0.6991622734628037,
+    -1.1740891404797933,
+    1.9727494901458882
+   ],
+   [
+    -0.03086730473811715,
+    -0.3547462608320902,
+    -0.1404580330889987,
+    -0.4548199488417433,
+    -1.0813180460541005,
+    2.279252070483309
+   ],
+   [
+    0.1580133926222148,
+    -0.6493379868851709,
+    -0.07044573454063438,
+    -0.6991622734628037,
+    1.634672906422818,
+    -2.9101634603305673
+   ],
+   [
+    0.1580133926222148,
+    -0.6493379868851709,
+    0.5310295004836592,
+    -0.23825169672187554,
+    -1.1740891404797933,
+    1.9727494901458882
+   ],
+   [
+    0.527704412039669,
+    -0.324234712588673,
+    -0.1404580330889987,
+    -0.4548199488417433,
+    1.5781551533556524,
+    -2.9582330439040723
+   ],
+   [
+    -0.0017490119941913657,
+    -0.4404666838065555,
+    -0.0021402787206604677,
+    -0.002666571668109859,
+    -0.0029186545132772043,
+    -0.0008963193201332822
+   ],
+   [
+    -0.002024474843623194,
+    -0.43983229254840694,
+    -0.0016332081171540921,
+    -0.002032180409961297,
+    -0.0029186545132772043,
+    0.0008963193201332822
+   ],
+   [
+    -0.0017490119941913657,
+    -0.4404666838065555,
+    -0.0016332081171540921,
+    0.002032180409961297,
+    -0.0008548323245373556,
+    0.00026192806198471974
+   ],
+   [
+    -0.002024474843623194,
+    -0.43983229254840694,
+    -0.0021402787206604677,
+    0.002666571668109859,
+    -0.0008548323245373556,
+    -0.00026192806198471974
+   ],
+   [
+    0.527704412039669,
+    -0.324234712588673,
+    0.6372951403905506,
+    -0.22416102457901987,
+    -1.0813180460541005,
+    2.279252070483309
+   ],
+   [
+    0.49458483754512633,
+    -0.3249097472924188,
+    0.48487037281257245,
+    -0.23882324767178664,
+    0.3765671237150995,
+    -0.07035152685349541
+   ],
+   [
+    -0.03086730473811715,
+    0.3547462608320902,
+    -0.1404580330889987,
+    0.4548199488417433,
+    -1.0813180460541005,
+    -2.279252070483309
+   ],
+   [
+    -0.03086730473811715,
+    -0.3547462608320902,
+    0.6372951403905506,
+    -0.22416102457901987,
+    1.5781551533556524,
+    -2.9582330439040723
+   ],
+   [
+    -0.002024474843623194,
+    0.43983229254840694,
+    -0.0021402787206604677,
+    -0.002666571668109859,
+    -0.0008548323245373556,
+    0.00026192806198471974
+   ],
+   [
+    0.605207316254209,
+    -0.31472669215974164,
+    0.614921780986763,
+    -0.2286401925391095,
+    0.3765671237150995,
+    0.07035152685349541
+   ],
+   [
+    -0.0017490119941913657,
+    0.4404666838065555,
+    -0.0016332081171540921,
+    -0.002032180409961297,
+    -0.0008548323245373556,
+    -0.00026192806198471974
+   ],
+   [
+    -0.002024474843623194,
+    0.43983229254840694,
+    -0.0016332081171540921,
+    0.002032180409961297,
+    -0.0029186545132772043,
+    -0.0008963193201332822
+   ],
+   [
+    -0.0017490119941913657,
+    0.4404666838065555,
+    -0.0021402787206604677,
+    0.002666571668109859,
+    -0.0029186545132772043,
+    0.0008963193201332822
+   ],
+   [
+    0.30257037332080994,
+    -0.28807598329950834,
+    0.5310295004836592,
+    -0.23825169672187554,
+    1.634672906422818,
+    -2.9101634603305673
+   ],
+   [
+    0.30257037332080994,
+    0.28807598329950834,
+    -0.07044573454063438,
+    0.6991622734628037,
+    -1.1740891404797933,
+    -1.9727494901458882
+   ],
+   [
+    0.605207316254209,
+    0.31472669215974164,
+    0.48487037281257245,
+    -0.23882324767178664,
+    0.7232250300842359,
+    0.06016847172081829
+   ],
+   [
+    0.527704412039669,
+    0.324234712588673,
+    0.6372951403905506,
+    0.22416102457901987,
+    -1.0813180460541005,
+    -2.279252070483309
+   ],
+   [
+    0.1580133926222148,
+    0.6493379868851709,
+    0.5310295004836592,
+    0.23825169672187554,
+    -1.1740891404797933,
+    -1.9727494901458882
+   ],
+   [
+    0.49458483754512633,
+    0.3249097472924188,
+    0.614921780986763,
+    -0.2286401925391095,
+    0.7232250300842359,
+    -0.06016847172081829
+   ],
+   [
+    0.605207316254209,
+    -0.31472669215974164,
+    0.48487037281257245,
+    0.23882324767178664,
+    0.7232250300842359,
+    -0.06016847172081829
+   ],
+   [
+    0.49458483754512633,
+    -0.3249097472924188,
+    0.614921780986763,
+    0.2286401925391095,
+    0.7232250300842359,
+    0.06016847172081829
+   ],
+   [
+    0.49458483754512633,
+    0.3249097472924188,
+    0.48487037281257245,
+    0.23882324767178664,
+    0.3765671237150995,
+    0.07035152685349541
+   ],
+   [
+    0.605207316254209,
+    0.31472669215974164,
+    0.614921780986763,
+    0.2286401925391095,
+    0.3765671237150995,
+    -0.07035152685349541
+   ],
+   [
+    0.527704412039669,
+    0.324234712588673,
+    -0.1404580330889987,
+    0.4548199488417433,
+    1.5781551533556524,
+    2.9582330439040723
+   ],
+   [
+    -0.03086730473811715,
+    0.3547462608320902,
+    0.6372951403905506,
+    0.22416102457901987,
+    1.5781551533556524,
+    2.9582330439040723
+   ],
+   [
+    0.30257037332080994,
+    0.28807598329950834,
+    0.5310295004836592,
+    0.23825169672187554,
+    1.634672906422818,
+    2.9101634603305673
+   ],
+   [
+    0.1580133926222148,
+    0.6493379868851709,
+    -0.07044573454063438,
+    0.6991622734628037,
+    1.634672906422818,
+    2.9101634603305673
+   ]
+  ],
+  "planted_found": true
+ },
+ "F2_split4": {
+  "engine": "msolve",
+  "job": "F2_split4",
+  "seconds": 206.9,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split4.ms -o /work/exact/F2_split4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split1": {
+  "engine": "msolve",
+  "job": "F2_split1",
+  "seconds": 174.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split1.ms -o /work/exact/F2_split1.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split2": {
+  "engine": "msolve",
+  "job": "F2_split2",
+  "seconds": 177.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split2.ms -o /work/exact/F2_split2.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split5": {
+  "engine": "msolve",
+  "job": "F2_split5",
+  "seconds": 184.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split5.ms -o /work/exact/F2_split5.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split6": {
+  "engine": "msolve",
+  "job": "F2_split6",
+  "seconds": 186.9,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split6.ms -o /work/exact/F2_split6.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split7": {
+  "engine": "msolve",
+  "job": "F2_split7",
+  "seconds": 192.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split7.ms -o /work/exact/F2_split7.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split0": {
+  "engine": "msolve",
+  "job": "F2_split0",
+  "seconds": 170.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split0.ms -o /work/exact/F2_split0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split3": {
+  "engine": "msolve",
+  "job": "F2_split3",
+  "seconds": 190.9,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split3.ms -o /work/exact/F2_split3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_split8": {
+  "engine": "msolve",
+  "job": "F2_split8",
+  "seconds": 189.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_split8.ms -o /work/exact/F2_split8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split4": {
+  "engine": "msolve",
+  "job": "F1_split4",
+  "seconds": 132.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F1_split4.ms -o /work/exact/F1_split4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split1": {
+  "engine": "msolve",
+  "job": "F1_split1",
+  "seconds": 133.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F1_split1.ms -o /work/exact/F1_split1.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split2": {
+  "engine": "msolve",
+  "job": "F1_split2",
+  "seconds": 134.8,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F1_split2.ms -o /work/exact/F1_split2.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split5": {
+  "engine": "msolve",
+  "job": "F1_split5",
+  "seconds": 108.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F1_split5.ms -o /work/exact/F1_split5.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split6": {
+  "engine": "msolve",
+  "job": "F1_split6",
+  "seconds": 129.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F1_split6.ms -o /work/exact/F1_split6.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_scr4_all": {
+  "engine": "msolve",
+  "job": "F2_scr4_all",
+  "seconds": 782.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 7200 msolve -t 1 -v 2 -f /work/exact/F2_scr4_all.ms -o /work/exact/F2_scr4_all.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_plant4": {
+  "engine": "msolve",
+  "job": "F2_plant4",
+  "seconds": 1893.9,
+  "returncode": 143,
+  "cmd": "timeout -s KILL 2400 msolve -t 6 -v 2 -f /work/exact/F2_plant4.ms -o /work/exact/F2_plant4.ms.out",
+  "status": "ERROR"
+ },
+ "F2_scr4_x0": {
+  "engine": "msolve",
+  "job": "F2_scr4_x0",
+  "seconds": 175.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x0.ms -o /work/exact/F2_scr4_x0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x1": {
+  "engine": "msolve",
+  "job": "F2_scr4_x1",
+  "seconds": 162.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x1.ms -o /work/exact/F2_scr4_x1.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x2": {
+  "engine": "msolve",
+  "job": "F2_scr4_x2",
+  "seconds": 39.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x2.ms -o /work/exact/F2_scr4_x2.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x3": {
+  "engine": "msolve",
+  "job": "F2_scr4_x3",
+  "seconds": 51.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x3.ms -o /work/exact/F2_scr4_x3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x4": {
+  "engine": "msolve",
+  "job": "F2_scr4_x4",
+  "seconds": 294.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x4.ms -o /work/exact/F2_scr4_x4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x5": {
+  "engine": "msolve",
+  "job": "F2_scr4_x5",
+  "seconds": 360.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x5.ms -o /work/exact/F2_scr4_x5.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x6": {
+  "engine": "msolve",
+  "job": "F2_scr4_x6",
+  "seconds": 99.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x6.ms -o /work/exact/F2_scr4_x6.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x7": {
+  "engine": "msolve",
+  "job": "F2_scr4_x7",
+  "seconds": 104.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x7.ms -o /work/exact/F2_scr4_x7.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x8": {
+  "engine": "msolve",
+  "job": "F2_scr4_x8",
+  "seconds": 93.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x8.ms -o /work/exact/F2_scr4_x8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x9": {
+  "engine": "msolve",
+  "job": "F2_scr4_x9",
+  "seconds": 32.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x9.ms -o /work/exact/F2_scr4_x9.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x10": {
+  "engine": "msolve",
+  "job": "F2_scr4_x10",
+  "seconds": 145.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x10.ms -o /work/exact/F2_scr4_x10.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x11": {
+  "engine": "msolve",
+  "job": "F2_scr4_x11",
+  "seconds": 235.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x11.ms -o /work/exact/F2_scr4_x11.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_scr4_x12": {
+  "engine": "msolve",
+  "job": "F2_scr4_x12",
+  "seconds": 234.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 6 -v 2 -f /work/exact/F2_scr4_x12.ms -o /work/exact/F2_scr4_x12.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no solution mod p"
+ },
+ "F2_red4": {
+  "engine": "msolve",
+  "job": "F2_red4",
+  "seconds": 10.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 4 -v 2 -f /work/exact/F2_red4.ms -o /work/exact/F2_red4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand0": {
+  "engine": "msolve",
+  "job": "F2_cand0",
+  "seconds": 10.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand0.ms -o /work/exact/F2_cand0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "positive dimensional",
+  "n_real": null
+ },
+ "F2_cand1": {
+  "engine": "msolve",
+  "job": "F2_cand1",
+  "seconds": 43.8,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand1.ms -o /work/exact/F2_cand1.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand2": {
+  "engine": "msolve",
+  "job": "F2_cand2",
+  "seconds": 43.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand2.ms -o /work/exact/F2_cand2.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand3": {
+  "engine": "msolve",
+  "job": "F2_cand3",
+  "seconds": 11.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand3.ms -o /work/exact/F2_cand3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "positive dimensional",
+  "n_real": null
+ },
+ "F2_cand4": {
+  "engine": "msolve",
+  "job": "F2_cand4",
+  "seconds": 42.8,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand4.ms -o /work/exact/F2_cand4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand5": {
+  "engine": "msolve",
+  "job": "F2_cand5",
+  "seconds": 44.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand5.ms -o /work/exact/F2_cand5.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand6": {
+  "engine": "msolve",
+  "job": "F2_cand6",
+  "seconds": 43.9,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand6.ms -o /work/exact/F2_cand6.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand7": {
+  "engine": "msolve",
+  "job": "F2_cand7",
+  "seconds": 40.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand7.ms -o /work/exact/F2_cand7.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_cand8": {
+  "engine": "msolve",
+  "job": "F2_cand8",
+  "seconds": 12.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F2_cand8.ms -o /work/exact/F2_cand8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "positive dimensional",
+  "n_real": null
+ },
+ "F1_cand0": {
+  "engine": "msolve",
+  "job": "F1_cand0",
+  "seconds": 13.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand0.ms -o /work/exact/F1_cand0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "positive dimensional",
+  "n_real": null
+ },
+ "F1_cand1": {
+  "engine": "msolve",
+  "job": "F1_cand1",
+  "seconds": 52.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand1.ms -o /work/exact/F1_cand1.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_cand2": {
+  "engine": "msolve",
+  "job": "F1_cand2",
+  "seconds": 4.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand2.ms -o /work/exact/F1_cand2.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_cand3": {
+  "engine": "msolve",
+  "job": "F1_cand3",
+  "seconds": 14.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand3.ms -o /work/exact/F1_cand3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "positive dimensional",
+  "n_real": null
+ },
+ "F1_cand4": {
+  "engine": "msolve",
+  "job": "F1_cand4",
+  "seconds": 54.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand4.ms -o /work/exact/F1_cand4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_cand5": {
+  "engine": "msolve",
+  "job": "F1_cand5",
+  "seconds": 26.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand5.ms -o /work/exact/F1_cand5.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_cand6": {
+  "engine": "msolve",
+  "job": "F1_cand6",
+  "seconds": 4.3,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand6.ms -o /work/exact/F1_cand6.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_cand7": {
+  "engine": "msolve",
+  "job": "F1_cand7",
+  "seconds": 27.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand7.ms -o /work/exact/F1_cand7.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_cand8": {
+  "engine": "msolve",
+  "job": "F1_cand8",
+  "seconds": 4.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 2 -v 2 -f /work/exact/F1_cand8.ms -o /work/exact/F1_cand8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "positive dimensional",
+  "n_real": null
+ },
+ "F2_red0": {
+  "engine": "msolve",
+  "job": "F2_red0",
+  "seconds": 12.6,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 1 -v 2 -f /work/exact/F2_red0.ms -o /work/exact/F2_red0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_pin4": {
+  "engine": "msolve",
+  "job": "F1_pin4",
+  "seconds": 0.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 600 msolve -t 1 -v 2 -f /work/exact/F1_pin4.ms -o /work/exact/F1_pin4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 2,
+  "real_boxes_midpoints": [
+   [
+    0.3333333333333333,
+    0.6666666666666666,
+    0.3333333333333333,
+    -0.1305442656996601,
+    -0.1040692156051498,
+    0.8292901234567901,
+    8.082244444444445
+   ],
+   [
+    0.3333333333333333,
+    0.6666666666666666,
+    0.3333333333333333,
+    1.4,
+    0.9,
+    0.8292901234567901,
+    8.082244444444445
+   ]
+  ],
+  "planted_found": true
+ },
+ "F2_pin4": {
+  "engine": "msolve",
+  "job": "F2_pin4",
+  "seconds": 0.1,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 600 msolve -t 1 -v 2 -f /work/exact/F2_pin4.ms -o /work/exact/F2_pin4.ms.out",
+  "squarefree_eliminant": true,
+  "status": "real solutions",
+  "n_real": 1,
+  "real_boxes_midpoints": [
+   [
+    0.49458483754512633,
+    0.3249097472924188,
+    0.614921780986763,
+    -0.2286401925391095,
+    0.7232250300842359,
+    -0.06016847172081829,
+    0.2993827160493827,
+    2.917777777777778
+   ]
+  ],
+  "planted_found": true
+ },
+ "F1_split0": {
+  "engine": "msolve",
+  "job": "F1_split0",
+  "seconds": 79.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 3 -v 2 -f /work/exact/F1_split0.ms -o /work/exact/F1_split0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split3": {
+  "engine": "msolve",
+  "job": "F1_split3",
+  "seconds": 77.7,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 3 -v 2 -f /work/exact/F1_split3.ms -o /work/exact/F1_split3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split7": {
+  "engine": "msolve",
+  "job": "F1_split7",
+  "seconds": 121.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 3 -v 2 -f /work/exact/F1_split7.ms -o /work/exact/F1_split7.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_split8": {
+  "engine": "msolve",
+  "job": "F1_split8",
+  "seconds": 244.5,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 3 -v 2 -f /work/exact/F1_split8.ms -o /work/exact/F1_split8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_red3": {
+  "engine": "msolve",
+  "job": "F2_red3",
+  "seconds": 11.2,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 1 -v 2 -f /work/exact/F2_red3.ms -o /work/exact/F2_red3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F2_red8": {
+  "engine": "msolve",
+  "job": "F2_red8",
+  "seconds": 10.4,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 3600 msolve -t 1 -v 2 -f /work/exact/F2_red8.ms -o /work/exact/F2_red8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_red0": {
+  "engine": "msolve",
+  "job": "F1_red0",
+  "seconds": 13.0,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 1800 msolve -t 2 -v 2 -f /work/exact/F1_red0.ms -o /work/exact/F1_red0.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_red3": {
+  "engine": "msolve",
+  "job": "F1_red3",
+  "seconds": 12.9,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 1800 msolve -t 2 -v 2 -f /work/exact/F1_red3.ms -o /work/exact/F1_red3.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ },
+ "F1_red8": {
+  "engine": "msolve",
+  "job": "F1_red8",
+  "seconds": 0.8,
+  "returncode": 0,
+  "cmd": "timeout -s KILL 1800 msolve -t 2 -v 2 -f /work/exact/F1_red8.ms -o /work/exact/F1_red8.ms.out",
+  "squarefree_eliminant": true,
+  "status": "no complex solution",
+  "n_real": 0
+ }
+}

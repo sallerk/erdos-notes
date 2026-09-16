@@ -1,0 +1,112 @@
+
+--------------- INPUT DATA ---------------
+#variables                      22
+#equations                      26
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         1
+info level                       2
+generate pbm files               0
+------------------------------------------
+
+Legend for f4 information
+--------------------------------------------------------
+deg       current degree of pairs selected in this round
+sel       number of pairs selected in this round
+pairs     total number of pairs in pair list
+mat       matrix dimensions (# rows x # columns)
+density   density of the matrix
+new data  # new elements for basis in this round
+          # zero reductions during linear algebra
+time(rd)  time of the current f4 round in seconds given
+          for real and cpu time
+--------------------------------------------------------
+
+deg     sel   pairs        mat          density            new data         time(rd) in sec (real|cpu)
+------------------------------------------------------------------------------------------------------
+  1       1      21       5 x 10         34.00%        1 new       0 zero         0.00 | 0.00         
+  2       2      20      12 x 15         20.00%        2 new       0 zero         0.00 | 0.00         
+  2       1      19       2 x 5          70.00%        1 new       0 zero         0.00 | 0.00         
+  3      10      18     113 x 134         2.54%       10 new       0 zero         0.00 | 0.00         
+  4       3       8     142 x 154         2.59%        2 new       1 zero         0.00 | 0.00         
+  2       1       6       3 x 4          66.67%        1 new       0 zero         0.00 | 0.00         
+  6       3       5     325 x 323         0.93%        0 new       3 zero         0.00 | 0.00         
+  7       2       2     272 x 273         0.96%        2 new       0 zero         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+reduce final basis       22 x 23         11.26%       22 new       0 zero         0.00 | 0.00         
+------------------------------------------------------------------------------------------------------
+
+---------------- TIMINGS ---------------
+overall(elapsed)        0.00 sec
+overall(cpu)            0.00 sec
+select                  0.00 sec  12.9%
+symbolic prep.          0.00 sec   4.9%
+update                  0.00 sec   5.5%
+convert                 0.00 sec   2.7%
+linear algebra          0.00 sec   1.3%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                    22
+#terms in basis                  44
+#pairs reduced                   23
+#GM criterion                   967
+#redundant elements              23
+#rows reduced                    68
+#zero reductions                  4
+max. matrix data                325 x 323 (0.931%)
+max. symbolic hash table size  2^11
+max. basis hash table size     2^16
+-----------------------------------------
+
+Learning phase 0.00 Gops/sec
+Dimension of quotient: 1
+[1, 1], Non trivial / Trivial = 100.00%
+Density of non-trivial part 100.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.00 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 1.
+
+Starts multi-modular computations
+Application phase 0.00 Gops/sec
+Multi-mod time: GB + fglm (elapsed): 0.00 sec
+{2}{4}[0][1][2][3][4][5][6][7][8][9][10][11][12][13][14][15][16][17][18][19][20][21]<19>[19]<20>[20]<21>[21]{8}
+9 primes used
+Time for CRT + rational reconstruction = 0.00
+Time for rational param:          0.02 (elapsed) sec /  0.01 sec (cpu)
+
+Real root isolation starts at precision 129
+Degree = 1 	 Max bit size = 24 Min bit size = 17 
+nthreads = 1
+Bound for positive roots: 9
+
++
+Bound for negative roots: -1
+
+!
+Time for isolation (elapsed): 0.00 sec
+
+
+Number of nodes : 2
+Number of shifts : 0
+Number of half splits : 0
+Time in Descartes (elapsed): 0.00 sec
+Time in Taylor shifts (elapsed): 0.00 sec
+
+Time for isolation (elapsed): 0.00 sec
+Time for refinement (elapsed): 0.00 sec
+Number of real roots: 1
+Starts real root extraction.
+Elapsed time (real root extraction) = 0.00
+------------------------------------------------------------------------------------
+msolve overall time           0.02 sec (elapsed) /  0.01 sec (cpu)
+------------------------------------------------------------------------------------

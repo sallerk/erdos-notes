@@ -1,0 +1,65 @@
+
+---------------- TIMINGS ---------------
+overall(elapsed)        6.63 sec
+overall(cpu)           44.16 sec
+select                  0.19 sec   2.9%
+symbolic prep.          0.32 sec   4.8%
+update                  5.30 sec  79.9%
+convert                 0.03 sec   0.4%
+linear algebra          0.78 sec  11.8%
+reduce gb               0.00 sec   0.0%
+-----------------------------------------
+
+---------- COMPUTATIONAL DATA -----------
+size of basis                   136
+#terms in basis                2312
+#pairs reduced                29704
+#GM criterion              11651657
+#redundant elements            4698
+#rows reduced                 60388
+#zero reductions              25308
+max. matrix data              44421 x 44810 (0.237%)
+max. symbolic hash table size  2^16
+max. basis hash table size     2^21
+-----------------------------------------
+
+
+--- stderr
+
+--------------- INPUT DATA ---------------
+#variables                      16
+#equations                      16
+#invalid equations               0
+field characteristic             0
+homogeneous input?               0
+signature-based computation      0
+monomial order                 DRL
+basis hash table resetting     OFF
+linear algebra option            2
+initial hash table size     131072 (2^17)
+max pair selection             ALL
+reduce gb                        1
+#threads                         7
+info level                       1
+generate pbm files               0
+------------------------------------------
+Dimension of quotient: 32
+[32, 16], Non trivial / Trivial = 50.00%
+Density of non-trivial part 50.00%
+Time spent to generate sequence (elapsed): 0.00 sec (0.32 Gops/sec)
+Time spent to compute eliminating polynomial (elapsed): 0.00 sec
+Elimination polynomial has degree 32.
+
+Starts multi-modular computations
+{8}{15}{22}{29}{36}[0]{64}[1][2][3][4][5][6][7][8][9][10][11][12][13][14][15]
+85 primes used
+Time for CRT + rational reconstruction = 0.01
+Time for rational param:         13.96 (elapsed) sec / 94.48 sec (cpu)
+
+Real root isolation starts at precision 168
+Number of real roots: 32
+Starts real root extraction.
+Elapsed time (real root extraction) = 0.00
+------------------------------------------------------------------------------------
+msolve overall time          13.98 sec (elapsed) / 94.55 sec (cpu)
+------------------------------------------------------------------------------------

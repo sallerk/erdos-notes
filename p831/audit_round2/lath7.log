@@ -1,0 +1,10 @@
+7x7: 49 points, 18424 triples, 212 distinct radii^2, 0.0s
+6364 concyclic quadruples, 0.3s
+   new best 10 : [(0, 0), (0, 1), (1, 0), (1, 2), (2, 5)]  (0.3s)
+   new best 9 : [(0, 0), (0, 1), (1, 0), (1, 2), (3, 2)]  (0.3s)
+   new best 8 : [(0, 0), (0, 1), (1, 0), (1, 2), (4, 3)]  (0.3s)
+   new best 6 : [(0, 0), (0, 1), (1, 0), (2, 2), (2, 3)]  (0.3s)
+   new best 5 : [(0, 0), (0, 1), (1, 3), (1, 4), (2, 2)]  (0.3s)
+PRUNE-FREE 7x7 n=5 : 1906884 subsets, 1027968 admissible, MIN distinct circumradii = 5
+   witness [(0, 0), (0, 1), (1, 3), (1, 4), (2, 2)]   2.9s
+   lath.py artifact says best=5 witness=[[0, 0], [0, 1], [1, 3], [1, 4], [2, 2]]  -> AGREES

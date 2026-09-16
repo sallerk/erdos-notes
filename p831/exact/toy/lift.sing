@@ -1,0 +1,9 @@
+ring R = 0, (x,y,t), dp;
+ideal I = x^2+y^2-1, x-y, t*x-1, x;
+matrix T;
+ideal G = liftstd(I, T, "slimgb");
+print(G);
+print(T);
+matrix T2 = lift(I, ideal(1));
+print(T2);
+quit;

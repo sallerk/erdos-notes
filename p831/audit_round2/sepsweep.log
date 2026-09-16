@@ -1,0 +1,20 @@
+PROBE 1b: floor vs the class-separation margin (tau fixed at 1e-08), 40 restarts
+  reported number = EQUALITY residual at the best point (penalties excluded)
+  i  tausweep-verdict    sep=1e-02     sep=3e-03     sep=1e-03     sep=3e-04     sep=1e-04     sep=1e-05      slope   NEW VERDICT
+   0 DEGENERATE-ONLY   1.783e-05  3.211e-09  2.975e-09  4.255e-09  2.551e-09  2.679e-09   +0.89   SEP-LIMITED
+   1 DEGENERATE-ONLY   1.930e-08  2.525e-08  5.646e-09  2.632e-09  2.088e-08  2.244e-08   -0.01   flat in sep
+   2 OBSTRUCTED        5.314e-03  2.820e-03  5.253e-04  1.909e-04  1.259e-04  1.642e-05   +0.85   SEP-LIMITED
+   3 OBSTRUCTED        5.454e-03  1.644e-03  6.547e-04  2.007e-04  6.394e-05  1.010e-05   +0.92   SEP-LIMITED
+   4 OBSTRUCTED        7.700e-03  1.837e-03  8.128e-04  2.110e-04  6.462e-05  1.002e-05   +0.96   SEP-LIMITED
+   5 OBSTRUCTED        6.037e-03  1.580e-03  1.048e-03  1.767e-04  9.862e-05  1.301e-05   +0.89   SEP-LIMITED
+   6 OBSTRUCTED        8.953e-03  2.536e-03  7.631e-04  2.793e-04  1.209e-04  9.999e-06   +0.96   SEP-LIMITED
+   7 OBSTRUCTED        6.545e-03  2.466e-03  7.417e-04  2.813e-04  1.196e-04  1.700e-05   +0.86   SEP-LIMITED
+   8 OBSTRUCTED        6.682e-03  2.154e-03  6.147e-04  2.087e-04  9.853e-05  1.325e-05   +0.90   SEP-LIMITED
+   9 OBSTRUCTED        7.786e-03  2.998e-03  8.452e-04  2.183e-04  1.629e-04  2.066e-05   +0.86   SEP-LIMITED
+  10 OBSTRUCTED        3.732e-03  2.060e-03  7.373e-04  2.296e-04  1.410e-04  1.403e-05   +0.81   SEP-LIMITED
+  11 OBSTRUCTED        7.030e-03  1.794e-03  1.384e-03  3.297e-04  1.419e-04  1.846e-05   +0.85   SEP-LIMITED
+  12 OBSTRUCTED        7.071e-03  2.655e-03  1.063e-03  2.602e-04  1.370e-04  2.173e-05   +0.85   SEP-LIMITED
+  13 OBSTRUCTED        1.113e-03  4.389e-04  9.800e-04  4.032e-04  1.298e-04  1.174e-05   +0.62   SEP-LIMITED
+  14 OBSTRUCTED        1.571e-03  1.699e-03  6.225e-04  1.630e-04  1.567e-05  1.752e-06   +1.08   SEP-LIMITED
+
+[exited with code 0]
