@@ -1,0 +1,34 @@
+{
+ "n": 7,
+ "classes": 184424,
+ "survivors": 2340,
+ "failing_each_condition": {
+  "C1": 82118,
+  "C2": 117722,
+  "C3": 182084
+ },
+ "implementations_disagree": 0,
+ "controls": {
+  "danzer": [
+   [
+    true,
+    true,
+    true
+   ],
+   [
+    true,
+    true,
+    true
+   ]
+  ],
+  "random_patterns_agreeing": 200000,
+  "random_patterns_failing": {
+   "C1": 81210,
+   "C2": 151812,
+   "C3": 199840
+  },
+  "C1_or_C2_fails_but_C3_holds": 0
+ },
+ "seconds": 6.6,
+ "note": "a class may fail several conditions, so the failure counts overlap"
+}

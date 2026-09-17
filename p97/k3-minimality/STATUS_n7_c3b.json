@@ -1,0 +1,14 @@
+{
+ "n": 7,
+ "workers": 5,
+ "wall_s": 3481.6,
+ "done": 41,
+ "skipped_over_budget": 38,
+ "unit_ideal": 21,
+ "unsat": 20,
+ "SAT": [],
+ "z3_unknown": [],
+ "errors": [],
+ "kills": 38,
+ "status": "COMPLETED"
+}

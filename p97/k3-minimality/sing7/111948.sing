@@ -1,0 +1,22 @@
+option(redSB);
+ring R = 0, (x2,x3,x4,x5,x6,y2,y3,y4,y5,y6), dp;
+ideal I =
+  -x2^2 - y2^2 + 1,
+  x2^2 - x4^2 + y2^2 - y4^2,
+  x2^2 - 2*x2 - x5^2 + 2*x5 + y2^2 - y5^2,
+  x5^2 - 2*x5 - x6^2 + 2*x6 + y5^2 - y6^2,
+  -2*x2*x3 + 2*x2*x4 + x3^2 - x4^2 - 2*y2*y3 + 2*y2*y4 + y3^2 - y4^2,
+  -2*x2*x4 + x4^2 - 2*y2*y4 + y4^2,
+  -2*x3*x4 + 2*x3*x6 + x4^2 - x6^2 - 2*y3*y4 + 2*y3*y6 + y4^2 - y6^2,
+  -2*x3*x6 + 2*x3 + x6^2 - 2*y3*y6 + y6^2 - 1,
+  -2*x4*x5 + 2*x4 + x5^2 - 2*y4*y5 + y5^2 - 1,
+  -x3^2 + 2*x3*x4 - 2*x4 - y3^2 + 2*y3*y4 + 1,
+  -x2^2 + 2*x2*x5 - y2^2 + 2*y2*y5,
+  x2^2 - 2*x2*x5 - x3^2 + 2*x3*x5 + y2^2 - 2*y2*y5 - y3^2 + 2*y3*y5,
+  -x4^2 + 2*x4*x6 - y4^2 + 2*y4*y6,
+  x4^2 - 2*x4*x6 - x5^2 + 2*x5*x6 + y4^2 - 2*y4*y6 - y5^2 + 2*y5*y6;
+int t0 = rtimer;
+ideal G = slimgb(I);
+if (reduce(poly(1), G) == 0) { print("RESULT UNIT"); }
+else { print("RESULT NONUNIT " + string(size(G))); write(":w /work/sing7/111948.gb", G); }
+quit;

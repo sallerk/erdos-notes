@@ -1,0 +1,26 @@
+{
+ "21998": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "17605": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "154553": {
+  "status": "NONUNIT",
+  "seconds": 0.2
+ },
+ "112980": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "168686": {
+  "status": "NONUNIT",
+  "seconds": 0.2
+ },
+ "158418": {
+  "status": "NONUNIT",
+  "seconds": 0.2
+ }
+}

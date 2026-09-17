@@ -41,7 +41,7 @@ showed" a line earlier is a typo in the original.)
 problem page already discounts as a presumed error since Erdos never repeated it. See
 `REFERENCES.md`. The minimality question is well posed for k = 3 regardless.)
 
-**Result: the smallest n for the k = 3 property is at least 7, and at most 9 by Danzer.**
+**Result: the smallest n for the k = 3 property is 8 or 9.** The bound n >= 7 is described below; n = 7 itself was excluded on 2026-09-16 by exact solver verdicts (Groebner bases and z3, no certificates), using veljjanoski's constraints, see `k3-minimality/RESULTS.md`; 9 is Danzer's construction.
 
 Without convexity the question is answered elsewhere: Erdos and Fishburn (Comput. Geom.
 7 (1997), 207-218) give 6 for the least n with every point having 3 others equidistant,
@@ -75,7 +75,7 @@ realisable pattern would invalidate every conclusion), and 300 randomly chosen
 prune-rejected patterns were handed to z3, which agreed all were unsatisfiable
 (298 unsat, 2 timeouts, 0 satisfiable).
 
-**n = 7 is NOT settled.** At the stop, 9,539 of 184,424 pattern classes had been
+**n = 7 was not settled by the run stopped on 2026-08-30** (it was completed on 2026-09-16; see the result above). At the stop, 9,539 of 184,424 pattern classes had been
 processed and 9,496 of them DECIDED (5,489 by a unit Groebner ideal, 4,007 unsat),
 which is 5.15% of the space; 43 came back z3-unknown and a further 171 were skipped
 as over budget. No configuration was found in any of them. Finding nothing in 5% of
@@ -105,7 +105,9 @@ satisfying the three relations Erdos prints for Danzer's construction in [Er87b,
 at n = 4 and n = 5, and the prune-rejection sample), `enum2.py` and `enum_nb.py`
 (pattern enumeration), `numsearch.py` (independent numerical search), `control.py` and
 `cmlemma.py` (soundness controls), and the run records including
-`STATUS_n7_AT_STOP.json`, which records the incomplete n = 7 run as incomplete.
+`STATUS_n7_AT_STOP.json`, which records the incomplete n = 7 run as incomplete. The completed n = 7 run of 2026-09-16 adds `c123.py`, `k3worker.py`, `k3super.py`, `k3sing.py`, `k3tally.py`, their records (`res_n7_c3*`, `skip_n7_c3*`, `STATUS_n7_c3*.json`, `sing7/`, `sing7ctl/`) and `RESULT_n7_c3.json`.
+
+`check_veljjanoski_certificates.py` and `check_veljjanoski_certificates.json`: the independent check of veljjanoski's k = 4 certificates described at the end of this note.
 
 ## Two things the reference check turned up
 
@@ -139,7 +141,7 @@ meets a convex curve twice, so each pair serves at most two vertices. That is a 
 proof of the same inequality, but it is not the argument in the thread, which is the
 Cauchy-Schwarz one above. The misattribution is corrected here.)
 
-## Later work in the thread (added 2026-09-16, not re-verified here)
+## Later work in the thread (added 2026-09-16)
 
-* **No $k = 4$ counterexample with at most 10 vertices.** veljjanoski (forum post of 14 Sep 2026, https://www.erdosproblems.com/forum/thread/97#post-9038) reports that no strictly convex polygon with $n \le 10$ vertices has every vertex equidistant from 4 others, and that for $n = 7$ no 7 distinct points in the plane have this property even without convexity; with the counting bound $n \ge 7$, any counterexample would have at least 11 vertices. The method enumerates incidence structures of the sets $Q_i$ under $|Q_i \cap Q_j| \le 2$ and two convexity constraints (no pair in three of the $Q_i$; a shared pair separated by its two centres in the cyclic order), then rules each structure out with Nullstellensatz certificates for $n \le 9$ and Groebner bases (sympy and Singular) for $n = 10$. Code, certificates and verifiers: https://github.com/veljjanoski/erdos97. This note has not checked those computations.
+* **No $k = 4$ counterexample with at most 10 vertices.** veljjanoski (forum post of 14 Sep 2026, https://www.erdosproblems.com/forum/thread/97#post-9038) reports that no strictly convex polygon with $n \le 10$ vertices has every vertex equidistant from 4 others, and that for $n = 7$ no 7 distinct points in the plane have this property even without convexity; with the counting bound $n \ge 7$, any counterexample would have at least 11 vertices. The method enumerates incidence structures of the sets $Q_i$ under $|Q_i \cap Q_j| \le 2$ and two convexity constraints (no pair in three of the $Q_i$; a shared pair separated by its two centres in the cyclic order), then rules each structure out with Nullstellensatz certificates for $n \le 9$ and Groebner bases (sympy and Singular) for $n = 10$. Code, certificates and verifiers: https://github.com/veljjanoski/erdos97. The 66 expansion certificates for $n \le 9$ (54 for $n = 7$, 1 for $n = 8$, 11 for $n = 9$) were checked independently here, by exact expansion with the polynomials rebuilt from each structure (`check_veljjanoski_certificates.py`; his files are not redistributed). The completeness of his enumeration, the five $n = 9$ classes decided by Groebner bases, and $n = 10$ were not checked. His conditions C1 to C3 also decide the $k = 3$ case $n = 7$; see the k = 3 section.
 * **Part of the theorem above in Lean.** mysticflounder replied (9 Sep 2026) that part of the symmetric-family theorem was incorporated, with attribution, into a Lean formalization: https://github.com/mysticflounder/erdos-97-96-formalization/blob/main/lean/Erdos9796Proof/P97/ConvexIndepLineCover.lean. Which part, and whether that file compiles, has not been checked here.

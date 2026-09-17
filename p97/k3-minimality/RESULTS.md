@@ -42,14 +42,15 @@ from every vertex to have multiplicity at least ceil((n-1)/(floor(n/2)-1)), whic
 | 4 | 1 | 0 | 0 | **no k=3 convex 4-gon** | `VERIFIED` |
 | 5 | 1,024 | 0 | 0 | **no k=3 convex 5-gon** | `VERIFIED` |
 | 6 | 1,000,000 | 564 | 66 | **no k=3 convex 6-gon** | `VERIFIED` |
-| 7 | 1,280,000,000 | 2,581,924 | 184,424 | running | — |
+| 7 | 1,280,000,000 | 2,581,924 | 184,424 (2,340 after C1-C3) | **no k=3 convex 7-gon** | solver verdicts, 2026-09-16 |
 | 8 | 2,251,875,390,625 | — | enumeration running | — | — |
 | 9 | — | — | — | exists (Danzer) | `CITED` |
 
-**Conclusion: the minimum n for the k=3 property is at least 7 and at most 9.**
-This is FINAL for this project -- n=7 was stopped by the user on 2026-08-30 as out of
-scope (it is Erdos's own 1975 question but not the statement of numbered problem #97,
-which asks for k=4).  n=7 therefore stays open and the bound stays at >= 7, not >= 8.
+**Conclusion (2026-09-16): the minimum n for the k=3 property is 8 or 9.**
+n=7 was stopped by the user on 2026-08-30 as out of scope (it is Erdos's own 1975 question
+but not the statement of numbered problem #97, which asks for k=4), and was completed on
+2026-09-16 at the user's request, using veljjanoski's constraints; see the section on that
+run below. The n=7 exclusion rests on solver verdicts, not certificates.
 
 ## Controls run (every one passed)
 
@@ -102,7 +103,62 @@ at best be narrowed to n in {8, 9} by this route.
   now shuffle their assignment, which also makes early progress representative.
 
 
+## n=7: completed on 2026-09-16, with veljjanoski's constraints
+
+veljjanoski's k = 4 work (forum thread 97, post of 14 Sep 2026) uses three conditions that
+every strictly convex realisation satisfies. Their proofs do not use k, so they hold for
+witness triples as well (`c123.py` gives the proofs, and shows that C3 alone implies C1 and C2):
+
+* C1: |T_i & T_j| <= 2 for i != j;
+* C2: no pair of vertices lies in three witness triples;
+* C3: if a pair {a,b} lies in T_i and in T_j, then a and b are separated by i and j in the
+  cyclic order.
+
+| step | classes left | refuted here |
+|---|---|---|
+| enumeration (`enum2.py`: obtuse-middle prune, dihedral reduction) | 184,424 | |
+| C1-C3 (`c123.py`, two implementations that agree on every class) | 2,340 | 182,084 |
+| sympy Groebner + z3, budget 25 s / 20 s, 5 workers (`k3super.py ... _c3`) | 79 | 2,261 |
+| the same with budget 300 s / 60 s (`_c3b`) | 38 | 41 |
+| Singular slimgb over Q, then z3 on the non-unit ones (`k3sing.py`, `sing7/`) | 0 | 38 |
+
+In all, 1,889 classes have a unit ideal over Q (no complex solution) and 451 are z3 unsat
+under strict convex position (all C(7,3) orientations) plus the two implied lemmas.
+`k3tally.py` checks that each pass was given exactly the classes the previous one left, that
+no class has two verdicts, and that every survivor is refuted; it writes `RESULT_n7_c3.json`.
+
+**Result: no strictly convex 7-gon has every vertex with three other vertices equidistant
+from it, so the minimum n for the k=3 property is 8 or 9.**
+
+Controls: Danzer's 9-gon pattern passes C1-C3. On 200,000 random patterns the two
+implementations agree, every condition fails somewhere, and C1 or C2 never fails while C3
+holds. Singular reproduced sympy's verdict on 6 classes sympy had decided (3 unit; 3 non-unit,
+then z3 unsat), in `sing7ctl/`. The 119 survivors that the stopped 2026-08-30 run had also
+decided got the same verdicts.
+
+What it rests on: the enumeration and its prune (controls above), the proofs of C1-C3, and
+the correctness of sympy, Singular 4.3.2 and z3. No certificate was produced, so unlike
+veljjanoski's n <= 9 results for k = 4, this cannot be re-checked by polynomial expansion.
+
+Reproduce, from this directory (about 75 minutes, almost all of it the two sympy passes):
+
+    python enum2.py 7            # cls_n7.npy, 184,424 classes, about 1 s
+    python c123.py 7             # c123_n7_survivors.npy, c123_n7.json
+    python k3super.py 7 5 25 20000 _c3 c123_n7_survivors.npy
+    python k3super.py 7 5 300 60000 _c3b c123_n7_undecided_pass1.npy
+    docker run -d --name cas97k3 --cpus 10 -v "$PWD:/work" erdos831-cas sleep infinity
+    python k3sing.py gen c123_n7_undecided_pass2.npy sing7
+    python k3sing.py run sing7 10 3600
+    python k3sing.py z3 sing7 1800
+    python k3tally.py            # ALL 2340 SURVIVORS REFUTED
+
+The image `erdos831-cas` is built from `p831/docker/Dockerfile` in this repository. The two
+undecided lists were extracted from the pass records; `k3tally.py` checks them against those
+records. Sympy's run times vary, so a re-run may skip a slightly different set of classes.
+
 ## n=7: STOPPED, not completed -- exactly what was and was not covered
+
+*Superseded by the completed run above; kept as the record of the run stopped on 2026-08-30.*
 
 The run was halted by the user. Recorded state at the stop
 (`STATUS_n7_AT_STOP.json`):
@@ -135,5 +191,8 @@ the one proved at n <= 6.
             independent numerical search and a 300-sample soundness check of the
             prune itself.
 `CITED`     n=9 is achievable (Danzer, unpublished; figure in Erdos 1987 p.175).
+`SOLVER`    no strictly convex 7-gon has the property (2026-09-16): every one of the
+            184,424 pattern classes is excluded by C1-C3 or by a Groebner basis or z3
+            verdict; no certificate.
 `CITED`     Erdos posed the minimality question in 1975 and it appears unanswered.
-=> the minimum lies in {7, 8, 9}.
+=> the minimum lies in {8, 9}.

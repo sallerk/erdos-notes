@@ -1,0 +1,154 @@
+{
+ "12072": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "105317": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "132153": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "111948": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "104110": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "12071": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "128850": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "104147": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "132152": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "12159": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "132403": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "139041": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "139056": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "132404": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "147438": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "148042": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "148003": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "153853": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "151571": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "153201": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "168207": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "168955": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "173225": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "169017": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "169047": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "169016": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "173231": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "178352": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "17608": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "17929": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "182453": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "182641": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "182795": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "42417": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "50544": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "30284": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "8579": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "57174": {
+  "status": "UNIT",
+  "seconds": 0.1
+ }
+}

@@ -1,0 +1,38 @@
+{
+ "132403": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "132404": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "139056": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "169016": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "169017": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "169047": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "17929": {
+  "verdict": "unsat",
+  "seconds": 0.9
+ },
+ "182795": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ },
+ "50544": {
+  "verdict": "unsat",
+  "seconds": 0.7
+ }
+}
