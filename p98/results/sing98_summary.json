@@ -1,0 +1,74 @@
+{
+ "date": "2026-09-16 and 2026-09-17",
+ "n5_weak96": {
+  "unit_with_distinct_nonzero_classes": 41,
+  "unit_after_also_no_collinear_no_concyclic": 47,
+  "zero_dimensional_no_real_solution_msolve": [
+   3,
+   6,
+   42,
+   60,
+   61,
+   71
+  ],
+  "realisable_confirmed_exactly": {
+   "49": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    2,
+    2,
+    3,
+    3,
+    1
+   ],
+   "70": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    2,
+    3,
+    3,
+    2
+   ]
+  },
+  "note": "hard.py had called patterns 49 and 70 unsat; confirm_real98.py and realsol98.py show real admissible realisations in exact arithmetic"
+ },
+ "n7_full_exposure": {
+  "n5_seeds": "99 sat + 152 inconclusive (xcheck) + 2 confirmed = 253; no hard.py verdict trusted",
+  "n6_candidates": 1141,
+  "n7_candidates": 132,
+  "n7_candidates_in_archived_chain": 1,
+  "singular_unit": 128,
+  "zero_dimensional_only_degenerate_real_solutions": {
+   "[0, 0, 1, 1, 2, 2, 0, 2, 3, 1, 3, 3, 2, 3, 1, 2, 1, 0, 0, 1, 3]": "every real solution has all 7 points concyclic",
+   "[0, 0, 1, 1, 2, 2, 1, 0, 2, 1, 2, 2, 0, 2, 1, 2, 0, 1, 1, 0, 0]": "every real solution has all 7 points concyclic",
+   "[0, 0, 1, 1, 2, 2, 1, 0, 2, 1, 3, 2, 0, 3, 1, 3, 0, 2, 2, 0, 1]": "every real solution has all 7 points concyclic",
+   "[0, 0, 1, 1, 2, 2, 1, 0, 3, 2, 3, 3, 0, 3, 2, 2, 3, 1, 1, 3, 0]": "every real solution has all 7 points concyclic"
+  },
+  "any_admissible": false
+ },
+ "controls": [
+  "n5: 11 trivial-ideal patterns UNIT; 3 xcheck-sat patterns NON-unit, also with the general-position conditions; 3 unordered-z3-unsat patterns UNIT",
+  "realsol98.py on the two confirmed n5 patterns: every real solution admissible (4 each)",
+  "z3 positive control (find points for a realisable n5 pattern) did NOT finish in 600 s; z3 was not used for any verdict here",
+  "n6: latmin_n6_z2_R50.json (5 distances, realisable) through gen/run/post/realsol98: NON-unit, zero-dimensional, 2 real solutions, both admissible"
+ ],
+ "rests_on": "the n=5 pattern lists (hdecide.enumerate_patterns for k=3; xcheck n=5 k=4 lists), the lemma filters L1-L5 in aug.py, Singular 4.3.2 (unit ideals, lex bases), msolve (6 no-real-root verdicts at n=5), and the 102 earlier sound n=5 k=4 rejections",
+ "n6_k3_rederivation": {
+  "seeds": "the 61 canonical 5-point patterns with at most 3 classes surviving lemmas.survives (exposure98.py 3)",
+  "n6_candidates": 470,
+  "singular_unit": 467,
+  "zero_dimensional_only_degenerate_real_solutions": {
+   "[0, 0, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 2, 2, 2]": "every real solution has a concyclic quadruple",
+   "[0, 0, 1, 1, 2, 0, 1, 2, 1, 2, 1, 1, 0, 0, 0]": "every real solution has a concyclic quadruple",
+   "[0, 0, 1, 1, 2, 1, 0, 2, 1, 2, 0, 2, 2, 0, 1]": "every real solution has a concyclic quadruple"
+  },
+  "any_admissible": false
+ }
+}

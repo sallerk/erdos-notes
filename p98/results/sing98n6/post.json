@@ -1,0 +1,20 @@
+{
+ "22": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 12",
+  "msolve_real_solutions": "some"
+ },
+ "458": {
+  "dim": 0,
+  "vdim": 2,
+  "lex": "LEX 12",
+  "msolve_real_solutions": "some"
+ },
+ "463": {
+  "dim": 0,
+  "vdim": 6,
+  "lex": "LEX 12",
+  "msolve_real_solutions": "some"
+ }
+}

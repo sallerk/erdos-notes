@@ -154,16 +154,43 @@ python last7.py                                            # kills the last one
 pattern as a literal and shows its Gram minors include multiples of `(2u - 11)` and
 `(u - 10)`, which cannot both vanish. The lex Groebner basis is `[1]`.
 
+**Superseded 2026-09-17: both lower bounds without `hard.py`** (NOTE.md section 3m). The chain
+above prunes with `hard.py`, two of whose unsat verdicts were then found to be false. The current
+derivation runs from this directory with the files it reads copied up from `results/`, in a
+container built from `p831/docker/Dockerfile` in this repository:
+
+```
+docker run -d --name cas98 --cpus 10 -v "$PWD:/work" erdos831-cas sleep infinity
+python sing98.py weak96 sing98_weak96.json                                # the 96 A8-dependent rejections
+python sing98.py gen sing98_weak96.json sing98w
+python sing98.py run sing98w 10 600                                       # 41 unit
+python sing98.py genfull sing98_weak96.json sing98wF sing98w/singular.json
+python sing98.py run sing98wF 10 600                                      # 47 more unit
+python sing98.py post sing98wF 600                                        # 8 zero-dimensional; 6 without real solutions
+python realsol98.py 5 sing98_weak96.json sing98wF 49 70                   # both admissible: realisable
+python exposure98.py 3                                                    # 470 candidates at n = 6
+python exposure98.py 4                                                    # 132 candidates at n = 7, about 13 minutes
+```
+
+Then, for `n = 6` (patterns `sing98_n6_cand.json`, folder `sing98n6`) and `n = 7`
+(`sing98_n7_cand.json`, `sing98n7`), with the environment variable `SING98_N` set to `n`:
+`python sing98.py gen <patterns> <folder>`, `run <folder> 10 600`, `post <folder> 600`, and
+`python realsol98.py <n> <patterns> <folder> <each non-unit index>`. Expected: at `n = 6`, 467 unit
+and 3 whose real solutions all have four points on a circle; at `n = 7`, 128 unit and 4 whose real
+solutions all have every point on one circle. The candidate files are the `exposure98.py` outputs
+with the key `candidates` renamed to `patterns`.
+
 ## Caveats you should know before trusting anything
 
 **`gram.py` is unsound for negative verdicts and must not be used for lower bounds.** It
 calls `sympy.solve` and reports `unsat` when nothing usable comes back, but `sympy.solve`
 can silently omit branches. Cross-checking found **17 patterns at n=5, k=4** it called
-impossible that are in fact realisable. Use `hard.py` or `pz3_noorder.py` (Groebner plus guaranteed-real
-`CRootOf` roots) instead. **Not `z3run.py`:** its class-ordering constraint makes its unsat verdicts non-proofs (see ASSUMPTIONS.md A8). `gram.py` is kept only because `xcheck.py`
+impossible that are in fact realisable. Use `pz3_noorder.py` or `sing98.py` instead. **Not
+`hard.py` either:** two of its unsat verdicts were shown false on 2026-09-17 (ASSUMPTIONS.md A8). **Not `z3run.py`:** its class-ordering constraint makes its unsat verdicts non-proofs (see ASSUMPTIONS.md A8). `gram.py` is kept only because `xcheck.py`
 documents the discrepancy.
 
-**`hard.py`'s unsat verdicts are validated only partially.** An early 40-pattern sample of
+**`hard.py`'s unsat verdicts are not sound.** Of the 96 A8-dependent rejections, `sing98.py`
+refuted 94 and showed 2 realisable (ASSUMPTIONS.md A8). The history: an early 40-pattern sample of
 its `n=5, k=4` unsats was re-decided by z3: **22 unsat, 18 unknown, 0 sat**. **That figure
 is superseded.** All 153 A8-dependent rejections have since been examined, of which **57
 are independently settled and 96 are not** (ASSUMPTIONS.md A8). Note also that the

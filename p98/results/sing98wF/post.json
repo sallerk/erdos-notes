@@ -1,0 +1,50 @@
+{
+ "3": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "none"
+ },
+ "6": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "none"
+ },
+ "42": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "none"
+ },
+ "49": {
+  "dim": 0,
+  "vdim": 8,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "some"
+ },
+ "60": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "none"
+ },
+ "61": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "none"
+ },
+ "70": {
+  "dim": 0,
+  "vdim": 12,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "some"
+ },
+ "71": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 13",
+  "msolve_real_solutions": "none"
+ }
+}

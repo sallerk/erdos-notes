@@ -1,0 +1,70 @@
+augmenting 253 seeds from n=5 to n=6, k=4
+   25/253 seeds, 521 candidates so far, 3s
+   50/253 seeds, 725 candidates so far, 6s
+   75/253 seeds, 914 candidates so far, 8s
+   100/253 seeds, 1029 candidates so far, 11s
+   125/253 seeds, 1090 candidates so far, 13s
+   150/253 seeds, 1119 candidates so far, 16s
+   175/253 seeds, 1127 candidates so far, 18s
+   200/253 seeds, 1137 candidates so far, 20s
+   225/253 seeds, 1140 candidates so far, 22s
+   250/253 seeds, 1141 candidates so far, 25s
+
+  raw extensions            : 259072
+  survive degree + K23      : 93879
+  survive the subset test   : 7180
+  distinct up to isomorphism: 1141   (25s)
+  written: exposure_n6_k4_cand.json
+augmenting 1141 seeds from n=6 to n=7, k=4
+   25/1141 seeds, 21 candidates so far, 18s
+   50/1141 seeds, 40 candidates so far, 37s
+   75/1141 seeds, 54 candidates so far, 54s
+   100/1141 seeds, 64 candidates so far, 72s
+   125/1141 seeds, 75 candidates so far, 89s
+   150/1141 seeds, 84 candidates so far, 105s
+   175/1141 seeds, 89 candidates so far, 121s
+   200/1141 seeds, 93 candidates so far, 138s
+   225/1141 seeds, 97 candidates so far, 153s
+   250/1141 seeds, 103 candidates so far, 171s
+   275/1141 seeds, 108 candidates so far, 189s
+   300/1141 seeds, 113 candidates so far, 206s
+   325/1141 seeds, 117 candidates so far, 223s
+   350/1141 seeds, 119 candidates so far, 239s
+   375/1141 seeds, 119 candidates so far, 257s
+   400/1141 seeds, 123 candidates so far, 273s
+   425/1141 seeds, 127 candidates so far, 288s
+   450/1141 seeds, 128 candidates so far, 304s
+   475/1141 seeds, 128 candidates so far, 319s
+   500/1141 seeds, 129 candidates so far, 334s
+   525/1141 seeds, 131 candidates so far, 351s
+   550/1141 seeds, 131 candidates so far, 367s
+   575/1141 seeds, 132 candidates so far, 383s
+   600/1141 seeds, 132 candidates so far, 396s
+   625/1141 seeds, 132 candidates so far, 410s
+   650/1141 seeds, 132 candidates so far, 424s
+   675/1141 seeds, 132 candidates so far, 438s
+   700/1141 seeds, 132 candidates so far, 451s
+   725/1141 seeds, 132 candidates so far, 466s
+   750/1141 seeds, 132 candidates so far, 479s
+   775/1141 seeds, 132 candidates so far, 493s
+   800/1141 seeds, 132 candidates so far, 508s
+   825/1141 seeds, 132 candidates so far, 525s
+   850/1141 seeds, 132 candidates so far, 541s
+   875/1141 seeds, 132 candidates so far, 556s
+   900/1141 seeds, 132 candidates so far, 572s
+   925/1141 seeds, 132 candidates so far, 588s
+   950/1141 seeds, 132 candidates so far, 604s
+   975/1141 seeds, 132 candidates so far, 618s
+   1000/1141 seeds, 132 candidates so far, 641s
+   1025/1141 seeds, 132 candidates so far, 666s
+   1050/1141 seeds, 132 candidates so far, 693s
+   1075/1141 seeds, 132 candidates so far, 716s
+   1100/1141 seeds, 132 candidates so far, 741s
+   1125/1141 seeds, 132 candidates so far, 754s
+
+  raw extensions            : 4673536
+  survive degree + K23      : 781321
+  survive the subset test   : 895
+  distinct up to isomorphism: 132   (764s)
+  written: exposure_n7_k4_cand.json
+n=5 seeds 253, n=6 candidates 1141, n=7 candidates 132

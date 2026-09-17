@@ -1,0 +1,26 @@
+{
+ "123": {
+  "dim": 0,
+  "vdim": 6,
+  "lex": "LEX 15",
+  "msolve_real_solutions": "some"
+ },
+ "125": {
+  "dim": 0,
+  "vdim": 6,
+  "lex": "LEX 14",
+  "msolve_real_solutions": "some"
+ },
+ "128": {
+  "dim": 0,
+  "vdim": 4,
+  "lex": "LEX 15",
+  "msolve_real_solutions": "some"
+ },
+ "131": {
+  "dim": 0,
+  "vdim": 6,
+  "lex": "LEX 15",
+  "msolve_real_solutions": "some"
+ }
+}

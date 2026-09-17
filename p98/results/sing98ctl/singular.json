@@ -1,0 +1,70 @@
+{
+ "6": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "0": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "4": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "5": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "7": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "1": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "3": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "8": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "2": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "9": {
+  "status": "UNIT",
+  "seconds": 0.2
+ },
+ "10": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "11": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "13": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "14": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "12": {
+  "status": "NONUNIT",
+  "seconds": 0.1
+ },
+ "15": {
+  "status": "UNIT",
+  "seconds": 0.1
+ },
+ "16": {
+  "status": "UNIT",
+  "seconds": 0.1
+ }
+}

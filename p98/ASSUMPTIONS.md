@@ -99,10 +99,16 @@ corrected tally for the 153:
 | **independently settled** | **57** | |
 | **still resting on A8** | **96** | 24 that time out unordered, plus the 72 z3 never decided |
 
-**Status: PARTIALLY VERIFIED (57/153).** Weaker than previously claimed. See A13 for what
-this does and does not touch: the disposal of the 28 surviving n=7 candidates is
-solver-free, but their GENERATION came from seed sets pruned with `hard.py` verdicts, so a
-single false unsat among the 96 could mean a 29th candidate was never generated.
+**Status: FALSIFIED (2026-09-17).** `sing98.py` re-decided the 96 with Singular and msolve:
+94 are refuted exactly (41 unit ideals with the classes distinct and non-zero, 47 more once no
+three collinear and no four concyclic are also imposed, and 6 zero-dimensional systems with no
+real solution), and 2 are realisable in general position, confirmed in exact arithmetic
+(`confirm_real98.py`, `realsol98.py`): patterns `0,0,0,1,1,2,2,3,3,1` and
+`0,0,1,1,1,1,2,3,3,2`. So `hard.py`'s unsat verdicts are not sound. Nothing in the lower bounds
+uses them any more: see A13 and NOTE.md section 3m. (Until then the status read PARTIALLY
+VERIFIED (57/153), with the warning that a single false unsat among the 96 could mean a missing
+candidate. That is what happened; the missing candidates have since been generated and
+decided.)
 
 *A second caveat on the original runs.* z3's `timeout` is advisory. The residual run held 6
 workers for 14,632.9 seconds of wall clock on 75 patterns, i.e. up to **87,797
@@ -148,17 +154,21 @@ limits what the n=8 lattice results mean, and it is stated wherever they are use
 
 ## A13. `D_gen(7) = 5` — what it actually rests on
 
-Upper bound: a verified witness (A6). Lower bound: 28 candidates, of which 21 use fewer
-than 4 classes and die by A3, 4 were decided by z3 (A7), 2 by the equilateral-centre
-lemma, and 1 by a trivial Groebner ideal. **Re-derived since:** all 28 fall to the
-combinatorial lemmas plus monotonicity alone, with no solver, and L3 independently rejects
-the pattern the Groebner argument killed.
-**Status: PROVED for the disposal, CONDITIONAL for the generation.** The 28 candidates
-are disposed of without a solver, so that half is independent of A8. But the 28 were
-*generated* by augmenting the cleaned n=6 seed set, which was pruned with `hard.py`
-verdicts; a false unsat among the 96 still resting on A8 could mean a 29th candidate was
-never generated. An earlier version of this line read "PROVED, and now independent of A8",
-which contradicted A8 four lines above and overstated exactly the dependency A8 records.
+Upper bound: a verified witness (A6). Lower bound, since 2026-09-17 (NOTE.md section 3m):
+132 n=7 candidates, generated from 253 n=5 seeds with no decider used at n=6; 128 have a unit
+ideal (Singular) and the other 4 have only real solutions with all 7 points concyclic
+(`realsol98.py`, exact). The same section re-derives `D_gen(6) > 3`: 470 candidates, 467 unit,
+and 3 whose real solutions all have four points on a circle.
+**Status: PROVED**, resting on the n=5 pattern lists, the lemmas, and the correctness of
+Singular and msolve, and on no `hard.py` verdict.
+
+*Earlier version, kept for the record.* 28 candidates, of which 21 used fewer than 4 classes
+and died by A3, 4 were decided by z3 (A7), 2 by the equilateral-centre lemma and 1 by a
+trivial Groebner ideal; later all 28 fell to the lemmas plus monotonicity. Its status read
+"PROVED for the disposal, CONDITIONAL for the generation", because the 28 were generated from
+seed sets pruned with `hard.py`. The condition failed: two of `hard.py`'s rejections are
+realisable (A8), and generating without `hard.py` gives 132 candidates under the current lemma
+filters.
 
 ## A14. Novelty
 

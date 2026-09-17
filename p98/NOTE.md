@@ -158,6 +158,8 @@ variables, plus non-collinearity and non-cocircularity), so that UNSAT would mea
 returned UNKNOWN after 872 s on a provably unsatisfiable instance (section 3b,
 `results/direct_n5_k2.json`). The lower bounds actually come from the pattern enumeration
 plus the Gram rank-2 decider (`hard.py`), with `pz3_noorder.py` as the sound cross-check.
+Since 2026-09-17, `D_gen(6) > 3` and `D_gen(7) > 4` no longer use `hard.py`, which was then
+found to emit false unsat verdicts (section 3m).
 
 Every witness is re-checked by `verify.py`, which converts to **real plane coordinates**
 and redoes collinearity, cocircularity and distance counts symbolically in sympy, sharing
@@ -168,8 +170,8 @@ no code with the searchers. All witnesses pass.
 | 3 | **1** | equilateral triangle |
 | 4 | **2** | `≤2` lattice witness; `>1` because 4 mutually equidistant points do not exist (solver UNSAT, also a control) |
 | 5 | **3** | `≤3` solver witness in ℚ(√3), squared distances `{1, 2+√3, 4+2√3}`, verified exactly; `>2` by §3a below |
-| 6 | **4** | `≤4` triangular-lattice witness, squared distances `{1,3,4,7}`; `>3` by §3c below |
-| 7 | **5** | `≤5` triangular-lattice witness `{1,7,12,13,19}`, verified; `>4` by §3h |
+| 6 | **4** | `≤4` triangular-lattice witness, squared distances `{1,3,4,7}`; `>3` by §3m (2026-09-17; §3c and §3e used a decider later found unsound) |
+| 7 | **5** | `≤5` triangular-lattice witness `{1,7,12,13,19}`, verified; `>4` by §3m (2026-09-17; §3h used the same decider) |
 
 The `n=5` witness, up to similarity:
 
@@ -400,6 +402,10 @@ with §3c, which showed independently that every realisation of it is cocircular
 So `D_gen(6) > 3`, and with the verified 4-distance witness, **`D_gen(6) = 4`**, now with
 nothing resting on `gram.py`.
 
+*2026-09-17: this re-derivation still took its seeds and one verdict from `hard.py`, which has
+since been shown to emit false unsat verdicts (ASSUMPTIONS.md A8). Section 3m re-derives
+`D_gen(6) > 3` without it.*
+
 
 ### 3f. What the extremal profile forces, and two cases ruled out
 
@@ -513,6 +519,10 @@ which must both vanish, forcing `u = 11/2` and `u = 10` at once. The lex Groebne
 
 So no 7-point set in general position has 4 distinct distances: `D_gen(7) > 4`, and with
 the independently verified 5-distance witness, **`D_gen(7) = 5`**.
+
+*2026-09-17: superseded by section 3m. Two of the 96 rejections described below turned out to
+be realisable, so this chain was incomplete. Section 3m regenerates and decides every
+candidate without `hard.py`, and `D_gen(7) = 5` stands.*
 
 **Soundness of the chain.** Every seed set was built by discarding patterns `hard.py`
 called unsat, and an earlier decider (`gram.py`) was caught emitting false unsats, so this
@@ -647,7 +657,8 @@ candidates fall to these lemmas plus monotonicity: L3 alone removes 27, and the 
 fewer than 4 classes so monotonicity kills it. This retires the 1318-second z3 stage and
 both bespoke algebraic arguments of section 3h. It is also a cross-check: L3 independently
 rejects the very pattern `last7.py` killed by exhibiting a trivial ideal, two unrelated
-methods agreeing.
+methods agreeing. (2026-09-17: the 28 were generated from `hard.py`-pruned seeds, so this
+covered an incomplete list; section 3m replaces it.)
 
 **A caveat on the k=4 versus k=5 comparison below.** The two runs are not like-for-like:
 the k=4 figures come from L1+L2 filtering on decider-pruned seeds, the k=5 figures from the
@@ -737,6 +748,48 @@ are flagged rather than removed:
   deliberately not archived.
 
 The archived figures that were re-checked and do hold are listed in `REPRODUCE.md`.
+
+### 3m. `D_gen(6) > 3` and `D_gen(7) > 4` without `hard.py` (2026-09-17)
+
+**Why.** `sing98.py` re-decided, with Singular and msolve, the 96 `n=5, k=4` rejections that
+rested on assumption A8. 94 are refuted exactly. The other 2, patterns `0,0,0,1,1,2,2,3,3,1` and
+`0,0,1,1,1,1,2,3,3,2`, are realisable: they have real configurations in general position with
+four distinct distances, confirmed in exact arithmetic (`confirm_real98.py`, `realsol98.py`). So
+`hard.py` emits false unsat verdicts. Both earlier derivations used it: section 3e took its
+`n=5, k=3` seeds from `hard.py` and let it decide one candidate, and section 3h pruned its seeds
+with `hard.py` at `n=5` and, through `dec.py`, at `n=6`. Both bounds are re-derived here with no
+`hard.py` verdict at any level.
+
+**Method.** `exposure98.py` builds the candidates from seeds that no decider has touched, with
+`aug.py` (the proved lemmas L1 to L5 and the subset test). `sing98.py` writes each candidate as a
+polynomial system: gauge `P0 = (0,0)`, `P1 = (1,0)`, one unknown per class, the distance
+equations, and a Rabinowitsch equation making the classes pairwise distinct and non-zero.
+Singular's unit ideal means no solution even over the complex numbers. For a non-unit system,
+`sing98.py post` computes the dimension, a lexicographic basis and msolve's real solutions; when
+the system is zero-dimensional, `realsol98.py` rebuilds every solution from the basis, re-checks
+every original equation exactly, and classifies each real solution, deciding equal classes,
+collinear triples and concyclic quadruples in exact algebraic arithmetic.
+
+| bound | seeds | candidates | unit ideal | the rest |
+|---|---|---|---|---|
+| `D_gen(6) > 3` | the 61 five-point patterns with at most 3 classes that survive the lemmas | 470 | 467 | 3, zero-dimensional; each of their 12 real solutions has four points on a circle |
+| `D_gen(7) > 4` | 253: xcheck's 99 sat and 152 inconclusive `n=5, k=4` patterns, plus the 2 above | 1,141 at `n=6` (none decided), then 132 at `n=7` | 128 | 4, zero-dimensional; each of their 22 real solutions has all 7 points on one circle |
+
+At `k = 4` the other 196 of xcheck's 198 rejections do not depend on the part of `hard.py` that
+failed: 45 are trivial Groebner ideals (the branch A8 always treated as sound), 57 are settled as
+in A8's table, and 94 by `sing98.py`.
+
+**Controls.** The 11 patterns with a known trivial ideal come out unit. Three patterns xcheck
+found realisable stay non-unit, also with general position imposed, and every real solution of
+the two confirmed patterns is classified admissible. At `n=6` the 5-distance `Z^2` lattice set of
+`latmin_n6_z2_R50.json` goes through the whole pipeline and comes out admissible.
+`exposure98.py 4` reproduces the 132 `n=7` candidates exactly.
+
+**What this rests on.** The `n=5` pattern lists (`hdecide.enumerate_patterns` for `k = 3`,
+xcheck's 449 patterns for `k = 4`), the lemmas, the 102 earlier sound rejections at `n=5, k=4`, and
+the correctness of Singular 4.3.2 (unit ideals, lexicographic bases) and msolve (6 of the 94). No
+z3 verdict is used. **So `D_gen(6) = 4` and `D_gen(7) = 5` stand, and neither proof uses
+`hard.py` any more.** Records: `results/sing98_summary.json` and the `results/sing98*` folders.
 
 ## 4. Still open here
 
