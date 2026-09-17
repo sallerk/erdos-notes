@@ -7,6 +7,8 @@ D_gen is non-decreasing (deleting a point keeps general position and cannot add
 distances), so an exact value at m is a lower bound for every n >= m.  The published
 lower bound is Szemeredi's ceil((n-1)/3).  Since D_gen(7) = 5 and ceil((n-1)/3) does not
 reach 5 until n = 14, the computed values give a STRICTLY BETTER lower bound on 4 <= n <= 13.
+(2026-09-16: a later forum bound, NOTE.md section 3g, is larger from n = 14 and ties on
+11..13; audit98.py checks that comparison.  Part 2 is superseded by the same bound.)
 
 PART 2.  The extremal profile is far more rigid than the counting suggests.
 To attain D_gen(n) = (n-1)/3 exactly, every point must see every one of the (n-1)/3
@@ -66,9 +68,9 @@ print()
 ck('D_gen(6) = 4 exceeds ceil(5/3) = 2', EXACT[6] > pigeon(6))
 ck('the computed values give a STRICTLY better lower bound on the window 4..13',
    gain == list(range(4, 14)), 'range %s' % gain)
-print('   So the small table is not only data: for 4 <= n <= 13 it is the best known')
-print('   lower bound, beating Szemeredi in that window.  ceil((n-1)/3) does not reach 5')
-print('   until n = 14, which is where the window closes.')
+print('   So for 4 <= n <= 13 the small table beats Szemeredi; ceil((n-1)/3) does not reach')
+print('   5 until n = 14.  (NOTE.md section 3g: a later forum bound narrows the window where')
+print('   the table is the best known bound to 5 <= n <= 10.)')
 print()
 print('   And a further exact value would extend it:')
 for hyp, name in ((6, 'if D_gen(8) = 6'),):
@@ -121,6 +123,7 @@ for n in att[:4]:
 ck('n = 10 is ruled out: (10-1)/3 = 3 but D_gen(10) >= D_gen(6) = 4',
    best_known(10) > (10 - 1) // 3)
 print()
+print('   [Superseded 2026-09-16: the forum bound of NOTE.md section 3g gives D_gen(16) >= 6.]')
 print('   n = 16 is the first case monotonicity does NOT settle: attaining (n-1)/3 there')
 print('   needs D_gen(16) = 5 exactly, and D_gen(7) = 5 gives D_gen(16) >= 5.')
 print('   So D_gen(7) = 5 does NOT rule n = 16 out; it forces EXACT EQUALITY there,')

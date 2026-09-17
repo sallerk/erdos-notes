@@ -403,6 +403,11 @@ nothing resting on `gram.py`.
 
 ### 3f. What the extremal profile forces, and two cases ruled out
 
+**Superseded for every n >= 4 (2026-09-16).** The forum bound in section 3g gives
+`D_gen(n) >= ceil((n-1)/3) + 1` for `n >= 6`, and `D_gen(4) = 2`, `D_gen(5) = 3`, so
+`(n-1)/3` is never attained for `n >= 4`; in particular `D_gen(16) >= 6`. The analysis below
+is kept as it was written.
+
 Attaining `D_gen(n) = (n-1)/3` requires every point to see every one of the `(n-1)/3`
 distances exactly three times. So **every distance class is a 3-regular graph on all `n`
 vertices**, and those classes partition `E(K_n)` — a 3-factorization of `K_n`. Hence:
@@ -425,24 +430,47 @@ The first two candidates fall to what we already have:
 The parity/divisibility constraint is classical graph factorization, not geometry, and
 appears not to have been applied to this problem.
 
-### 3g. The small values are the best known lower bound for 4 <= n <= 13
+### 3g. Where the small values are the best known lower bound (revised 2026-09-16)
 
-Monotonicity turns each exact value into a lower bound for all larger `n`. Against
-Szemeredi's `ceil((n-1)/3)`, using `D_gen(7) = 5` from section 3h:
+Monotonicity turns each exact value into a lower bound for all larger `n`. There are two
+general bounds to compare with: Szemeredi's `ceil((n-1)/3)`, and a bound DesmondWeisenberg
+posted on the forum on 2026-09-06 (https://www.erdosproblems.com/forum/thread/98,
+post-8853): `D_gen(n) >= (n+2)/3` "for all large n".
+
+**His argument, checked here by hand.** Let the convex layers of the set `A` be `L_1` (the
+vertices of its hull), `L_2` (the vertices of the hull of what is left), and so on to `L_s`.
+
+* *Lemma 1.* If `x` is on `L_k` with `k >= 2` and `y != x` is in `A`, some `z` on `L_(k-1)`
+  has `d(z,y) > d(x,y)`. Since no three points are collinear, `x` lies strictly inside the
+  hull `H` of `L_(k-1)` (whose vertices are exactly `L_(k-1)`). The ray from `x` pointing
+  away from `y` leaves `H` at a point `q` with `d(q,y) > d(x,y)`. If `q` is not a vertex it
+  lies on an edge `[u,v]` of `H`; squared distance to `y` is convex along a segment, so one
+  of `u`, `v` is at least as far from `y` as `q`.
+* *Lemma 2.* Take `x` on the innermost layer `L_s`. Every circle about `x` holds at most 3
+  other points, so `x` sees at least `ceil((n-1)/3)` distinct distances, all at most
+  `d(x,y)` for a farthest point `y`. Lemma 1 applied `s-1` times with `y` fixed gives points
+  on `L_(s-1)`, ..., `L_1` at strictly increasing distances from `y`, all larger than
+  `d(x,y)`. So `A` determines at least `ceil((n-1)/3) + s - 1` distinct distances.
+* If `s = 1` the set is in convex position, and Altman's theorem gives at least `floor(n/2)`.
+
+Hence `D_gen(n) >= min(floor(n/2), ceil((n-1)/3) + 1)`. This equals `ceil((n+2)/3)` at
+`n = 4` and for every `n >= 6`; at `n = 5` it is only 2.
 
 | n | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| `ceil((n-1)/3)` | 1 | 2 | 2 | 2 | 3 | 3 | 3 | 4 | 4 | 4 | **5** |
-| ours | **2** | **3** | **4** | **5** | 5 | 5 | 5 | 5 | 5 | 5 | 5 |
+| `ceil((n-1)/3)` | 1 | 2 | 2 | 2 | 3 | 3 | 3 | 4 | 4 | 4 | 5 |
+| `min(floor(n/2), ceil((n-1)/3)+1)` | 2 | 2 | 3 | 3 | 4 | 4 | 4 | 5 | 5 | 5 | **6** |
+| ours | 2 | **3** | **4** | **5** | **5** | **5** | **5** | 5 | 5 | 5 | 5 |
 
-So the table is not merely data: on `4 <= n <= 13` it is the **best known lower bound**,
-`ceil((n-1)/3)` not reaching 5 until `n = 14`. A further exact value would extend the
-window: `D_gen(8) = 6` would push it to `n <= 16`. Verified by `lowerbound.py`.
+So the exact values are strictly the best known lower bound for `5 <= n <= 10`, tie with
+the forum bound at `n = 4` and `11 <= n <= 13`, and fall behind it from `n = 14`. A further
+exact value would widen the window: `D_gen(8) = 6` would make it strictly best up to
+`n = 13` and tied up to `n = 16`. `audit98.py` (section 6c) checks this arithmetic; the
+argument above is checked by hand only.
 
-*An earlier version of this section gave the window as `4 <= n <= 10` with an `ours` row of
-`4,4,4,4,4` from `n = 7`. That predated section 3h and was stale; `REPRODUCE.md`,
-`audit98.py` and the comment draft all carried the corrected window while this section did
-not.*
+*History: before 2026-09-16 this section compared only with `ceil((n-1)/3)` and called the
+exact values the best known lower bound for `4 <= n <= 13` (and, earlier still, for
+`4 <= n <= 10`).*
 
 
 ### 3h. `D_gen(7) = 5`

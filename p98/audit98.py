@@ -321,16 +321,29 @@ def ours(n):
     return max([val for m, val in EXACT.items() if m <= n] or [1])
 
 
+# DesmondWeisenberg, forum thread 98, post-8853 (2026-09-06): convex layers plus Altman give
+# D_gen(n) >= min(floor(n/2), ceil((n-1)/3) + 1).  His argument is checked by hand in
+# NOTE.md section 3g; only the arithmetic is checked here.
+def forum(n):
+    return min(n // 2, pig(n) + 1)
+
+
 win = [n for n in range(4, 30) if ours(n) > pig(n)]
 print('    n where monotonicity beats ceil((n-1)/3): %s' % win)
-ck('the computed values are the best known lower bound for 4 <= n <= 13',
+ck('monotonicity beats ceil((n-1)/3) exactly for 4 <= n <= 13',
    win == list(range(4, 14)), 'window %s' % win)
-# n = 16 is the smallest n = 4 mod 6 not already excluded.  Attaining (n-1)/3 = 5 there
-# now requires D_gen(16) to EQUAL its lower bound exactly, which forces the rigid
-# all-classes-3-regular profile; it is no longer merely one option among several.
-ck('at n = 16 the bound (n-1)/3 equals our lower bound 5, so attaining it forces '
-   'exact equality and the rigid 3-regular profile',
-   ours(16) == 5 and (16 - 1) // 3 == 5)
+strict = [n for n in range(4, 30) if ours(n) > max(pig(n), forum(n))]
+tie = [n for n in range(4, 30) if ours(n) == max(pig(n), forum(n))]
+print('    against the forum bound too: strictly better at %s, equal at %s' % (strict, tie))
+ck('with the forum bound, the values are strictly best for 5 <= n <= 10 and tie at n = 4 '
+   'and 11 <= n <= 13', strict == list(range(5, 11)) and tie == [4, 11, 12, 13],
+   'strict %s, tie %s' % (strict, tie))
+ck('the forum bound equals ceil((n+2)/3) at n = 4 and for 6 <= n < 30, and is 2 at n = 5',
+   all(forum(n) == -(-(n + 2) // 3) for n in [4] + list(range(6, 30))) and forum(5) == 2)
+# Section 3f's extremal profile needs D_gen(n) = (n-1)/3, which no n >= 4 can now attain.
+ck('max(ours, forum bound) exceeds (n-1)/3 for every 4 <= n < 30 (at n = 16 it is 6), so '
+   'section 3f is superseded', all(3 * max(ours(n), forum(n)) > n - 1 for n in range(4, 30))
+   and max(ours(16), forum(16)) == 6)
 
 # --------------------------------------------------------------------------- 7
 print()

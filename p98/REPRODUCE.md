@@ -90,7 +90,9 @@ sharing no code with the searches that originally produced them. It verifies:
 * the heptagon identification for `D_gen(6) > 3`;
 * the equilateral-centre lemma, its corollary, and the trivial ideal that kills the last
   `n = 7` candidate;
-* that the values are the best known lower bound for `4 <= n <= 13`.
+* the arithmetic comparing the values with Szemeredi's bound and with the later forum bound
+  of NOTE.md section 3g (strictly best for `5 <= n <= 10`; that bound's proof is checked by
+  hand, not by the script).
 
 It prints `ALL CHECKS PASSED` and exits non-zero on any failure.
 
