@@ -1,10 +1,16 @@
-# Erdos #548 (Erdos-Sos conjecture): a convention mismatch, and where the frontier is
+# Erdos #548 (Erdos-Sos conjecture): a convention mismatch, and where the frontier was
 
 Problem page: https://www.erdosproblems.com/548
 
+**Status update, 2026-09-16.** The problem page now marks #548 PROVED (LEAN) and says:
+"A proof of the full conjecture was given by GPT-6 Astra; see the proof expositions"
+(page last edited 07 September 2026, with a proof exposition by Thomas Bloom). There is
+therefore no open instance any more. The convention mismatch below is unaffected; the two
+frontier sections record where the first open instance stood before that proof.
+
 This note contains **no new mathematics**. It reports that the problem statement and
 the literature summarised in the thread use two different meanings of `k`, differing by
-one, and works out where the first open instance actually falls. Every quotation is
+one, and works out where the first open instance fell before the conjecture was proved. Every quotation is
 verified at source; see `REFERENCES.md`. The arithmetic is checked by `audit548.py`.
 
 ## The mismatch
@@ -31,7 +37,7 @@ k+1 vertices and could not embed in a graph on k vertices at all, and the page's
 hypothesis n >= k+1 excludes that case anyway. So the k of items (vii) to (xi) is tree
 order, as in the source papers.
 
-## Where the frontier actually is
+## Where the frontier actually was (before the proof noted at the top)
 
 Reading the thread against the statement without noticing this, one concludes the first
 open instance is n = 15 with trees on 11 vertices. It is not: an 11-vertex tree has

@@ -11,7 +11,7 @@ artifacts behind it.
 | p506 | #506 minimum circles from n points | Wang arXiv:2608.19844 Thm 1.2 already settles the thread's values; two 17-circle witnesses verified, isomorphic but not similar |
 | p982 | #982 distinct distances from a vertex | **SHELVED** - correct and reproducible but not new; n <= 7 already follows from Moser 1952 and Erdos-Fishburn 1994, and n = 8 is out of reach |
 | p1082 | #1082 no three collinear | the first question for n <= 15 |
-| p548 | #548 Erdos-Sos | a k-convention mismatch between the statement and the cited literature; re-locates the first open instance to n = 15, 61 edges, trees on 10 vertices |
+| p548 | #548 Erdos-Sos | a k-convention mismatch between the statement and the cited literature; re-locates what was the first open instance (n = 15, 61 edges, trees on 10 vertices); the page now marks the conjecture proved |
 | p583 | #583 Gallai path decomposition | verified for every connected graph on n <= 11; the cited theorems already cover n <= 6, but not a majority of graphs by n = 10 |
 | p217 | #217 crescent configurations | no 9-point configuration on the triangular lattice with squared diameter <= 400; extends the published 91-point search 16-fold |
 | p98 | #98 distinct distances in general position | exact values D_gen(3..7) = 1, 2, 3, 4, 5, the best known lower bound for 4 <= n <= 13; D_gen(8) in [5,7] |
