@@ -138,3 +138,8 @@ count: that each of the C(k,2) pairs inside Q_i has its bisector through v_i, an
 meets a convex curve twice, so each pair serves at most two vertices. That is a valid
 proof of the same inequality, but it is not the argument in the thread, which is the
 Cauchy-Schwarz one above. The misattribution is corrected here.)
+
+## Later work in the thread (added 2026-09-16, not re-verified here)
+
+* **No $k = 4$ counterexample with at most 10 vertices.** veljjanoski (forum post of 14 Sep 2026, https://www.erdosproblems.com/forum/thread/97#post-9038) reports that no strictly convex polygon with $n \le 10$ vertices has every vertex equidistant from 4 others, and that for $n = 7$ no 7 distinct points in the plane have this property even without convexity; with the counting bound $n \ge 7$, any counterexample would have at least 11 vertices. The method enumerates incidence structures of the sets $Q_i$ under $|Q_i \cap Q_j| \le 2$ and two convexity constraints (no pair in three of the $Q_i$; a shared pair separated by its two centres in the cyclic order), then rules each structure out with Nullstellensatz certificates for $n \le 9$ and Groebner bases (sympy and Singular) for $n = 10$. Code, certificates and verifiers: https://github.com/veljjanoski/erdos97. This note has not checked those computations.
+* **Part of the theorem above in Lean.** mysticflounder replied (9 Sep 2026) that part of the symmetric-family theorem was incorporated, with attribution, into a Lean formalization: https://github.com/mysticflounder/erdos-97-96-formalization/blob/main/lean/Erdos9796Proof/P97/ConvexIndepLineCover.lean. Which part, and whether that file compiles, has not been checked here.
